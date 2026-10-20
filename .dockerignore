@@ -4,6 +4,7 @@
 .codex
 .aws
 **/target
+.patched-deps
 dist
 corpus
 log

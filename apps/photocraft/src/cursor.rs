@@ -6,8 +6,8 @@
 //! - **macOS**: `NSEvent.mouseLocation`, converted into the content view of our window under it.
 //! - **X11**: `QueryPointer` on our window (a second, pure-Rust X connection).
 //! - **Windows**: `GetCursorPos`, relative to the window's client area.
-//! - **Wayland**: no global pointer position; this fork's winit (`patches/winit`) reports the drag
-//!   position as pointer motion, so egui's latest pointer is where the files are.
+//! - **Wayland**: no global pointer position; the winit patch queue reports drag motion and the
+//!   captured drop position as pointer motion, so egui can route native file drops.
 //!
 //! No `unsafe`: every OS call goes through a safe binding.
 //!

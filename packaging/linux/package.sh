@@ -49,6 +49,7 @@ BASENAME="photocraft-$VERSION-linux-$ARCH"
 echo "==> PhotoCraft $VERSION for Linux $ARCH ($FORMATS)"
 
 if [ "$SKIP_BUILD" = 0 ]; then
+  (cd "$ROOT" && bash scripts/prepare-deps.sh)
   if [ -n "${CROSS_TARGET:-}" ]; then
     (cd "$ROOT" && cargo build --release --locked -p photocraft -p photocraft-cli --features heif --target "$CROSS_TARGET")
   else

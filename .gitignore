@@ -1,6 +1,7 @@
 *~
 plan/
 /target
+/.patched-deps
 target/
 /dist
 /corpus

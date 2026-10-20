@@ -42,6 +42,7 @@ for s in 16 20 24 32 40 48 64 128 256; do
   render "$TIGHT" "$s" "$TMP/ico-$s.png"
   ICO_PNGS+=("$TMP/ico-$s.png")
 done
+(cd "$ROOT" && bash scripts/prepare-deps.sh)
 (cd "$ROOT" && cargo run -q -p xtask -- ico "$DIR/photocraft.ico" "${ICO_PNGS[@]}")
 
 # macOS .icns.

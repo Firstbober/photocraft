@@ -255,9 +255,17 @@ The desktop app also offers an authenticated, loopback-only control channel (`ph
 ```sh
 git clone https://github.com/storytold/photocraft
 cd photocraft
-cargo run --release -p photocraft -- image.psd   # the desktop app
-cargo test --workspace                           # the test suite
+bash scripts/prepare-deps.sh                       # once, before any workspace Cargo command
+cargo run --release -p photocraft -- image.psd      # the desktop app
+cargo test --workspace                              # the test suite
 ```
+
+`prepare-deps.sh` is the dependency patch queue: it downloads the checksum-pinned crates.io
+archives and materializes the committed winit/egui-winit diffs under `.patched-deps/`. Run it
+before the first `cargo` command (including `cargo metadata`); it never uses a GitHub fork. For
+air-gapped builds, preseed the two archives under `.patched-deps/archives/` and use
+`bash scripts/prepare-deps.sh --offline`. On Windows, run the bootstrap from Git Bash (Git for
+Windows); the PowerShell packaging script invokes that Bash entry point too.
 
 Japanese fonts for the UI and Type tool come from [craft-fonts](https://github.com/storytold/craft-fonts), an optional build input (desktop release builds always include it). Without it PhotoCraft uses your system's CJK fonts:
 

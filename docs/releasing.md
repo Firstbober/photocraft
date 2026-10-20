@@ -9,12 +9,26 @@ This is PhotoCraft's implementation of the shared
 [release playbook](release-playbook.md). User-facing names say **PhotoCraft**. Files, binaries
 and ids stay lowercase (`photocraft-<version>-<platform>-<arch>.<ext>`, `ai.storyteller.photocraft`).
 
+The local packaging entry points prepare the pinned dependency patch queue immediately before
+their first workspace Cargo build. `--skip-build` and artifact-only Flatpak, signing or
+verification utilities do not run this bootstrap; this change adds no dependency-download calls
+to those paths. See [`docs/development.md`](development.md#dependency-patch-queue) for the
+instructions.
+
+Release CI uses PhotoCraft-specific local reusable workflows for release, Windows ARM64 and
+FreeBSD (`.github/workflows/*-local.yml`). Each job prepares the pinned dependency patch queue
+before its first Cargo cache or build operation. Packaging-lint remains an external reusable
+workflow because it performs no workspace Cargo operation.
+
 ## Cutting a release
 
 1. **Bump the version** on `main`. The only place it lives is `[workspace.package] version`
-   in the root `Cargo.toml`:
+   in the root `Cargo.toml`. On a fresh checkout, first run
+   `bash scripts/prepare-deps.sh` as described in the
+   [`dependency patch queue`](development.md#dependency-patch-queue) section:
 
    ```sh
+   bash scripts/prepare-deps.sh
    cargo xtask version                 # prints the current version, e.g. 0.1.0
    cargo xtask version set 0.2.0       # or 0.2.0-rc.1; updates Cargo.toml and Cargo.lock
    ```

@@ -56,6 +56,7 @@ echo "==> PhotoCraft $VERSION for macOS ($ARCH), identity: $IDENTITY, notarize: 
 
 # ---- build -------------------------------------------------------------------------------------
 if [ "$SKIP_BUILD" = 0 ]; then
+  (cd "$ROOT" && bash scripts/prepare-deps.sh)
   args=()
   for t in "${TARGETS[@]}"; do args+=(--target "$t"); done
   (cd "$ROOT" && cargo build --release --locked -p photocraft -p photocraft-cli --features heif "${args[@]}")

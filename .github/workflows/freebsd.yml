@@ -16,6 +16,11 @@ on:
       - .github/workflows/freebsd.yml
       - packaging/freebsd/**
       - packaging/env.sh
+      - scripts/prepare-deps*.sh
+      - patches/**
+      - Cargo.toml
+      - Cargo.lock
+      - .github/workflows/freebsd-local.yml
   workflow_dispatch:
 
 concurrency:
@@ -27,8 +32,8 @@ permissions:
 
 jobs:
   freebsd:
-    # Intentionally tracked at @main (not SHA-pinned) so org-wide CI improvements, security fixes, and build optimizations propagate without PR churn across all craftapp repos.
-    uses: storytold/craft-common-actions/.github/workflows/freebsd.yml@main
+    # PhotoCraft-specific workflow prepares the patch queue inside the FreeBSD VM before Cargo/cache access.
+    uses: ./.github/workflows/freebsd-local.yml
     with:
       craft-fonts-ref: abb83316d96aa59c1cf64784289e378fe9fa5695
       cargo-build-extra-args: "--features heif"

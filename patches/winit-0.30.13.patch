@@ -1,0 +1,1327 @@
+# PhotoCraft winit 0.30.13 dependency patch provenance.
+# Base: crates.io winit-0.30.13 archive, SHA-256 a6755fa58a9f8350bd1e472d4c3fcc25f824ec358933bba33306d0b63df5978d.
+# Upstream: rust-windowing/winit PR #4729, refs/pull/4729/head @ 7a962fd46470a137d9a7a1945bf5b5d0b95a002c.
+# Local adaptations: shared per-seat DnD/clipboard lifecycle, bounded transfers, drop-position CursorMoved preservation, and URI-reader cleanup.
+diff --git a/Cargo.toml b/Cargo.toml
+index 4bfded8..a5858df 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -104,6 +104,7 @@ wayland = [
+     "sctk",
+     "ahash",
+     "memmap2",
++    "percent-encoding",
+ ]
+ wayland-csd-adwaita = [
+     "sctk-adwaita",
+diff --git a/src/platform/wayland.rs b/src/platform/wayland.rs
+index 9c1a8e4..5586821 100644
+--- a/src/platform/wayland.rs
++++ b/src/platform/wayland.rs
+@@ -16,6 +16,8 @@
+ 
+ use std::ffi::c_void;
+ use std::ptr::NonNull;
++use std::sync::{Arc, Weak};
++use std::{fmt, io};
+ 
+ use crate::event_loop::{ActiveEventLoop, EventLoop, EventLoopBuilder};
+ use crate::monitor::MonitorHandle;
+@@ -27,6 +29,9 @@ pub use crate::window::Theme;
+ pub trait ActiveEventLoopExtWayland {
+     /// True if the [`ActiveEventLoop`] uses Wayland.
+     fn is_wayland(&self) -> bool;
++
++    /// The clipboard of this event loop, or [`None`] if it doesn't use Wayland.
++    fn clipboard(&self) -> Option<Clipboard>;
+ }
+ 
+ impl ActiveEventLoopExtWayland for ActiveEventLoop {
+@@ -34,6 +39,66 @@ impl ActiveEventLoopExtWayland for ActiveEventLoop {
+     fn is_wayland(&self) -> bool {
+         self.p.is_wayland()
+     }
++
++    fn clipboard(&self) -> Option<Clipboard> {
++        #[allow(clippy::single_match)]
++        match &self.p {
++            crate::platform_impl::ActiveEventLoop::Wayland(event_loop) => {
++                Some(Clipboard { state: Arc::downgrade(&event_loop.state.borrow().clipboard) })
++            },
++            #[cfg(x11_platform)]
++            _ => None,
++        }
++    }
++}
++
++/// The clipboard of a Wayland event loop.
++///
++/// It goes through the `wl_data_device` winit binds for each seat to receive file drops, so a
++/// toolkit should use it instead of binding a data device of its own: some compositors, such as
++/// Hyprland, send the selection and drags to only one data device of a client.
++///
++/// It can be used from any thread. Reading another client's selection waits for that client to
++/// send it, without dispatching the event loop, and gives up after two seconds of silence.
++/// Reading our own selection returns it directly. A clipboard outliving its event loop reports
++/// errors.
++#[derive(Clone)]
++pub struct Clipboard {
++    state: Weak<crate::platform_impl::wayland::ClipboardState>,
++}
++
++impl Clipboard {
++    /// The clipboard of the winit event loop connected through `display`, a `wl_display`
++    /// pointer such as the one in its `WaylandDisplayHandle`, if that event loop still exists.
++    pub fn for_display(display: NonNull<c_void>) -> Option<Self> {
++        crate::platform_impl::wayland::ClipboardState::for_display(display.as_ptr())
++            .map(|state| Self { state: Arc::downgrade(&state) })
++    }
++
++    /// The text on the clipboard of the seat the application last received input from.
++    pub fn load_text(&self) -> io::Result<String> {
++        self.state()?.load_text()
++    }
++
++    /// Puts `text` on the clipboard of the seat the application last received input from.
++    ///
++    /// The compositor accepts it only in response to input, so call this while handling the
++    /// keyboard or pointer event that asked for the copy.
++    pub fn store_text(&self, text: impl Into<String>) -> io::Result<()> {
++        self.state()?.store_text(text.into())
++    }
++
++    fn state(&self) -> io::Result<Arc<crate::platform_impl::wayland::ClipboardState>> {
++        self.state
++            .upgrade()
++            .ok_or_else(|| io::Error::new(io::ErrorKind::NotConnected, "the event loop has ended"))
++    }
++}
++
++impl fmt::Debug for Clipboard {
++    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
++        f.debug_struct("Clipboard").finish_non_exhaustive()
++    }
+ }
+ 
+ /// Additional methods on [`EventLoop`] that are specific to Wayland.
+diff --git a/src/platform_impl/linux/wayland/clipboard.rs b/src/platform_impl/linux/wayland/clipboard.rs
+new file mode 100644
+index 0000000..0804b53
+--- /dev/null
++++ b/src/platform_impl/linux/wayland/clipboard.rs
+@@ -0,0 +1,350 @@
++//! Copy and paste through the seat's `wl_data_device`, the one winit also uses for drag and drop.
++//!
++//! A client should keep one data device per seat. Some compositors, Hyprland among them, send
++//! the selection and drags to only one data device of a client, so a toolkit that binds a second
++//! device for its clipboard stops receiving the selection once winit binds one for drops. Winit
++//! therefore offers the clipboard on its own device.
++
++use std::fs::File;
++use std::io::{self, ErrorKind, Read, Write};
++use std::os::fd::{AsRawFd, OwnedFd};
++use std::sync::{Arc, Mutex, Weak};
++use std::time::Duration;
++
++use tracing::warn;
++
++use sctk::data_device_manager::data_device::DataDeviceData;
++use sctk::data_device_manager::data_source::DataSourceData;
++use sctk::data_device_manager::WritePipe;
++use sctk::reexports::client::backend::ObjectId;
++use sctk::reexports::client::protocol::wl_data_device::WlDataDevice;
++use sctk::reexports::client::protocol::wl_data_device_manager::WlDataDeviceManager;
++use sctk::reexports::client::protocol::wl_data_source::WlDataSource;
++use sctk::reexports::client::{Connection, Proxy, QueueHandle};
++
++use crate::platform_impl::wayland::state::WinitState;
++
++/// The text types winit offers, and accepts in this order of preference.
++const TEXT_MIME_TYPES: [&str; 5] =
++    ["text/plain;charset=utf-8", "UTF8_STRING", "text/plain", "TEXT", "STRING"];
++
++/// How long a paste waits for the source to send more data before giving up.
++const READ_TIMEOUT: Duration = Duration::from_secs(2);
++
++/// Maximum clipboard text accepted from another client.
++const MAX_CLIPBOARD_TEXT: usize = 16 << 20;
++
++/// Every live clipboard, so one can be found from the display handle a toolkit is given.
++static CLIPBOARDS: Mutex<Vec<Weak<ClipboardState>>> = Mutex::new(Vec::new());
++
++/// The clipboard of one event loop, shared between the loop and its users.
++#[derive(Debug)]
++pub struct ClipboardState {
++    connection: Connection,
++    queue_handle: QueueHandle<WinitState>,
++    manager: Option<WlDataDeviceManager>,
++    /// The `wl_display` pointer, to match a raw display handle.
++    display: usize,
++    /// A marker type offered with our own selection, so we recognise it when it comes back.
++    marker: String,
++    inner: Mutex<Inner>,
++}
++
++#[derive(Debug, Default)]
++struct Inner {
++    seats: Vec<SeatClipboard>,
++    /// The seat that last gave one of our windows input.
++    active_seat: Option<ObjectId>,
++    /// The selection we offer, until another client takes the selection.
++    owned: Option<OwnedSelection>,
++}
++
++#[derive(Debug)]
++struct SeatClipboard {
++    seat: ObjectId,
++    device: WlDataDevice,
++    /// The serial of the latest input event on this seat, which setting the selection needs.
++    serial: Option<u32>,
++}
++
++#[derive(Debug)]
++struct OwnedSelection {
++    source: WlDataSource,
++    text: Arc<str>,
++}
++
++impl ClipboardState {
++    pub fn new(
++        connection: &Connection,
++        queue_handle: &QueueHandle<WinitState>,
++        manager: Option<WlDataDeviceManager>,
++    ) -> Arc<Self> {
++        let display = connection.display().id().as_ptr() as usize;
++        let state = Arc::new(Self {
++            connection: connection.clone(),
++            queue_handle: queue_handle.clone(),
++            manager,
++            display,
++            marker: format!(
++                "application/x-winit-selection;pid={};display={display:x}",
++                std::process::id()
++            ),
++            inner: Mutex::new(Inner::default()),
++        });
++
++        let mut clipboards =
++            CLIPBOARDS.lock().unwrap_or_else(std::sync::PoisonError::into_inner);
++        clipboards.retain(|clipboard| clipboard.strong_count() > 0);
++        clipboards.push(Arc::downgrade(&state));
++        state
++    }
++
++    /// The clipboard of the event loop connected through this `wl_display`.
++    pub fn for_display(display: *mut std::ffi::c_void) -> Option<Arc<Self>> {
++        let clipboards = CLIPBOARDS.lock().unwrap_or_else(std::sync::PoisonError::into_inner);
++        clipboards
++            .iter()
++            .filter_map(Weak::upgrade)
++            .find(|clipboard| clipboard.display == display as usize)
++    }
++
++    pub fn add_seat(&self, seat: ObjectId, device: WlDataDevice) {
++        let mut inner = self.inner.lock().unwrap_or_else(std::sync::PoisonError::into_inner);
++        inner.seats.retain(|entry| entry.seat != seat);
++        inner.seats.push(SeatClipboard { seat, device, serial: None });
++    }
++
++    pub fn remove_seat(&self, seat: &ObjectId) {
++        let mut inner = self.inner.lock().unwrap_or_else(std::sync::PoisonError::into_inner);
++        inner.seats.retain(|entry| &entry.seat != seat);
++        if inner.active_seat.as_ref() == Some(seat) {
++            inner.active_seat = None;
++        }
++    }
++
++    /// Records input on a seat: its serial, and that this seat is the one in use.
++    pub fn note_input(&self, seat: &ObjectId, serial: u32) {
++        let mut inner = self.inner.lock().unwrap_or_else(std::sync::PoisonError::into_inner);
++        if let Some(entry) = inner.seats.iter_mut().find(|entry| &entry.seat == seat) {
++            entry.serial = Some(serial);
++            inner.active_seat = Some(seat.clone());
++        }
++    }
++
++    /// The text of our own selection for a source the compositor asks to send.
++    pub fn owned_text(&self, source: &WlDataSource) -> Option<Arc<str>> {
++        let inner = self.inner.lock().unwrap_or_else(std::sync::PoisonError::into_inner);
++        inner.owned.as_ref().filter(|owned| &owned.source == source).map(|owned| owned.text.clone())
++    }
++
++    /// Forgets our selection once another client has taken it.
++    pub fn source_cancelled(&self, source: &WlDataSource) {
++        let mut inner = self.inner.lock().unwrap_or_else(std::sync::PoisonError::into_inner);
++        if inner.owned.as_ref().is_some_and(|owned| &owned.source == source) {
++            inner.owned = None;
++        }
++        source.destroy();
++    }
++
++    /// Sends our selection's text through the pipe the compositor gave us.
++    pub fn send(&self, source: &WlDataSource, mime_type: &str, pipe: WritePipe) {
++        let Some(text) = self.owned_text(source) else { return };
++        if !TEXT_MIME_TYPES.contains(&mime_type) && mime_type != self.marker {
++            return;
++        }
++        let mut file = File::from(OwnedFd::from(pipe));
++        // The reader may be slow, or be this very process: write off the event loop.
++        let spawned = std::thread::Builder::new().name("winit-clipboard".into()).spawn(move || {
++            if let Err(error) = file.write_all(text.as_bytes()) {
++                if error.kind() != ErrorKind::BrokenPipe {
++                    warn!("Failed to send the clipboard: {error}");
++                }
++            }
++        });
++        if let Err(error) = spawned {
++            warn!("Failed to send the clipboard: {error}");
++        }
++    }
++
++    fn active_device(inner: &Inner) -> Option<&SeatClipboard> {
++        inner
++            .active_seat
++            .as_ref()
++            .and_then(|seat| inner.seats.iter().find(|entry| &entry.seat == seat))
++            .or_else(|| inner.seats.first())
++    }
++
++    pub fn load_text(&self) -> io::Result<String> {
++        let inner = self.inner.lock().unwrap_or_else(std::sync::PoisonError::into_inner);
++        let offer = Self::active_device(&inner)
++            .and_then(|entry| entry.device.data::<DataDeviceData>())
++            .and_then(|data| data.selection_offer());
++
++        let Some(offer) = offer else {
++            // The compositor hasn't told us about a selection, but one we set is still ours.
++            return match &inner.owned {
++                Some(owned) => Ok(owned.text.to_string()),
++                None => Err(io::Error::new(ErrorKind::NotFound, "the clipboard is empty")),
++            };
++        };
++
++        let types = offer.with_mime_types(|types| types.to_vec());
++        if types.iter().any(|mime| mime == &self.marker) {
++            // Our own selection: reading it through the compositor would wait on this thread.
++            if let Some(owned) = &inner.owned {
++                return Ok(owned.text.to_string());
++            }
++        }
++
++        let Some(mime) = TEXT_MIME_TYPES.iter().find(|mime| types.iter().any(|t| t == *mime))
++        else {
++            return Err(io::Error::new(ErrorKind::InvalidData, "the clipboard holds no text"));
++        };
++
++        let pipe = offer.receive(mime.to_string()).map_err(|error| match error {
++            sctk::data_device_manager::data_offer::DataOfferError::Io(error) => error,
++            other => io::Error::new(ErrorKind::Other, other.to_string()),
++        })?;
++        drop(inner);
++        // The source only writes once the compositor has our request.
++        self.connection.flush().map_err(|error| io::Error::new(ErrorKind::Other, error))?;
++
++        let bytes = read_with_timeout(File::from(OwnedFd::from(pipe)))?;
++        let text = String::from_utf8_lossy(&bytes);
++        // `text/*` types use CRLF line endings, but applications expect LF.
++        Ok(text.replace("\r\n", "\n").replace('\r', "\n"))
++    }
++
++    pub fn store_text(&self, text: String) -> io::Result<()> {
++        let Some(manager) = &self.manager else {
++            return Err(io::Error::new(ErrorKind::Unsupported, "no data device manager"));
++        };
++        let mut inner = self.inner.lock().unwrap_or_else(std::sync::PoisonError::into_inner);
++        let Some(entry) = Self::active_device(&inner) else {
++            return Err(io::Error::new(ErrorKind::NotFound, "no seat"));
++        };
++        let Some(serial) = entry.serial else {
++            return Err(io::Error::new(ErrorKind::Other, "no input to set the clipboard for"));
++        };
++
++        let source = manager.create_data_source(&self.queue_handle, DataSourceData::default());
++        for mime in TEXT_MIME_TYPES {
++            source.offer(mime.to_owned());
++        }
++        source.offer(self.marker.clone());
++        entry.device.set_selection(Some(&source), serial);
++
++        if let Some(previous) = inner.owned.replace(OwnedSelection { source, text: text.into() }) {
++            previous.source.destroy();
++        }
++        drop(inner);
++        self.connection.flush().map_err(|error| io::Error::new(ErrorKind::Other, error))
++    }
++}
++
++impl Drop for ClipboardState {
++    fn drop(&mut self) {
++        if let Some(owned) = self
++            .inner
++            .get_mut()
++            .unwrap_or_else(std::sync::PoisonError::into_inner)
++            .owned
++            .take() {
++            owned.source.destroy();
++        }
++    }
++}
++
++/// Reads a pipe to its end, giving up if the writer stays silent for [`READ_TIMEOUT`].
++fn read_with_timeout(mut file: File) -> io::Result<Vec<u8>> {
++    let fd = file.as_raw_fd();
++    // SAFETY: `fd` is a valid descriptor owned by `file`.
++    unsafe {
++        let flags = libc::fcntl(fd, libc::F_GETFL);
++        if flags < 0 || libc::fcntl(fd, libc::F_SETFL, flags | libc::O_NONBLOCK) < 0 {
++            return Err(io::Error::last_os_error());
++        }
++    }
++
++    let mut bytes = Vec::new();
++    let mut chunk = [0u8; 8192];
++    loop {
++        match file.read(&mut chunk) {
++            Ok(0) => return Ok(bytes),
++            Ok(read) => {
++                let Some(new_len) = bytes.len().checked_add(read) else {
++                    return Err(io::Error::new(
++                        ErrorKind::InvalidData,
++                        "clipboard text is too large",
++                    ));
++                };
++                if new_len > MAX_CLIPBOARD_TEXT {
++                    return Err(io::Error::new(
++                        ErrorKind::InvalidData,
++                        "clipboard text is too large",
++                    ));
++                }
++                bytes.extend_from_slice(&chunk[..read]);
++            },
++            Err(error) if error.kind() == ErrorKind::Interrupted => {},
++            Err(error) if error.kind() == ErrorKind::WouldBlock => {
++                let mut poll = libc::pollfd { fd, events: libc::POLLIN, revents: 0 };
++                // SAFETY: `poll` points to one valid `pollfd`.
++                let ready = unsafe { libc::poll(&mut poll, 1, READ_TIMEOUT.as_millis() as i32) };
++                if ready == 0 {
++                    return Err(io::Error::new(
++                        ErrorKind::TimedOut,
++                        "the clipboard's owner did not send it",
++                    ));
++                }
++                if ready < 0 {
++                    let error = io::Error::last_os_error();
++                    if error.kind() != ErrorKind::Interrupted {
++                        return Err(error);
++                    }
++                }
++            },
++            Err(error) => return Err(error),
++        }
++    }
++}
++
++#[cfg(test)]
++mod tests {
++    use super::*;
++    use std::io::Write;
++    use std::sync::atomic::{AtomicU64, Ordering};
++
++    static NEXT_TEMP: AtomicU64 = AtomicU64::new(0);
++
++    fn read_temp(contents: &[u8]) -> io::Result<Vec<u8>> {
++        let id = NEXT_TEMP.fetch_add(1, Ordering::Relaxed);
++        let path =
++            std::env::temp_dir().join(format!("winit-clipboard-test-{}-{id}", std::process::id()));
++        let result = (|| {
++            let mut output = File::create(&path)?;
++            output.write_all(contents)?;
++            drop(output);
++            read_with_timeout(File::open(&path)?)
++        })();
++        let _ = std::fs::remove_file(path);
++        result
++    }
++
++    #[test]
++    fn reads_empty_clipboard_text() {
++        assert!(read_temp(&[]).unwrap().is_empty());
++    }
++
++    #[test]
++    fn reads_normal_clipboard_text() {
++        assert_eq!(read_temp(b"hello\r\nworld").unwrap(), b"hello\r\nworld");
++    }
++
++    #[test]
++    fn rejects_clipboard_text_over_limit() {
++        let contents = vec![b'x'; MAX_CLIPBOARD_TEXT + 1];
++        let error = read_temp(&contents).expect_err("oversized clipboard text must fail");
++        assert_eq!(error.kind(), ErrorKind::InvalidData);
++    }
++}
+diff --git a/src/platform_impl/linux/wayland/event_loop/mod.rs b/src/platform_impl/linux/wayland/event_loop/mod.rs
+index fef13f4..dc151c8 100644
+--- a/src/platform_impl/linux/wayland/event_loop/mod.rs
++++ b/src/platform_impl/linux/wayland/event_loop/mod.rs
+@@ -95,8 +95,9 @@ impl<T: 'static> EventLoop<T> {
+         let event_loop =
+             map_err!(calloop::EventLoop::<WinitState>::try_new(), WaylandError::Calloop)?;
+ 
+-        let mut winit_state = WinitState::new(&globals, &queue_handle, event_loop.handle())
+-            .map_err(|error| os_error!(error))?;
++        let mut winit_state =
++            WinitState::new(&connection, &globals, &queue_handle, event_loop.handle())
++                .map_err(|error| os_error!(error))?;
+ 
+         // NOTE: do a roundtrip after binding the globals to prevent potential
+         // races with the server.
+diff --git a/src/platform_impl/linux/wayland/mod.rs b/src/platform_impl/linux/wayland/mod.rs
+index 63052b7..677c65d 100644
+--- a/src/platform_impl/linux/wayland/mod.rs
++++ b/src/platform_impl/linux/wayland/mod.rs
+@@ -10,10 +10,12 @@ use sctk::reexports::client::{self, ConnectError, DispatchError, Proxy};
+ pub(super) use crate::cursor::OnlyCursorImage as CustomCursor;
+ use crate::dpi::{LogicalSize, PhysicalSize};
+ pub use crate::platform_impl::platform::{OsError, WindowId};
++pub use clipboard::ClipboardState;
+ pub use event_loop::{ActiveEventLoop, EventLoop, EventLoopProxy};
+ pub use output::{MonitorHandle, VideoModeHandle};
+ pub use window::Window;
+ 
++mod clipboard;
+ mod event_loop;
+ mod output;
+ mod seat;
+diff --git a/src/platform_impl/linux/wayland/seat/dnd.rs b/src/platform_impl/linux/wayland/seat/dnd.rs
+new file mode 100644
+index 0000000..81d620c
+--- /dev/null
++++ b/src/platform_impl/linux/wayland/seat/dnd.rs
+@@ -0,0 +1,630 @@
++//! File drag and drop through the core `wl_data_device` protocol.
++//!
++//! A drag that offers `text/uri-list` is accepted with the copy action. Its list is read as soon
++//! as it enters a window, so the window hears `HoveredFile` for each local file while the drag is
++//! over it, `HoveredFileCancelled` when it leaves, and `DroppedFile` for each file once dropped.
++
++use std::ffi::OsStr;
++use std::fs::File;
++use std::io::{ErrorKind, Read};
++use std::os::unix::ffi::OsStrExt;
++use std::path::PathBuf;
++
++use percent_encoding::percent_decode;
++use tracing::warn;
++
++use sctk::compositor::SurfaceData;
++use sctk::data_device_manager::data_device::{DataDeviceData, DataDeviceHandler};
++use sctk::data_device_manager::data_offer::{DataOfferHandler, DragOffer};
++use sctk::data_device_manager::data_source::DataSourceHandler;
++use sctk::reexports::calloop::{PostAction, RegistrationToken};
++use sctk::reexports::client::backend::ObjectId;
++use sctk::reexports::client::protocol::wl_data_device::WlDataDevice;
++use sctk::reexports::client::protocol::wl_data_device_manager::DndAction;
++use sctk::reexports::client::protocol::wl_data_source::WlDataSource;
++use sctk::reexports::client::protocol::wl_surface::WlSurface;
++use sctk::reexports::client::{Connection, Proxy, QueueHandle};
++
++use crate::dpi::LogicalPosition;
++use crate::event::WindowEvent;
++use crate::platform_impl::wayland::state::WinitState;
++use crate::platform_impl::wayland::{make_wid, DeviceId, WindowId};
++
++const URI_LIST: &str = "text/uri-list";
++
++/// A uri-list bigger than this is not a list of files someone dragged.
++const MAX_URI_LIST: usize = 16 << 20;
++
++/// A file drag over one of our windows.
++#[derive(Debug)]
++pub struct FileDrag {
++    offer: DragOffer,
++    window_id: WindowId,
++    /// The files in the drag, once the list has been read.
++    paths: Option<Vec<PathBuf>>,
++    /// Bytes of the list read so far.
++    buffer: Vec<u8>,
++    /// The source reading the list.
++    reader: Option<RegistrationToken>,
++    /// Most recent position reported by `wl_data_device::motion`.
++    position: (f64, f64),
++    /// Position captured by `drop_performed`; URI transfer may finish later.
++    drop_position: Option<(f64, f64)>,
++    /// Whether `HoveredFile` was sent for this drag.
++    hovered: bool,
++    /// Whether the drag was dropped on the window.
++    dropped: bool,
++}
++
++impl WinitState {
++    fn cancel_drag(&mut self, drag: FileDrag) {
++        if let Some(reader) = drag.reader {
++            self.loop_handle.remove(reader);
++        }
++        if drag.hovered {
++            self.events_sink.push_window_event(WindowEvent::HoveredFileCancelled, drag.window_id);
++        }
++        // The pointer does not report a leave while a drag is in progress.
++        self.events_sink.push_window_event(
++            WindowEvent::CursorLeft {
++                device_id: crate::event::DeviceId(crate::platform_impl::DeviceId::Wayland(DeviceId)),
++            },
++            drag.window_id,
++        );
++        drag.offer.destroy();
++        self.dispatched_events = true;
++    }
++
++    /// Ends the active file drag of a seat without dropping it.
++    fn cancel_active_file_drag(&mut self, seat: &ObjectId) {
++        let drag = self.seats.get_mut(seat).and_then(|seat| seat.file_drag.take());
++        if let Some(drag) = drag {
++            self.cancel_drag(drag);
++        }
++    }
++
++    /// Starts a new drag while retaining any dropped transfer that has not reached EOF yet.
++    fn prepare_file_drag(&mut self, seat: &ObjectId) {
++        let drag = self.seats.get_mut(seat).and_then(|seat| seat.file_drag.take());
++        let Some(drag) = drag else { return };
++        if drag.dropped {
++            if let Some(seat_state) = self.seats.get_mut(seat) {
++                seat_state.pending_file_drags.push(drag);
++            }
++        } else {
++            self.cancel_drag(drag);
++        }
++    }
++
++    /// Ends all file drags of a seat, including dropped transfers still waiting on their pipes.
++    pub(super) fn cancel_file_drag(&mut self, seat: &ObjectId) {
++        let (active, pending) = {
++            let Some(seat_state) = self.seats.get_mut(seat) else { return };
++            (
++                seat_state.file_drag.take(),
++                std::mem::take(&mut seat_state.pending_file_drags),
++            )
++        };
++        if let Some(drag) = active {
++            self.cancel_drag(drag);
++        }
++        for drag in pending {
++            self.cancel_drag(drag);
++        }
++    }
++
++    /// Emits the pointer position carried by `wl_data_device::motion`.
++    ///
++    /// Wayland pointer events stop while a drag is active, but applications still need the
++    /// position to place a drop. Keep this in the same event stream as ordinary pointer motion.
++    fn file_drag_cursor_moved(&mut self, window_id: WindowId, x: f64, y: f64) {
++        let scale = match self.windows.get_mut().get(&window_id) {
++            Some(window) => window.lock().unwrap_or_else(std::sync::PoisonError::into_inner).scale_factor(),
++            None => return,
++        };
++        let position = LogicalPosition::new(x, y).to_physical(scale);
++        let device_id = crate::event::DeviceId(crate::platform_impl::DeviceId::Wayland(DeviceId));
++        self.events_sink.push_window_event(WindowEvent::CursorMoved { device_id, position }, window_id);
++        self.dispatched_events = true;
++    }
++
++    fn file_drag_mut<'a>(
++        &'a mut self,
++        seat: &ObjectId,
++        offer_id: &ObjectId,
++    ) -> Option<&'a mut FileDrag> {
++        let seat_state = self.seats.get_mut(seat)?;
++        if seat_state
++            .file_drag
++            .as_ref()
++            .is_some_and(|drag| drag.offer.inner().id() == offer_id.clone())
++        {
++            seat_state.file_drag.as_mut()
++        } else {
++            seat_state
++                .pending_file_drags
++                .iter_mut()
++                .find(|drag| drag.offer.inner().id() == offer_id.clone())
++        }
++    }
++
++    /// Finishes a dropped drag once its URI transfer reaches EOF.
++    fn finish_file_drag(&mut self, seat: &ObjectId, drag: FileDrag) {
++        // The offer carries the action the compositor settled on; finishing without one is a
++        // protocol error.
++        let selected = self
++            .seats
++            .get(seat)
++            .and_then(|seat| seat.data_device.as_ref())
++            .and_then(|device| device.data().drag_offer())
++            .filter(|offer| offer.inner() == drag.offer.inner())
++            .map_or(drag.offer.selected_action, |offer| offer.selected_action);
++        if selected == DndAction::Copy {
++            drag.offer.finish();
++        }
++        drag.offer.destroy();
++
++        let paths = drag.paths.unwrap_or_default();
++        // URI transfer can finish after the drop event. Re-emit the captured position immediately
++        // before the dropped files so consumers that process events in order use drop coordinates.
++        if !paths.is_empty() {
++            if let Some((x, y)) = drag.drop_position {
++                self.file_drag_cursor_moved(drag.window_id, x, y);
++            }
++        }
++        for path in paths {
++            self.events_sink.push_window_event(WindowEvent::DroppedFile(path), drag.window_id);
++        }
++        self.dispatched_events = true;
++    }
++
++    /// Reports what is known about a seat's file drag: hovered files once their list is read, and
++    /// dropped files once the drag is dropped and read, which also finishes it.
++    fn advance_file_drag(&mut self, seat: &ObjectId, offer_id: &ObjectId) {
++        let mut pending_index = None;
++        let active = self
++            .seats
++            .get(seat)
++            .and_then(|seat| seat.file_drag.as_ref())
++            .is_some_and(|drag| drag.offer.inner().id() == offer_id.clone());
++
++        {
++            let Some(seat_state) = self.seats.get_mut(seat) else { return };
++            let drag = if active {
++                seat_state.file_drag.as_mut()
++            } else {
++                let Some(index) = seat_state
++                    .pending_file_drags
++                    .iter()
++                    .position(|drag| drag.offer.inner().id() == offer_id.clone())
++                else {
++                    return;
++                };
++                pending_index = Some(index);
++                seat_state.pending_file_drags.get_mut(index)
++            };
++            let Some(drag) = drag else { return };
++            let Some(paths) = drag.paths.as_ref() else { return };
++
++            if !drag.hovered {
++                drag.hovered = true;
++                for path in paths {
++                    self.events_sink
++                        .push_window_event(WindowEvent::HoveredFile(path.clone()), drag.window_id);
++                }
++                self.dispatched_events = true;
++            }
++            if !drag.dropped {
++                return;
++            }
++        }
++
++        let Some(seat_state) = self.seats.get_mut(seat) else { return };
++        let drag = if active {
++            seat_state.file_drag.take()
++        } else {
++            let Some(index) = pending_index else { return };
++            Some(seat_state.pending_file_drags.remove(index))
++        };
++        if let Some(drag) = drag {
++            self.finish_file_drag(seat, drag);
++        }
++    }
++
++    /// Reads the part of a seat's list that is ready, telling the loop whether to keep watching.
++    fn read_file_drag(
++        &mut self,
++        seat: &ObjectId,
++        offer_id: &ObjectId,
++        mut pipe: &File,
++    ) -> PostAction {
++        let Some(drag) = self.file_drag_mut(seat, offer_id) else {
++            return PostAction::Remove;
++        };
++
++        // The pipe is ready, so one read does not block.
++        let mut chunk = [0u8; 4096];
++        let (action, advance) = match pipe.read(&mut chunk) {
++            Ok(0) => {
++                drag.reader = None;
++                drag.paths = Some(parse_uri_list(&drag.buffer));
++                drag.buffer = Vec::new();
++                (PostAction::Remove, true)
++            },
++            Ok(read) => {
++                let new_len =
++                    drag.buffer.len().checked_add(read).map_or(MAX_URI_LIST + 1, |len| len);
++                if new_len > MAX_URI_LIST {
++                    warn!("Dragged file list is too large");
++                    drag.reader = None;
++                    drag.buffer.clear();
++                    drag.paths = Some(Vec::new());
++                    (PostAction::Remove, true)
++                } else {
++                    drag.buffer.extend_from_slice(&chunk[..read]);
++                    (PostAction::Continue, false)
++                }
++            },
++            Err(error)
++                if matches!(error.kind(), ErrorKind::Interrupted | ErrorKind::WouldBlock) =>
++            {
++                (PostAction::Continue, false)
++            },
++            Err(error) => {
++                warn!("Failed to read a dragged file list: {error}");
++                drag.reader = None;
++                drag.paths = Some(Vec::new());
++                (PostAction::Remove, true)
++            },
++        };
++        if advance {
++            self.advance_file_drag(seat, offer_id);
++        }
++        action
++    }
++}
++
++impl DataDeviceHandler for WinitState {
++    fn enter(
++        &mut self,
++        conn: &Connection,
++        _: &QueueHandle<Self>,
++        data_device: &WlDataDevice,
++        x: f64,
++        y: f64,
++        surface: &WlSurface,
++    ) {
++        let Some(data) = data_device.data::<DataDeviceData>() else { return };
++        let seat = data.seat().id();
++        self.prepare_file_drag(&seat);
++
++        let Some(offer) = data.drag_offer() else { return };
++        // A CSD frame can be the surface receiving the data-device event, while winit's window
++        // events belong to its parent surface.
++        let parent_surface =
++            surface.data::<SurfaceData>().and_then(|data| data.parent_surface()).unwrap_or(surface);
++        let window_id = make_wid(parent_surface);
++        let offers_files = offer.with_mime_types(|types| types.iter().any(|mime| mime == URI_LIST));
++        if !offers_files || !self.windows.get_mut().contains_key(&window_id) {
++            offer.accept_mime_type(offer.serial, None);
++            let _ = conn.flush();
++            return;
++        }
++
++        offer.accept_mime_type(offer.serial, Some(URI_LIST.to_owned()));
++        offer.set_actions(DndAction::Copy, DndAction::Copy);
++        let pipe = match offer.receive(URI_LIST.to_owned()) {
++            Ok(pipe) => pipe,
++            Err(error) => {
++                warn!("Failed to receive a dragged file list: {error}");
++                offer.destroy();
++                let _ = conn.flush();
++                return;
++            },
++        };
++        // The source only writes once the compositor has our request.
++        let _ = conn.flush();
++
++        let reader_seat = seat.clone();
++        let reader_offer = offer.inner().id();
++        let reader = self
++            .loop_handle
++            .insert_source(pipe, move |_, file, state| {
++                state.read_file_drag(&reader_seat, &reader_offer, file)
++            });
++        let reader = match reader {
++            Ok(reader) => reader,
++            Err(error) => {
++                warn!("Failed to watch a dragged file list: {error}");
++                offer.destroy();
++                let _ = conn.flush();
++                return;
++            },
++        };
++
++        let Some(seat_state) = self.seats.get_mut(&seat) else {
++            self.loop_handle.remove(reader);
++            offer.destroy();
++            let _ = conn.flush();
++            return;
++        };
++        seat_state.file_drag = Some(FileDrag {
++            offer,
++            window_id,
++            paths: None,
++            buffer: Vec::new(),
++            reader: Some(reader),
++            position: (x, y),
++            drop_position: None,
++            hovered: false,
++            dropped: false,
++        });
++        self.file_drag_cursor_moved(window_id, x, y);
++    }
++
++    fn leave(&mut self, _: &Connection, _: &QueueHandle<Self>, data_device: &WlDataDevice) {
++        let Some(data) = data_device.data::<DataDeviceData>() else { return };
++        let seat = data.seat().id();
++        // A drop is followed by a leave; that drag stays until its files are delivered.
++        let dropped = self
++            .seats
++            .get(&seat)
++            .and_then(|seat| seat.file_drag.as_ref())
++            .is_some_and(|drag| drag.dropped);
++        if !dropped {
++            self.cancel_active_file_drag(&seat);
++        }
++    }
++
++    fn motion(
++        &mut self,
++        conn: &Connection,
++        _: &QueueHandle<Self>,
++        data_device: &WlDataDevice,
++        x: f64,
++        y: f64,
++    ) {
++        let Some(data) = data_device.data::<DataDeviceData>() else { return };
++        let seat = data.seat().id();
++        if let Some(drag) = self.seats.get_mut(&seat).and_then(|seat| seat.file_drag.as_mut()) {
++            drag.position = (x, y);
++        }
++        let Some(window_id) =
++            self.seats.get(&seat).and_then(|seat| seat.file_drag.as_ref()).map(|drag| drag.window_id)
++        else {
++            return;
++        };
++        // Keep the drop position available to applications; pointer events stop during a drag.
++        self.file_drag_cursor_moved(window_id, x, y);
++
++        // Some compositors want the type accepted again as the drag moves. The actions are not
++        // set again: that restarts the negotiation and can turn a quick drop into a leave.
++        if let Some(drag) = self.seats.get(&seat).and_then(|seat| seat.file_drag.as_ref()) {
++            drag.offer.accept_mime_type(drag.offer.serial, Some(URI_LIST.to_owned()));
++            let _ = conn.flush();
++        }
++    }
++
++    // The clipboard reads the device's current selection when asked.
++    fn selection(&mut self, _: &Connection, _: &QueueHandle<Self>, _: &WlDataDevice) {}
++
++    fn drop_performed(
++        &mut self,
++        _: &Connection,
++        _: &QueueHandle<Self>,
++        data_device: &WlDataDevice,
++    ) {
++        let Some(data) = data_device.data::<DataDeviceData>() else { return };
++        let seat = data.seat().id();
++        let current = data.drag_offer();
++        let Some(offer_id) = self
++            .seats
++            .get(&seat)
++            .and_then(|seat| seat.file_drag.as_ref())
++            .map(|drag| drag.offer.inner().id())
++        else {
++            return;
++        };
++        let Some(drag) = self.seats.get_mut(&seat).and_then(|seat| seat.file_drag.as_mut()) else {
++            return;
++        };
++        if let Some(current) = current.filter(|current| current.inner() == drag.offer.inner()) {
++            drag.offer = current;
++        }
++        drag.drop_position = Some(drag.position);
++        drag.dropped = true;
++        self.advance_file_drag(&seat, &offer_id);
++    }
++}
++
++impl DataOfferHandler for WinitState {
++    fn source_actions(
++        &mut self,
++        _: &Connection,
++        _: &QueueHandle<Self>,
++        _: &mut DragOffer,
++        _: DndAction,
++    ) {
++    }
++
++    fn selected_action(
++        &mut self,
++        conn: &Connection,
++        _: &QueueHandle<Self>,
++        offer: &mut DragOffer,
++        _: DndAction,
++    ) {
++        let ours = self.seats.values_mut().find_map(|seat| {
++            if seat.file_drag.as_ref().is_some_and(|drag| drag.offer.inner() == offer.inner()) {
++                seat.file_drag.as_mut()
++            } else {
++                seat.pending_file_drags
++                    .iter_mut()
++                    .find(|drag| drag.offer.inner() == offer.inner())
++            }
++        });
++        if let Some(drag) = ours {
++            drag.offer.selected_action = offer.selected_action;
++            offer.accept_mime_type(offer.serial, Some(URI_LIST.to_owned()));
++            let _ = conn.flush();
++        }
++    }
++}
++
++// Winit offers data only for the clipboard.
++impl DataSourceHandler for WinitState {
++    fn accept_mime(
++        &mut self,
++        _: &Connection,
++        _: &QueueHandle<Self>,
++        _: &WlDataSource,
++        _: Option<String>,
++    ) {
++    }
++
++    fn send_request(
++        &mut self,
++        _: &Connection,
++        _: &QueueHandle<Self>,
++        source: &WlDataSource,
++        mime: String,
++        pipe: sctk::data_device_manager::WritePipe,
++    ) {
++        self.clipboard.send(source, &mime, pipe);
++    }
++
++    fn cancelled(&mut self, _: &Connection, _: &QueueHandle<Self>, source: &WlDataSource) {
++        self.clipboard.source_cancelled(source);
++    }
++
++    fn dnd_dropped(&mut self, _: &Connection, _: &QueueHandle<Self>, _: &WlDataSource) {}
++
++    fn dnd_finished(&mut self, _: &Connection, _: &QueueHandle<Self>, _: &WlDataSource) {}
++
++    fn action(&mut self, _: &Connection, _: &QueueHandle<Self>, _: &WlDataSource, _: DndAction) {}
++}
++
++sctk::delegate_data_device!(WinitState);
++
++/// The local files in a `text/uri-list` (RFC 2483): one URI per line, `#` starting a comment.
++/// Only `file` URIs naming this machine (no host, or `localhost`) become paths.
++fn parse_uri_list(list: &[u8]) -> Vec<PathBuf> {
++    list.split(|&byte| byte == b'\n')
++        .map(trim_ascii_whitespace)
++        .filter(|line| !line.is_empty() && !line.starts_with(b"#"))
++        .filter_map(file_uri_path)
++        .collect()
++}
++
++fn trim_ascii_whitespace(mut line: &[u8]) -> &[u8] {
++    while let [first, rest @ ..] = line {
++        if !first.is_ascii_whitespace() {
++            break;
++        }
++        line = rest;
++    }
++    while let [rest @ .., last] = line {
++        if !last.is_ascii_whitespace() {
++            break;
++        }
++        line = rest;
++    }
++    line
++}
++
++fn file_uri_path(uri: &[u8]) -> Option<PathBuf> {
++    let (scheme, rest) = uri.split_at(uri.iter().position(|&byte| byte == b':')?);
++    if !scheme.eq_ignore_ascii_case(b"file") {
++        return None;
++    }
++    let rest = &rest[1..];
++    let path = match rest.strip_prefix(b"//") {
++        Some(authority_and_path) => {
++            let slash = authority_and_path.iter().position(|&byte| byte == b'/')?;
++            let (host, path) = authority_and_path.split_at(slash);
++            if !host.is_empty() && !host.eq_ignore_ascii_case(b"localhost") {
++                return None;
++            }
++            path
++        },
++        // `file:/path`, which some sources write.
++        None if rest.starts_with(b"/") => rest,
++        None => return None,
++    };
++    // Drop a query or fragment, which a file path cannot hold unescaped.
++    let end = path.iter().position(|&byte| byte == b'?' || byte == b'#').unwrap_or(path.len());
++    let decoded: Vec<u8> = percent_decode(&path[..end]).collect();
++    if decoded.contains(&0) {
++        return None;
++    }
++    Some(PathBuf::from(OsStr::from_bytes(&decoded)))
++}
++
++#[cfg(test)]
++mod tests {
++    use super::*;
++
++    fn paths(list: &str) -> Vec<PathBuf> {
++        parse_uri_list(list.as_bytes())
++    }
++
++    #[test]
++    fn reads_file_uris() {
++        assert_eq!(paths("file:///home/me/a.txt\r\nfile:///tmp/b%20c.png\r\n"), [
++            PathBuf::from("/home/me/a.txt"),
++            PathBuf::from("/tmp/b c.png")
++        ]);
++    }
++
++    #[test]
++    fn accepts_bare_newlines_and_a_missing_final_one() {
++        assert_eq!(paths("file:///a\nfile:///b"), [PathBuf::from("/a"), PathBuf::from("/b")]);
++    }
++
++    #[test]
++    fn skips_comments_blank_lines_and_other_schemes() {
++        assert_eq!(
++            paths("# from a file manager\r\n\r\nhttps://example.com/x\r\nfile:///kept\r\n"),
++            [PathBuf::from("/kept")]
++        );
++    }
++
++    #[test]
++    fn accepts_localhost_and_skips_other_hosts() {
++        assert_eq!(paths("file://localhost/a\r\nfile://LOCALHOST/b\r\nfile://elsewhere/c\r\n"), [
++            PathBuf::from("/a"),
++            PathBuf::from("/b")
++        ]);
++    }
++
++    #[test]
++    fn decodes_utf8_and_non_utf8_bytes() {
++        assert_eq!(paths("file:///na%C3%AFve%2Bx"), [PathBuf::from("/naïve+x")]);
++        assert_eq!(paths("file:///raw%FF"), [PathBuf::from(OsStr::from_bytes(b"/raw\xff"))]);
++    }
++
++    #[test]
++    fn skips_escaped_nul_and_malformed_uris() {
++        assert!(paths("file:///a%00b\r\nfile:\r\nfile://host-without-path\r\n").is_empty());
++    }
++
++    #[test]
++    fn accepts_the_short_file_form_and_drops_unescaped_query_and_fragments() {
++        assert_eq!(
++            paths("file:/a/b#frag\nfile:///query?download=1\nfile:///literal%3Fname%23x"),
++            [
++                PathBuf::from("/a/b"),
++                PathBuf::from("/query"),
++                PathBuf::from("/literal?name#x")
++            ]
++        );
++    }
++
++    #[test]
++    fn preserves_malformed_percent_escapes() {
++        assert_eq!(paths("file:///bad%2\nfile:///good%20name"), [
++            PathBuf::from("/bad%2"),
++            PathBuf::from("/good name")
++        ]);
++    }
++}
+diff --git a/src/platform_impl/linux/wayland/seat/keyboard/mod.rs b/src/platform_impl/linux/wayland/seat/keyboard/mod.rs
+index f84c386..51b0e65 100644
+--- a/src/platform_impl/linux/wayland/seat/keyboard/mod.rs
++++ b/src/platform_impl/linux/wayland/seat/keyboard/mod.rs
+@@ -61,8 +61,9 @@ impl Dispatch<WlKeyboard, KeyboardData, WinitState> for WinitState {
+                     warn!("unknown keymap format 0x{:x}", value)
+                 },
+             },
+-            WlKeyboardEvent::Enter { surface, .. } => {
++            WlKeyboardEvent::Enter { surface, serial, .. } => {
+                 let window_id = wayland::make_wid(&surface);
++                state.clipboard.note_input(&data.seat.id(), serial);
+ 
+                 // Mark the window as focused.
+                 let was_unfocused = match state.windows.get_mut().get(&window_id) {
+@@ -131,7 +132,10 @@ impl Dispatch<WlKeyboard, KeyboardData, WinitState> for WinitState {
+                     state.events_sink.push_window_event(WindowEvent::Focused(false), window_id);
+                 }
+             },
+-            WlKeyboardEvent::Key { key, state: WEnum::Value(WlKeyState::Pressed), .. } => {
++            WlKeyboardEvent::Key {
++                key, serial, state: WEnum::Value(WlKeyState::Pressed), ..
++            } => {
++                state.clipboard.note_input(&data.seat.id(), serial);
+                 let key = key + 8;
+ 
+                 key_input(
+diff --git a/src/platform_impl/linux/wayland/seat/mod.rs b/src/platform_impl/linux/wayland/seat/mod.rs
+index eaecd93..2dcce60 100644
+--- a/src/platform_impl/linux/wayland/seat/mod.rs
++++ b/src/platform_impl/linux/wayland/seat/mod.rs
+@@ -12,6 +12,7 @@ use sctk::reexports::client::{Connection, Proxy, QueueHandle};
+ use sctk::reexports::protocols::wp::relative_pointer::zv1::client::zwp_relative_pointer_v1::ZwpRelativePointerV1;
+ use sctk::reexports::protocols::wp::text_input::zv3::client::zwp_text_input_v3::ZwpTextInputV3;
+ 
++use sctk::data_device_manager::data_device::DataDevice;
+ use sctk::seat::pointer::{ThemeSpec, ThemedPointer};
+ use sctk::seat::{Capability as SeatCapability, SeatHandler, SeatState};
+ 
+@@ -19,6 +20,7 @@ use crate::event::WindowEvent;
+ use crate::keyboard::ModifiersState;
+ use crate::platform_impl::wayland::state::WinitState;
+ 
++mod dnd;
+ mod keyboard;
+ mod pointer;
+ mod text_input;
+@@ -57,11 +59,20 @@ pub struct WinitSeatState {
+ 
+     /// Whether we have pending modifiers.
+     modifiers_pending: bool,
++
++    /// The data device bound on the seat, which receives file drags.
++    data_device: Option<DataDevice>,
++
++    /// The file drag over one of our windows.
++    file_drag: Option<dnd::FileDrag>,
++
++    /// Dropped drags whose URI transfers are still pending while a new drag enters.
++    pending_file_drags: Vec<dnd::FileDrag>,
+ }
+ 
+ impl WinitSeatState {
+-    pub fn new() -> Self {
+-        Default::default()
++    pub fn new(data_device: Option<DataDevice>) -> Self {
++        Self { data_device, ..Default::default() }
+     }
+ }
+ 
+@@ -202,10 +213,17 @@ impl SeatHandler for WinitState {
+     fn new_seat(
+         &mut self,
+         _connection: &Connection,
+-        _queue_handle: &QueueHandle<Self>,
++        queue_handle: &QueueHandle<Self>,
+         seat: WlSeat,
+     ) {
+-        self.seats.insert(seat.id(), WinitSeatState::new());
++        let data_device = self
++            .data_device_manager_state
++            .as_ref()
++            .map(|manager| manager.get_data_device(queue_handle, &seat));
++        if let Some(data_device) = &data_device {
++            self.clipboard.add_seat(seat.id(), data_device.inner().clone());
++        }
++        self.seats.insert(seat.id(), WinitSeatState::new(data_device));
+     }
+ 
+     fn remove_seat(
+@@ -214,6 +232,8 @@ impl SeatHandler for WinitState {
+         _queue_handle: &QueueHandle<Self>,
+         seat: WlSeat,
+     ) {
++        self.cancel_file_drag(&seat.id());
++        self.clipboard.remove_seat(&seat.id());
+         let _ = self.seats.remove(&seat.id());
+         self.on_keyboard_destroy(&seat.id());
+     }
+diff --git a/src/platform_impl/linux/wayland/seat/pointer/mod.rs b/src/platform_impl/linux/wayland/seat/pointer/mod.rs
+index 3dcb00b..724dd11 100644
+--- a/src/platform_impl/linux/wayland/seat/pointer/mod.rs
++++ b/src/platform_impl/linux/wayland/seat/pointer/mod.rs
+@@ -157,6 +157,7 @@ impl PointerHandler for WinitState {
+                 | ref kind @ PointerEventKind::Release { button, serial, .. } => {
+                     // Update the last button serial.
+                     pointer.winit_data().inner.lock().unwrap().latest_button_serial = serial;
++                    self.clipboard.note_input(&seat.id(), serial);
+ 
+                     let button = wayland_button_to_winit(button);
+                     let state = if matches!(kind, PointerEventKind::Press { .. }) {
+diff --git a/src/platform_impl/linux/wayland/state.rs b/src/platform_impl/linux/wayland/state.rs
+index 13ef99c..d2e8338 100644
+--- a/src/platform_impl/linux/wayland/state.rs
++++ b/src/platform_impl/linux/wayland/state.rs
+@@ -12,6 +12,7 @@ use sctk::reexports::client::protocol::wl_surface::WlSurface;
+ use sctk::reexports::client::{Connection, Proxy, QueueHandle};
+ 
+ use sctk::compositor::{CompositorHandler, CompositorState};
++use sctk::data_device_manager::DataDeviceManagerState;
+ use sctk::output::{OutputHandler, OutputState};
+ use sctk::registry::{ProvidesRegistryState, RegistryState};
+ use sctk::seat::pointer::ThemedPointer;
+@@ -23,6 +24,7 @@ use sctk::shm::slot::SlotPool;
+ use sctk::shm::{Shm, ShmHandler};
+ use sctk::subcompositor::SubcompositorState;
+ 
++use crate::platform_impl::wayland::clipboard::ClipboardState;
+ use crate::platform_impl::wayland::event_loop::sink::EventSink;
+ use crate::platform_impl::wayland::output::MonitorHandle;
+ use crate::platform_impl::wayland::seat::{
+@@ -54,6 +56,13 @@ pub struct WinitState {
+     /// The seat state responsible for all sorts of input.
+     pub seat_state: SeatState,
+ 
++    /// The data device manager, which gives each seat a data device for file drags and the
++    /// clipboard.
++    pub data_device_manager_state: Option<DataDeviceManagerState>,
++
++    /// The clipboard, which shares each seat's data device with file drags.
++    pub clipboard: Arc<ClipboardState>,
++
+     /// The shm for software buffers, such as cursors.
+     pub shm: Shm,
+ 
+@@ -119,6 +128,7 @@ pub struct WinitState {
+ 
+ impl WinitState {
+     pub fn new(
++        connection: &Connection,
+         globals: &GlobalList,
+         queue_handle: &QueueHandle<Self>,
+         loop_handle: LoopHandle<'static, WinitState>,
+@@ -143,9 +153,32 @@ impl WinitState {
+ 
+         let seat_state = SeatState::new(globals, queue_handle);
+ 
++        let data_device_manager_state = match DataDeviceManagerState::bind(globals, queue_handle) {
++            Ok(manager) => Some(manager),
++            Err(e) => {
++                tracing::warn!(
++                    "Data device manager not available, ignoring file drops and the clipboard: \
++                     {e:?}"
++                );
++                None
++            },
++        };
++
++        let clipboard = ClipboardState::new(
++            connection,
++            queue_handle,
++            data_device_manager_state.as_ref().map(|manager| manager.data_device_manager().clone()),
++        );
++
+         let mut seats = AHashMap::default();
+         for seat in seat_state.seats() {
+-            seats.insert(seat.id(), WinitSeatState::new());
++            let data_device = data_device_manager_state
++                .as_ref()
++                .map(|manager| manager.get_data_device(queue_handle, &seat));
++            if let Some(data_device) = &data_device {
++                clipboard.add_seat(seat.id(), data_device.inner().clone());
++            }
++            seats.insert(seat.id(), WinitSeatState::new(data_device));
+         }
+ 
+         let (viewporter_state, fractional_scaling_manager) =
+@@ -164,6 +197,8 @@ impl WinitState {
+             subcompositor_state: subcompositor_state.map(Arc::new),
+             output_state,
+             seat_state,
++            data_device_manager_state,
++            clipboard,
+             shm,
+             custom_cursor_pool,
+ 

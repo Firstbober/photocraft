@@ -57,6 +57,11 @@ if (-not $env:PHOTOCRAFT_BUILD_DATE) { $env:PHOTOCRAFT_BUILD_DATE = (Get-Date).T
 Write-Output "PhotoCraft $Version for Windows $Arch ($Target)"
 
 if (-not $SkipBuild) {
+  # prepare-deps.sh is Bash; Windows packaging requires Git for Windows (or another Bash).
+  Invoke-Native 'prepare patched dependencies' {
+    Push-Location $Root
+    try { bash scripts/prepare-deps.sh } finally { Pop-Location }
+  }
   # Static CRT: no VC++ redistributable needed. Scoped to the target so host build scripts and
   # proc-macros are unaffected.
   $flagVar = 'CARGO_TARGET_' + ($Target.ToUpper() -replace '-', '_') + '_RUSTFLAGS'

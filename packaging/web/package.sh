@@ -16,6 +16,7 @@ set -euo pipefail
 HERE="$ROOT/packaging/web"
 
 if [ "${1:-}" != "--skip-build" ]; then
+  (cd "$ROOT" && bash scripts/prepare-deps.sh)
   command -v trunk >/dev/null || { echo "error: trunk not found (cargo install trunk --locked)" >&2; exit 1; }
   (cd "$ROOT/apps/photocraft-web" && trunk build --release)
   (cd "$ROOT/apps/photocraft-web-boot" && trunk build --release)

@@ -1,6 +1,9 @@
 # Flatpak manifest for PhotoCraft, ready for a Flathub submission.
 #
-# Flatpak builds run offline, so the crate sources must be vendored first. From the repo root:
+# Flatpak builds run offline. `cargo-sources.json` vendors the ordinary Cargo.lock sources, while
+# the two checksum-pinned file sources below preseed the crates used by the local patch queue.
+# `prepare-deps.sh --offline` validates those archives and materializes the patched sources before
+# Cargo reads the workspace manifest. From the repo root:
 #
 #   curl -fsSLO https://raw.githubusercontent.com/flatpak/flatpak-builder-tools/master/cargo/flatpak-cargo-generator.py
 #   python3 flatpak-cargo-generator.py Cargo.lock -o packaging/linux/flatpak/cargo-sources.json
@@ -47,6 +50,8 @@ modules:
         CARGO_HOME: /run/build/photocraft/cargo
         CARGO_NET_OFFLINE: 'true'
     build-commands:
+      - mkdir -p .patched-deps/archives
+      - bash scripts/prepare-deps.sh --offline
       - cargo --offline build --release --locked -p photocraft --features heif
       - install -Dm755 target/release/photocraft /app/bin/photocraft
       - install -Dm644 packaging/linux/ai.storyteller.photocraft.desktop /app/share/applications/ai.storyteller.photocraft.desktop
@@ -63,7 +68,16 @@ modules:
         skip:
           - target
           - dist
+          - .patched-deps
           - corpus
           - build-flatpak
           - .flatpak-builder
       - cargo-sources.json
+      - type: file
+        url: https://static.crates.io/crates/winit/winit-0.30.13.crate
+        sha256: a6755fa58a9f8350bd1e472d4c3fcc25f824ec358933bba33306d0b63df5978d
+        dest: .patched-deps/archives
+      - type: file
+        url: https://static.crates.io/crates/egui-winit/egui-winit-0.36.2.crate
+        sha256: 98466000559d66ba4db786a30448b01483946add4188e7f10f522a27b4fb89cc
+        dest: .patched-deps/archives

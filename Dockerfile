@@ -13,7 +13,7 @@ FROM rust:${RUST_VERSION}-slim-bookworm AS builder
 # Must match `TRUNK_VERSION` in the `web` job of .github/workflows/release.yml.
 ARG TRUNK_VERSION=0.21.14
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends ca-certificates curl \
+    && apt-get install -y --no-install-recommends ca-certificates curl git \
     && rm -rf /var/lib/apt/lists/* \
     && rustup target add wasm32-unknown-unknown
 RUN set -eu; \
@@ -34,6 +34,8 @@ RUN set -eu; \
 
 WORKDIR /src
 COPY . .
+# Materialize the checksum-pinned dependency patch queue before Trunk invokes Cargo.
+RUN bash scripts/prepare-deps.sh
 WORKDIR /src/apps/photocraft-web
 # Docker serving has no static-host per-file size cap. Thin LTO uses less build
 # memory than the release zip's fat LTO; retain the profile's other optimizations.

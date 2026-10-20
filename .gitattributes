@@ -1,0 +1,3 @@
+# Dependency patches must retain their exact bytes on Windows checkouts.
+patches/*.patch -text
+scripts/prepare-deps*.sh text eol=lf

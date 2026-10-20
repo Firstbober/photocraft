@@ -32,6 +32,41 @@ administrator about an approved development environment. If you only want to run
 use the [packaged Windows release](https://github.com/storytold/photocraft/releases) to avoid
 building locally; the downloaded app is still subject to Windows application-control checks.
 
+## Dependency patch queue
+
+On a fresh checkout, prepare the pinned dependency sources before Cargo can inspect the
+workspace:
+
+```sh
+bash scripts/prepare-deps.sh
+```
+
+The bootstrap verifies the two crates.io archives against their recorded SHA-256 values and
+materializes the winit/egui-winit patch queue in `.patched-deps/`; it must run before any
+workspace `cargo` command, including `cargo metadata` used by caches. It uses no GitHub fork.
+For offline work, preseed `.patched-deps/archives/` with the checked archives and run
+`bash scripts/prepare-deps.sh --offline`. On Windows, use Git Bash (Git for Windows) for this
+Bash command; the packaging PowerShell script calls the same entry point.
+
+The queue keeps eframe/egui **0.36.2** and winit **0.30.13**. The patches adapt
+[winit #4729](https://github.com/rust-windowing/winit/pull/4729) and
+[egui #8657](https://github.com/emilk/egui/pull/8657): file drops and text clipboard operations use
+one data device per Wayland seat, avoiding compositors' first-data-device selection conflicts.
+Both clipboard text and URI-list transfers have a 16 MiB ceiling. Immutable source revisions and
+licenses are recorded in `ATTRIBUTION.md` and `patches/licenses/`.
+
+Commit the reviewed `.patch` files, not `.patched-deps/` or edits to Cargo's registry cache.
+Preparation refuses to overwrite modified generated sources; preserve any intended changes in
+the patch before removing that generated crate directory and preparing it again. Run
+`bash scripts/prepare-deps-test.sh` after preparation to check offline operation, integrity
+failures and preservation of working sources when a patch fails.
+
+Remove both Cargo overrides and the bootstrap integrations together once eframe's supported
+winit version supplies native drops and a shared clipboard device. winit 0.30's `DroppedFile`
+event has no coordinates: the patch re-emits the captured drop position before delivery, but
+later pointer events in the same input batch can still replace a consumer's latest position.
+
+
 ## Build and run
 
 ```sh

@@ -22,3 +22,10 @@ Builds made with craft-fonts (CRAFT_FONTS_DIR; all official releases) also embed
 https://github.com/storytold/craft-fonts/blob/main/ATTRIBUTION.md (today BIZ UDPGothic, Shippori Mincho and
 BIZ UDMincho; not the web build), under the SIL Open Font License 1.1. Their licence texts
 ship with the package as OFL-<family>.txt.
+
+The dependency patch queue materializes upstream winit 0.30.13 and egui-winit 0.36.2 sources at
+build time. Their patches are derived from winit PR #4729 (head
+`7a962fd46470a137d9a7a1945bf5b5d0b95a002c`) and egui PR #8657 (head
+`14135f0d3d996b0676a9980f24f08527623a45fc`); the upstream MIT/Apache-2.0 notices are retained
+under `patches/licenses/` and listed in `ATTRIBUTION.md`.
+

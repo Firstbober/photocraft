@@ -43,12 +43,14 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
+      - name: Prepare patched dependencies
+        run: bash scripts/prepare-deps.sh
 
       - uses: dtolnay/rust-toolchain@stable
 
       - uses: Swatinem/rust-cache@v2
         with:
-          key: perf-release
+          key: perf-release-${{ hashFiles('scripts/prepare-deps*.sh', 'patches/**') }}
 
       - name: Run benchmarks
         id: perf

@@ -1,0 +1,157 @@
+# PhotoCraft-specific FreeBSD VM build and package check.
+# This reusable workflow owns the guest bootstrap because Cargo and its cache run inside the VM.
+name: FreeBSD
+
+on:
+  workflow_call:
+    inputs:
+      architectures:
+        description: JSON array of FreeBSD architectures; empty selects x86_64 on PRs and both otherwise
+        type: string
+        required: false
+        default: ""
+      craft-fonts-ref:
+        description: Optional craft-fonts commit
+        type: string
+        required: false
+        default: ""
+      require-craft-fonts:
+        description: Require craft-fonts during the build
+        type: boolean
+        required: false
+        default: false
+      freebsd-release:
+        description: FreeBSD release for the VM
+        type: string
+        required: false
+        default: "15.1-STABLE"
+      cargo-test-extra-args:
+        description: Additional arguments for the default cargo test command
+        type: string
+        required: false
+        default: ""
+      cargo-build-extra-args:
+        description: Additional arguments for the workspace cargo build
+        type: string
+        required: false
+        default: ""
+      skip-tests:
+        description: Skip tests after the workspace build
+        type: boolean
+        required: false
+        default: false
+      run-package-check:
+        description: Build and inspect the FreeBSD package
+        type: boolean
+        required: false
+        default: false
+      custom-test-command:
+        description: Shell commands replacing the default cargo test
+        type: string
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: FreeBSD ${{ matrix.arch }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      matrix:
+        arch: ${{ fromJSON(inputs.architectures != '' && inputs.architectures || ((github.event_name == 'pull_request' || github.event_name == 'pull_request_target') && '["x86_64"]' || '["x86_64","aarch64"]')) }}
+    env:
+      CARGO_HOME: /var/tmp/craft-cargo
+      CARGO_TARGET_DIR: /var/tmp/craft-target
+      CARGO_INCREMENTAL: 0
+      CARGO_BUILD_JOBS: 4
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Check out craft-fonts
+        if: inputs.craft-fonts-ref != ''
+        uses: storytold/craft-common-actions/actions/checkout-craft-fonts@main
+        with:
+          ref: ${{ inputs.craft-fonts-ref }}
+      - name: Start FreeBSD and install build prerequisites
+        uses: vmactions/freebsd-vm@c46abacb49f09938ca4e1702d15d836285d694cc # v1.5.9
+        with:
+          release: ${{ inputs.freebsd-release == '15.1-STABLE' && '15.1' || inputs.freebsd-release }}
+          arch: ${{ matrix.arch }}
+          usesh: true
+          cpu: 4
+          mem: 12288
+          copyback: false
+          envs: CARGO_HOME CARGO_TARGET_DIR CARGO_INCREMENTAL CARGO_BUILD_JOBS
+          prepare: |
+            unset CARGO_HOME CARGO_TARGET_DIR
+            pkg install -y bash git curl coreutils pkgconf cmake python3 libxkbcommon wayland libX11 libXcursor libXrandr libXi libxcb mesa-libs vulkan-loader gtk3 fontconfig freetype2 alsa-lib dejavu
+            if ! command -v sha256sum >/dev/null; then
+              ln -sf "$(command -v gsha256sum)" /usr/local/bin/sha256sum
+            fi
+            bash scripts/prepare-deps.sh
+            if [ "${{ matrix.arch }}" = aarch64 ]; then
+              pkg install -y rust
+            else
+              curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --profile minimal --default-toolchain stable
+            fi
+      - name: Restore guest Cargo cache
+        id: cargo-cache
+        continue-on-error: true
+        timeout-minutes: 10
+        uses: storytold/craft-common-actions/actions/freebsd-cargo-cache@main
+        with:
+          configuration: ${{ toJSON(inputs) }}
+          source-hash: ${{ hashFiles('**/Cargo.lock', '**/Cargo.toml', '**/build.rs', '.cargo/**', 'rust-toolchain*', 'packaging/**', 'scripts/prepare-deps*.sh', 'patches/**', '.github/workflows/freebsd.yml', '.github/workflows/freebsd-local.yml') }}
+      - name: Build and test in the guest
+        shell: freebsd {0}
+        run: |
+          set -eu
+          [ ! -f "$HOME/.cargo/env" ] || . "$HOME/.cargo/env"
+          if [ "${{ steps.cargo-cache.outcome }}" = failure ]; then
+            rm -rf /var/tmp/craft-target /var/tmp/craft-cargo/registry /var/tmp/craft-cargo/git
+          fi
+          git config --global --add safe.directory "*"
+          export CRAFT_FONTS_DIR="$PWD/craft-fonts"
+          if [ "${{ inputs.require-craft-fonts }}" = true ]; then export CRAFT_FONTS_REQUIRED=1; fi
+          CARGO_PROFILE_DEV_DEBUG=0 cargo build --workspace --all-targets --locked ${{ inputs.cargo-build-extra-args }}
+          if [ "${{ inputs.skip-tests }}" != true ]; then
+            if [ "${{ inputs.custom-test-command != '' }}" = true ]; then
+              ${{ inputs.custom-test-command }}
+            else
+              CARGO_PROFILE_DEV_DEBUG=0 cargo test --workspace --locked ${{ inputs.cargo-test-extra-args }}
+            fi
+          fi
+      - name: Checkpoint debug cache and restore release profile
+        if: inputs.run-package-check
+        continue-on-error: true
+        timeout-minutes: 10
+        uses: storytold/craft-common-actions/actions/freebsd-cargo-cache@main
+        with:
+          phase: package
+          configuration: ${{ toJSON(inputs) }}
+          source-hash: ${{ hashFiles('**/Cargo.lock', '**/Cargo.toml', '**/build.rs', '.cargo/**', 'rust-toolchain*', 'packaging/**', 'scripts/prepare-deps*.sh', 'patches/**', '.github/workflows/freebsd.yml', '.github/workflows/freebsd-local.yml') }}
+      - name: Build and inspect the FreeBSD package
+        if: inputs.run-package-check
+        shell: freebsd {0}
+        run: |
+          set -eu
+          [ ! -f "$HOME/.cargo/env" ] || . "$HOME/.cargo/env"
+          export CRAFT_FONTS_DIR="$PWD/craft-fonts"
+          if [ "${{ inputs.require-craft-fonts }}" = true ]; then export CRAFT_FONTS_REQUIRED=1; fi
+          bash packaging/freebsd/package.sh
+          archive="$(find dist/release -maxdepth 1 -type f -name '*-freebsd-${{ matrix.arch }}.tar.gz' -print -quit)"
+          [ -n "$archive" ] || { echo 'FreeBSD package archive is missing' >&2; exit 1; }
+          tar -tzf "$archive" >/dev/null
+      - name: Save guest Cargo cache
+        if: always() && github.event_name != 'pull_request' && github.event_name != 'pull_request_target'
+        continue-on-error: true
+        timeout-minutes: 10
+        uses: storytold/craft-common-actions/actions/freebsd-cargo-cache@main
+        with:
+          phase: save
+          configuration: ${{ toJSON(inputs) }}
+          source-hash: ${{ hashFiles('**/Cargo.lock', '**/Cargo.toml', '**/build.rs', '.cargo/**', 'rust-toolchain*', 'packaging/**', 'scripts/prepare-deps*.sh', 'patches/**', '.github/workflows/freebsd.yml', '.github/workflows/freebsd-local.yml') }}
+          key: ${{ steps.cargo-cache.outputs.key }}

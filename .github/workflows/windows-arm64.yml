@@ -11,9 +11,13 @@ on:
     paths:
       - .github/workflows/windows-arm64.yml
       - packaging/windows/**
+      - scripts/prepare-deps*.sh
+      - patches/**
+      - Cargo.toml
+      - Cargo.lock
+      - .github/workflows/windows-arm64-local.yml
   schedule:
     - cron: "41 4 * * *"
-  workflow_dispatch:
 
 concurrency:
   group: windows-arm64-${{ github.ref }}
@@ -24,8 +28,8 @@ permissions:
 
 jobs:
   windows-arm64:
-    # Intentionally tracked at @main (not SHA-pinned) so org-wide CI improvements, security fixes, and build optimizations propagate without PR churn across all craftapp repos.
-    uses: storytold/craft-common-actions/.github/workflows/windows-arm64.yml@main
+    # PhotoCraft-specific workflow prepares the patch queue before the Windows Cargo cache.
+    uses: ./.github/workflows/windows-arm64-local.yml
     with:
       app-name: photocraft
       app-dir: PhotoCraft

@@ -73,12 +73,12 @@ jobs:
           # The browser build (a fat-LTO wasm build) runs only when something it compiles or
           # packages changed: the web app and its packaging, crate sources and manifests (the web
           # build compiles nearly every crate), the workspace manifests and this workflow.
-          if git diff --name-only "$BASE" HEAD | grep -Eq '^(apps/photocraft-web(-boot)?/|packaging/web/|packaging/env\.sh$|crates/[^/]+/(src/|Cargo\.toml$|build\.rs$)|Cargo\.(toml|lock)$|rust-toolchain(\.toml)?$|\.github/workflows/ci\.yml$)'; then
+          if git diff --name-only "$BASE" HEAD | grep -Eq '^(apps/photocraft-web(-boot)?/|packaging/web/|packaging/env\.sh$|crates/[^/]+/(src/|Cargo\.toml$|build\.rs$)|Cargo\.(toml|lock)$|rust-toolchain(\.toml)?$|scripts/prepare-deps.*\.sh$|patches/|\.github/workflows/(ci|release-local|windows-arm64-local|freebsd-local)\.yml$)'; then
             echo "web=true" >> "$GITHUB_OUTPUT"
           else
             echo "web=false" >> "$GITHUB_OUTPUT"
           fi
-          if git diff --name-only "$BASE" HEAD | grep -Eq '^(apps/|crates/(ui-egui|text|gpu|tablet|heif)/|Cargo\.lock$|(.*/)?build\.rs$|\.github/workflows/ci\.yml$)'; then
+          if git diff --name-only "$BASE" HEAD | grep -Eq '^(apps/|crates/(ui-egui|text|gpu|tablet|heif)/|Cargo\.(toml|lock)$|(.*/)?build\.rs$|scripts/prepare-deps.*\.sh$|patches/|\.github/workflows/(ci|release-local|windows-arm64-local|freebsd-local)\.yml$)'; then
             echo "legs=$all" >> "$GITHUB_OUTPUT"
           else
             echo "legs=[$linux]" >> "$GITHUB_OUTPUT"
@@ -100,6 +100,11 @@ jobs:
       CARGO_PROFILE_DEV_DEBUG: ${{ startsWith(matrix.os, 'windows') && '0' || 'line-tables-only' }}
     steps:
       - uses: actions/checkout@v4
+      - name: Prepare patched dependencies
+        run: bash scripts/prepare-deps.sh
+      - name: Check dependency preparation
+        if: runner.os == 'Linux'
+        run: bash scripts/prepare-deps-test.sh
 
       # Unused toolchains in the image (Android SDK, .NET, GHC, CodeQL) are deleted in the
       # background: the space is free before the craft-fonts build needs it, and nothing waits.
@@ -124,6 +129,7 @@ jobs:
       # because it also runs Clippy and so leaves Clippy's dependency metadata in it.
       - uses: Swatinem/rust-cache@v2
         with:
+          shared-key: test-${{ hashFiles('scripts/prepare-deps*.sh', 'patches/**') }}
           save-if: ${{ github.ref == 'refs/heads/main' && (matrix.part == 'all' || matrix.part == 'integration') }}
           cache-on-failure: true
 
@@ -241,6 +247,8 @@ jobs:
         variant: [without heif, with craft-fonts]
     steps:
       - uses: actions/checkout@v4
+      - name: Prepare patched dependencies
+        run: bash scripts/prepare-deps.sh
 
       - name: Install Linux system dependencies (egui/winit/rfd)
         run: |
@@ -255,7 +263,7 @@ jobs:
 
       - uses: Swatinem/rust-cache@v2
         with:
-          shared-key: test
+          shared-key: test-${{ hashFiles('scripts/prepare-deps*.sh', 'patches/**') }}
           save-if: false
 
       - uses: taiki-e/install-action@83ac0ad63c0167e6f06796fab0fce28db1bf3db0 # v2.87.22
@@ -306,10 +314,12 @@ jobs:
       CARGO_PROFILE_RELEASE_CODEGEN_UNITS: "16"
     steps:
       - uses: actions/checkout@v4
+      - name: Prepare patched dependencies
+        run: bash scripts/prepare-deps.sh
       - uses: dtolnay/rust-toolchain@stable
       - uses: Swatinem/rust-cache@v2
         with:
-          key: corpus
+          key: corpus-${{ hashFiles('scripts/prepare-deps*.sh', 'patches/**') }}
           save-if: ${{ github.ref == 'refs/heads/main' }}
           cache-on-failure: true
       - name: Restore test corpora
@@ -328,12 +338,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Prepare patched dependencies
+        run: bash scripts/prepare-deps.sh
       - uses: dtolnay/rust-toolchain@stable
         with:
           targets: wasm32-unknown-unknown
       - uses: Swatinem/rust-cache@v2
         with:
-          key: wasm32
+          key: wasm32-${{ hashFiles('scripts/prepare-deps*.sh', 'patches/**') }}
           save-if: ${{ github.ref == 'refs/heads/main' }}
           cache-on-failure: true
       - name: Check wasm-safe crates
@@ -351,12 +363,14 @@ jobs:
       TRUNK_VERSION: 0.21.14
     steps:
       - uses: actions/checkout@v4
+      - name: Prepare patched dependencies
+        run: bash scripts/prepare-deps.sh
       - uses: dtolnay/rust-toolchain@stable
         with:
           targets: wasm32-unknown-unknown
       - uses: Swatinem/rust-cache@v2
         with:
-          key: ci-web
+          key: ci-web-${{ hashFiles('scripts/prepare-deps*.sh', 'patches/**') }}
           save-if: ${{ github.ref == 'refs/heads/main' }}
           cache-on-failure: true
       - name: Install trunk
@@ -419,10 +433,13 @@ jobs:
           - { crate: format, name: load }
     steps:
       - uses: actions/checkout@v4
+      - name: Prepare patched dependencies
+        run: bash scripts/prepare-deps.sh
       - uses: dtolnay/rust-toolchain@nightly
       - uses: Swatinem/rust-cache@v2
         with:
           workspaces: crates/${{ matrix.target.crate }}/fuzz
+          key: fuzz-deps-${{ hashFiles('scripts/prepare-deps*.sh', 'patches/**') }}
       - name: Install cargo-fuzz
         run: cargo install cargo-fuzz --locked
       - name: Fuzz

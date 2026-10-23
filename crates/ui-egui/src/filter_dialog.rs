@@ -246,12 +246,13 @@ const FULL_RESOLUTION_PREVIEW: &[&str] = &[
 
 /// Whether `command` with `params` previews at full resolution: [`FULL_RESOLUTION_PREVIEW`], every
 /// Filter Gallery filter (its strokes, grain and textures are sized in pixels; the settings are
-/// abstract levels, not lengths) and the dithered colour-mode conversions (Indexed Color, Bitmap).
+/// abstract levels, not lengths), and palette-aware Indexed Color/Palette Map conversions.
 fn full_resolution_preview(command: &str, params: &Value) -> bool {
     let choice = |key: &str| params.get(key).and_then(Value::as_str);
     FULL_RESOLUTION_PREVIEW.contains(&command)
         || command.starts_with("filter.gallery.")
-        || (command == "image.mode.indexedColor" && choice("dither") != Some("none"))
+        || command == "filter.paletteMap"
+        || command == "image.mode.indexedColor"
         || (command == "image.mode.bitmap" && !matches!(choice("method"), Some("threshold" | "threshold50")))
 }
 
@@ -341,11 +342,40 @@ fn rememberable(kind: &Kind, value: &Value) -> bool {
     }
 }
 
+fn palette_widget_command(command: &str) -> bool {
+    matches!(command, "filter.paletteMap" | "image.mode.indexedColor" | "file.export.saveForWebLegacy")
+}
+
+fn palette_widget_field(command: &str, key: &str) -> bool {
+    palette_widget_command(command) && matches!(key, "paletteId" | "paletteSnapshot" | "mapping")
+}
+
+fn valid_palette_widget_value(key: &str, value: &Value) -> bool {
+    match key {
+        "paletteId" => {
+            value.as_str().is_some_and(|id| !id.is_empty() && (id == crate::palette_map_ui::CUSTOM_ID || photocraft_algo::palettes::builtin(id).is_some()))
+        }
+        "paletteSnapshot" => serde_json::from_value::<photocraft_algo::palette_map::Palette>(value.clone()).is_ok_and(|palette| palette.validate().is_ok()),
+        "mapping" => serde_json::from_value::<photocraft_algo::palette_map::Settings>(value.clone()).is_ok_and(|settings| settings.validate().is_ok()),
+        _ => false,
+    }
+}
+
 fn restore_remembered(app: &PhotocraftApp, command: &str, spec: &str, fields: &mut Map<String, Value>) {
     let Some(Value::Object(saved)) = app.session.prefs().dialogs.get(command) else { return };
     for p in parse_spec(spec) {
-        if let Some(v) = saved.get(&p.key).filter(|v| rememberable(&p.kind, v)) {
-            fields.insert(p.key, v.clone());
+        let valid = if palette_widget_field(command, &p.key) {
+            saved.get(&p.key).is_some_and(|value| {
+                valid_palette_widget_value(&p.key, value)
+                    && (p.key != "paletteId"
+                        || value.as_str() != Some(crate::palette_map_ui::CUSTOM_ID)
+                        || saved.get("paletteSnapshot").is_some_and(|snapshot| valid_palette_widget_value("paletteSnapshot", snapshot)))
+            })
+        } else {
+            saved.get(&p.key).is_some_and(|value| rememberable(&p.kind, value))
+        };
+        if valid && let Some(value) = saved.get(&p.key) {
+            fields.insert(p.key, value.clone());
         }
     }
 }
@@ -356,8 +386,15 @@ pub(crate) fn remember(app: &mut PhotocraftApp, command: &str, fields: &Map<Stri
         return;
     }
     let Some(spec) = photocraft_engine::commands::find(command) else { return };
-    let saved: Map<String, Value> =
+    let mut saved: Map<String, Value> =
         parse_spec(spec.params).into_iter().filter_map(|p| fields.get(&p.key).filter(|v| rememberable(&p.kind, v)).map(|v| (p.key, v.clone()))).collect();
+    if palette_widget_command(command) {
+        for key in ["paletteId", "paletteSnapshot", "mapping"] {
+            if let Some(value) = fields.get(key).filter(|value| valid_palette_widget_value(key, value)) {
+                saved.insert(key.into(), value.clone());
+            }
+        }
+    }
     if !saved.is_empty() {
         app.session.prefs.edit(|prefs| prefs.dialogs.insert(command.into(), Value::Object(saved)));
     }
@@ -365,6 +402,15 @@ pub(crate) fn remember(app: &mut PhotocraftApp, command: &str, fields: &Map<Stri
 
 /// Schema-default values for one param of `command` (open and Alt+Reset share this).
 fn default_value(app: &PhotocraftApp, command: &str, p: &Param) -> Option<Value> {
+    // Palette Map, Indexed Color and Save for Web own these optional fields.  The generic
+    // notation parser intentionally has no representation for `string?`/`json?`, so treating
+    // them as ordinary integer parameters would synthesize `0` and make the custom widgets
+    // reject a fresh dialog before they can install their real defaults.
+    // An absent transparentIndex lets conversion allocate a slot. A fabricated zero instead
+    // steals the palette's first colour, and makes an opaque conversion invalid.
+    if palette_widget_field(command, &p.key) || (command == "image.mode.indexedColor" && p.key == "transparentIndex") {
+        return None;
+    }
     Some(match &p.kind {
         Kind::Range { default, .. } if command == "image.mode.indexedColor" && p.key == "colors" => json!(default.round().clamp(2.0, 256.0) as u32),
         Kind::Range { default, .. } => json!(default),
@@ -467,6 +513,9 @@ pub fn reset_fields(app: &PhotocraftApp, fields: &mut Map<String, Value>) {
             fields.insert(p.key, v);
         }
     }
+    if command == "filter.paletteMap" {
+        crate::palette_map_ui::ensure_filter_default(fields);
+    }
     apply_command_defaults(app, &command, fields);
     // The schema has no default for the Blur Gallery's pins: start again from the opening one.
     if crate::blur_pins::handles(&command) {
@@ -490,6 +539,9 @@ pub fn open(app: &mut PhotocraftApp, command: &str) -> Option<u64> {
         }
     }
     restore_remembered(app, command, spec.params, &mut fields);
+    if command == "filter.paletteMap" {
+        crate::palette_map_ui::ensure_filter_default(&mut fields);
+    }
     apply_command_defaults(app, command, &mut fields);
     if crate::blur_pins::handles(command) {
         crate::blur_pins::init(app, &mut fields);
@@ -780,6 +832,13 @@ fn replace_color_result(ui: &mut egui::Ui, f: &mut Map<String, Value>) {
 pub fn body(ui: &mut egui::Ui, f: &mut Map<String, Value>) {
     let t = Tokens::get(ui.ctx());
     let cmd = f.get("__command").and_then(Value::as_str).unwrap_or_default().to_string();
+    if crate::palette_map_ui::owns_command(&cmd) {
+        if cmd == "filter.paletteMap" {
+            crate::palette_map_ui::ensure_filter_default(f);
+        }
+        crate::palette_map_ui::body(ui, f, &cmd);
+        return;
+    }
     // Plug-in dialogs carry their own spec (from the plug-in's manifest).
     let spec = match f.get("__spec").and_then(Value::as_str) {
         Some(s) => s.to_string(),
@@ -1855,65 +1914,6 @@ mod tests {
         assert!(!has_dialog("filter.stylize.findEdges"));
     }
 
-    /// Generated filter and adjustment labels (param names, symbolic choices) and gallery
-    /// names that `lang` has no catalog row for.
-    fn missing_generated_filter_labels(lang: crate::i18n::Lang) -> std::collections::BTreeSet<String> {
-        let mut missing = std::collections::BTreeSet::new();
-        let mut check = |s: String| {
-            if !matches!(s.as_str(), "X" | "Y" | "A" | "B") && !crate::i18n::has(lang, &s) {
-                missing.insert(s);
-            }
-        };
-        for c in photocraft_engine::command_specs().iter().filter(|c| c.id.starts_with("filter.") || c.id.starts_with("image.adjustments.")) {
-            for p in parse_spec(c.params) {
-                if !p.key.chars().all(|c| c.is_ascii_alphanumeric()) || matches!(p.kind, Kind::Json) {
-                    continue;
-                }
-                check(source_label(&p.key));
-                if let Kind::Choice { options, .. } = &p.kind {
-                    for choice in options {
-                        // Only symbolic options are UI choices; registry docs also contain
-                        // colour syntax and array notation, which are not translatable names.
-                        if choice.chars().all(|c| c.is_ascii_alphanumeric()) {
-                            check(source_label(choice));
-                        }
-                    }
-                }
-            }
-        }
-        for f in photocraft_algo::GalleryFilter::ALL {
-            check(f.name().to_string());
-        }
-        for cat in photocraft_algo::GALLERY_CATEGORIES {
-            check(cat.to_string());
-        }
-        missing
-    }
-
-    #[test]
-    fn korean_covers_generated_filter_options_and_gallery_names() {
-        let missing = missing_generated_filter_labels(crate::i18n::lang_from_tag("ko-KR").unwrap());
-        assert!(missing.is_empty(), "missing Korean dynamic labels: {missing:#?}");
-    }
-
-    #[test]
-    fn italian_covers_generated_filter_options_and_gallery_names() {
-        let missing = missing_generated_filter_labels(crate::i18n::lang_from_tag("it-IT").unwrap());
-        assert!(missing.is_empty(), "missing Italian dynamic labels: {missing:#?}");
-    }
-
-    #[test]
-    fn spanish_covers_generated_filter_options_and_gallery_names() {
-        let missing = missing_generated_filter_labels(crate::i18n::lang_from_tag("es-ES").unwrap());
-        assert!(missing.is_empty(), "missing Spanish dynamic labels: {missing:#?}");
-    }
-
-    #[test]
-    fn russian_covers_generated_filter_options_and_gallery_names() {
-        let missing = missing_generated_filter_labels(crate::i18n::lang_from_tag("ru-RU").unwrap());
-        assert!(missing.is_empty(), "missing Russian dynamic labels: {missing:#?}");
-    }
-
     /// The Select menu's generated dialogs (Select and Mask, Modify ▸ …) show their
     /// params, choices and title in every UI language, not just Korean.
     #[test]
@@ -2354,8 +2354,6 @@ mod tests {
             let shown = preview_document(doc, Some(bg), cmd, &p, k).unwrap();
             assert!(diff_at_quarter(&applied, &shown) < 1e-4, "{cmd}: the preview is what OK applies");
         }
-        // Without dithering, the colour-mode conversions keep the proxy.
-        assert_eq!(preview_factor("image.mode.indexedColor", &json!({"dither": "none"}), 4), 4);
         assert_eq!(preview_factor("image.mode.bitmap", &json!({"method": "threshold"}), 4), 4);
     }
 

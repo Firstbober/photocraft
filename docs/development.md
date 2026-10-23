@@ -513,6 +513,24 @@ preview with warmup plus repeated runs. Keep reports local, and compare runs bui
 release settings and machine class. The `generate_blue_noise` example regenerates the committed
 deterministic threshold tile when algorithm data changes; normal startup does not regenerate it.
 
+## Indexed Color palette workflow
+
+Image › Mode › Indexed Color uses the shared palette browser and mapping controls in
+`palette_map_ui.rs`. Generate from image retains its generation settings, including the
+Black & White shortcut; Choose a palette selects a bundled palette or imported GPL/ACT snapshot.
+Palette cards show representative strips, while the selected palette uses contiguous swatches
+without index labels. EGA strips sample the entire palette rather than its initial black entries.
+
+The resizable dialog uses two columns when there is room and a scrolling single-column layout
+on smaller viewports. Before/After panes share fit, zoom and pan controls; disabling Preview
+removes those panes and places Dithering below the palette controls. Wheel events scroll these
+settings instead of changing their numeric fields, sliders or algorithm selection.
+
+Advanced mapping opens the threshold-pattern editor: ingredients can be enabled, selected,
+reordered, removed and configured with per-pattern strength, size, scale and phase. These
+settings are stored in `mapping.patterns` and use the same mapping kernel as the main algorithm.
+The editor previews synthetic threshold patterns, not an imported or personal photograph.
+
 ## Indexed Color timings
 
 `cargo run --release -p photocraft-engine --example indexed_color_perf -- image.png` measures

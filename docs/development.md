@@ -531,6 +531,16 @@ reordered, removed and configured with per-pattern strength, size, scale and pha
 settings are stored in `mapping.patterns` and use the same mapping kernel as the main algorithm.
 The editor previews synthetic threshold patterns, not an imported or personal photograph.
 
+### Save for Web indexed previews
+
+Save for Web GIF and PNG-8 panes use the same palette catalog and mapping controls as Indexed
+Color. By default, palette preparation and preview rendering use a bounded 2048-pixel proxy;
+the dialog's **Exact preview (full resolution)** switch uses the export dimensions instead and
+labels both panes accordingly. Swatch replacements are applied after indexed quantization, so
+they reuse the cached index plane and are carried into the eventual export without changing the
+document. The preview receives the frame-local document and its ICC profile, while animated
+documents keep frame selection and playback outside the source document's history.
+
 ## Indexed Color timings
 
 `cargo run --release -p photocraft-engine --example indexed_color_perf -- image.png` measures

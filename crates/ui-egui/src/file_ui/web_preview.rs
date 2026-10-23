@@ -31,15 +31,31 @@ pub fn prepare_table(app: &PhotocraftApp, f: &mut Map<String, Value>) -> Result<
     let st = app.session.active().ok_or("no document")?;
     let mut source = params(f);
     let Some(m) = source.as_object_mut() else { return Err("invalid web settings".into()) };
-    // Only palette-affecting options invalidate index-based edits. Metadata, interlacing,
-    // dithering and output paths must not discard the user's replacement colours.
+    // Palette snapshots and mapping settings are part of the colour-table identity. Metadata,
+    // interlacing, and output paths must not discard the user's replacement colours.
     m.retain(|k, _| {
         matches!(
             k.as_str(),
-            "preset" | "format" | "palette" | "colors" | "transparency" | "matte" | "webSnap" | "convertToSrgb" | "width" | "height" | "percent" | "resample"
+            "preset"
+                | "format"
+                | "palette"
+                | "paletteId"
+                | "paletteSnapshot"
+                | "mapping"
+                | "reducePalette"
+                | "colors"
+                | "transparency"
+                | "matte"
+                | "webSnap"
+                | "convertToSrgb"
+                | "width"
+                | "height"
+                | "percent"
+                | "resample"
         )
     });
-    let signature = format!("{}|{}|{}", st.doc.id.0, st.revision, source);
+    let exact = f.get("__exactWebPreview").and_then(Value::as_bool).unwrap_or(false);
+    let signature = format!("{}|{}|{}|exact={exact}", st.doc.id.0, st.revision, source);
     if f.get("__tableSignature").and_then(Value::as_str) == Some(&signature) {
         return Ok(());
     }
@@ -52,10 +68,10 @@ pub fn prepare_table(app: &PhotocraftApp, f: &mut Map<String, Value>) -> Result<
     }
     if !f.contains_key("colorTable") {
         let settings = WebSettings::from_params(&source, "preview").map_err(|e| e.to_string())?;
-        // Bound palette preparation as well as the displayed image. The fixed table is then
-        // passed unchanged to full-resolution export, so the swatches are the file's colours.
+        // Exact mode also prepares its table from the full source, so small transparent
+        // features cannot disappear before reserving their palette slot.
         let (w, h) = dimensions(&st.doc, &source)?;
-        let scale = (2048.0 / w.max(h)).min(1.0);
+        let scale = if exact { 1.0 } else { (2048.0 / w.max(h)).min(1.0) };
         let mut proxy = source.clone();
         if let Some(m) = proxy.as_object_mut() {
             m.remove("percent");
@@ -66,12 +82,9 @@ pub fn prepare_table(app: &PhotocraftApp, f: &mut Map<String, Value>) -> Result<
         let (doc, _, _) = web_cmds::web_document(&st.doc, &proxy, &settings).map_err(|e| e.to_string())?;
         f.insert("__paletteApproximate".into(), json!(scale < 1.0));
         let buf = photocraft_compose::flatten(&doc);
-        let mut optimized = web_cmds::optimize(&buf.px, doc.size.width as usize, doc.bounds(), &settings, None, None, None, doc.resolution_dpi, false)
+        let icc = doc.icc_profile.as_deref().map(Vec::as_slice);
+        let optimized = web_cmds::optimize(&buf.px, doc.size.width as usize, doc.bounds(), &settings, icc, None, None, doc.resolution_dpi, false)
             .map_err(|e| e.to_string())?;
-        // Tiny transparent features may disappear in the proxy; keep room for their index.
-        if settings.transparency {
-            optimized.color_table.truncate(255);
-        }
         f.insert("colorTable".into(), json!(optimized.color_table.iter().map(|c| web_cmds::rgb_hex(*c)).collect::<Vec<_>>()));
         f.insert("__transparentIndex".into(), json!(optimized.transparent_index));
     }
@@ -129,7 +142,16 @@ type EncodedPreview = (Vec<u8>, usize, Option<usize>, &'static str);
 
 /// Palette replacements reuse the cached index buffer; picker drags do not re-quantize or
 /// re-encode the proxy. The GIF payload length is unchanged by RGB table replacements.
-pub fn optimized(ui: &mut egui::Ui, key: egui::Id, signature: &str, p: &Value, px: &[[f32; 4]], w: u32, h: u32) -> Result<EncodedPreview, String> {
+pub fn optimized(
+    ui: &mut egui::Ui,
+    key: egui::Id,
+    signature: &str,
+    p: &Value,
+    px: &[[f32; 4]],
+    dimensions: (u32, u32),
+    icc: Option<&[u8]>,
+) -> Result<EncodedPreview, String> {
+    let (w, h) = dimensions;
     let settings = WebSettings::from_params(p, "preview").map_err(|e| e.to_string())?;
     let mut base = p.clone();
     if let Some(m) = base.as_object_mut() {
@@ -143,7 +165,7 @@ pub fn optimized(ui: &mut egui::Ui, key: egui::Id, signature: &str, p: &Value, p
     } else {
         let settings = WebSettings::from_params(&base, "preview").map_err(|e| e.to_string())?;
         let encoded = Arc::new(
-            web_cmds::optimize(px, w as usize, photocraft_geom::Rect::new(0, 0, w as i32, h as i32), &settings, None, None, None, 72.0, true)
+            web_cmds::optimize(px, w as usize, photocraft_geom::Rect::new(0, 0, w as i32, h as i32), &settings, icc, None, None, 72.0, true)
                 .map_err(|e| e.to_string())?,
         );
         ui.data_mut(|d| d.insert_temp(key, (signature, encoded.clone())));
@@ -225,6 +247,10 @@ pub fn controls(ui: &mut egui::Ui, f: &mut Map<String, Value>) {
         if ui.small_button(tl!("100%")).clicked() {
             nav.zoom = Some(1.0);
         }
+        let mut exact = f.get("__exactWebPreview").and_then(Value::as_bool).unwrap_or(false);
+        if crate::widgets::checkbox(ui, &mut exact, "Exact preview (full resolution)").changed() {
+            f.insert("__exactWebPreview".into(), Value::Bool(exact));
+        }
         ui.add(egui::Label::new(egui::RichText::new(tl!("Drag to pan · Scroll to zoom · Double-click to fit")).weak()).truncate());
     });
     nav.write(f);
@@ -253,7 +279,12 @@ pub fn paint(ui: &mut egui::Ui, rect: egui::Rect, response: &egui::Response, tex
         }
     }
     nav.clamp(rect.size(), source * scale);
-    let image = egui::Rect::from_min_size(rect.center() - nav.center * source * scale, source * scale);
+    let mut origin = rect.center() - nav.center * source * scale;
+    if scale * ppp >= 1.0 {
+        origin.x = (origin.x * ppp).round() / ppp;
+        origin.y = (origin.y * ppp).round() / ppp;
+    }
+    let image = egui::Rect::from_min_size(origin, source * scale);
     ui.painter().with_clip_rect(rect.intersect(ui.clip_rect())).image(
         tex.id(),
         image,
@@ -296,7 +327,7 @@ mod tests {
         let p = json!({"format": "gif", "colorTable": ["#ff0000", "#0000ff"], "dither": "none"});
         let mut h = egui_kittest::Harness::builder().build_ui_state(
             move |ui, state: &mut (Value, Vec<u8>)| {
-                state.1 = optimized(ui, key, "fixture", &state.0, &[[1.0, 0.0, 0.0, 1.0], [0.0, 0.0, 1.0, 1.0]], 2, 1).unwrap().0;
+                state.1 = optimized(ui, key, "fixture", &state.0, &[[1.0, 0.0, 0.0, 1.0], [0.0, 0.0, 1.0, 1.0]], (2, 1), None).unwrap().0;
             },
             (p, Vec::new()),
         );

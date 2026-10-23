@@ -506,12 +506,40 @@ Engine adapters expose shared `Palette`/`Settings` resolution and legacy `dither
 `ditherAmount`, `paletteId` and `paletteSnapshot` spellings in `crates/engine/src/palette_cmds.rs`.
 Indexed conversion keeps its existing 256-entry/transparency-slot rules and stores the expanded
 sRGB samples plus `ColorTable`; Save for Web and video use the same mapping implementation.
-No Palette Map filter command or UI is registered by this backend change.
+Filter › PhotoCraft › Palette Map… is registered as `filter.paletteMap`. It accepts a bundled `paletteId` or
+an explicit `paletteSnapshot`; serialized `mapping` settings take precedence over legacy dither
+fields. The destructive filter preserves the document's colour mode and native sample depth,
+limits edits to the selection, and records the palette snapshot, mapping and compatible ICC
+source profile when applied as a Smart Filter.
 
 `crates/engine/examples/indexed_color_perf.rs` measures palette construction and the full Indexed
 preview with warmup plus repeated runs. Keep reports local, and compare runs built with the same
 release settings and machine class. The `generate_blue_noise` example regenerates the committed
 deterministic threshold tile when algorithm data changes; normal startup does not regenerate it.
+
+## Palette Map filter workflow
+
+**Filter › PhotoCraft › Palette Map…** (`filter.paletteMap`) is the only UI that owns the
+advanced palette workflow. Its filter dialog starts with a bundled palette, offers a searchable
+palette browser with GPL/ACT snapshot import, shows the selected palette as a contiguous swatch
+grid, and exposes the shared mapping controls without the generated-palette controls used by
+Indexed Color. Palette cards wrap to the available width; the filter settings use visible
+scrollbars and switch between two columns and a stacked layout as the dialog permits.
+
+The filter's Before/After comparison is controlled by its Preview checkbox. Turning Preview off
+removes those panes and keeps palette and mapping settings in one scrolling column. Wheel events
+scroll the settings rather than changing a focused numeric field, slider or algorithm choice.
+Advanced mapping includes method-specific controls and a threshold-pattern editor: ingredients can
+be enabled, selected, reordered, removed and configured with amount, matrix, scale, phase and seed.
+Each ingredient has a generated synthetic preview; it does not preview an imported or personal
+photograph.
+
+Palette Map preserves the document's colour mode and native sample depth, maps the current
+selection only, and stores the normalized palette snapshot, mapping settings and compatible ICC
+source profile when a Smart Filter is recorded. Indexed Color and Save for Web retain their stock
+dialogs. Their shared palette/mapping engine and automation fields may remain available where
+their command schemas allow them; that does not add Palette Map's browser, responsive filter
+columns or Before/After workflow to those commands.
 
 ## Indexed Color timings
 

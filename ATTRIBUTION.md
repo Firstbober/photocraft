@@ -88,6 +88,7 @@ The other built-in ICC profiles and the generated LUT looks are produced by code
 | `docs/brand/` (all files) | ArtCraft name, wordmark and mark | ArtCraft Team | getartcraft.com | Not open source; trademarks of the ArtCraft Team, [`docs/brand/LICENSE-brand.txt`](docs/brand/LICENSE-brand.txt) |
 | `docs/images/photocraft-*.jpg` | PhotoCraft screenshots | PhotoCraft contributors (UI) | Rendered offscreen with the `snapshot` example | MIT OR Apache-2.0 (UI); the artwork in each is public domain, listed below |
 | `docs/images/preferences-apply-*.png` | Preferences before and after adding Apply (no artwork) | PhotoCraft contributors | PhotoCraft control-channel capture and offscreen `snapshot` example | MIT OR Apache-2.0 |
+| `docs/review/palette-split/*.png` | Indexed painting, Indexed Color, Palette Map and Save for Web review captures | PhotoCraft contributors | Native offscreen `snapshot` example; original synthetic gradients and geometric brush strokes | MIT OR Apache-2.0 (UI and synthetic artwork); embedded brand/palette notices retained; see [`docs/review/palette-split/LICENSE`](docs/review/palette-split/LICENSE) |
 
 Artwork shown in the screenshots (all public domain, via Wikimedia Commons; details in
 [`docs/images/SOURCES.md`](docs/images/SOURCES.md)):

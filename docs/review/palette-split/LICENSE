@@ -1,0 +1,15 @@
+SPDX-License-Identifier: MIT OR Apache-2.0
+
+The original synthetic test artwork (gradients and geometric brush strokes) and
+PhotoCraft screenshot composition in this directory are available under either
+the MIT license or Apache License 2.0, at your option, as in the repository root:
+
+../../../LICENSE-MIT
+../../../LICENSE-APACHE
+
+Captures are generated with PhotoCraft's native offscreen snapshot example.
+No personal photographs or third-party demo artwork are used.
+
+Depicted PhotoCraft UI, trademarks, and bundled palette assets retain their
+existing notices. This notice does not relicense third-party material or resolve
+the separate historical GIMP palette licensing review identified in the PRs.

@@ -573,6 +573,11 @@ How the web shell (`apps/photocraft-web/src/web.rs`) differs from desktop:
 
 ## Indexed Color timings
 
+Indexed Color converts the composited image from its composite ICC profile to encoded sRGB
+before palette construction and quantization, preserving alpha. The resulting expanded RGB
+samples and color table are tagged sRGB. Untagged/sRGB input retains the identity fast path;
+the stock dialog and quantizer are unchanged.
+
 `cargo run --release -p photocraft-engine --example indexed_color_perf -- image.png` measures
 palette construction, Floyd–Steinberg diffusion, and the complete full-resolution CPU preview
 path (proxy copy, engine command, result composition; excludes GPU upload/presentation).

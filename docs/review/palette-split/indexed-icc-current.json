@@ -1,0 +1,74 @@
+[
+  {
+    "profile": "display-p3",
+    "depth": 8,
+    "rgb8": [
+      13,
+      80,
+      217
+    ],
+    "result_profile": "sRGB IEC61966-2.1",
+    "matches_convert_before_quantize": true,
+    "native_roundtrip": true
+  },
+  {
+    "profile": "display-p3",
+    "depth": 16,
+    "rgb8": [
+      13,
+      80,
+      217
+    ],
+    "result_profile": "sRGB IEC61966-2.1",
+    "matches_convert_before_quantize": true,
+    "native_roundtrip": true
+  },
+  {
+    "profile": "display-p3",
+    "depth": 32,
+    "rgb8": [
+      13,
+      80,
+      217
+    ],
+    "result_profile": "sRGB IEC61966-2.1",
+    "matches_convert_before_quantize": true,
+    "native_roundtrip": true
+  },
+  {
+    "profile": "adobe-rgb-compat",
+    "depth": 8,
+    "rgb8": [
+      0,
+      78,
+      214
+    ],
+    "result_profile": "sRGB IEC61966-2.1",
+    "matches_convert_before_quantize": true,
+    "native_roundtrip": true
+  },
+  {
+    "profile": "adobe-rgb-compat",
+    "depth": 16,
+    "rgb8": [
+      0,
+      78,
+      214
+    ],
+    "result_profile": "sRGB IEC61966-2.1",
+    "matches_convert_before_quantize": true,
+    "native_roundtrip": true
+  },
+  {
+    "profile": "adobe-rgb-compat",
+    "depth": 32,
+    "rgb8": [
+      0,
+      78,
+      214
+    ],
+    "result_profile": "sRGB IEC61966-2.1",
+    "matches_convert_before_quantize": true,
+    "native_roundtrip": true
+  }
+]

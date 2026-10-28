@@ -1,7 +1,7 @@
 {
   "baseline": "1f7fc0f53696e54da79b95015abb37d7c22cdd1a",
-  "backend": "f38e60c4aff48d3620ead40a0e94bf4a7fdf29e2",
-  "candidate": "65475ab5d379be3e2da34c72717ebd4075a0bc31",
+  "backend": "93535501b9d09aaaa78713830c8c12db3efa7915",
+  "candidate": "9f84f95f3f8816920a282ed757f7e9f59898b648",
   "rust": "1.95.0",
   "cpu": "Intel Core i9-13900K",
   "cpu_affinity": [
@@ -42162,5 +42162,331 @@
     "Timing variance is retained: first-pass 8-color median +17.84%, reverse-pass +1.21%, combined +2.23%. These measurements are not a performance budget pass.",
     "2.5MP target applies to native direct Palette Map previews above 5MP when Low Resolution Previews is enabled (default); Smart Filter editing retains the pre-existing full-resolution preview policy.",
     "Strict UI Clippy has six inherited failures; one known unrelated eight-step type-tool regression was excluded from the broad serial UI test gates."
-  ]
+  ],
+  "native_full_resolution_apply": {
+    "method": "Single-shot native CLI command round trips, including dispatch/job wait, on the complete RGB16 input; no baseline comparison or performance-budget claim. No local build was running.",
+    "results": [
+      {
+        "method": "bayer",
+        "palette_entries": 2,
+        "size": [
+          6000,
+          4000
+        ],
+        "depth": 16,
+        "command_roundtrip_ms": 330.86556600028416,
+        "mode": "Rgb",
+        "probes": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "method": "riemersma",
+        "palette_entries": 16,
+        "size": [
+          6000,
+          4000
+        ],
+        "depth": 16,
+        "command_roundtrip_ms": 1827.8601990004972,
+        "mode": "Rgb",
+        "probes": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.4000000059604645,
+            0.4000000059604645,
+            0.4000000059604645,
+            1.0
+          ],
+          [
+            0.2666666805744171,
+            0.2666666805744171,
+            0.2666666805744171,
+            1.0
+          ]
+        ]
+      }
+    ]
+  },
+  "gates": {
+    "backend_tests": {
+      "passed": 7701,
+      "ignored": 65,
+      "excluded_unrelated_type_tool": 1,
+      "source": "f38e60c4aff48d3620ead40a0e94bf4a7fdf29e2"
+    },
+    "filter_tests": {
+      "passed": 7005,
+      "ignored": 39,
+      "excluded_unrelated_type_tool": 1,
+      "source": "65475ab5d379be3e2da34c72717ebd4075a0bc31"
+    },
+    "layers": {
+      "crates": 31,
+      "passed": true
+    },
+    "wasm": {
+      "crates": 24,
+      "heif": true,
+      "passed": true,
+      "source": "9f84f95f3f8816920a282ed757f7e9f59898b648"
+    },
+    "adversarial_commands": {
+      "passed": true
+    },
+    "menu_wiring": {
+      "live": 631,
+      "total": 631,
+      "behavioral_parity_claim": false
+    },
+    "quick_perf": {
+      "passed": true,
+      "benches": 8,
+      "budget_check": "not applied in quick mode",
+      "regression_comparison": "skipped: stored baseline is macOS Apple M4 Pro, current host is Linux Intel i9-13900K",
+      "source": "65475ab5d379be3e2da34c72717ebd4075a0bc31"
+    },
+    "strict_clippy": {
+      "full_backend": "blocked by inherited crates/codecs/src/codecs/via_image.rs:112 nonminimal_bool",
+      "ui": "six inherited errors: canvas/strokes.rs (2), dialogs/vp_ui.rs, panels/blend_preview.rs, widgets/text_field.rs, dialogs/color_picker_ui/tests.rs",
+      "isolated_engine": "Only inherited crop_fill.rs:78 nonminimal_bool and canvas_geom/tests.rs:242 manual_range_contains remain; optimize cognitive_complexity violation removed by private helper extraction, not suppression."
+    },
+    "post_refactor_web_tests": {
+      "source": "93535501b9d09aaaa78713830c8c12db3efa7915",
+      "passed": 51,
+      "failed": 0
+    }
+  },
+  "measurement_source": "65475ab5d379be3e2da34c72717ebd4075a0bc31",
+  "post_measurement_refactor": "93535501b9d09aaaa78713830c8c12db3efa7915 extracts private stock/mapped Web palette construction without changing algorithms, allocations or public APIs; filter commit replayed on it.",
+  "evidence_sources": {
+    "broad_backend_tests": "f38e60c4aff48d3620ead40a0e94bf4a7fdf29e2",
+    "broad_filter_tests": "65475ab5d379be3e2da34c72717ebd4075a0bc31",
+    "native_cli_matrix_and_ui_captures": "65475ab5d379be3e2da34c72717ebd4075a0bc31",
+    "timings": "65475ab5d379be3e2da34c72717ebd4075a0bc31",
+    "post_refactor_export_tests": "93535501b9d09aaaa78713830c8c12db3efa7915",
+    "post_refactor_native_smoke": "9f84f95f3f8816920a282ed757f7e9f59898b648"
+  },
+  "post_refactor_native_smoke": {
+    "source": "9f84f95f3f8816920a282ed757f7e9f59898b648",
+    "backend": "93535501b9d09aaaa78713830c8c12db3efa7915",
+    "binary_profile": "dev",
+    "exports": [
+      {
+        "variant": "generated",
+        "format": "gif",
+        "file": "final-generated.gif",
+        "pixel_hash_sha256": "9181c8b20f8396ddfe065784a54fd8fab95f1f722287f579d9e937ee16ab096a",
+        "first_pixel": [
+          37,
+          32,
+          62,
+          255
+        ]
+      },
+      {
+        "variant": "generated",
+        "format": "png8",
+        "file": "final-generated.png",
+        "pixel_hash_sha256": "9181c8b20f8396ddfe065784a54fd8fab95f1f722287f579d9e937ee16ab096a",
+        "first_pixel": [
+          37,
+          32,
+          62,
+          255
+        ]
+      },
+      {
+        "variant": "legacy_table_edit",
+        "format": "gif",
+        "file": "final-legacy_table_edit.gif",
+        "pixel_hash_sha256": "7d27a3cf695e590dcddd048cce45f14619e88a1085e10f8f5c558d765091dfcd",
+        "first_pixel": [
+          0,
+          255,
+          0,
+          255
+        ]
+      },
+      {
+        "variant": "legacy_table_edit",
+        "format": "png8",
+        "file": "final-legacy_table_edit.png",
+        "pixel_hash_sha256": "7d27a3cf695e590dcddd048cce45f14619e88a1085e10f8f5c558d765091dfcd",
+        "first_pixel": [
+          0,
+          255,
+          0,
+          255
+        ]
+      },
+      {
+        "variant": "explicit_mapping",
+        "format": "gif",
+        "file": "final-explicit_mapping.gif",
+        "pixel_hash_sha256": "ae366d8fc29f5b5edc4f3bd42c94938ace37918b8f78a6c2d5b0902638ca10b1",
+        "first_pixel": [
+          0,
+          0,
+          0,
+          255
+        ]
+      },
+      {
+        "variant": "explicit_mapping",
+        "format": "png8",
+        "file": "final-explicit_mapping.png",
+        "pixel_hash_sha256": "ae366d8fc29f5b5edc4f3bd42c94938ace37918b8f78a6c2d5b0902638ca10b1",
+        "first_pixel": [
+          0,
+          0,
+          0,
+          255
+        ]
+      }
+    ],
+    "native_tail": [
+      {
+        "command": "document.inspect",
+        "result": {
+          "activeLayer": 4,
+          "canRedo": false,
+          "canUndo": true,
+          "channels": {
+            "alpha": [],
+            "colors": [
+              {
+                "name": "Red",
+                "visible": true
+              },
+              {
+                "name": "Green",
+                "visible": true
+              },
+              {
+                "name": "Blue",
+                "visible": true
+              }
+            ],
+            "composite": "RGB",
+            "compositeVisible": true,
+            "layerMaskView": null,
+            "quickMask": null,
+            "target": {
+              "kind": "composite"
+            }
+          },
+          "depth": 8,
+          "hasSelection": false,
+          "height": 384,
+          "history": [
+            "Open",
+            "Palette Map"
+          ],
+          "historySource": {
+            "label": "Open",
+            "state": 0
+          },
+          "isolatedLayers": [],
+          "lastAppliedComp": null,
+          "layerComps": [],
+          "layerMaskView": null,
+          "layers": [
+            {
+              "blend": "Normal",
+              "bounds": [
+                0,
+                0,
+                512,
+                384
+              ],
+              "clipped": false,
+              "fill": 1.0,
+              "hasMask": false,
+              "hasVectorMask": false,
+              "hasXmp": false,
+              "id": 4,
+              "kind": "Pixel",
+              "labelColor": "none",
+              "linkGroup": null,
+              "name": "Layer 0",
+              "opacity": 1.0,
+              "selected": true,
+              "vectorMaskEnabled": null,
+              "visible": true
+            }
+          ],
+          "measurement": {
+            "count": 0,
+            "countGroups": 0,
+            "ruler": null,
+            "scale": "1 pixels = 1.0000 pixels"
+          },
+          "mode": "Rgb",
+          "name": "gradient-small.pcraft",
+          "notes": [],
+          "path": "gradient-small.pcraft",
+          "quickMask": false,
+          "resolution": 72.0,
+          "revision": 2,
+          "selectedLayers": [
+            4
+          ],
+          "selectionBounds": null,
+          "snapshots": [
+            {
+              "id": 0,
+              "name": "gradient-small.pcraft"
+            }
+          ],
+          "symmetry": null,
+          "timeline": null,
+          "variables": null,
+          "width": 512
+        }
+      },
+      {
+        "command": "document.pixel",
+        "result": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  "focused_smoke": {
+    "indexed_icc": {
+      "source": "1acab69e919aae0bd87aa72d569d64960efdefef",
+      "file": "indexed-icc-current.json"
+    },
+    "indexed_matte": {
+      "source": "c25465030d1a6a4f98ba1b782a398a257c69a780",
+      "file": "indexed-matte-prior.json",
+      "scope": "Six depth/alpha cases before the picker-Cancel-only fix; not rerun as a full matrix on 67b897a."
+    }
+  }
 }

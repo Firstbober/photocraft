@@ -193,7 +193,7 @@ fn composite(doc: &Document, opaque: bool) -> Vec<[f32; 4]> {
 
 /// Indexed storage and its palette are sRGB. Convert RGB/gray composites before quantisation so
 /// wide-gamut document samples are not interpreted as sRGB numbers by the quantizer.
-fn composite_in_srgb(doc: &Document, opaque: bool) -> Result<Vec<[f32; 4]>> {
+fn composite_in_srgb(doc: &Document, opaque: bool, options: TransformOptions) -> Result<Vec<[f32; 4]>> {
     const CMD: &str = "image.mode.indexedColor";
     let mut pixels = composite(doc, opaque);
     let channels = match doc.mode {
@@ -203,11 +203,12 @@ fn composite_in_srgb(doc: &Document, opaque: bool) -> Result<Vec<[f32; 4]>> {
     };
     let source = crate::color_cmds::document_profile(doc);
     let srgb = Builtin::Srgb.profile();
-    if source.same_colors(srgb) {
+    if source.same_colors(srgb)
+        && (options.intent != photocraft_cms::Intent::AbsoluteColorimetric || source.same_bytes(srgb) || source.media_white() == srgb.media_white())
+    {
         return Ok(pixels);
     }
-    let transform =
-        photocraft_cms::cached(&source, srgb, TransformOptions::default()).map_err(|e| bad(CMD, format!("could not convert the composite to sRGB: {e}")))?;
+    let transform = photocraft_cms::cached(&source, srgb, options).map_err(|e| bad(CMD, format!("could not convert the composite to sRGB: {e}")))?;
     let convert = |converted: &mut [f32; 16], pixel: &mut [f32; 4]| {
         let input = if channels == 1 { &pixel[..1] } else { &pixel[..3] };
         transform.eval(input, converted);
@@ -310,8 +311,9 @@ fn indexed_color(s: &mut Session, p: &Value) -> Result<Value> {
     };
     let amount = num(p, "amount", 75.0).clamp(0.0, 100.0) / 100.0;
     let transparency = p.get("transparency").and_then(Value::as_bool).unwrap_or(true);
+    let options = TransformOptions { intent: s.color.settings.intent(), bpc: s.color.settings.bpc, ..TransformOptions::default() };
     let (pal_len, transparent) = s.edit("Indexed Color", |doc, active| {
-        let mut px = composite_in_srgb(doc, !transparency)?;
+        let mut px = composite_in_srgb(doc, !transparency, options)?;
         let has_clear = transparency && px.iter().any(|q| q[3] < 0.5);
         let mut pal = quantize::build_palette(&px, kind, if has_clear { colors.saturating_sub(1).max(2) } else { colors }, forced).map_err(|e| bad(CMD, e))?;
         let transparent = if has_clear && pal.len() < 256 {

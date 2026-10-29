@@ -527,6 +527,9 @@ Indexed Color converts the composited image from its composite ICC profile to en
 before palette construction and quantization, preserving alpha. The resulting expanded RGB
 samples and color table are tagged sRGB. Untagged/sRGB input retains the identity fast path;
 the stock dialog and quantizer are unchanged.
+Non-identity transforms reuse the cached CMS transform. Native composites of at least 16,384
+pixels convert in parallel with per-worker scratch; smaller images and WebAssembly retain the
+serial path. Both paths preserve alpha and the same RGB/gray channel routing.
 
 `cargo run --release -p photocraft-engine --example indexed_color_perf -- image.png` measures
 palette construction, Floyd–Steinberg diffusion, and the complete full-resolution CPU preview

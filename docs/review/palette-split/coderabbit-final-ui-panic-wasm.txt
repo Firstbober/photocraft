@@ -1,0 +1,204 @@
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+     Removed 268 files, 2.1GiB total
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+     Removed 14 files, 10.4MiB total
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling photocraft-io v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/io)
+   Compiling photocraft-ui-egui v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/ui-egui)
+   Compiling photocraft-engine v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/engine)
+    Finished `release` profile [optimized] target(s) in 8m 06s
+     Running unittests src/lib.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-coderabbit/release/deps/photocraft_ui_egui-46b8ce7b83687635)
+
+running 3 tests
+test dialogs::filter_dialog::tests::indexed_matte_dropdown_and_picker_change_the_applied_edge_color ... ok
+test dialogs::filter_dialog::tests::indexed_matte_cancel_keeps_the_previous_choice ... ok
+test dialogs::filter_dialog::tests::indexed_matte_named_choices_seed_srgb_picker_and_preserve_transitions ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 4107 filtered out; finished in 0.06s
+
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling photocraft-engine v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/engine)
+    Finished `release` profile [optimized] target(s) in 54.25s
+     Running tests/panic_hunt.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-coderabbit/release/deps/panic_hunt-3549e07717f15dac)
+
+running 1 test
+test no_command_panics_or_hangs_on_adversarial_params ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out; finished in 43.55s
+
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+    Checking photocraft-cms v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/cms)
+    Checking photocraft-geom v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/geom)
+   Compiling photocraft-text v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/text)
+   Compiling photocraft-ui-egui v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/ui-egui)
+    Checking photocraft-color v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/color)
+    Checking photocraft-raster v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/raster)
+    Checking photocraft-doc v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/doc)
+    Checking photocraft-algo v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/algo)
+    Checking photocraft-paint v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/paint)
+    Checking photocraft-plugins v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/plugins)
+warning: function `open_regular` is never used
+  --> crates/plugins/src/registry.rs:67:4
+   |
+67 | fn open_regular(path: &std::path::Path) -> std::io::Result<std::fs::File> {
+   |    ^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `photocraft-plugins` (lib) generated 1 warning
+    Checking photocraft-vector v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/vector)
+    Checking photocraft-format v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/format)
+    Checking photocraft-compose v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/compose)
+    Checking photocraft-ops v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/ops)
+    Checking photocraft-io v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/io)
+    Checking photocraft-gpu v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/gpu)
+    Checking photocraft-engine v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/engine)
+warning: constant `PAR_PIXELS` is never used
+   --> crates/engine/src/display_color.rs:110:7
+    |
+110 | const PAR_PIXELS: usize = 16 * 1024;
+    |       ^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: constant `MAX_FOLDER_LUTS` is never used
+   --> crates/engine/src/cmd/adjust_cmds.rs:188:7
+    |
+188 | const MAX_FOLDER_LUTS: usize = 500;
+    |       ^^^^^^^^^^^^^^^
+
+warning: constant `MAX_FOLDER_LUT_BYTES` is never used
+   --> crates/engine/src/cmd/adjust_cmds.rs:190:7
+    |
+190 | const MAX_FOLDER_LUT_BYTES: u64 = 64 << 20;
+    |       ^^^^^^^^^^^^^^^^^^^^
+
+warning: constant `MAX_SUBFOLDER_DEPTH` is never used
+  --> crates/engine/src/cmd/file_cmds/batch_run.rs:25:18
+   |
+25 | pub(crate) const MAX_SUBFOLDER_DEPTH: usize = 32;
+   |                  ^^^^^^^^^^^^^^^^^^^
+
+warning: constant `MAX_SUBFOLDER_FILES` is never used
+  --> crates/engine/src/cmd/file_cmds/batch_run.rs:29:18
+   |
+29 | pub(crate) const MAX_SUBFOLDER_FILES: usize = 100_000;
+   |                  ^^^^^^^^^^^^^^^^^^^
+
+warning: `photocraft-engine` (lib) generated 5 warnings
+warning: function `effective_locale` is never used
+   --> crates/ui-egui/src/text/cjk_fonts.rs:564:4
+    |
+564 | fn effective_locale(ui_code: &str, os_locale: Option<&str>) -> Option<String> {
+    |    ^^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `photocraft-ui-egui` (lib) generated 1 warning
+    Finished `dev` profile [optimized] target(s) in 18.83s
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+    Checking photocraft-cms v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/cms)
+    Checking photocraft-geom v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/geom)
+   Compiling photocraft-text v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/text)
+   Compiling photocraft-ui-egui v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/ui-egui)
+    Checking photocraft-color v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/color)
+    Checking photocraft-raster v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/raster)
+    Checking photocraft-doc v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/doc)
+    Checking photocraft-algo v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/algo)
+    Checking photocraft-paint v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/paint)
+    Checking photocraft-plugins v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/plugins)
+warning: function `open_regular` is never used
+  --> crates/plugins/src/registry.rs:67:4
+   |
+67 | fn open_regular(path: &std::path::Path) -> std::io::Result<std::fs::File> {
+   |    ^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `photocraft-plugins` (lib) generated 1 warning
+    Checking photocraft-vector v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/vector)
+    Checking photocraft-format v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/format)
+    Checking photocraft-compose v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/compose)
+    Checking photocraft-ops v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/ops)
+    Checking photocraft-io v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/io)
+    Checking photocraft-gpu v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/gpu)
+    Checking photocraft-engine v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/engine)
+warning: constant `PAR_PIXELS` is never used
+   --> crates/engine/src/display_color.rs:110:7
+    |
+110 | const PAR_PIXELS: usize = 16 * 1024;
+    |       ^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: constant `MAX_FOLDER_LUTS` is never used
+   --> crates/engine/src/cmd/adjust_cmds.rs:172:7
+    |
+172 | const MAX_FOLDER_LUTS: usize = 500;
+    |       ^^^^^^^^^^^^^^^
+
+warning: constant `MAX_FOLDER_LUT_BYTES` is never used
+   --> crates/engine/src/cmd/adjust_cmds.rs:174:7
+    |
+174 | const MAX_FOLDER_LUT_BYTES: u64 = 64 << 20;
+    |       ^^^^^^^^^^^^^^^^^^^^
+
+warning: constant `MAX_SUBFOLDER_DEPTH` is never used
+  --> crates/engine/src/cmd/file_cmds/batch_run.rs:25:18
+   |
+25 | pub(crate) const MAX_SUBFOLDER_DEPTH: usize = 32;
+   |                  ^^^^^^^^^^^^^^^^^^^
+
+warning: constant `MAX_SUBFOLDER_FILES` is never used
+  --> crates/engine/src/cmd/file_cmds/batch_run.rs:29:18
+   |
+29 | pub(crate) const MAX_SUBFOLDER_FILES: usize = 100_000;
+   |                  ^^^^^^^^^^^^^^^^^^^
+
+warning: `photocraft-engine` (lib) generated 5 warnings
+warning: function `effective_locale` is never used
+   --> crates/ui-egui/src/text/cjk_fonts.rs:564:4
+    |
+564 | fn effective_locale(ui_code: &str, os_locale: Option<&str>) -> Option<String> {
+    |    ^^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `photocraft-ui-egui` (lib) generated 1 warning
+    Finished `dev` profile [optimized] target(s) in 18.25s

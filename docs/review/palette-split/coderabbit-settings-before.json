@@ -1,0 +1,124 @@
+{
+  "cases": [
+    {
+      "actual": [
+        [
+          36,
+          72,
+          150
+        ],
+        [
+          114,
+          98,
+          53
+        ]
+      ],
+      "bpc": false,
+      "expected": [
+        [
+          73,
+          94,
+          158
+        ],
+        [
+          126,
+          113,
+          82
+        ]
+      ],
+      "intent": "relative",
+      "mode": "rgb",
+      "pass": false
+    },
+    {
+      "actual": [
+        [
+          36,
+          72,
+          150
+        ],
+        [
+          114,
+          98,
+          53
+        ]
+      ],
+      "bpc": true,
+      "expected": [
+        [
+          65,
+          87,
+          144
+        ],
+        [
+          114,
+          104,
+          74
+        ]
+      ],
+      "intent": "absolute",
+      "mode": "rgb",
+      "pass": false
+    },
+    {
+      "actual": [
+        [
+          69,
+          69,
+          69
+        ],
+        [
+          95,
+          95,
+          95
+        ]
+      ],
+      "bpc": false,
+      "expected": [
+        [
+          92,
+          92,
+          92
+        ],
+        [
+          111,
+          111,
+          111
+        ]
+      ],
+      "intent": "relative",
+      "mode": "gray",
+      "pass": false
+    },
+    {
+      "actual": [
+        [
+          69,
+          69,
+          69
+        ],
+        [
+          95,
+          95,
+          95
+        ]
+      ],
+      "bpc": true,
+      "expected": [
+        [
+          83,
+          85,
+          84
+        ],
+        [
+          100,
+          102,
+          101
+        ]
+      ],
+      "intent": "absolute",
+      "mode": "gray",
+      "pass": false
+    }
+  ]
+}

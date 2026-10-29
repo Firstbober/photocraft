@@ -1,0 +1,13 @@
+{
+  "affected_public_head": "36664390484358fb7c090ebd388cc98675e623ba",
+  "after_source": "efac61e63dac2b31d0dd89a2c27b9127d37752a3",
+  "before_raw": "coderabbit-act-sentinel-before.txt",
+  "after_raw": "coderabbit-final-act-and-cache-repair.txt",
+  "parser_tests_passed": 8,
+  "native_after_colors": 256,
+  "recipe": {
+    "example": "crates/algo/examples/review_act_compat.rs",
+    "source": "//! Temporary ACT compatibility probe; removed after before/after verification.\nfn main() {\n    let mut bytes = [0u8; 772];\n    for (color, index) in bytes[..768].chunks_exact_mut(3).zip(0u8..=255) {\n        color.copy_from_slice(&[index, 255 - index, 17]);\n    }\n    bytes[768..772].copy_from_slice(&[1, 0, 1, 1]);\n    let result = photocraft_algo::palettes::parse_act(&bytes);\n    println!(\"{:?}\", result.map(|p| (p.colors.len(), p.colors.first().copied(), p.colors.last().copied())));\n}\n",
+    "run": "cargo run --release -p photocraft-algo --example review_act_compat"
+  }
+}

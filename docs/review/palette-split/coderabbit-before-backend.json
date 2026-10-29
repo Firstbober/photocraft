@@ -1,0 +1,57 @@
+{
+  "source": "93535501b9d09aaaa78713830c8c12db3efa7915",
+  "observed": {
+    "act_opaque_colors": [
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ]
+    ],
+    "bayer_amount_03_alpha_025_coverage": 0.0,
+    "indexed_error_command": "image.mode.indexedColor",
+    "mapped_sampling": [
+      {
+        "elapsed_ms": 18.123238999999998,
+        "kind": "adaptive",
+        "palette": [
+          [
+            0,
+            0,
+            255
+          ],
+          [
+            255,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "elapsed_ms": 15.534467,
+        "kind": "exact",
+        "palette": [
+          [
+            0,
+            0,
+            255
+          ],
+          [
+            255,
+            0,
+            0
+          ]
+        ]
+      }
+    ],
+    "null_save_for_web": {
+      "error": "invalid parameters for `file.export.saveForWebLegacy`: params must be a JSON object",
+      "ok": false
+    }
+  }
+}

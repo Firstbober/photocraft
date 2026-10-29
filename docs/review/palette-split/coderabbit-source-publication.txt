@@ -1,0 +1,29 @@
+{
+  "operation": "Atomic four-ref git push with exact force-with-lease expectations",
+  "expected_old_refs": {
+    "backend": [
+      "feat/palette-mapping-core",
+      "36664390484358fb7c090ebd388cc98675e623ba"
+    ],
+    "filter-current": [
+      "feat/palette-map-filter",
+      "f8bb5fd22f51f470ffadce7486459cafdee86726"
+    ],
+    "correctness": [
+      "fix/indexed-color-srgb",
+      "52d52c015ba1608b163fc6a59e1c00e63d99e0a9"
+    ],
+    "matte": [
+      "feat/indexed-color-matte",
+      "67b897a190237f33c388f57bab9eb47a928ac1d0"
+    ]
+  },
+  "published_heads": {
+    "backend": "3a9e6bed6d131106f034babc86a9cb81813743d8",
+    "filter-current": "1c0b08d6ba44c08b748d709eee0d95a134952e76",
+    "correctness": "5ac84bf592b5547aec48d5cc9aa851c6b5972517",
+    "matte": "fbf7455464ea63a148dfd61a26a586a0e493827c"
+  },
+  "post_push_pr_heads_match": true,
+  "remote": "https://github.com/Firstbober/photocraft.git"
+}

@@ -1,0 +1,21 @@
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Checking serde v1.0.229
+    Checking photocraft-cms v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/backend/crates/cms)
+    Checking num-complex v0.4.6
+    Checking serde_json v1.0.154
+    Checking rustfft v6.4.1
+    Checking photocraft-geom v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/backend/crates/geom)
+    Checking photocraft-testkit v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/backend/crates/testkit)
+    Checking photocraft-color v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/backend/crates/color)
+    Checking photocraft-raster v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/backend/crates/raster)
+    Checking photocraft-algo v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/backend/crates/algo)
+    Finished `release` profile [optimized] target(s) in 9.19s

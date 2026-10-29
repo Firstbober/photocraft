@@ -1,0 +1,46 @@
+{
+  "dialogs": [
+    {
+      "fields": {
+        "__command": "image.mode.indexedColor",
+        "__filter": true,
+        "__indexedMatteBackground": "#d61006",
+        "__indexedMatteForeground": "#009ebb",
+        "__label": "Indexed Color\u2026",
+        "__preview": true,
+        "amount": 75.0,
+        "colors": 256,
+        "dither": "diffusion",
+        "forced": "blackWhite",
+        "matte": "foreground",
+        "palette": "selective",
+        "transparency": true
+      },
+      "id": 1,
+      "kind": "Command",
+      "title": "Indexed Color"
+    },
+    {
+      "fields": {
+        "__colorPicker": "field",
+        "__dialog": 1,
+        "__field": "matte",
+        "__focused": true,
+        "__hsv": [
+          189.30482482910156,
+          1.0,
+          0.7333333492279053
+        ],
+        "__label": "Color Picker (Matte)",
+        "__mode": "h",
+        "__orig": "#009ebb",
+        "__webOnly": false,
+        "color": "#009ebb"
+      },
+      "id": 2,
+      "kind": "Command",
+      "title": "Color Picker (Matte)"
+    }
+  ],
+  "status": ""
+}

@@ -1,0 +1,125 @@
+{
+  "baseline": {
+    "source": "1acab69e919aae0bd87aa72d569d64960efdefef",
+    "pixels": [
+      6000,
+      4000
+    ],
+    "depth": 32,
+    "profile": "Display P3",
+    "workers": 8,
+    "affinity": [
+      0,
+      2,
+      4,
+      6,
+      8,
+      10,
+      12,
+      14
+    ],
+    "warmup_seconds": [
+      2.583844,
+      2.543558
+    ],
+    "run_seconds": [
+      2.529455,
+      2.562495,
+      2.550396
+    ],
+    "median_seconds": 2.550396,
+    "pixel_blake3": "c00d4d65ae7b0db2a34a87f0ce0f932549fdca59855148acfe48b3aaa1b0bf15",
+    "scope": "actual image.mode.indexedColor command, fixture construction/hash excluded"
+  },
+  "candidate": {
+    "source": "1acab69e plus pending composite_in_srgb parallel fix",
+    "workers": 8,
+    "affinity": [
+      0,
+      2,
+      4,
+      6,
+      8,
+      10,
+      12,
+      14
+    ],
+    "warmup_seconds": [
+      0.850255,
+      0.846901
+    ],
+    "run_seconds": [
+      0.855566,
+      0.831551,
+      0.829374
+    ],
+    "median_seconds": 0.831551
+  },
+  "reverse_order": {
+    "candidate": {
+      "warmup_seconds": [
+        0.841183,
+        0.826561
+      ],
+      "run_seconds": [
+        0.836284,
+        0.826185,
+        0.827413
+      ],
+      "median_seconds": 0.827413
+    },
+    "baseline": {
+      "warmup_seconds": [
+        2.636894,
+        2.643864
+      ],
+      "run_seconds": [
+        2.609624,
+        2.582422,
+        2.591117
+      ],
+      "median_seconds": 2.591117
+    }
+  },
+  "all_twenty_pixel_hashes": "c00d4d65ae7b0db2a34a87f0ce0f932549fdca59855148acfe48b3aaa1b0bf15",
+  "method": "Two warmups and three measured actual image.mode.indexedColor runs per direction/version; same 24MP RGB32 Display P3 fixture, 8 Rayon workers, fixed affinity; construction and hashing excluded.",
+  "combined_medians": {
+    "before_seconds": 2.5724585,
+    "after_seconds": 0.8304625,
+    "speedup": 3.097621506088475,
+    "time_reduction_percent": 67.71716628276026
+  },
+  "fixture": {
+    "size": [
+      6000,
+      4000
+    ],
+    "mode": "RGB",
+    "depth": 32,
+    "document_icc": "Builtin::DisplayP3",
+    "rgb_formula": {
+      "r": "((x*17+y*24+11)%997)/996.0",
+      "g": "((x*29+y*36+37)%997)/996.0",
+      "b": "((x*43+y*50+71)%997)/996.0"
+    },
+    "alpha_cycle_by_linear_pixel_index_mod_5": [
+      0,
+      0.17,
+      0.43,
+      0.73,
+      1
+    ],
+    "command": "image.mode.indexedColor",
+    "params": {
+      "palette": "adaptive",
+      "colors": 256,
+      "forced": "none",
+      "dither": "none"
+    },
+    "hash": "BLAKE3 of expanded result-surface bytes in bounds.tiles() iteration order, intersected with canvas bounds",
+    "excluded_from_timer": [
+      "fixture construction",
+      "output hashing"
+    ]
+  }
+}

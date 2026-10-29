@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-29T16:34:31.870935+00:00",
+  "source_heads": {
+    "backend": "3a9e6bed6d131106f034babc86a9cb81813743d8",
+    "filter-current": "1c0b08d6ba44c08b748d709eee0d95a134952e76",
+    "correctness": "5ac84bf592b5547aec48d5cc9aa851c6b5972517",
+    "matte": "fbf7455464ea63a148dfd61a26a586a0e493827c"
+  },
+  "pr_state": "All four PRs open and non-draft; zero unresolved review threads in the recorded post-push snapshot.",
+  "publication": "coderabbit-source-publication.txt",
+  "review_snapshot": "coderabbit-final-pr-state.json",
+  "resolved_threads": [
+    "coderabbit-resolved-threads.json",
+    "coderabbit-resolved-followup-threads.json"
+  ],
+  "acknowledgements": "coderabbit-review-acknowledgements.json",
+  "pr_comments_posted": 0,
+  "final_delta_validation": {
+    "act": {
+      "parser_tests_passed": 8,
+      "native_colors_retained": 256,
+      "recipe_and_results": "coderabbit-act-sentinel-smoke.json",
+      "after_source": "efac61e63dac2b31d0dd89a2c27b9127d37752a3",
+      "later_change": "serial-reference test only; parser unchanged"
+    },
+    "configured_intent_bpc": {
+      "native_before_passed": 0,
+      "native_after_passed": 4,
+      "cases": 4,
+      "recipe_and_results": "coderabbit-settings-smoke.json",
+      "after_source": "40216b478a5eeba589d79dc26fc188949e731542",
+      "later_change": "serial-reference test only; production behavior unchanged"
+    },
+    "mode_tests": {
+      "passed": 32,
+      "raw": "coderabbit-final-mode-tests.txt",
+      "source_commit": "b5ec97e42c7a2049bfa5a318651dacb1944b61dc",
+      "published_equivalent": "fbf7455464ea63a148dfd61a26a586a0e493827c",
+      "tree_equivalence": "coderabbit-matte-tree-equivalence.json",
+      "coverage": "Includes independent CMS expected colors for configured intent/BPC, full-command RGB/gray depth matrix, matte behavior, and exact cached-serial versus parallel output comparison."
+    },
+    "matte_ui_tests": {
+      "passed": 3,
+      "raw": "coderabbit-final-ui-panic-wasm.txt",
+      "source_commit": "b5ec97e42c7a2049bfa5a318651dacb1944b61dc",
+      "published_equivalent": "fbf7455464ea63a148dfd61a26a586a0e493827c"
+    },
+    "hostile_input": {
+      "passed": 1,
+      "raw": "coderabbit-final-ui-panic-wasm.txt",
+      "source_commit": "b5ec97e42c7a2049bfa5a318651dacb1944b61dc",
+      "published_equivalent": "fbf7455464ea63a148dfd61a26a586a0e493827c"
+    },
+    "wasm_engine_ui": {
+      "passed_stacks": {
+        "filter": "1c0b08d6ba44c08b748d709eee0d95a134952e76",
+        "matte_validated_commit": "b5ec97e42c7a2049bfa5a318651dacb1944b61dc",
+        "matte_published_equivalent": "fbf7455464ea63a148dfd61a26a586a0e493827c"
+      },
+      "raw": "coderabbit-final-ui-panic-wasm.txt"
+    },
+    "formatting": {
+      "passed_trees": [
+        "backend",
+        "filter-current",
+        "correctness",
+        "matte"
+      ],
+      "raw": "coderabbit-final-format.json"
+    },
+    "algo_strict_clippy": {
+      "passed": true,
+      "raw": "coderabbit-final-algo-clippy.txt"
+    }
+  },
+  "earlier_broad_validation": "coderabbit-earlier-validation-index.json",
+  "performance": {
+    "raw": "coderabbit-icc-perf.json",
+    "source": "52d52c015ba1608b163fc6a59e1c00e63d99e0a9",
+    "scope": "Isolated two-order 24MP Display P3 Indexed command; not a later-head benchmark.",
+    "median_before_s": 2.5724585,
+    "median_after_s": 0.8304625,
+    "speedup": 3.097621506088475,
+    "pixel_hashes_identical": 20,
+    "quick_perf": "coderabbit-perf-quick.json",
+    "quick_perf_limit": "Overlapped compilation; not used for paired performance claims."
+  },
+  "known_limits": {
+    "strict_dependency_inclusive_clippy": "Untouched text/src/psd_path.rs:157 overly_complex_bool_expr blocks engine/UI before those crates are linted; raw coderabbit-final-{engine,ui}-clippy.txt.",
+    "isolated_engine_clippy": {
+      "raw": "coderabbit-final-engine-clippy-no-deps.txt",
+      "untouched_sites": [
+        "crop_fill.rs:78 nonminimal_bool",
+        "canvas_geom/tests.rs:242 manual_range_contains"
+      ]
+    },
+    "isolated_ui_clippy": {
+      "raw": "coderabbit-final-ui-clippy-no-deps.txt",
+      "untouched_sites": [
+        "canvas/strokes.rs:435 collapsible_match",
+        "canvas/strokes.rs:440 collapsible_match",
+        "dialogs/vp_ui.rs:989 nonminimal_bool",
+        "panels/blend_preview.rs:104 nonminimal_bool",
+        "widgets/text_field.rs:29 collapsible_match",
+        "dialogs/color_picker_ui/tests.rs:103 manual_range_contains"
+      ],
+      "owned_unreachable_diagnostic_removed": true
+    },
+    "earlier_full_algo": "719 passed / 26 ignored; two untouched pixelate NaN-comparison tests failed. No independent baseline-inheritance proof is claimed.",
+    "no_lint_suppressions_added": true,
+    "no_blanket_green_tree_claim": true,
+    "remote_ci": "Not asserted; these are local verification receipts."
+  },
+  "test_reference_correction": {
+    "before_raw": "coderabbit-settings-after-and-mode-reference-failure.txt",
+    "after_raw": "coderabbit-final-mode-tests.txt",
+    "reason": "Fresh non-cached serial reference differed slightly from the production cached transform in a concurrent mode run. The reference now matches the actual pre-parallel cache policy; exact output assertions were not relaxed. Independent full-command CMS fixtures remain separate."
+  },
+  "cache_repair": {
+    "scope": "Only owned review target artifacts for text/UI build scripts were cleaned; they embedded paths of removed comparison worktrees. No product workaround or user source change.",
+    "raw": [
+      "coderabbit-final-act-and-cache-repair.txt",
+      "coderabbit-settings-after-and-mode-reference-failure.txt",
+      "coderabbit-final-mode-tests.txt",
+      "coderabbit-final-ui-panic-wasm.txt"
+    ]
+  }
+}

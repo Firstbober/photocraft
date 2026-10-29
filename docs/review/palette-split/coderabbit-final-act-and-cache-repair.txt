@@ -1,0 +1,57 @@
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+     Removed 14 files, 2.6MiB total
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling photocraft-cms v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/backend/crates/cms)
+   Compiling photocraft-color v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/backend/crates/color)
+   Compiling photocraft-raster v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/backend/crates/raster)
+   Compiling photocraft-algo v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/backend/crates/algo)
+    Finished `release` profile [optimized] target(s) in 36.27s
+     Running `/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-coderabbit/release/examples/review_act_compat`
+Ok((256, Some([0.0, 1.0, 0.06666667]), Some([1.0, 0.0, 0.06666667])))
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling photocraft-algo v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/backend/crates/algo)
+    Finished `release` profile [optimized] target(s) in 1m 34s
+     Running unittests src/lib.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-coderabbit/release/deps/photocraft_algo-686abcc4b2f70637)
+
+running 8 tests
+test palettes::tests::act_out_of_range_transparency_preserves_all_used_colors ... ok
+test palettes::tests::act_requires_exact_bounded_sizes_and_preserves_duplicates ... ok
+test palettes::tests::act_extended_transparency_omits_only_declared_slot_and_rejects_transparent_only ... ok
+test palettes::tests::gpl_rejects_oversized_input_without_truncating ... ok
+test palettes::tests::gpl_rejects_bad_rows_headers_metadata_and_encoding ... ok
+test palettes::tests::gpl_preserves_order_and_duplicates ... ok
+test palettes::tests::generated_catalog_has_stable_ids_metadata_and_boundaries ... ok
+test palettes::tests::gpl_accepts_the_maximum_palette_but_not_more ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 740 filtered out; finished in 0.00s
+
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling photocraft-cms v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/cms)
+   Compiling photocraft-text v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/text)
+error: photocraft-text@0.16.0: deflating the bundled fonts in /home/bober/Documents/ProgrammingProjects/Git/photocraft-review/coderabbit-matte-before/crates/text/../../assets/fonts: No such file or directory (os error 2)
+error: build script logged errors
+warning: build failed, waiting for other jobs to finish...

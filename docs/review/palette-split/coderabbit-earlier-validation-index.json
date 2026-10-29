@@ -1,0 +1,51 @@
+{
+  "backend": {
+    "head": "36664390484358fb7c090ebd388cc98675e623ba",
+    "engine_passed": 2649,
+    "engine_ignored": 20,
+    "panic_hunt_passed": 1,
+    "algo_passed": 719,
+    "algo_ignored": 26,
+    "algo_failed_untouched": [
+      "pixelate facet_reuse_matches_scalar_in_every_model",
+      "pixelate cell_filters_match_scalar_models_edges_and_fractional_cells"
+    ]
+  },
+  "filter": {
+    "head": "f8bb5fd22f51f470ffadce7486459cafdee86726",
+    "focused_ui_passed": 6,
+    "full_ui_passed": 4352,
+    "full_ui_ignored": 19,
+    "test_exclusions": [],
+    "native_matrix_recipe_retention": true,
+    "screenshot": "coderabbit-matrix-after.png"
+  },
+  "icc": {
+    "head": "52d52c015ba1608b163fc6a59e1c00e63d99e0a9",
+    "mode_tests_passed": 28,
+    "isolated_24mp_benchmark": "coderabbit-icc-perf.json",
+    "note": "Do not relabel these timings as measurements of later heads."
+  },
+  "matte_engine": {
+    "head": "06780a29fb6104094b935b171e6fb37a753dd4ed",
+    "engine_passed": 2557,
+    "engine_ignored": 20,
+    "engine_suites": 9,
+    "mode_passed": 31,
+    "runtime_cases_passed": 24,
+    "runtime_cases_total": 24,
+    "before_runtime_cases_passed": 0,
+    "native_picker_hex": "009ebb",
+    "note": "Source commit recovered from the worktree reflog; only the earlier source-scoped checks listed here were run."
+  },
+  "matte_ui": {
+    "head": "2058211bdb2018378fc062db4a7523da6244d740",
+    "focused_ui_passed": 3,
+    "full_ui_passed": 4225,
+    "full_ui_ignored": 19,
+    "panic_hunt_passed": 1,
+    "engine_ui_wasm_passed": true,
+    "test_exclusions": [],
+    "note": "Source commit recovered from the worktree reflog; only the earlier source-scoped checks listed here were run."
+  }
+}

@@ -1,0 +1,54 @@
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Checking photocraft-cms v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/cms)
+    Checking photocraft-geom v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/geom)
+   Compiling photocraft-text v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/text)
+    Checking photocraft-codecs v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/codecs)
+    Checking photocraft-psd v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/psd)
+    Checking photocraft-raw v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/raw)
+    Checking photocraft-color v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/color)
+    Checking photocraft-raster v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/raster)
+    Checking photocraft-doc v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/doc)
+    Checking photocraft-algo v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/algo)
+    Checking photocraft-paint v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/paint)
+    Checking photocraft-affinity v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/affinity)
+    Checking photocraft-plugins v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/plugins)
+    Checking photocraft-ipp v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/ipp)
+    Checking photocraft-testkit v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/testkit)
+    Checking photocraft-vector v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/vector)
+    Checking photocraft-format v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/format)
+    Checking photocraft-compose v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/compose)
+    Checking photocraft-ops v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/ops)
+    Checking photocraft-io v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/io)
+    Checking photocraft-engine v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/engine)
+error: this boolean expression can be simplified
+  --> crates/engine/src/crop_fill.rs:78:12
+   |
+78 |         if !format.alpha || !(x.is_finite() && y.is_finite()) {
+   |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try: `!(format.alpha && x.is_finite() && y.is_finite())`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#nonminimal_bool
+   = note: `-D clippy::nonminimal-bool` implied by `-D warnings`
+   = help: to override `-D warnings` add `#[allow(clippy::nonminimal_bool)]`
+
+error: could not compile `photocraft-engine` (lib) due to 1 previous error
+warning: build failed, waiting for other jobs to finish...
+error: manual `!RangeInclusive::contains` implementation
+   --> crates/engine/src/canvas_geom/tests.rs:242:9
+    |
+242 |         d < 1e-3 || d > 360.0 - 1e-3
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: use: `!(1e-3..=360.0 - 1e-3).contains(&d)`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#manual_range_contains
+    = note: `-D clippy::manual-range-contains` implied by `-D warnings`
+    = help: to override `-D warnings` add `#[allow(clippy::manual_range_contains)]`
+
+error: could not compile `photocraft-engine` (lib test) due to 2 previous errors

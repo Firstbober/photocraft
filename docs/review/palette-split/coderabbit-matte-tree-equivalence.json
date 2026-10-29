@@ -1,0 +1,8 @@
+{
+  "validated_local_commit": "b5ec97e42c7a2049bfa5a318651dacb1944b61dc",
+  "validated_tree": "0c5d417adaa73947d93560450b73b689918e9e60",
+  "published_commit": "fbf7455464ea63a148dfd61a26a586a0e493827c",
+  "published_tree": "0c5d417adaa73947d93560450b73b689918e9e60",
+  "identical": true,
+  "note": "Only ancestry was rebased after validation; the complete tracked source tree is identical."
+}

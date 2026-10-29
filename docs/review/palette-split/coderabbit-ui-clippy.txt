@@ -1,0 +1,203 @@
+    Blocking waiting for file lock on package cache
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on build directory
+    Checking memchr v2.8.3
+    Checking gpu-allocator v0.28.0
+    Checking x11rb v0.13.2
+   Compiling ring v0.17.14
+    Checking wgpu-hal v30.0.1
+    Checking serde_json v1.0.154
+    Checking photocraft-doc v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/doc)
+    Checking calloop-wayland-source v0.3.0
+    Checking accesskit_consumer v0.39.1
+    Checking phf_shared v0.14.0
+    Checking zeroize v1.9.1
+    Checking rustls-pki-types v1.15.1
+    Checking phf v0.14.0
+    Checking smithay-client-toolkit v0.19.2
+    Checking wgpu-core-deps-windows-linux-android v30.0.1
+    Checking x11-dl v2.21.0
+    Checking atspi-proxies v0.13.0
+    Checking xkbcommon-dl v0.4.2
+    Checking wayland-protocols-plasma v0.3.12
+    Checking calloop v0.14.4
+    Checking getrandom v0.2.17
+    Checking smol_str v0.2.2
+    Checking untrusted v0.9.0
+    Checking futures-task v0.3.34
+    Checking dpi v0.1.2
+    Checking typenum v1.20.1
+    Checking futures-util v0.3.34
+    Checking winit v0.30.13 (https://github.com/storytold/winit.git?rev=a517b3846ee8457d84ee4975110bfda6797c44dc#a517b384)
+    Checking generic-array v0.14.7
+    Checking calloop-wayland-source v0.4.1
+    Checking atspi v0.29.0
+    Checking wgpu-core v30.0.1
+    Checking accesskit_atspi_common v0.21.0
+    Checking wayland-protocols-experimental v20250721.0.1
+    Checking wayland-protocols-misc v0.3.12
+    Checking smithay-client-toolkit v0.20.0
+    Checking accesskit_unix v0.24.0
+   Compiling rustls v0.23.46
+    Checking photocraft-vector v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/vector)
+    Checking fixed_decimal v0.7.3
+    Checking openssl-probe v0.2.1
+    Checking rustls-webpki v0.103.15
+    Checking web-time v1.1.0
+    Checking rustc-hash v2.1.3
+    Checking bytes v1.12.1
+    Checking subtle v2.6.1
+    Checking http v1.5.0
+    Checking type-map v0.5.1
+    Checking wgpu v30.0.1
+    Checking photocraft-codecs v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/codecs)
+    Checking accesskit_winit v0.34.1
+    Checking rustls-native-certs v0.8.4
+    Checking photocraft-compose v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/compose)
+    Checking smithay-clipboard v0.7.3
+    Checking httparse v1.10.1
+    Checking block-buffer v0.10.4
+    Checking crypto-common v0.1.7
+    Checking arboard v3.7.0
+    Checking base64 v0.23.1
+    Checking ureq-proto v0.6.5
+    Checking egui-winit v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+    Checking rustls-platform-verifier v0.7.1
+    Checking photocraft-format v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/format)
+    Checking photocraft-text v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/text)
+    Checking digest v0.10.7
+    Checking egui-wgpu v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+    Checking icu_plurals v2.3.0
+    Checking icu_decimal v2.3.0
+    Checking photocraft-affinity v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/affinity)
+    Checking roxmltree v0.21.1
+    Checking icu_provider_adapters v2.3.0
+    Checking icu_provider_blob v2.3.0
+    Checking filetime v0.2.29
+    Checking is-docker v0.2.0
+    Checking lazy_static v1.5.0
+    Checking cpufeatures v0.2.17
+    Checking utf8-zero v0.8.1
+    Checking pollster v1.0.1
+    Checking sys-locale v0.3.2
+    Checking eframe v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+    Checking craft-i18n v0.1.0 (https://github.com/storytold/craft-libs?rev=92d392cff132eaf53e13afff77f38b5c11b73aa0#92d392cf)
+    Checking ureq v3.5.0
+    Checking photocraft-io v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/io)
+    Checking colored v2.2.0
+    Checking sha2 v0.10.9
+    Checking is-wsl v0.4.0
+   Compiling photocraft-ui-egui v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/ui-egui)
+    Checking tar v0.4.46
+    Checking enum-map v3.1.0
+    Checking anyhow v1.0.104
+    Checking photocraft-plugins v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/plugins)
+    Checking photocraft-ops v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/ops)
+    Checking getopts v0.2.24
+    Checking toml_parser v1.1.3+spec-1.1.0
+    Checking serde_spanned v1.1.1
+    Checking toml_datetime v1.1.1+spec-1.1.0
+    Checking craft-fonts-build v0.1.0 (https://github.com/storytold/craft-libs?rev=92d392cff132eaf53e13afff77f38b5c11b73aa0#92d392cf)
+    Checking dify v0.8.0
+    Checking toml v1.1.6+spec-1.1.0
+    Checking craft-update v0.1.0 (https://github.com/storytold/craft-libs?rev=92d392cff132eaf53e13afff77f38b5c11b73aa0#92d392cf)
+    Checking craft-ui v0.1.0 (https://github.com/storytold/craft-libs?rev=92d392cff132eaf53e13afff77f38b5c11b73aa0#92d392cf)
+    Checking egui_extras v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+    Checking open v5.4.5
+    Checking photocraft-gpu v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/gpu)
+    Checking kittest v0.5.0
+    Checking photocraft-testkit v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/testkit)
+    Checking egui_kittest v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+    Checking photocraft-engine v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/engine)
+error: this `if` can be collapsed into the outer `match`
+   --> crates/ui-egui/src/canvas/strokes.rs:435:13
+    |
+435 | /             if rest.is_empty() || live.push(&rest).is_ok() {
+436 | |                 let _ = app.session.offer_live_retouch(live);
+437 | |             }
+    | |_____________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#collapsible_match
+    = note: `-D clippy::collapsible-match` implied by `-D warnings`
+    = help: to override `-D warnings` add `#[allow(clippy::collapsible_match)]`
+help: collapse nested if block
+    |
+434 ~         EngineStroke::Retouch(mut live) if !dab
+435 ~             && (rest.is_empty() || live.push(&rest).is_ok()) => {
+436 |                 let _ = app.session.offer_live_retouch(live);
+437 ~             }
+    |
+
+error: this `if` can be collapsed into the outer `match`
+   --> crates/ui-egui/src/canvas/strokes.rs:440:13
+    |
+440 | /             if rest.is_empty() || live.push(&rest).is_ok() {
+441 | |                 let _ = app.session.offer_live_dab(live);
+442 | |             }
+    | |_____________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#collapsible_match
+help: collapse nested if block
+    |
+439 ~         EngineStroke::Dab(mut live) if dab
+440 ~             && (rest.is_empty() || live.push(&rest).is_ok()) => {
+441 |                 let _ = app.session.offer_live_dab(live);
+442 ~             }
+    |
+
+error: this boolean expression can be simplified
+   --> crates/ui-egui/src/dialogs/vp_ui.rs:989:12
+    |
+989 |         if !(0.0..=360.0).contains(&angle) || !(depth > 0.0 && depth <= 1000.0) {
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try: `!((0.0..=360.0).contains(&angle) && depth > 0.0 && depth <= 1000.0)`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#nonminimal_bool
+    = note: `-D clippy::nonminimal-bool` implied by `-D warnings`
+    = help: to override `-D warnings` add `#[allow(clippy::nonminimal_bool)]`
+
+error: this boolean expression can be simplified
+   --> crates/ui-egui/src/panels/blend_preview.rs:104:8
+    |
+104 |     if !p.shown.as_ref().is_some_and(|(shown, _)| *shown == key) {
+    |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try: `p.shown.as_ref().is_none_or(|(shown, _)| *shown != key)`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#nonminimal_bool
+
+error: this `if` can be collapsed into the outer `match`
+  --> crates/ui-egui/src/widgets/text_field.rs:29:17
+   |
+29 | /                 if cut(text) && active_range_chars.as_ref().is_some_and(|r| r.end > INPUT_EVENT_LIMIT) {
+30 | |                     *active_range_chars = None;
+31 | |                 }
+   | |_________________^
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#collapsible_match
+help: collapse nested if block
+   |
+28 ~             egui::Event::Ime(egui::ImeEvent::Preedit { text, active_range_chars })
+29 ~                 if cut(text) && active_range_chars.as_ref().is_some_and(|r| r.end > INPUT_EVENT_LIMIT) => {
+30 |                     *active_range_chars = None;
+31 ~                 }
+   |
+
+error: could not compile `photocraft-ui-egui` (lib) due to 5 previous errors
+warning: build failed, waiting for other jobs to finish...
+error: manual `!RangeInclusive::contains` implementation
+   --> crates/ui-egui/src/dialogs/color_picker_ui/tests.rs:103:13
+    |
+103 |     assert!(hue < 30.0 || hue > 330.0, "hue {hue}");
+    |             ^^^^^^^^^^^^^^^^^^^^^^^^^ help: use: `!(30.0..=330.0).contains(&hue)`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#manual_range_contains
+    = note: `-D clippy::manual-range-contains` implied by `-D warnings`
+    = help: to override `-D warnings` add `#[allow(clippy::manual_range_contains)]`
+
+error: could not compile `photocraft-ui-egui` (lib test) due to 6 previous errors

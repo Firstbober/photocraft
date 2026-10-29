@@ -1,0 +1,45 @@
+    Blocking waiting for file lock on package cache
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on build directory
+    Checking photocraft-cms v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/cms)
+    Checking photocraft-geom v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/geom)
+    Checking photocraft-codecs v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/codecs)
+    Checking photocraft-psd v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/psd)
+    Checking photocraft-raw v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/raw)
+    Checking photocraft-color v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/color)
+    Checking photocraft-raster v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/raster)
+    Checking photocraft-doc v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/doc)
+    Checking photocraft-algo v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/algo)
+    Checking photocraft-paint v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/paint)
+    Checking photocraft-affinity v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/affinity)
+   Compiling photocraft-ui-egui v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/ui-egui)
+    Checking photocraft-plugins v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/plugins)
+    Checking photocraft-testkit v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/testkit)
+    Checking photocraft-vector v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/vector)
+    Checking photocraft-text v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/text)
+    Checking photocraft-format v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/format)
+    Checking photocraft-compose v0.16.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/compose)
+error: this boolean expression contains a logic bug
+   --> crates/text/src/psd_path.rs:157:8
+    |
+157 |     if s <= SAME || (!path.closed && s >= total - SAME) || (path.closed && s >= total - SAME) {
+    |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: it would look like the following: `s <= SAME || s >= total - SAME`
+    |
+help: this expression can be optimized out by applying boolean operations to the outer expression
+   --> crates/text/src/psd_path.rs:157:23
+    |
+157 |     if s <= SAME || (!path.closed && s >= total - SAME) || (path.closed && s >= total - SAME) {
+    |                       ^^^^^^^^^^^
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#overly_complex_bool_expr
+    = note: `#[deny(clippy::overly_complex_bool_expr)]` on by default
+
+error: could not compile `photocraft-text` (lib) due to 1 previous error
+warning: build failed, waiting for other jobs to finish...

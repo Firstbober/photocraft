@@ -1,0 +1,42 @@
+{
+  "reviews": [
+    {
+      "pr": 8929,
+      "review": "PRR_kwDOU1UDD88AAAABU5CcMA",
+      "submitted_at": "2026-10-29T11:30:01Z"
+    },
+    {
+      "pr": 8933,
+      "review": "PRR_kwDOU1UDD88AAAABUuieeQ",
+      "submitted_at": "2026-10-28T16:15:37Z"
+    },
+    {
+      "pr": 9882,
+      "review": "PRR_kwDOU1UDD88AAAABU5EmCw",
+      "submitted_at": "2026-10-29T11:32:45Z"
+    }
+  ],
+  "result": {
+    "data": {
+      "a8929": {
+        "reaction": {
+          "id": "REA_lAPOU1UDD88AAAABU5CcMM4NLuf8",
+          "content": "THUMBS_UP"
+        }
+      },
+      "a8933": {
+        "reaction": {
+          "id": "REA_lAPOU1UDD88AAAABUuieec4NLuf9",
+          "content": "THUMBS_UP"
+        }
+      },
+      "a9882": {
+        "reaction": {
+          "id": "REA_lAPOU1UDD88AAAABU5EmC84NLuf_",
+          "content": "THUMBS_UP"
+        }
+      }
+    }
+  },
+  "comments_posted": 0
+}

@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "recorded_at": "2026-10-29T16:34:31.870935+00:00",
+  "recorded_at": "2026-10-29T16:40:56.963418+00:00",
   "source_heads": {
     "backend": "3a9e6bed6d131106f034babc86a9cb81813743d8",
-    "filter-current": "1c0b08d6ba44c08b748d709eee0d95a134952e76",
+    "filter-current": "8deac624deb9e501a6b9b26b33b52c7adc64e69a",
     "correctness": "5ac84bf592b5547aec48d5cc9aa851c6b5972517",
     "matte": "fbf7455464ea63a148dfd61a26a586a0e493827c"
   },
@@ -58,7 +58,8 @@
         "matte_validated_commit": "b5ec97e42c7a2049bfa5a318651dacb1944b61dc",
         "matte_published_equivalent": "fbf7455464ea63a148dfd61a26a586a0e493827c"
       },
-      "raw": "coderabbit-final-ui-panic-wasm.txt"
+      "raw": "coderabbit-final-ui-panic-wasm.txt",
+      "published_filter_docs_only_successor": "8deac624deb9e501a6b9b26b33b52c7adc64e69a"
     },
     "formatting": {
       "passed_trees": [
@@ -125,5 +126,6 @@
       "coderabbit-final-mode-tests.txt",
       "coderabbit-final-ui-panic-wasm.txt"
     ]
-  }
+  },
+  "late_wording_review": "coderabbit-late-wording-review.json"
 }

@@ -1,0 +1,133 @@
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling photocraft-text v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/backend/crates/text)
+   Compiling photocraft-io v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/backend/crates/io)
+   Compiling photocraft-engine v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/backend/crates/engine)
+error[E0432]: unresolved imports `photocraft_algo::palette_map`, `photocraft_algo::palette_map`
+ --> crates/engine/src/palette_cmds.rs:8:22
+  |
+8 | use photocraft_algo::palette_map::{self, AlphaMode, Method, Palette, Settings};
+  |                      ^^^^^^^^^^^   ^^^^ no `palette_map` in the root
+  |                      |
+  |                      could not find `palette_map` in `photocraft_algo`
+
+error[E0432]: unresolved import `photocraft_algo::palette_map`
+  --> crates/engine/src/cmd/mode_cmds.rs:10:22
+   |
+10 | use photocraft_algo::palette_map::{AlphaMode, Palette};
+   |                      ^^^^^^^^^^^ could not find `palette_map` in `photocraft_algo`
+
+error[E0432]: unresolved import `photocraft_algo::palette_map`
+ --> crates/engine/src/cmd/web_cmds/optimizer.rs:3:22
+  |
+3 | use photocraft_algo::palette_map::{AlphaMode, Palette};
+  |                      ^^^^^^^^^^^ could not find `palette_map` in `photocraft_algo`
+
+error[E0432]: unresolved import `photocraft_algo::palette_map`
+ --> crates/engine/src/cmd/web_cmds/settings.rs:3:22
+  |
+3 | use photocraft_algo::palette_map::{Method, Palette, Settings};
+  |                      ^^^^^^^^^^^ could not find `palette_map` in `photocraft_algo`
+
+error[E0432]: unresolved import `photocraft_algo::palette_map`
+ --> crates/engine/src/cmd/web_cmds/tests.rs:2:22
+  |
+2 | use photocraft_algo::palette_map::{Method, Palette, Settings};
+  |                      ^^^^^^^^^^^ could not find `palette_map` in `photocraft_algo`
+
+error[E0432]: unresolved import `photocraft_algo::palette_map`
+    --> crates/engine/src/cmd/web_cmds/tests.rs:1370:26
+     |
+1370 |     use photocraft_algo::palette_map::{AlphaMode, Pattern, PatternKind};
+     |                          ^^^^^^^^^^^ could not find `palette_map` in `photocraft_algo`
+
+error[E0433]: cannot find `palettes` in `photocraft_algo`
+  --> crates/engine/src/palette_cmds.rs:51:26
+   |
+51 | ...   photocraft_algo::palettes::builtin(id).ok_or_else(|| bad(format!("unknown paletteId `{id}`; choose a bundled palette or provid...
+   |                        ^^^^^^^^ could not find `palettes` in `photocraft_algo`
+
+error[E0433]: cannot find `palette_map` in `photocraft_algo`
+   --> crates/engine/src/cmd/web_cmds/optimizer.rs:242:47
+    |
+242 | ...   let mapped = photocraft_algo::palette_map::render(&mut work, w, &palette, &mapping, [rect.x0, rect.y0], None).map_err(other)?;
+    |                                     ^^^^^^^^^^^ could not find `palette_map` in `photocraft_algo`
+
+error[E0433]: cannot find `palette_map` in `photocraft_algo`
+   --> crates/engine/src/cmd/web_cmds/optimizer.rs:338:47
+    |
+338 | ...   let mapped = photocraft_algo::palette_map::render(&mut work, w, &palette, &mapping, [rect.x0, rect.y0], t).map_err(other)?;
+    |                                     ^^^^^^^^^^^ could not find `palette_map` in `photocraft_algo`
+
+error[E0433]: cannot find `palette_map` in `photocraft_algo`
+   --> crates/engine/src/cmd/mode_cmds.rs:283:67
+    |
+283 |             if parse_dither(dither).is_none() && photocraft_algo::palette_map::Method::from_id(dither).is_none() {
+    |                                                                   ^^^^^^^^^^^ could not find `palette_map` in `photocraft_algo`
+    |
+note: enum `crate::image_cmds::Method` exists but is inaccessible
+   --> crates/engine/src/cmd/image_cmds.rs:171:1
+    |
+171 | enum Method {
+    | ^^^^^^^^^^^ not accessible
+
+error[E0433]: cannot find type `EngineError` in this scope
+   --> crates/engine/src/cmd/web_cmds/settings.rs:185:17
+    |
+185 |                 EngineError::BadParams { msg, .. } => bad(cmd, msg),
+    |                 ^^^^^^^^^^^ use of undeclared type `EngineError`
+    |
+help: consider importing this enum through its public re-export
+    |
+  1 + use crate::EngineError;
+    |
+
+error[E0433]: cannot find type `EngineError` in this scope
+   --> crates/engine/src/cmd/web_cmds/settings.rs:191:17
+    |
+191 |                 EngineError::BadParams { msg, .. } => bad(cmd, msg),
+    |                 ^^^^^^^^^^^ use of undeclared type `EngineError`
+    |
+help: consider importing this enum through its public re-export
+    |
+  1 + use crate::EngineError;
+    |
+
+error[E0599]: no variant or associated item named `BlackWhite` found for enum `photocraft_algo::quantize::PaletteKind` in the current scope
+   --> crates/engine/src/cmd/mode_cmds.rs:352:87
+    |
+352 |     let generated_black_white = custom_palette.is_none() && kind == Some(PaletteKind::BlackWhite);
+    |                                                                                       ^^^^^^^^^^ variant or associated item not found in `photocraft_algo::quantize::PaletteKind`
+
+error[E0433]: cannot find type `Dither` in this scope
+   --> crates/engine/src/cmd/mode_cmds.rs:625:55
+    |
+625 |         quantize::quantize(&mut px, 1, &table.colors, Dither::None, 0.0, table.transparent.map(usize::from));
+    |                                                       ^^^^^^ use of undeclared type `Dither`
+
+error[E0433]: cannot find type `Dither` in this scope
+   --> crates/engine/src/cmd/mode_cmds.rs:658:55
+    |
+658 |         quantize::quantize(&mut px, w, &table.colors, Dither::None, 0.0, table.transparent.map(usize::from));
+    |                                                       ^^^^^^ use of undeclared type `Dither`
+
+error[E0599]: no variant or associated item named `BlackWhite` found for enum `photocraft_algo::quantize::PaletteKind` in the current scope
+   --> crates/engine/src/cmd/web_cmds/optimizer.rs:434:70
+    |
+434 |     let generated_black_white = !fixed && st.palette == PaletteKind::BlackWhite;
+    |                                                                      ^^^^^^^^^^ variant or associated item not found in `photocraft_algo::quantize::PaletteKind`
+
+error[E0599]: no variant or associated item named `BlackWhite` found for enum `photocraft_algo::quantize::PaletteKind` in the current scope
+   --> crates/engine/src/cmd/web_cmds/settings.rs:280:26
+    |
+280 |             PaletteKind::BlackWhite => "blackWhite",
+    |                          ^^^^^^^^^^ variant or associated item not found in `photocraft_algo::quantize::PaletteKind`
+
+Some errors have detailed explanations: E0432, E0433, E0599.
+For more information about an error, try `rustc --explain E0432`.
+error: could not compile `photocraft-engine` (lib test) due to 17 previous errors

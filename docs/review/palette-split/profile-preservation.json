@@ -1,0 +1,197 @@
+{
+  "status": "verified_profile_preserving_revision",
+  "recorded_at": "2026-10-31T14:25:17.157986+00:00",
+  "review": {
+    "url": "https://github.com/storytold/photocraft/pull/9887#issuecomment-6528069597",
+    "decision": "davidmann4 is correct: stock Indexed preserves document RGB samples and ICC; the forced-sRGB proposal is withdrawn. No PR comments/replies are posted."
+  },
+  "sources": {
+    "main_pin": "422ca7beda90d927643bcd074646ebbd37706d75",
+    "backend": "a9bcf686294b309d223ebb7b87a0ca4ef70d4a70",
+    "filter": "a7ab773951f2131c44690f4abfaf4b045f34eea2",
+    "matte": "360caa3cc6e5eee7032bcea07f70d68de0097e4f",
+    "filter_engine_and_lifecycle_compiled_at": "a22bbfc15bb35e249c326e330c6b77f5bda4e99a",
+    "filter_final_delta": [
+      "crates/ui-egui/src/dialogs.rs"
+    ],
+    "matte_excludes_9882": true,
+    "filter_feature_commits_on_backend": 1
+  },
+  "behavior": {
+    "stock_indexed": "No unconditional document\u2192sRGB normalization; Exact retains encoded document RGB and embedded ICC, including no ICC. Default Indexed\u2192RGB is a representation-only change; explicit profile targets still use CMS.",
+    "matte": "Foreground/background and Other picker seeds transform working RGB\u2192document RGB with configured intent/BPC and finite gamut clipping. 50% Gray=#808080, Netscape Gray=#c0c0c0.",
+    "preview": "The actual inline and worker preview Sessions copy tool FG/BG and invalidate stale previews when those colors change.",
+    "advanced": "Palette Map remains Filter\u2192PhotoCraft\u2192Palette Map and editable Smart Filters. Explicit encoded-sRGB snapshots map back into document RGB. Bundled GIMP collections remain removed; external .gpl/ACT import and three original generated palettes remain."
+  },
+  "verified": {
+    "matte": {
+      "mode_tests": 40,
+      "indexed_ui_tests": 8,
+      "preview_tests": 30,
+      "hostile_input_test": 1,
+      "native_profile_depth_cases": 12,
+      "native_matte_cases": 24,
+      "layers_crates": 31,
+      "wasm_crates": 24,
+      "wasm_optional_heif": true,
+      "raw": [
+        "profile-preserving-matte-checks.txt",
+        "profile-preserving-matte-portability.txt"
+      ],
+      "native": "profile-preserving-matte-native.json",
+      "visually_inspected": [
+        "profile-preserving-matte-preview.png",
+        "profile-preserving-matte-options.png"
+      ]
+    },
+    "backend": {
+      "algorithm_palette_tests": 21,
+      "mode_tests": 40,
+      "web_tests": 58,
+      "palette_command_tests": 6,
+      "native_profile_depth_cases": 12,
+      "native_advanced_srgb_red_to_p3_rgba8": [
+        234,
+        51,
+        35,
+        255
+      ],
+      "raw": "profile-preserving-backend-checks.txt",
+      "native": "profile-preserving-backend-native.json"
+    },
+    "filter_engine": {
+      "compiled_source": "a22bbfc15bb35e249c326e330c6b77f5bda4e99a",
+      "mode_tests": 40,
+      "palette_command_tests": 10,
+      "palette_lifecycle_tests": 4,
+      "hostile_input_test": 1,
+      "algorithm_strict_all_target_clippy": "pass",
+      "raw": [
+        "profile-preserving-filter-checks.txt",
+        "profile-preserving-filter-portability-lifecycle.txt"
+      ],
+      "layers_crates": 31,
+      "wasm_crates": 24,
+      "wasm_optional_heif": true,
+      "menu_wiring": "631/631; generated parity-checklist content unchanged. Not functional Photoshop parity."
+    },
+    "filter_final": {
+      "source": "a7ab773951f2131c44690f4abfaf4b045f34eea2",
+      "stock_ui_tests": 3,
+      "palette_map_ui_tests": 16,
+      "preview_tests": 32,
+      "native_profile_depth_cases": 12,
+      "native_selected_mapping_cases": 3,
+      "native_smart_filter_save_reopen_cases": 3,
+      "native": [
+        "profile-preserving-filter-native.json",
+        "profile-preserving-filter-smart-native.json"
+      ],
+      "snapshot_recipes": "profile-preserving-filter-snapshots.json",
+      "visually_inspected": [
+        "profile-preserving-filter-dialog.png",
+        "profile-preserving-stock-indexed.png"
+      ],
+      "screenshots_byte_identical_after_layout_cleanup": true,
+      "ui_wasm": "pass",
+      "raw": "profile-preserving-filter-final-ui-checks.txt",
+      "owned_arity_lint": "Resolved without suppression: mutually exclusive fixed/resizable modal sizing is represented by a private enum. Other untouched lint blockers remain."
+    }
+  },
+  "native_fixture_contract": {
+    "profiles": [
+      "adobe-rgb-compat",
+      "display-p3",
+      "prophoto-compat",
+      "none"
+    ],
+    "depths": [
+      8,
+      16,
+      32
+    ],
+    "sample_rgba8": [
+      100,
+      150,
+      200,
+      255
+    ],
+    "assertions": [
+      "Exact Indexed and default RGB retain samples and profile",
+      "undo/redo retains the same samples/profile",
+      "Indexed PSD save/reopen and RGB PSD save retain samples",
+      "PSD ICC resource bytes/hash equal the original, or stay absent for untagged"
+    ],
+    "profile_limits": "Generated PhotoCraft compatible ICCs, not proprietary Adobe assets or a Photoshop runtime oracle. Tagged PSDs are generated from RGB fixtures; untagged cases explicitly assign none.",
+    "generation": "profile-preserving-fixtures.json"
+  },
+  "performance": {
+    "stock": "No new full-image ICC normalization is introduced into stock Indexed. No new benchmark or speedup claim.",
+    "historical": "The former3.0976\u00d7 timing measured the now-withdrawn forced-sRGB path. It is retained only as a historical measurement at its original source, not current performance or Photoshop-parity evidence."
+  },
+  "limits": {
+    "photoshop_runtime": "Not available. David\u2019s observed preservation behavior is the requirement. Gray constants follow established named-color conventions, not newly measured Photoshop numeric oracles.",
+    "matte_reference": "Separate opaque-swatch edit.convertToProfile commands supply the reference; this is a separate command path, not an independent CMS implementation.",
+    "strict_dependency_inclusive_clippy": "Blocked by untouched text/src/psd_path.rs:157.",
+    "no_suppressions_or_unrelated_source_edits": true,
+    "remote_ci": "Not asserted; local receipts only.",
+    "isolated_engine_clippy": {
+      "site": "crop_fill.rs:78 nonminimal_bool",
+      "raw": [
+        "profile-preserving-matte-engine-clippy-no-deps.txt",
+        "profile-preserving-filter-engine-clippy-no-deps.txt"
+      ]
+    },
+    "isolated_ui_clippy": {
+      "sites": [
+        "canvas/strokes.rs:495 collapsible_match",
+        "canvas/strokes.rs:500 collapsible_match",
+        "dialogs/vp_ui.rs:989 nonminimal_bool",
+        "widgets/text_field.rs:29 collapsible_match",
+        "dialogs/color_picker_ui/tests.rs:130 manual_range_contains"
+      ],
+      "raw": [
+        "profile-preserving-matte-ui-clippy-no-deps.txt",
+        "profile-preserving-filter-final-ui-checks.txt"
+      ],
+      "no_owned_remaining_diagnostic_observed": true
+    }
+  },
+  "cache_corrections": {
+    "scope": "Only owned verification artifacts; no product fallback or user source reset.",
+    "initial_backend_failure": "Two missing restack imports were repaired. An incompatible shared algo artifact was invalidated before the successful backend gate.",
+    "filter_failure": "The initial shared native CLI lacked filter.paletteMap, and the reused xtask binary embedded the Matte root. No initial filter CLI or wrong-root portability result counts as filter proof. Affected native packages and xtask were invalidated, then the actual command, tests, source-bound xtask and screenshots were exercised.",
+    "raw_rejected": [
+      "profile-preserving-backend-before-repair.txt",
+      "profile-preserving-filter-before-cache-repair.txt",
+      "profile-preserving-filter-stale-cli.txt"
+    ],
+    "raw_accepted": [
+      "profile-preserving-backend-checks.txt",
+      "profile-preserving-filter-checks.txt",
+      "profile-preserving-filter-portability-lifecycle.txt"
+    ]
+  },
+  "supersedes": "coderabbit-followup.json; historical receipts remain source-scoped rather than being re-labelled as current.",
+  "publication": {
+    "source_refs": {
+      "command": [
+        "git",
+        "push",
+        "--atomic",
+        "--force-with-lease=refs/heads/feat/palette-mapping-core:3a9e6bed6d131106f034babc86a9cb81813743d8",
+        "--force-with-lease=refs/heads/feat/palette-map-filter:8deac624deb9e501a6b9b26b33b52c7adc64e69a",
+        "--force-with-lease=refs/heads/feat/indexed-color-matte:fbf7455464ea63a148dfd61a26a586a0e493827c",
+        "https://github.com/Firstbober/photocraft.git",
+        "a9bcf686294b309d223ebb7b87a0ca4ef70d4a70:refs/heads/feat/palette-mapping-core",
+        "a7ab773951f2131c44690f4abfaf4b045f34eea2:refs/heads/feat/palette-map-filter",
+        "360caa3cc6e5eee7032bcea07f70d68de0097e4f:refs/heads/feat/indexed-color-matte"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": "To https://github.com/Firstbober/photocraft.git\n + fbf745546...360caa3cc 360caa3cc6e5eee7032bcea07f70d68de0097e4f -> feat/indexed-color-matte (forced update)\n + 8deac624d...a7ab77395 a7ab773951f2131c44690f4abfaf4b045f34eea2 -> feat/palette-map-filter (forced update)\n + 3a9e6bed6...a9bcf6862 a9bcf686294b309d223ebb7b87a0ca4ef70d4a70 -> feat/palette-mapping-core (forced update)\n",
+      "published_at": "2026-10-31T14:23:47.870792+00:00"
+    },
+    "no_pr_comments_or_replies": true
+  }
+}

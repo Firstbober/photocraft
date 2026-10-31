@@ -1,0 +1,857 @@
+    Updating git repository `https://github.com/storytold/craft-libs`
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling proc-macro2 v1.0.107
+   Compiling unicode-ident v1.0.26
+   Compiling quote v1.0.47
+   Compiling crossbeam-utils v0.8.23
+   Compiling crossbeam-epoch v0.9.21
+   Compiling crossbeam-deque v0.8.8
+   Compiling rayon-core v1.13.0
+   Compiling either v1.18.0
+   Compiling once_cell v1.21.4
+   Compiling cfg-if v1.0.5
+   Compiling simd-adler32 v0.3.10
+   Compiling syn v3.0.6
+   Compiling rayon v1.12.0
+   Compiling bitflags v2.13.2
+   Compiling synstructure v0.14.0
+   Compiling serde_core v1.0.229
+   Compiling autocfg v1.5.1
+   Compiling adler2 v2.0.1
+   Compiling zlib-rs v0.6.8
+   Compiling num-traits v0.2.19
+   Compiling libm v0.2.16
+   Compiling crc32fast v1.5.3
+   Compiling tracing-core v0.1.36
+   Compiling pin-project-lite v0.2.17
+   Compiling stable_deref_trait v1.2.1
+   Compiling tracing v0.1.44
+   Compiling miniz_oxide v0.9.1
+   Compiling serde v1.0.229
+   Compiling smallvec v1.16.2
+   Compiling flate2 v1.1.10
+   Compiling memchr v2.8.3
+   Compiling version_check v0.9.5
+   Compiling zmij v1.0.23
+   Compiling jxl-bitstream v1.1.0
+   Compiling photocraft-cms v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/cms)
+   Compiling writeable v0.6.4
+   Compiling serde_json v1.0.154
+   Compiling libc v0.2.191
+   Compiling itoa v1.0.18
+   Compiling jxl-oxide-common v1.0.0
+   Compiling jxl-grid v0.6.2
+   Compiling miniz_oxide v0.8.9
+   Compiling syn v2.0.119
+   Compiling bytemuck_derive v1.12.1
+   Compiling zerofrom-derive v0.1.8
+   Compiling yoke-derive v0.8.3
+   Compiling bytemuck v1.25.2
+   Compiling zerovec-derive v0.11.6
+   Compiling zerofrom v0.1.8
+   Compiling serde_derive v1.0.229
+   Compiling yoke v0.8.3
+   Compiling displaydoc v0.2.7
+   Compiling zerovec v0.11.8
+   Compiling litemap v0.8.3
+   Compiling potential_utf v0.1.6
+   Compiling tinystr v0.8.4
+   Compiling zerotrie v0.2.5
+   Compiling icu_locale_core v2.3.0
+   Compiling jxl-coding v1.0.1
+   Compiling jxl-threadpool v1.0.0
+   Compiling fdeflate v0.3.7
+   Compiling thiserror v2.0.21
+   Compiling weezl v0.1.12
+   Compiling icu_provider v2.3.1
+   Compiling thiserror-impl v2.0.21
+   Compiling utf8_iter v1.0.4
+   Compiling zerocopy v0.8.59
+   Compiling photocraft-color v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/color)
+   Compiling photocraft-geom v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/geom)
+   Compiling color_quant v1.1.0
+   Compiling photocraft-raster v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/raster)
+   Compiling arrayvec v0.7.8
+   Compiling log v0.4.34
+   Compiling zune-core v0.5.3
+   Compiling icu_collections v2.3.0
+   Compiling zerocopy-derive v0.8.59
+   Compiling jxl-modular v0.11.3
+   Compiling font-types v0.12.5
+   Compiling num-complex v0.4.6
+   Compiling jxl-image v0.13.0
+   Compiling icu_locale_fallback_data v2.3.0
+   Compiling icu_properties_data v2.3.0
+   Compiling byteorder-lite v0.1.0
+   Compiling paste v1.0.15
+   Compiling read-fonts v0.41.0
+   Compiling jxl-vardct v0.11.1
+   Compiling zune-jpeg v0.5.15
+   Compiling photocraft-doc v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/doc)
+   Compiling pulp v0.22.3
+   Compiling slotmap v1.1.1
+   Compiling core_maths v0.1.1
+   Compiling find-msvc-tools v0.1.14
+   Compiling rustix v1.1.5
+   Compiling shlex v2.0.1
+   Compiling pxfm v0.1.30
+   Compiling icu_normalizer_data v2.3.0
+   Compiling quick-error v2.0.1
+   Compiling alloc-no-stdlib v2.0.4
+   Compiling float-cmp v0.9.0
+   Compiling icu_segmenter_data v2.3.0
+   Compiling strict-num v0.1.1
+   Compiling alloc-stdlib v0.2.4
+   Compiling moxcms v0.8.1
+   Compiling half v2.7.1
+   Compiling cc v1.5.1
+   Compiling ttf-parser v0.25.1
+   Compiling jxl-frame v0.13.3
+   Compiling gif v0.14.2
+   Compiling fax_derive v0.2.0
+   Compiling png v0.18.1
+   Compiling qoi v0.4.1
+   Compiling num-integer v0.1.47
+   Compiling raw-cpuid v11.6.0
+   Compiling reborrow v0.5.5
+   Compiling foldhash v0.2.0
+   Compiling roxmltree v0.20.0
+   Compiling linux-raw-sys v0.12.1
+   Compiling pulp-wasm-simd-flag v0.1.1
+   Compiling arrayref v0.3.9
+   Compiling tiny-skia-path v0.11.4
+   Compiling fontconfig-parser v0.5.8
+   Compiling hashbrown v0.17.1
+   Compiling fax v0.2.6
+   Compiling image v0.25.10
+   Compiling icu_properties v2.3.0
+   Compiling icu_locale_fallback v2.3.0
+   Compiling blake3 v1.8.7
+   Compiling brotli-decompressor v5.0.3
+   Compiling image-webp v0.2.4
+   Compiling jxl-color v0.11.0
+   Compiling kurbo v0.11.3
+   Compiling memmap2 v0.9.11
+   Compiling zune-inflate v0.2.54
+   Compiling bit_field v0.10.3
+   Compiling siphasher v1.0.4
+   Compiling wasmparser v0.228.0
+   Compiling wasmi_ir v2.0.0
+   Compiling tinyvec v1.13.3
+   Compiling unicode-script v0.5.8
+   Compiling strength_reduce v0.2.4
+   Compiling unicode-bidi-mirroring v0.4.0
+   Compiling unicode-properties v0.1.4
+   Compiling lebe v0.5.3
+   Compiling linebender_resource_handle v0.1.1
+   Compiling parlance v0.1.0
+   Compiling bitflags v1.3.2
+   Compiling twox-hash v2.1.4
+   Compiling unicode-ccc v0.4.0
+   Compiling rustybuzz v0.20.1
+   Compiling ruzstd v0.9.1
+   Compiling png v0.17.16
+   Compiling fontique v0.11.1
+   Compiling exr v1.74.2
+   Compiling transpose v0.2.3
+   Compiling fontdb v0.23.0
+   Compiling svgtypes v0.15.3
+   Compiling photocraft-text v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/text)
+   Compiling jxl-render v0.12.4
+   Compiling jxl-jbr v0.2.1
+   Compiling icu_segmenter v2.3.0
+   Compiling icu_normalizer v2.3.0
+   Compiling parley_data v0.11.1
+   Compiling tiff v0.11.3
+   Compiling primal-check v0.3.4
+   Compiling harfrust v0.12.0
+   Compiling skrifa v0.44.0
+   Compiling craft-jpeg v0.1.0 (https://github.com/storytold/craft-libs?rev=c5a1cbfb5f9049f9270955caffb5bee5997aebf7#c5a1cbfb)
+   Compiling zune-jpegxl v0.5.2
+   Compiling simplecss v0.2.2
+   Compiling wasmi_core v2.0.0
+   Compiling wasmi v2.0.0
+   Compiling jpeg-encoder v0.6.1
+   Compiling xmlwriter v0.1.0
+   Compiling cpufeatures v0.3.1
+   Compiling unicode-vo v0.1.0
+   Compiling getrandom v0.4.3
+   Compiling unicode-bidi v0.3.18
+   Compiling imagesize v0.13.0
+   Compiling pico-args v0.5.0
+   Compiling data-url v0.3.2
+   Compiling constant_time_eq v0.4.2
+   Compiling leb128fmt v0.1.0
+   Compiling base64 v0.22.1
+   Compiling zune-core v0.4.12
+   Compiling zune-jpeg v0.4.21
+   Compiling usvg v0.45.1
+   Compiling wasm-encoder v0.262.0
+   Compiling photocraft-codecs v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/codecs)
+   Compiling parley v0.11.1
+   Compiling rustfft v6.4.1
+   Compiling jxl-oxide v0.12.6
+   Compiling tiny-skia v0.11.4
+   Compiling photocraft-vector v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/vector)
+   Compiling photocraft-psd v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/psd)
+   Compiling gif v0.13.3
+   Compiling rgb v0.8.53
+   Compiling bumpalo v3.20.3
+   Compiling wasmi_collections v2.0.0
+   Compiling rustc-hash v2.1.3
+   Compiling unicode-width v0.2.2
+   Compiling spin v0.9.9
+   Compiling wast v262.0.0
+   Compiling photocraft-paint v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/paint)
+   Compiling resvg v0.45.1
+   Compiling photocraft-compose v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/compose)
+   Compiling photocraft-algo v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/algo)
+   Compiling photocraft-format v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/format)
+   Compiling photocraft-raw v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/raw)
+   Compiling photocraft-affinity v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/affinity)
+   Compiling memory-stats v1.2.0
+   Compiling roxmltree v0.21.1
+   Compiling craft-winprint-gdi v0.1.0 (https://github.com/storytold/winprint.rs?rev=417ac3c4d14d3da5485a99c7d5ce8f05664ec312#417ac3c4)
+   Compiling fastrand v2.5.0
+   Compiling craft-docpath v0.1.0 (https://github.com/storytold/craft-libs?rev=c5a1cbfb5f9049f9270955caffb5bee5997aebf7#c5a1cbfb)
+   Compiling photocraft-io v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/io)
+   Compiling tempfile v3.27.0
+   Compiling craft-print v0.1.0 (https://github.com/storytold/craft-libs?rev=c5a1cbfb5f9049f9270955caffb5bee5997aebf7#c5a1cbfb)
+   Compiling photocraft-testkit v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/testkit)
+   Compiling photocraft-plugins v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/plugins)
+   Compiling wat v1.262.0
+   Compiling photocraft-ops v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/ops)
+   Compiling chrono v0.4.45
+   Compiling photocraft-ipp v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/ipp)
+   Compiling semver v1.0.28
+   Compiling photocraft-engine v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/engine)
+    Finished `test` profile [optimized] target(s) in 3m 24s
+     Running unittests src/lib.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-profile-parity/debug/deps/photocraft_engine-41d13d98c70ad398)
+
+running 40 tests
+test cmd::mode_cmds::tests::flattened_mode_pixels_match_the_allocating_conversion_at_every_channel_count ... ok
+test cmd::mode_cmds::tests::bitmap_halftone_rejects_bad_angles_and_frequencies_without_editing_the_document ... ok
+test cmd::mode_cmds::tests::indexed_matte_without_transparency_fills_clear_pixels_and_rejects_bad_input_atomically ... ok
+test cmd::mode_cmds::tests::indexed_brush_stroke_leaves_pixels_it_did_not_paint ... ok
+test cmd::mode_cmds::tests::color_table_presets_and_entries ... ok
+test cmd::mode_cmds::tests::bitmap_lays_a_transparent_composite_over_white ... ok
+test cmd::mode_cmds::tests::color_table_rejects_an_invalid_transparent_index_without_editing ... ok
+test cmd::mode_cmds::tests::bitmap_rejects_bad_resolutions_and_patterns_without_editing_the_document ... ok
+test cmd::mode_cmds::tests::brush_stroke_keeps_indexed_transparency_binary ... ok
+test cmd::mode_cmds::tests::duotone_curve_points_must_be_finite ... ok
+test cmd::mode_cmds::tests::pencil_auto_erase_knows_the_indexed_foreground ... ok
+test cmd::mode_cmds::tests::live_brush_preview_matches_indexed_commit ... ok
+test cmd::mode_cmds::tests::brush_stroke_stays_in_indexed_color_table ... ok
+test cmd::mode_cmds::tests::indexed_color_rejects_invalid_counts_without_editing_the_document ... ok
+test cmd::mode_cmds::tests::modes_round_trip_through_pcraft ... ok
+test cmd::mode_cmds::tests::clearing_color_table_transparency_restores_indexed_pixels ... ok
+test cmd::mode_cmds::tests::bitmap_custom_pattern_thresholds_against_the_tiled_pattern ... ok
+test cmd::mode_cmds::tests::rotate_arbitrary_keeps_the_background_opaque_with_a_translucent_background_colour ... ok
+test cmd::mode_cmds::tests::duotone_to_rgb_inks_fill_layer_colours ... ok
+test cmd::mode_cmds::tests::bitmap_halftone_screen_is_laid_out_at_the_output_resolution ... ok
+test cmd::mode_cmds::tests::bitmap_output_resolution_resamples_and_sets_the_resolution ... ok
+test cmd::mode_cmds::tests::indexed_matte_named_gray_choices_use_their_document_samples ... ok
+test cmd::mode_cmds::tests::bitmap_methods_need_grayscale ... ok
+test cmd::mode_cmds::tests::duotone_inks_and_display ... ok
+test cmd::mode_cmds::tests::indexed_matte_hex_stays_in_document_rgb_coordinates ... ok
+test cmd::mode_cmds::tests::bitmap_budgets_a_conversion_at_the_document_resolution_too ... ok
+test cmd::mode_cmds::tests::rotate_arbitrary_rotates_grouped_locked_children_and_preserves_lock ... ok
+test cmd::mode_cmds::tests::shrinking_the_color_table_drops_a_transparent_index_past_its_end ... ok
+test cmd::mode_cmds::tests::rotate_arbitrary_other_modes ... ok
+test cmd::mode_cmds::tests::rotate_arbitrary_grows_canvas_and_keeps_background ... ok
+test cmd::mode_cmds::tests::rotate_arbitrary_keeps_the_full_precision_angle ... ok
+test cmd::mode_cmds::tests::rotate_arbitrary_turns_unlinked_layer_masks ... ok
+test cmd::mode_cmds::tests::indexed_exact_preserves_profile_and_samples_through_default_rgb ... ok
+test cmd::mode_cmds::tests::indexed_matte_blends_edges_without_replacing_clear_pixels ... ok
+test cmd::mode_cmds::tests::indexed_exact_transparency_and_sources ... ok
+test cmd::mode_cmds::tests::indexed_matte_converts_working_rgb_to_document_profile_at_every_depth ... ok
+test cmd::mode_cmds::tests::indexed_color_palettes_and_dithers ... ok
+test cmd::mode_cmds::tests::duotone_to_colour_modes_keeps_the_ink_colours ... ok
+test cmd::mode_cmds::tests::bitmap_output_resolution_budgets_the_whole_conversion_not_just_the_resample ... ok
+test cmd::mode_cmds::tests::bitmap_in_bands_matches_one_full_canvas_conversion ... ok
+
+test result: ok. 40 passed; 0 failed; 0 ignored; 0 measured; 2446 filtered out; finished in 4.92s
+
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling serde_core v1.0.229
+   Compiling syn v3.0.6
+   Compiling syn v2.0.119
+   Compiling smallvec v1.16.2
+   Compiling serde v1.0.229
+   Compiling num-traits v0.2.19
+   Compiling rustix v1.1.5
+   Compiling linux-raw-sys v0.12.1
+   Compiling equivalent v1.0.2
+   Compiling either v1.18.0
+   Compiling libloading v0.8.9
+   Compiling winnow v1.0.4
+   Compiling pkg-config v0.3.34
+   Compiling hashbrown v0.17.1
+   Compiling rayon v1.12.0
+   Compiling wayland-sys v0.31.11
+   Compiling dlib v0.5.3
+   Compiling toml_parser v1.1.3+spec-1.1.0
+   Compiling toml_datetime v1.1.1+spec-1.1.0
+   Compiling synstructure v0.14.0
+   Compiling slab v0.4.12
+   Compiling indexmap v2.14.2
+   Compiling cfg_aliases v0.2.2
+   Compiling toml_edit v0.25.15+spec-1.1.0
+   Compiling polling v3.11.0
+   Compiling proc-macro-crate v3.5.0
+   Compiling wayland-backend v0.3.17
+   Compiling parking v2.2.1
+   Compiling downcast-rs v1.2.1
+   Compiling writeable v0.6.4
+   Compiling endi v1.1.1
+   Compiling scoped-tls v1.0.1
+   Compiling futures-core v0.3.34
+   Compiling quick-xml v0.41.0
+   Compiling wayland-client v0.31.15
+   Compiling wayland-scanner v0.31.11
+   Compiling litemap v0.8.3
+   Compiling uuid v1.26.1
+   Compiling parking_lot_core v0.9.12
+   Compiling linebender_resource_handle v0.1.1
+   Compiling static_assertions v1.1.0
+   Compiling scopeguard v1.2.0
+   Compiling futures-io v0.3.34
+   Compiling lock_api v0.4.14
+   Compiling event-listener v5.4.2
+   Compiling concurrent-queue v2.5.0
+   Compiling event-listener-strategy v0.5.4
+   Compiling parking_lot v0.12.5
+   Compiling tracing-attributes v0.1.31
+   Compiling zerocopy-derive v0.8.59
+   Compiling serde_derive v1.0.229
+   Compiling bytemuck_derive v1.12.1
+   Compiling thiserror-impl v2.0.21
+   Compiling bytemuck v1.25.2
+   Compiling tracing v0.1.44
+   Compiling zerofrom-derive v0.1.8
+   Compiling zerocopy v0.8.59
+   Compiling yoke-derive v0.8.3
+   Compiling zerovec-derive v0.11.6
+   Compiling thiserror v2.0.21
+   Compiling enumflags2_derive v0.7.12
+   Compiling zvariant_utils v4.2.0
+   Compiling displaydoc v0.2.7
+   Compiling zerofrom v0.1.8
+   Compiling cobs v0.3.0
+   Compiling font-types v0.12.5
+   Compiling yoke v0.8.3
+   Compiling zerovec v0.11.8
+   Compiling read-fonts v0.41.0
+   Compiling tinystr v0.8.4
+   Compiling icu_locale_core v2.3.0
+   Compiling zerotrie v0.2.5
+   Compiling zvariant_derive v5.15.0
+   Compiling postcard v1.1.3
+   Compiling enumflags2 v0.7.12
+   Compiling zcheapstr v1.1.0
+   Compiling half v2.7.1
+   Compiling icu_provider v2.3.1
+   Compiling futures-lite v2.6.1
+   Compiling zvariant v5.15.0
+   Compiling memchr v2.8.3
+   Compiling zbus_names v4.3.4
+   Compiling photocraft-cms v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/cms)
+   Compiling async-io v2.6.0
+   Compiling getrandom v0.3.4
+   Compiling profiling v1.0.18
+   Compiling unicode-properties v0.1.4
+   Compiling photocraft-color v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/color)
+   Compiling serde_json v1.0.154
+   Compiling harfrust v0.12.0
+   Compiling skrifa v0.44.0
+   Compiling potential_utf v0.1.6
+   Compiling wayland-protocols v0.32.13
+   Compiling photocraft-geom v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/geom)
+   Compiling jxl-bitstream v1.1.0
+   Compiling accesskit v0.25.1
+   Compiling polycool v0.4.0
+   Compiling ahash v0.8.12
+   Compiling errno v0.3.14
+   Compiling raw-window-handle v0.6.2
+   Compiling async-task v4.7.1
+   Compiling moxcms v0.8.1
+   Compiling signal-hook-registry v1.4.8
+   Compiling kurbo v0.13.1
+   Compiling photocraft-raster v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/raster)
+   Compiling qoi v0.4.1
+   Compiling color v0.3.3
+   Compiling async-channel v2.5.0
+   Compiling euclid v0.22.14
+   Compiling rustc-hash v1.1.0
+   Compiling atomic-waker v1.1.2
+   Compiling piper v0.2.5
+   Compiling naga-types v30.0.1
+   Compiling guillotiere v0.7.0
+   Compiling peniko v0.6.1
+   Compiling image v0.25.10
+   Compiling async-signal v0.2.14
+   Compiling jxl-oxide-common v1.0.0
+   Compiling zbus_xml v5.2.1
+   Compiling jxl-grid v0.6.2
+   Compiling async-lock v3.4.2
+   Compiling naga v30.0.1
+   Compiling unicode-general-category v1.1.0
+   Compiling fearless_simd v0.4.1
+   Compiling rustix v0.38.44
+   Compiling bit-vec v0.9.1
+   Compiling thiserror v1.0.69
+   Compiling epaint_default_fonts v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+   Compiling ash v0.38.0+1.3.281
+   Compiling vello_common v0.2.0
+   Compiling bit-set v0.10.0
+   Compiling icu_collections v2.3.0
+   Compiling async-process v2.5.0
+   Compiling zbus-lockstep v0.5.2
+   Compiling blocking v1.7.0
+   Compiling async-executor v1.14.0
+   Compiling codespan-reporting v0.13.1
+   Compiling jxl-coding v1.0.1
+   Compiling zbus_macros v5.19.0
+   Compiling jxl-threadpool v1.0.0
+   Compiling emath v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+   Compiling serde_repr v0.1.21
+   Compiling async-trait v0.1.92
+   Compiling async-recursion v1.1.1
+   Compiling thiserror-impl v1.0.69
+   Compiling async-broadcast v0.7.2
+   Compiling ordered-stream v0.2.0
+   Compiling spirv v0.4.0+sdk-1.4.341.0
+   Compiling khronos-egl v6.0.0
+   Compiling allocator-api2 v0.2.21
+   Compiling cursor-icon v1.2.0
+   Compiling hex v0.4.3
+   Compiling xkeysym v0.2.1
+   Compiling xcursor v0.3.11
+   Compiling linux-raw-sys v0.4.15
+   Compiling wayland-cursor v0.31.14
+   Compiling wayland-csd-frame v0.3.0
+   Compiling hashbrown v0.16.1
+   Compiling zbus v5.19.0
+   Compiling ecolor v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+   Compiling zbus-lockstep-macros v0.5.2
+   Compiling vello_cpu v0.2.0
+   Compiling wgpu-types v30.0.1
+   Compiling wayland-protocols-wlr v0.3.12
+   Compiling num-complex v0.4.6
+   Compiling phf_shared v0.14.0
+   Compiling wgpu-hal v30.0.1
+   Compiling percent-encoding v2.3.2
+   Compiling fastrand v2.5.0
+   Compiling presser v0.3.1
+   Compiling nohash-hasher v0.2.0
+   Compiling self_cell v1.3.0
+   Compiling unicode-segmentation v1.13.3
+   Compiling epaint v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+   Compiling gpu-allocator v0.28.0
+   Compiling phf_generator v0.14.0
+   Compiling wgpu-naga-bridge v30.0.1
+   Compiling icu_locale_fallback v2.3.0
+   Compiling atspi-common v0.13.0
+   Compiling calloop v0.13.0
+   Compiling jxl-modular v0.11.3
+   Compiling jxl-image v0.13.0
+   Compiling photocraft-doc v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/doc)
+   Compiling x11-dl v2.21.0
+   Compiling gethostname v1.1.0
+   Compiling itertools v0.15.0
+   Compiling ring v0.17.14
+   Compiling ordered-float v5.5.0
+   Compiling renderdoc-sys v1.1.0
+   Compiling as-raw-xcb-connection v1.0.1
+   Compiling glow v0.17.0
+   Compiling smithay-client-toolkit v0.19.2
+   Compiling x11rb-protocol v0.13.2
+   Compiling egui v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+   Compiling jxl-vardct v0.11.1
+   Compiling x11rb v0.13.2
+   Compiling icu_properties v2.3.0
+   Compiling calloop-wayland-source v0.3.0
+   Compiling phf_macros v0.14.0
+   Compiling accesskit_consumer v0.39.1
+   Compiling winit v0.30.13 (https://github.com/storytold/winit.git?rev=a517b3846ee8457d84ee4975110bfda6797c44dc#a517b384)
+   Compiling wgpu-core v30.0.1
+   Compiling generic-array v0.14.7
+   Compiling num-integer v0.1.47
+   Compiling zeroize v1.9.1
+   Compiling litrs v1.0.0
+   Compiling write16 v1.0.0
+   Compiling utf16_iter v1.0.5
+   Compiling icu_normalizer v2.3.0
+   Compiling document-features v0.2.12
+   Compiling tiny-skia-path v0.11.4
+   Compiling rustls-pki-types v1.15.1
+   Compiling phf v0.14.0
+   Compiling jxl-frame v0.13.3
+   Compiling wgpu-core-deps-windows-linux-android v30.0.1
+   Compiling atspi-proxies v0.13.0
+   Compiling xkbcommon-dl v0.4.2
+   Compiling wayland-protocols-plasma v0.3.12
+   Compiling calloop v0.14.4
+   Compiling futures-macro v0.3.34
+   Compiling fax_derive v0.2.0
+   Compiling wgpu v30.0.1
+   Compiling kurbo v0.11.3
+   Compiling getrandom v0.2.17
+   Compiling futures-task v0.3.34
+   Compiling dpi v0.1.2
+   Compiling untrusted v0.9.0
+   Compiling smol_str v0.2.2
+   Compiling smithay-client-toolkit v0.20.0
+   Compiling typenum v1.20.1
+   Compiling pulp v0.22.3
+   Compiling transpose v0.2.3
+   Compiling rustybuzz v0.20.1
+   Compiling futures-util v0.3.34
+   Compiling svgtypes v0.15.3
+   Compiling fax v0.2.6
+   Compiling calloop-wayland-source v0.4.1
+   Compiling atspi v0.29.0
+   Compiling accesskit_atspi_common v0.21.0
+   Compiling primal-check v0.3.4
+   Compiling jxl-color v0.11.0
+   Compiling wayland-protocols-experimental v20250721.0.1
+   Compiling wayland-protocols-misc v0.3.12
+   Compiling httparse v1.10.1
+   Compiling rustls v0.23.46
+   Compiling usvg v0.45.1
+   Compiling fontique v0.11.1
+   Compiling exr v1.74.2
+   Compiling jxl-render v0.12.4
+   Compiling rustfft v6.4.1
+   Compiling jxl-jbr v0.2.1
+   Compiling icu_segmenter v2.3.0
+   Compiling accesskit_unix v0.24.0
+   Compiling tiff v0.11.3
+   Compiling tiny-skia v0.11.4
+   Compiling rustls-webpki v0.103.15
+   Compiling parley_data v0.11.1
+   Compiling photocraft-vector v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/vector)
+   Compiling fixed_decimal v0.7.3
+   Compiling craft-jpeg v0.1.0 (https://github.com/storytold/craft-libs?rev=c5a1cbfb5f9049f9270955caffb5bee5997aebf7#c5a1cbfb)
+   Compiling rgb v0.8.53
+   Compiling openssl-probe v0.2.1
+   Compiling anyhow v1.0.104
+   Compiling subtle v2.6.1
+   Compiling web-time v1.1.0
+   Compiling bytes v1.12.1
+   Compiling photocraft-codecs v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/codecs)
+   Compiling http v1.5.0
+   Compiling rustls-native-certs v0.8.4
+   Compiling resvg v0.45.1
+   Compiling photocraft-compose v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/compose)
+   Compiling parley v0.11.1
+   Compiling tempfile v3.27.0
+   Compiling accesskit_winit v0.34.1
+   Compiling jxl-oxide v0.12.6
+   Compiling photocraft-algo v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/algo)
+   Compiling smithay-clipboard v0.7.3
+   Compiling crypto-common v0.1.7
+   Compiling block-buffer v0.10.4
+   Compiling type-map v0.5.1
+   Compiling arboard v3.7.0
+   Compiling photocraft-psd v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/psd)
+   Compiling serde_spanned v1.1.1
+   Compiling is-docker v0.2.0
+   Compiling base64 v0.23.1
+   Compiling lazy_static v1.5.0
+   Compiling toml_writer v1.1.2+spec-1.1.0
+   Compiling toml v1.1.6+spec-1.1.0
+   Compiling colored v2.2.0
+   Compiling ureq-proto v0.6.5
+   Compiling is-wsl v0.4.0
+   Compiling photocraft-text v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/text)
+   Compiling egui-winit v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+   Compiling egui-wgpu v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+   Compiling digest v0.10.7
+   Compiling photocraft-raw v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/raw)
+   Compiling photocraft-format v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/format)
+   Compiling rustls-platform-verifier v0.7.1
+   Compiling icu_plurals v2.3.0
+   Compiling icu_decimal v2.3.0
+   Compiling photocraft-affinity v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/affinity)
+   Compiling photocraft-paint v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/paint)
+   Compiling icu_provider_adapters v2.3.0
+   Compiling getopts v0.2.24
+   Compiling roxmltree v0.21.1
+   Compiling icu_provider_blob v2.3.0
+   Compiling enum-map-derive v1.0.1
+   Compiling chrono v0.4.45
+   Compiling semver v1.0.28
+   Compiling filetime v0.2.29
+   Compiling utf8-zero v0.8.1
+   Compiling sys-locale v0.3.2
+   Compiling pollster v1.0.1
+   Compiling cpufeatures v0.2.17
+   Compiling sha2 v0.10.9
+   Compiling craft-i18n v0.1.0 (https://github.com/storytold/craft-libs?rev=c5a1cbfb5f9049f9270955caffb5bee5997aebf7#c5a1cbfb)
+   Compiling eframe v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+   Compiling photocraft-io v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/io)
+   Compiling ureq v3.5.0
+   Compiling tar v0.4.46
+   Compiling enum-map v3.1.0
+   Compiling dify v0.8.0
+   Compiling photocraft-ui-egui v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/ui-egui)
+   Compiling open v5.4.5
+   Compiling photocraft-plugins v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/plugins)
+   Compiling kittest v0.5.0
+   Compiling photocraft-ops v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/ops)
+   Compiling craft-fonts-build v0.1.0 (https://github.com/storytold/craft-libs?rev=c5a1cbfb5f9049f9270955caffb5bee5997aebf7#c5a1cbfb)
+   Compiling craft-ui v0.1.0 (https://github.com/storytold/craft-libs?rev=c5a1cbfb5f9049f9270955caffb5bee5997aebf7#c5a1cbfb)
+   Compiling photocraft-engine v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/engine)
+   Compiling photocraft-testkit v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/testkit)
+   Compiling egui_kittest v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+   Compiling egui_extras v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+   Compiling craft-update v0.1.0 (https://github.com/storytold/craft-libs?rev=c5a1cbfb5f9049f9270955caffb5bee5997aebf7#c5a1cbfb)
+   Compiling photocraft-gpu v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/gpu)
+    Finished `test` profile [optimized] target(s) in 4m 43s
+     Running unittests src/lib.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-profile-parity/debug/deps/photocraft_ui_egui-2597354be20dd143)
+
+running 8 tests
+test text::cjk_fonts::tests::craft_face_selection_ignores_empty_and_unindexed_faces ... ok
+test dialogs::filter_dialog::tests::indexed_matte_tool_seeds_use_document_encoded_rgb ... ok
+test dialogs::filter_dialog::tests::indexed_counts_are_integer_json_while_dither_amounts_keep_their_decimals ... ok
+test dialogs::sizing::tests::indexed_color_resamples_with_nearest_neighbor_only ... ok
+test dialogs::filter_dialog::tests::indexed_matte_cancel_keeps_the_previous_choice ... ok
+test dialogs::file_ui::web_playback_tests::playback_refreshes_indexed_frames_without_resetting_palette_or_navigation ... ok
+test dialogs::filter_dialog::tests::indexed_matte_dropdown_and_picker_change_the_applied_edge_color ... ok
+test canvas::tests::indexed_matte_preview_matches_commit_and_refreshes_tool_colors_inline_and_on_worker ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 4479 filtered out; finished in 0.34s
+
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+    Finished `test` profile [optimized] target(s) in 0.22s
+     Running unittests src/lib.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-profile-parity/debug/deps/photocraft_ui_egui-2597354be20dd143)
+
+running 30 tests
+test dialogs::filter_preview_ui::tests::a_click_maps_to_the_document_point_under_it ... ok
+test dialogs::filter_preview_ui::tests::textures_are_reduced_to_fit_the_gpu ... ok
+test dialogs::filter_preview_ui::tests::the_source_rect_follows_the_centre_and_zoom ... ok
+test dialogs::filter_preview_ui::tests::a_hundred_percent_is_one_document_pixel_per_point ... ok
+test dialogs::filter_preview_ui::tests::a_zoomed_out_region_centres_the_whole_image ... ok
+test dialogs::filter_preview_ui::tests::zoom_steps_walk_the_levels_and_stay_in_bounds ... ok
+test dialogs::filter_preview_ui::tests::the_centre_is_clamped_to_the_document ... ok
+test dialogs::filter_preview_ui::tests::only_filter_dialogs_get_the_preview_window ... ok
+test dialogs::filter_preview_ui::tests::the_image_keeps_square_pixels_when_the_region_overhangs_it ... ok
+test dialogs::filter_preview_worker::tests::request_identity_covers_dialog_revision_layer_and_params ... ok
+test dialogs::filter_preview_worker::tests::a_stale_preview_is_cancelled_only_once_the_values_settle ... ok
+test dialogs::filter_preview_worker::tests::escaped_panic_is_an_error_and_worker_can_be_reused ... ok
+test dialogs::filter_preview_worker::tests::blocked_preview_does_not_block_ui_or_queue_slider_requests ... ok
+test canvas::tests::filter_preview_factor_caps_at_the_view_without_overriding_the_preference ... ok
+test dialogs::filter_preview_ui::tests::full_resolution_preview_textures_respect_the_device_limit ... ok
+test dialogs::filter_preview_ui::tests::original_texture_refreshes_when_the_channel_view_changes_without_an_edit ... ok
+test dialogs::filter_preview_ui::tests::the_window_defaults_its_view_and_never_panics ... ok
+test canvas::rotation_preview_isolation_tests::channel_overlay_shows_filter_preview_and_restores_on_cancel ... ok
+test canvas::rotation_preview_isolation_tests::filter_preview_refreshes_when_channel_target_changes ... ok
+test canvas::tests::inline_filter_preview_is_composited_and_recorded_once ... ok
+test canvas::rotation_preview_isolation_tests::filter_preview_is_not_returned_for_inactive_document ... ok
+test canvas::rotation_preview_isolation_tests::filter_preview_matches_applied_alpha_target ... ok
+test canvas::rotation_preview_isolation_tests::filter_preview_matches_applied_layer_mask_target ... ok
+test canvas::rotation_preview_isolation_tests::filter_preview_overlay_matches_quick_mask_and_mixed_color_views ... ok
+test panels::smart_ui::tests::an_edited_smart_filter_previews_what_ok_gives ... ok
+test dialogs::filter_preview_ui::tests::uploaded_preview_shows_the_filtered_alpha_at_every_depth_and_proxy_scale ... ok
+test canvas::rotation_preview_isolation_tests::filter_preview_matches_applied_color_target ... ok
+test canvas::tests::filter_preview_at_100_percent_is_full_resolution ... ok
+test canvas::tests::every_filter_previews_off_the_ui_thread_and_a_newer_value_cancels_the_old ... ok
+test dialogs::filter_dialog::tests::core_filter_previews_keep_minimum_settings_after_downsampling ... ok
+
+test result: ok. 30 passed; 0 failed; 0 ignored; 0 measured; 4457 filtered out; finished in 0.46s
+
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling photocraft-engine v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/engine)
+    Finished `test` profile [optimized] target(s) in 34.19s
+     Running tests/panic_hunt.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-profile-parity/debug/deps/panic_hunt-a5a18aa743d43e3a)
+
+running 1 test
+test no_command_panics_or_hangs_on_adversarial_params ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out; finished in 37.14s
+
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling syn v3.0.6
+   Compiling tracing v0.1.44
+   Compiling serde_json v1.0.154
+   Compiling serde_core v1.0.229
+   Compiling jxl-bitstream v1.1.0
+   Compiling jxl-oxide-common v1.0.0
+   Compiling jxl-grid v0.6.2
+   Compiling rustix v1.1.5
+   Compiling jxl-coding v1.0.1
+   Compiling jxl-threadpool v1.0.0
+   Compiling linux-raw-sys v0.12.1
+   Compiling synstructure v0.14.0
+   Compiling jxl-modular v0.11.3
+   Compiling jxl-image v0.13.0
+   Compiling jxl-vardct v0.11.1
+   Compiling strsim v0.11.1
+   Compiling jxl-frame v0.13.3
+   Compiling half v2.7.1
+   Compiling futures-sink v0.3.34
+   Compiling jxl-color v0.11.0
+   Compiling io-lifetimes v2.0.4
+   Compiling ident_case v1.0.1
+   Compiling io-lifetimes v3.0.1
+   Compiling darling_core v0.24.1
+   Compiling jxl-jbr v0.2.1
+   Compiling tiff v0.11.3
+   Compiling futures-channel v0.3.34
+   Compiling slab v0.4.12
+   Compiling winnow v1.0.4
+   Compiling io-extras v0.19.0
+   Compiling utf8parse v0.2.2
+   Compiling futures-io v0.3.34
+   Compiling ref-cast v1.0.27
+   Compiling anstyle-parse v1.0.0
+   Compiling toml_parser v1.1.3+spec-1.1.0
+   Compiling toml_datetime v1.1.1+spec-1.1.0
+   Compiling serde_spanned v1.1.1
+   Compiling serde_derive_internals v0.30.0
+   Compiling mio v1.2.3
+   Compiling socket2 v0.6.5
+   Compiling bytemuck_derive v1.12.1
+   Compiling serde_derive v1.0.229
+   Compiling zerofrom-derive v0.1.8
+   Compiling yoke-derive v0.8.3
+   Compiling bytemuck v1.25.2
+   Compiling zerovec-derive v0.11.6
+   Compiling serde v1.0.229
+   Compiling displaydoc v0.2.7
+   Compiling photocraft-color v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/color)
+   Compiling photocraft-geom v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/geom)
+   Compiling photocraft-raster v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/raster)
+   Compiling thiserror-impl v2.0.21
+   Compiling num-complex v0.4.6
+   Compiling font-types v0.12.5
+   Compiling zerofrom v0.1.8
+   Compiling read-fonts v0.41.0
+   Compiling yoke v0.8.3
+   Compiling zerovec v0.11.8
+   Compiling zerotrie v0.2.5
+   Compiling tinystr v0.8.4
+   Compiling icu_locale_core v2.3.0
+   Compiling potential_utf v0.1.6
+   Compiling icu_provider v2.3.1
+   Compiling icu_collections v2.3.0
+   Compiling photocraft-doc v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/doc)
+   Compiling icu_properties v2.3.0
+   Compiling icu_locale_fallback v2.3.0
+   Compiling pulp v0.22.3
+   Compiling thiserror v2.0.21
+   Compiling tiny-skia-path v0.11.4
+   Compiling qoi v0.4.1
+   Compiling image v0.25.10
+   Compiling exr v1.74.2
+   Compiling craft-jpeg v0.1.0 (https://github.com/storytold/craft-libs?rev=c5a1cbfb5f9049f9270955caffb5bee5997aebf7#c5a1cbfb)
+   Compiling icu_segmenter v2.3.0
+   Compiling parley_data v0.11.1
+   Compiling fontique v0.11.1
+   Compiling harfrust v0.12.0
+   Compiling skrifa v0.44.0
+   Compiling icu_normalizer v2.3.0
+   Compiling jxl-render v0.12.4
+   Compiling rustybuzz v0.20.1
+   Compiling futures-macro v0.3.34
+   Compiling usvg v0.45.1
+   Compiling jxl-oxide v0.12.6
+   Compiling futures-util v0.3.34
+   Compiling parley v0.11.1
+   Compiling photocraft-codecs v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/codecs)
+   Compiling tiny-skia v0.11.4
+   Compiling photocraft-psd v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/psd)
+   Compiling photocraft-vector v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/vector)
+   Compiling rustfft v6.4.1
+   Compiling chrono v0.4.45
+   Compiling rgb v0.8.53
+   Compiling darling_macro v0.24.1
+   Compiling ref-cast-impl v1.0.27
+   Compiling tokio-macros v2.7.2
+   Compiling anstyle-query v1.1.5
+   Compiling colorchoice v1.0.5
+   Compiling cap-primitives v4.0.3
+   Compiling is_terminal_polyfill v1.70.2
+   Compiling anstyle v1.0.14
+   Compiling anstream v1.0.0
+   Compiling photocraft-paint v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/paint)
+   Compiling darling v0.24.1
+   Compiling photocraft-algo v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/algo)
+   Compiling tokio v1.54.1
+   Compiling resvg v0.45.1
+   Compiling photocraft-format v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/format)
+   Compiling photocraft-text v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/text)
+   Compiling photocraft-compose v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/compose)
+   Compiling futures-executor v0.3.34
+   Compiling photocraft-raw v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/raw)
+   Compiling schemars_derive v1.2.3
+   Compiling toml v1.1.6+spec-1.1.0
+   Compiling fs-set-times v0.20.3
+   Compiling rustix-linux-procfs v0.1.1
+   Compiling heck v0.5.0
+   Compiling cap-std v4.0.3
+   Compiling maybe-owned v0.3.4
+   Compiling ipnet v2.12.2
+   Compiling rmcp v3.6.0
+   Compiling dyn-clone v1.0.20
+   Compiling ambient-authority v0.0.2
+   Compiling clap_lex v1.1.1
+   Compiling clap_builder v4.6.7
+   Compiling schemars v1.2.3
+   Compiling tempfile v3.27.0
+   Compiling clap_derive v4.6.7
+   Compiling photocraft-io v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/io)
+   Compiling indexmap v2.14.2
+   Compiling winresource v0.1.34
+   Compiling futures v0.3.34
+   Compiling tokio-util v0.7.19
+   Compiling rmcp-macros v3.7.0
+   Compiling photocraft-plugins v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/plugins)
+   Compiling photocraft-ops v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/ops)
+   Compiling uuid v1.26.1
+   Compiling pastey v0.2.3
+   Compiling photocraft-engine v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/engine)
+   Compiling clap v4.6.7
+   Compiling photocraft-cli v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/apps/photocraft-cli)
+   Compiling photocraft-automation v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/automation)
+    Finished `dev` profile [optimized] target(s) in 2m 31s
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling photocraft-ui-egui v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/ui-egui)
+    Finished `dev` profile [optimized] target(s) in 48.94s

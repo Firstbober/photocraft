@@ -1,0 +1,26 @@
+COMMAND cargo +1.95.0 clippy -p photocraft-engine --no-deps --all-targets -- -D warnings
+SOURCE a22bbfc15bb35e249c326e330c6b77f5bda4e99a
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling photocraft-text v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/text)
+    Checking photocraft-algo v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/algo)
+    Checking photocraft-io v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/io)
+    Checking photocraft-engine v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/engine)
+error: this boolean expression can be simplified
+  --> crates/engine/src/crop_fill.rs:78:12
+   |
+78 |         if !format.alpha || !(x.is_finite() && y.is_finite()) {
+   |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try: `!(format.alpha && x.is_finite() && y.is_finite())`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#nonminimal_bool
+   = note: `-D clippy::nonminimal-bool` implied by `-D warnings`
+   = help: to override `-D warnings` add `#[allow(clippy::nonminimal_bool)]`
+
+error: could not compile `photocraft-engine` (lib) due to 1 previous error
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `photocraft-engine` (lib test) due to 1 previous error

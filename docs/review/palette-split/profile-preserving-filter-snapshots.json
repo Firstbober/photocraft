@@ -1,0 +1,51 @@
+{
+  "source_head": "a7ab773951f2131c44690f4abfaf4b045f34eea2",
+  "filter": {
+    "source_head": "a7ab773951f2131c44690f4abfaf4b045f34eea2",
+    "command": [
+      "/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-profile-parity/debug/examples/snapshot",
+      "--out",
+      "/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/evidence-repo/docs/review/palette-split/profile-preserving-filter-dialog.png",
+      "--size",
+      "1440x900",
+      "--scale",
+      "1",
+      "--safe-gpu",
+      "--background-jobs",
+      "--settle-ms",
+      "300",
+      "--script",
+      "[[\"engine.execute\",{\"command\":\"file.new\",\"params\":{\"width\":256,\"height\":160,\"depth\":16,\"background\":\"#6496c8\"}}],[\"engine.execute\",{\"command\":\"edit.assignProfile\",\"params\":{\"profile\":\"adobe-rgb-compat\"}}],[\"engine.execute\",{\"command\":\"select.rect\",\"params\":{\"x\":0,\"y\":0,\"width\":64,\"height\":160}}],[\"engine.execute\",{\"command\":\"edit.fill\",\"params\":{\"color\":[0.8,0.3,0.1,1]}}],[\"engine.execute\",{\"command\":\"select.rect\",\"params\":{\"x\":64,\"y\":0,\"width\":64,\"height\":160}}],[\"engine.execute\",{\"command\":\"edit.fill\",\"params\":{\"color\":[0.1,0.7,0.3,1]}}],[\"engine.execute\",{\"command\":\"select.rect\",\"params\":{\"x\":128,\"y\":0,\"width\":64,\"height\":160}}],[\"engine.execute\",{\"command\":\"edit.fill\",\"params\":{\"color\":[0.1,0.3,0.8,1]}}],[\"engine.execute\",{\"command\":\"select.rect\",\"params\":{\"x\":192,\"y\":0,\"width\":64,\"height\":160}}],[\"engine.execute\",{\"command\":\"edit.fill\",\"params\":{\"color\":[0.6,0.2,0.7,1]}}],[\"engine.execute\",{\"command\":\"select.deselect\",\"params\":{}}],[\"ui.set\",{\"zoom\":2.0}],[\"ui.menu.invoke\",{\"id\":\"filter.paletteMap\"}]]"
+    ],
+    "exit": 0,
+    "stdout": "perf: {\"commandMs\":0.022902999999992346,\"compositeMs\":0.22363,\"gpu\":false,\"gpuBudgetMb\":0,\"gpuFallback\":\"CPU rendering: --safe-gpu: CPU renderer for this launch\",\"gpuInfo\":{\"adapter\":\"AMD Radeon RX 580 Series (RADV POLARIS10)\",\"adapters\":[],\"backend\":\"vulkan\",\"canvas\":\"cpu\",\"deviceType\":\"discreteGpu\",\"driver\":\"radv Mesa 26.2.5-arch1.1\",\"fallback\":\"--safe-gpu: CPU renderer for this launch\",\"lost\":null,\"preference\":\"\",\"present\":\"\",\"selected\":\"cpu\",\"videoMemoryMb\":4096},\"gpuLayerFit\":null,\"gpuMs\":null,\"gpuMsPx\":0,\"gpuUploads\":0,\"lastCommand\":\"select.deselect\",\"lastRefresh\":\"full\",\"lastRefreshPx\":40960,\"spans\":{\"outline\":0.07,\"scrollbars\":0.0},\"uiMaxMs\":1.2148070000000075,\"uiMs\":1.1663442437095246,\"uploadMs\":0.6524749999999955}\nlanguage: {\"preference\":\"auto\",\"resolved\":\"en\"}\nwrote /home/bober/Documents/ProgrammingProjects/Git/photocraft-review/evidence-repo/docs/review/palette-split/profile-preserving-filter-dialog.png (1440\u00d7900)\n",
+    "stderr": ""
+  },
+  "stock_indexed": {
+    "source_head": "a7ab773951f2131c44690f4abfaf4b045f34eea2",
+    "command": [
+      "/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-profile-parity/debug/examples/snapshot",
+      "--out",
+      "/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/evidence-repo/docs/review/palette-split/profile-preserving-stock-indexed.png",
+      "--size",
+      "1440x900",
+      "--scale",
+      "1",
+      "--safe-gpu",
+      "--background-jobs",
+      "--settle-ms",
+      "300",
+      "--script",
+      "[[\"engine.execute\",{\"command\":\"file.new\",\"params\":{\"width\":256,\"height\":160,\"depth\":16,\"background\":\"#6496c8\"}}],[\"engine.execute\",{\"command\":\"edit.assignProfile\",\"params\":{\"profile\":\"adobe-rgb-compat\"}}],[\"engine.execute\",{\"command\":\"select.rect\",\"params\":{\"x\":0,\"y\":0,\"width\":64,\"height\":160}}],[\"engine.execute\",{\"command\":\"edit.fill\",\"params\":{\"color\":[0.8,0.3,0.1,1]}}],[\"engine.execute\",{\"command\":\"select.rect\",\"params\":{\"x\":64,\"y\":0,\"width\":64,\"height\":160}}],[\"engine.execute\",{\"command\":\"edit.fill\",\"params\":{\"color\":[0.1,0.7,0.3,1]}}],[\"engine.execute\",{\"command\":\"select.rect\",\"params\":{\"x\":128,\"y\":0,\"width\":64,\"height\":160}}],[\"engine.execute\",{\"command\":\"edit.fill\",\"params\":{\"color\":[0.1,0.3,0.8,1]}}],[\"engine.execute\",{\"command\":\"select.rect\",\"params\":{\"x\":192,\"y\":0,\"width\":64,\"height\":160}}],[\"engine.execute\",{\"command\":\"edit.fill\",\"params\":{\"color\":[0.6,0.2,0.7,1]}}],[\"engine.execute\",{\"command\":\"select.deselect\",\"params\":{}}],[\"ui.set\",{\"zoom\":2.0}],[\"ui.menu.invoke\",{\"id\":\"image.mode.indexedColor\"}]]"
+    ],
+    "exit": 0,
+    "stdout": "perf: {\"commandMs\":0.017100999999996702,\"compositeMs\":0.15093100000001414,\"gpu\":false,\"gpuBudgetMb\":0,\"gpuFallback\":\"CPU rendering: --safe-gpu: CPU renderer for this launch\",\"gpuInfo\":{\"adapter\":\"AMD Radeon RX 580 Series (RADV POLARIS10)\",\"adapters\":[],\"backend\":\"vulkan\",\"canvas\":\"cpu\",\"deviceType\":\"discreteGpu\",\"driver\":\"radv Mesa 26.2.5-arch1.1\",\"fallback\":\"--safe-gpu: CPU renderer for this launch\",\"lost\":null,\"preference\":\"\",\"present\":\"\",\"selected\":\"cpu\",\"videoMemoryMb\":4096},\"gpuLayerFit\":null,\"gpuMs\":null,\"gpuMsPx\":0,\"gpuUploads\":0,\"lastCommand\":\"select.deselect\",\"lastRefresh\":\"full\",\"lastRefreshPx\":40960,\"spans\":{\"outline\":0.14,\"scrollbars\":0.0},\"uiMaxMs\":0.6770849999999768,\"uiMs\":0.6719210564714467,\"uploadMs\":0.8418640000000011}\nlanguage: {\"preference\":\"auto\",\"resolved\":\"en\"}\nwrote /home/bober/Documents/ProgrammingProjects/Git/photocraft-review/evidence-repo/docs/review/palette-split/profile-preserving-stock-indexed.png (1440\u00d7900)\n",
+    "stderr": ""
+  },
+  "capture": "Native egui offscreen, CPU canvas plus wgpu UI, no desktop focus.",
+  "sha256": {
+    "profile-preserving-filter-dialog.png": "1c4ae948e1ed722720d117e8c8ed44f1f8dfe65744e51dc8fb831de618887ae3",
+    "profile-preserving-stock-indexed.png": "e07e0d3466c3fdb04e7cef85c27480e3e0ba23af0137f63cf3d8eab638d4c4b3"
+  },
+  "identical_to_pre_modal_cleanup_inspected_images": true
+}

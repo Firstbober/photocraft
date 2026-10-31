@@ -1,0 +1,242 @@
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+     Removed 33 files, 135.3MiB total
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+ Downloading crates ...
+  Downloaded itertools v0.13.0
+  Downloaded page_size v0.6.0
+  Downloaded alloca v0.4.0
+  Downloaded criterion v0.8.2
+  Downloaded criterion-plot v0.8.2
+   Compiling syn v3.0.6
+   Compiling half v2.7.1
+   Compiling alloca v0.4.0
+   Compiling ciborium-io v0.2.2
+   Compiling regex-syntax v0.8.11
+   Compiling ciborium-ll v0.2.2
+   Compiling clap_builder v4.6.7
+   Compiling itertools v0.13.0
+   Compiling regex-automata v0.4.18
+   Compiling same-file v1.0.6
+   Compiling cast v0.3.0
+   Compiling criterion-plot v0.8.2
+   Compiling walkdir v2.5.0
+   Compiling regex v1.13.1
+   Compiling clap v4.6.7
+   Compiling page_size v0.6.0
+   Compiling num-complex v0.4.6
+   Compiling anes v0.1.6
+   Compiling oorandom v11.1.5
+   Compiling rustfft v6.4.1
+   Compiling photocraft-testkit v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/backend/crates/testkit)
+   Compiling serde_derive v1.0.229
+   Compiling serde v1.0.229
+   Compiling photocraft-color v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/backend/crates/color)
+   Compiling tinytemplate v1.2.1
+   Compiling ciborium v0.2.2
+   Compiling photocraft-geom v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/backend/crates/geom)
+   Compiling photocraft-raster v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/backend/crates/raster)
+   Compiling criterion v0.8.2
+   Compiling photocraft-algo v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/backend/crates/algo)
+    Finished `test` profile [optimized] target(s) in 41.50s
+     Running unittests src/lib.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-profile-parity/debug/deps/photocraft_algo-eea9ebde31e99250)
+
+running 21 tests
+test palette_map::tests::all_stateful_methods_cover_a_non_square_region ... ok
+test palette_map::tests::alpha_dither_uses_reserved_transparency_and_preserves_rgb_filter_without_one ... ok
+test palette_map::tests::custom_pattern_rejects_centered_or_out_of_range_cells ... ok
+test palette_map::tests::bayer_half_tone_keeps_two_by_two_checker_cells ... ok
+test palette_map::tests::custom_patterns_compose_and_disabled_patterns_do_not_change_output ... ok
+test palette_map::tests::diffusion_conserves_a_gray_ramp_without_changing_palette_members ... ok
+test palette_map::tests::alpha_dither_has_expected_coverage_and_does_not_enable_rgb_dither ... ok
+test palette_map::tests::cancellation_is_reported_before_mutating_pixels ... ok
+test palette_map::tests::bayer_and_white_noise_are_origin_stable ... ok
+test palette_map::tests::extended_srgb_members_remain_distinct_in_rgb_and_lab_with_dithering ... ok
+test palette_map::tests::duplicate_palette_entries_do_not_consume_the_second_threshold_candidate ... ok
+test palette_map::tests::floyd_steinberg_uses_the_standard_forward_stencil ... ok
+test palette_map::tests::hilbert_rectangle_visits_each_cell_once_without_padding_duplicates ... ok
+test palette_map::tests::fully_transparent_preserve_pixel_does_not_seed_diffusion_without_reservation ... ok
+test palette_map::tests::ids_include_legacy_command_spellings ... ok
+test palette_map::tests::settings_round_trip_through_serde_keeps_custom_matrix ... ok
+test palette_map::tests::render_pixels_avoids_return_plane_but_matches_render_output ... ok
+test palette_map::tests::blue_noise_suppresses_low_frequency_harmonics_at_multiple_coverages ... ok
+test palette_map::tests::alpha_dither_uses_unscaled_rank_for_ordered_noise_and_stateful_paths ... ok
+test palette_map::tests::validates_float_palettes_and_preserves_member_entries_above_u8_index ... ok
+test palette_map::tests::cdf_calibrated_mixtures_cover_gray_tones_without_brightness_bias ... ok
+
+test result: ok. 21 passed; 0 failed; 0 ignored; 0 measured; 792 filtered out; finished in 0.02s
+
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling photocraft-algo v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/backend/crates/algo)
+   Compiling photocraft-io v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/backend/crates/io)
+   Compiling photocraft-engine v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/backend/crates/engine)
+    Finished `test` profile [optimized] target(s) in 1m 43s
+     Running unittests src/lib.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-profile-parity/debug/deps/photocraft_engine-41d13d98c70ad398)
+
+running 40 tests
+test cmd::mode_cmds::tests::flattened_mode_pixels_match_the_allocating_conversion_at_every_channel_count ... ok
+test cmd::mode_cmds::tests::indexed_non_black_white_generation_keeps_existing_total_count_semantics ... ok
+test cmd::mode_cmds::tests::bitmap_lays_a_transparent_composite_over_white ... ok
+test cmd::mode_cmds::tests::color_table_rejects_an_invalid_transparent_index_without_editing ... ok
+test cmd::mode_cmds::tests::indexed_color_rejects_invalid_counts_without_editing_the_document ... ok
+test cmd::mode_cmds::tests::color_table_presets_and_entries ... ok
+test cmd::mode_cmds::tests::bitmap_halftone_rejects_bad_angles_and_frequencies_without_editing_the_document ... ok
+test cmd::mode_cmds::tests::indexed_explicit_transparency_excludes_reserved_palette_entry ... ok
+test cmd::mode_cmds::tests::bitmap_rejects_bad_resolutions_and_patterns_without_editing_the_document ... ok
+test cmd::mode_cmds::tests::indexed_advanced_srgb_snapshot_maps_back_to_document_profile ... ok
+test cmd::mode_cmds::tests::brush_stroke_stays_in_indexed_color_table ... ok
+test cmd::mode_cmds::tests::pencil_auto_erase_knows_the_indexed_foreground ... ok
+test cmd::mode_cmds::tests::indexed_black_white_generation_keeps_both_opaque_entries_and_replays ... ok
+test cmd::mode_cmds::tests::indexed_brush_stroke_leaves_pixels_it_did_not_paint ... ok
+test cmd::mode_cmds::tests::live_brush_preview_matches_indexed_commit ... ok
+test cmd::mode_cmds::tests::duotone_curve_points_must_be_finite ... ok
+test cmd::mode_cmds::tests::brush_stroke_keeps_indexed_transparency_binary ... ok
+test cmd::mode_cmds::tests::clearing_color_table_transparency_restores_indexed_pixels ... ok
+test cmd::mode_cmds::tests::bitmap_custom_pattern_thresholds_against_the_tiled_pattern ... ok
+test cmd::mode_cmds::tests::rotate_arbitrary_keeps_the_background_opaque_with_a_translucent_background_colour ... ok
+test cmd::mode_cmds::tests::rotate_arbitrary_rotates_grouped_locked_children_and_preserves_lock ... ok
+test cmd::mode_cmds::tests::duotone_to_rgb_inks_fill_layer_colours ... ok
+test cmd::mode_cmds::tests::duotone_inks_and_display ... ok
+test cmd::mode_cmds::tests::bitmap_methods_need_grayscale ... ok
+test cmd::mode_cmds::tests::modes_round_trip_through_pcraft ... ok
+test cmd::mode_cmds::tests::bitmap_budgets_a_conversion_at_the_document_resolution_too ... ok
+test cmd::mode_cmds::tests::shrinking_the_color_table_drops_a_transparent_index_past_its_end ... ok
+test cmd::mode_cmds::tests::bitmap_halftone_screen_is_laid_out_at_the_output_resolution ... ok
+test cmd::mode_cmds::tests::indexed_extended_mapping_is_opt_in_and_malformed_values_error ... ok
+test cmd::mode_cmds::tests::bitmap_output_resolution_resamples_and_sets_the_resolution ... ok
+test cmd::mode_cmds::tests::rotate_arbitrary_other_modes ... ok
+test cmd::mode_cmds::tests::indexed_exact_preserves_encoded_rgb_profile_through_rgb_at_all_depths ... ok
+test cmd::mode_cmds::tests::rotate_arbitrary_grows_canvas_and_keeps_background ... ok
+test cmd::mode_cmds::tests::indexed_exact_transparency_and_sources ... ok
+test cmd::mode_cmds::tests::rotate_arbitrary_turns_unlinked_layer_masks ... ok
+test cmd::mode_cmds::tests::rotate_arbitrary_keeps_the_full_precision_angle ... ok
+test cmd::mode_cmds::tests::indexed_color_palettes_and_dithers ... ok
+test cmd::mode_cmds::tests::duotone_to_colour_modes_keeps_the_ink_colours ... ok
+test cmd::mode_cmds::tests::bitmap_output_resolution_budgets_the_whole_conversion_not_just_the_resample ... ok
+test cmd::mode_cmds::tests::bitmap_in_bands_matches_one_full_canvas_conversion ... ok
+
+test result: ok. 40 passed; 0 failed; 0 ignored; 0 measured; 2461 filtered out; finished in 4.52s
+
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+    Finished `test` profile [optimized] target(s) in 0.17s
+     Running unittests src/lib.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-profile-parity/debug/deps/photocraft_engine-41d13d98c70ad398)
+
+running 58 tests
+test cmd::web_cmds::tests::black_white_web_palette_keeps_two_opaque_entries_with_transparency ... ok
+test cmd::web_cmds::tests::generator_spaced_size_keeps_only_the_file_name ... ok
+test cmd::web_cmds::tests::generator_naming_grammar ... ok
+test cmd::web_cmds::tests::ordinary_indexed_web_settings_keep_the_stock_mapper_opt_in ... ok
+test cmd::web_cmds::tests::fixed_web_palette_overrides_black_white_generation_and_count ... ok
+test cmd::web_cmds::tests::color_table_tests::color_replacement_preserves_pixel_membership_and_transparency ... ok
+test cmd::web_cmds::tests::platform_writer_checks_settings_before_dropping_floating_pixels ... ok
+test cmd::web_cmds::tests::indexed_export_preserves_distinct_colours_outside_the_srgb_gamut ... ok
+test cmd::web_cmds::tests::image_assets_refuse_empty_artboards ... ok
+test cmd::web_cmds::tests::platform_writer_checks_authorization_before_dropping_floating_pixels ... ok
+test cmd::web_cmds::tests::oversized_export_palette_requires_deliberate_reduction ... ok
+test cmd::web_cmds::tests::a_dotted_device_file_name_exports_without_the_device_stem ... ok
+test cmd::web_cmds::tests::non_boolean_flags_are_refused_without_changing_anything ... ok
+test cmd::web_cmds::tests::overlapping_slices_keep_the_later_slice_in_html ... ok
+test cmd::web_cmds::tests::same_file_sees_through_other_names_for_one_file ... ok
+test cmd::web_cmds::tests::images_folder_rejects_existing_symlink_outside_export_directory ... ok
+test cmd::web_cmds::tests::platform_writer_receives_slices_spacer_and_html_with_sibling_references ... ok
+test cmd::web_cmds::tests::overlapping_slices_export_each_pixel_once ... ok
+test cmd::web_cmds::tests::null_save_for_web_uses_default_estimate_without_mutating_document_or_settings ... ok
+test cmd::web_cmds::tests::image_assets_reject_traversal_from_names_and_defaults ... ok
+test cmd::web_cmds::tests::jpeg_quality_progressive_and_metadata ... ok
+test cmd::web_cmds::tests::a_complete_export_remembers_its_settings_in_the_preferences ... ok
+test cmd::web_cmds::tests::export_preferences_drive_quick_export ... ok
+test cmd::web_cmds::tests::image_assets_keep_full_artboards ... ok
+test cmd::web_cmds::tests::image_assets_never_write_one_file_twice ... ok
+test cmd::web_cmds::tests::estimates_preserve_last_successful_export_settings ... ok
+test cmd::web_cmds::tests::web_settings_from_params ... ok
+test cmd::web_cmds::tests::platform_writer_failure_stops_export_and_preserves_saved_settings ... ok
+test cmd::web_cmds::tests::image_assets_needs_the_generator_preference ... ok
+test cmd::web_cmds::tests::quick_export_exr_preserves_linear_hdr_and_alpha ... ok
+test cmd::web_cmds::tests::srgb_snapshot_colours_are_encoded_in_the_retained_export_profile ... ok
+test cmd::web_cmds::tests::reserved_document_and_slice_names_export_with_portable_names ... ok
+test cmd::web_cmds::tests::slice_links_allow_normal_urls_and_drop_active_schemes ... ok
+test cmd::web_cmds::tests::previews_show_the_optimised_pixels ... ok
+test cmd::web_cmds::tests::png8_has_no_matte_by_default ... ok
+test cmd::web_cmds::tests::gif_and_png8_keep_transparency_and_palette ... ok
+test cmd::web_cmds::tests::embed_color_profile_tags_an_untagged_document_srgb ... ok
+test cmd::web_cmds::tests::slices_with_the_same_name_get_distinct_files ... ok
+test cmd::web_cmds::tests::platform_writer_receives_resized_image_at_every_depth ... ok
+test cmd::web_cmds::tests::quick_export_never_replaces_the_documents_own_file_unasked ... ok
+test cmd::web_cmds::tests::quick_export_all_writes_the_photos_exif ... ok
+test cmd::web_cmds::tests::slices_export_with_html_table ... ok
+test cmd::web_cmds::tests::custom_palette_and_composed_alpha_dither_match_encoded_previews_at_every_depth ... ok
+test cmd::web_cmds::tests::image_assets_reject_existing_symlinks_in_folders_and_files ... ok
+test cmd::web_cmds::tests::save_for_web_all_writes_the_photos_exif ... ok
+test cmd::web_cmds::tests::slice_html_escapes_imported_markup_by_default_and_requires_trusted_opt_in ... ok
+test cmd::web_cmds::tests::jpeg_preview_at_odd_sizes ... ok
+test cmd::web_cmds::tests::webp_export_preferences_select_lossless_or_lossy_output ... ok
+test cmd::web_cmds::tests::color_table_tests::malformed_tables_and_out_of_bounds_slices_return_errors ... ok
+test cmd::web_cmds::tests::quick_export_writes_the_format_its_path_names ... ok
+test cmd::web_cmds::tests::save_for_web_webp_all_keeps_an_exif_only_photos_exif ... ok
+test cmd::web_cmds::tests::color_table_tests::exported_palette_edits_work_at_every_document_depth ... ok
+test cmd::web_cmds::tests::images_folder_stays_inside_export_directory_and_is_escaped_in_html ... ok
+test cmd::web_cmds::tests::webp_too_large_is_an_error ... ok
+test cmd::web_cmds::tests::image_assets_are_generated_now_and_on_save ... ok
+test cmd::web_cmds::tests::web_exif_that_does_not_fit_is_reported_and_bad_exif_is_harmless ... ok
+test cmd::web_cmds::tests::webp_lossy_lossless_transparency_and_metadata ... ok
+test cmd::web_cmds::tests::estimates_every_format_at_every_depth ... ok
+
+test result: ok. 58 passed; 0 failed; 0 ignored; 0 measured; 2443 filtered out; finished in 0.08s
+
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+    Finished `test` profile [optimized] target(s) in 0.13s
+     Running unittests src/lib.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-profile-parity/debug/deps/photocraft_engine-41d13d98c70ad398)
+
+running 6 tests
+test palette_cmds::tests::indexed_reduction_rejects_out_of_bounds_transparent_slot ... ok
+test palette_cmds::tests::mapping_legacy_spellings_are_shared ... ok
+test palette_cmds::tests::malformed_legacy_dither_does_not_fall_back_to_stock_mapping ... ok
+test palette_cmds::tests::malformed_palette_id_is_rejected_even_when_snapshot_is_present ... ok
+test palette_cmds::tests::snapshot_wins_over_unknown_catalog_id ... ok
+test palette_cmds::tests::wrong_type_palette_id_does_not_fall_back_to_generated_indexing ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 2495 filtered out; finished in 0.00s
+
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling photocraft-text v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/backend/crates/text)
+   Compiling photocraft-algo v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/backend/crates/algo)
+   Compiling photocraft-io v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/backend/crates/io)
+   Compiling photocraft-engine v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/backend/crates/engine)
+   Compiling photocraft-automation v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/backend/crates/automation)
+   Compiling photocraft-cli v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/backend/apps/photocraft-cli)
+    Finished `dev` profile [optimized] target(s) in 56.77s

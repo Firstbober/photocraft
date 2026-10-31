@@ -1,0 +1,565 @@
+{
+  "purpose": "RGB-only fixture generation; the generator never executes Indexed conversion and is not a conversion oracle.",
+  "generator_source": "Existing original release CLI; exact source commit is not asserted. Candidate source is independently pinned in each behavioral receipt.",
+  "fixtures": [
+    {
+      "profile_id": "adobe-rgb-compat",
+      "depth": 8,
+      "file": "adobe-rgb-compat-8.psd",
+      "rgb_sample": [
+        100,
+        150,
+        200
+      ],
+      "command": [
+        "/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/release/photocraft-cli",
+        "run",
+        "--new",
+        "{\"width\": 3, \"height\": 1, \"depth\": 8, \"background\": \"#6496c8\"}",
+        "--cmd",
+        "edit.assignProfile",
+        "--params",
+        "{\"profile\": \"adobe-rgb-compat\"}",
+        "--cmd",
+        "document.pixel",
+        "--params",
+        "{\"x\":0,\"y\":0}",
+        "--out",
+        "/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/evidence/profile-preservation-fixtures/adobe-rgb-compat-8.psd"
+      ],
+      "output": [
+        {
+          "command": "edit.assignProfile",
+          "result": {
+            "profile": "Adobe RGB (1998)-compatible (PhotoCraft)"
+          }
+        },
+        {
+          "command": "document.pixel",
+          "result": [
+            0.3921568691730499,
+            0.5882353186607361,
+            0.7843137383460999,
+            1.0
+          ]
+        }
+      ]
+    },
+    {
+      "profile_id": "display-p3",
+      "depth": 8,
+      "file": "display-p3-8.psd",
+      "rgb_sample": [
+        100,
+        150,
+        200
+      ],
+      "command": [
+        "/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/release/photocraft-cli",
+        "run",
+        "--new",
+        "{\"width\": 3, \"height\": 1, \"depth\": 8, \"background\": \"#6496c8\"}",
+        "--cmd",
+        "edit.assignProfile",
+        "--params",
+        "{\"profile\": \"display-p3\"}",
+        "--cmd",
+        "document.pixel",
+        "--params",
+        "{\"x\":0,\"y\":0}",
+        "--out",
+        "/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/evidence/profile-preservation-fixtures/display-p3-8.psd"
+      ],
+      "output": [
+        {
+          "command": "edit.assignProfile",
+          "result": {
+            "profile": "Display P3"
+          }
+        },
+        {
+          "command": "document.pixel",
+          "result": [
+            0.3921568691730499,
+            0.5882353186607361,
+            0.7843137383460999,
+            1.0
+          ]
+        }
+      ]
+    },
+    {
+      "profile_id": "prophoto-compat",
+      "depth": 8,
+      "file": "prophoto-compat-8.psd",
+      "rgb_sample": [
+        100,
+        150,
+        200
+      ],
+      "command": [
+        "/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/release/photocraft-cli",
+        "run",
+        "--new",
+        "{\"width\": 3, \"height\": 1, \"depth\": 8, \"background\": \"#6496c8\"}",
+        "--cmd",
+        "edit.assignProfile",
+        "--params",
+        "{\"profile\": \"prophoto-compat\"}",
+        "--cmd",
+        "document.pixel",
+        "--params",
+        "{\"x\":0,\"y\":0}",
+        "--out",
+        "/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/evidence/profile-preservation-fixtures/prophoto-compat-8.psd"
+      ],
+      "output": [
+        {
+          "command": "edit.assignProfile",
+          "result": {
+            "profile": "ProPhoto RGB-compatible (ROMM primaries, PhotoCraft)"
+          }
+        },
+        {
+          "command": "document.pixel",
+          "result": [
+            0.3921568691730499,
+            0.5882353186607361,
+            0.7843137383460999,
+            1.0
+          ]
+        }
+      ]
+    },
+    {
+      "profile_id": "none",
+      "depth": 8,
+      "file": "none-8.psd",
+      "rgb_sample": [
+        100,
+        150,
+        200
+      ],
+      "command": [
+        "/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/release/photocraft-cli",
+        "run",
+        "--new",
+        "{\"width\": 3, \"height\": 1, \"depth\": 8, \"background\": \"#6496c8\"}",
+        "--cmd",
+        "edit.assignProfile",
+        "--params",
+        "{\"profile\": \"none\"}",
+        "--cmd",
+        "document.pixel",
+        "--params",
+        "{\"x\":0,\"y\":0}",
+        "--out",
+        "/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/evidence/profile-preservation-fixtures/none-8.psd"
+      ],
+      "output": [
+        {
+          "command": "edit.assignProfile",
+          "result": {
+            "profile": "none"
+          }
+        },
+        {
+          "command": "document.pixel",
+          "result": [
+            0.3921568691730499,
+            0.5882353186607361,
+            0.7843137383460999,
+            1.0
+          ]
+        }
+      ]
+    },
+    {
+      "profile_id": "adobe-rgb-compat",
+      "depth": 16,
+      "file": "adobe-rgb-compat-16.psd",
+      "rgb_sample": [
+        100,
+        150,
+        200
+      ],
+      "command": [
+        "/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/release/photocraft-cli",
+        "run",
+        "--new",
+        "{\"width\": 3, \"height\": 1, \"depth\": 16, \"background\": \"#6496c8\"}",
+        "--cmd",
+        "edit.assignProfile",
+        "--params",
+        "{\"profile\": \"adobe-rgb-compat\"}",
+        "--cmd",
+        "document.pixel",
+        "--params",
+        "{\"x\":0,\"y\":0}",
+        "--out",
+        "/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/evidence/profile-preservation-fixtures/adobe-rgb-compat-16.psd"
+      ],
+      "output": [
+        {
+          "command": "edit.assignProfile",
+          "result": {
+            "profile": "Adobe RGB (1998)-compatible (PhotoCraft)"
+          }
+        },
+        {
+          "command": "document.pixel",
+          "result": [
+            0.3921568691730499,
+            0.5882353186607361,
+            0.7843137383460999,
+            1.0
+          ]
+        }
+      ]
+    },
+    {
+      "profile_id": "display-p3",
+      "depth": 16,
+      "file": "display-p3-16.psd",
+      "rgb_sample": [
+        100,
+        150,
+        200
+      ],
+      "command": [
+        "/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/release/photocraft-cli",
+        "run",
+        "--new",
+        "{\"width\": 3, \"height\": 1, \"depth\": 16, \"background\": \"#6496c8\"}",
+        "--cmd",
+        "edit.assignProfile",
+        "--params",
+        "{\"profile\": \"display-p3\"}",
+        "--cmd",
+        "document.pixel",
+        "--params",
+        "{\"x\":0,\"y\":0}",
+        "--out",
+        "/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/evidence/profile-preservation-fixtures/display-p3-16.psd"
+      ],
+      "output": [
+        {
+          "command": "edit.assignProfile",
+          "result": {
+            "profile": "Display P3"
+          }
+        },
+        {
+          "command": "document.pixel",
+          "result": [
+            0.3921568691730499,
+            0.5882353186607361,
+            0.7843137383460999,
+            1.0
+          ]
+        }
+      ]
+    },
+    {
+      "profile_id": "prophoto-compat",
+      "depth": 16,
+      "file": "prophoto-compat-16.psd",
+      "rgb_sample": [
+        100,
+        150,
+        200
+      ],
+      "command": [
+        "/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/release/photocraft-cli",
+        "run",
+        "--new",
+        "{\"width\": 3, \"height\": 1, \"depth\": 16, \"background\": \"#6496c8\"}",
+        "--cmd",
+        "edit.assignProfile",
+        "--params",
+        "{\"profile\": \"prophoto-compat\"}",
+        "--cmd",
+        "document.pixel",
+        "--params",
+        "{\"x\":0,\"y\":0}",
+        "--out",
+        "/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/evidence/profile-preservation-fixtures/prophoto-compat-16.psd"
+      ],
+      "output": [
+        {
+          "command": "edit.assignProfile",
+          "result": {
+            "profile": "ProPhoto RGB-compatible (ROMM primaries, PhotoCraft)"
+          }
+        },
+        {
+          "command": "document.pixel",
+          "result": [
+            0.3921568691730499,
+            0.5882353186607361,
+            0.7843137383460999,
+            1.0
+          ]
+        }
+      ]
+    },
+    {
+      "profile_id": "none",
+      "depth": 16,
+      "file": "none-16.psd",
+      "rgb_sample": [
+        100,
+        150,
+        200
+      ],
+      "command": [
+        "/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/release/photocraft-cli",
+        "run",
+        "--new",
+        "{\"width\": 3, \"height\": 1, \"depth\": 16, \"background\": \"#6496c8\"}",
+        "--cmd",
+        "edit.assignProfile",
+        "--params",
+        "{\"profile\": \"none\"}",
+        "--cmd",
+        "document.pixel",
+        "--params",
+        "{\"x\":0,\"y\":0}",
+        "--out",
+        "/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/evidence/profile-preservation-fixtures/none-16.psd"
+      ],
+      "output": [
+        {
+          "command": "edit.assignProfile",
+          "result": {
+            "profile": "none"
+          }
+        },
+        {
+          "command": "document.pixel",
+          "result": [
+            0.3921568691730499,
+            0.5882353186607361,
+            0.7843137383460999,
+            1.0
+          ]
+        }
+      ]
+    },
+    {
+      "profile_id": "adobe-rgb-compat",
+      "depth": 32,
+      "file": "adobe-rgb-compat-32.psd",
+      "rgb_sample": [
+        100,
+        150,
+        200
+      ],
+      "command": [
+        "/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/release/photocraft-cli",
+        "run",
+        "--new",
+        "{\"width\": 3, \"height\": 1, \"depth\": 32, \"background\": \"#6496c8\"}",
+        "--cmd",
+        "edit.assignProfile",
+        "--params",
+        "{\"profile\": \"adobe-rgb-compat\"}",
+        "--cmd",
+        "document.pixel",
+        "--params",
+        "{\"x\":0,\"y\":0}",
+        "--out",
+        "/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/evidence/profile-preservation-fixtures/adobe-rgb-compat-32.psd"
+      ],
+      "output": [
+        {
+          "command": "edit.assignProfile",
+          "result": {
+            "profile": "Adobe RGB (1998)-compatible (PhotoCraft)"
+          }
+        },
+        {
+          "command": "document.pixel",
+          "result": [
+            0.3921568691730499,
+            0.5882353186607361,
+            0.7843137383460999,
+            1.0
+          ]
+        }
+      ]
+    },
+    {
+      "profile_id": "display-p3",
+      "depth": 32,
+      "file": "display-p3-32.psd",
+      "rgb_sample": [
+        100,
+        150,
+        200
+      ],
+      "command": [
+        "/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/release/photocraft-cli",
+        "run",
+        "--new",
+        "{\"width\": 3, \"height\": 1, \"depth\": 32, \"background\": \"#6496c8\"}",
+        "--cmd",
+        "edit.assignProfile",
+        "--params",
+        "{\"profile\": \"display-p3\"}",
+        "--cmd",
+        "document.pixel",
+        "--params",
+        "{\"x\":0,\"y\":0}",
+        "--out",
+        "/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/evidence/profile-preservation-fixtures/display-p3-32.psd"
+      ],
+      "output": [
+        {
+          "command": "edit.assignProfile",
+          "result": {
+            "profile": "Display P3"
+          }
+        },
+        {
+          "command": "document.pixel",
+          "result": [
+            0.3921568691730499,
+            0.5882353186607361,
+            0.7843137383460999,
+            1.0
+          ]
+        }
+      ]
+    },
+    {
+      "profile_id": "prophoto-compat",
+      "depth": 32,
+      "file": "prophoto-compat-32.psd",
+      "rgb_sample": [
+        100,
+        150,
+        200
+      ],
+      "command": [
+        "/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/release/photocraft-cli",
+        "run",
+        "--new",
+        "{\"width\": 3, \"height\": 1, \"depth\": 32, \"background\": \"#6496c8\"}",
+        "--cmd",
+        "edit.assignProfile",
+        "--params",
+        "{\"profile\": \"prophoto-compat\"}",
+        "--cmd",
+        "document.pixel",
+        "--params",
+        "{\"x\":0,\"y\":0}",
+        "--out",
+        "/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/evidence/profile-preservation-fixtures/prophoto-compat-32.psd"
+      ],
+      "output": [
+        {
+          "command": "edit.assignProfile",
+          "result": {
+            "profile": "ProPhoto RGB-compatible (ROMM primaries, PhotoCraft)"
+          }
+        },
+        {
+          "command": "document.pixel",
+          "result": [
+            0.3921568691730499,
+            0.5882353186607361,
+            0.7843137383460999,
+            1.0
+          ]
+        }
+      ]
+    },
+    {
+      "profile_id": "none",
+      "depth": 32,
+      "file": "none-32.psd",
+      "rgb_sample": [
+        100,
+        150,
+        200
+      ],
+      "command": [
+        "/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/release/photocraft-cli",
+        "run",
+        "--new",
+        "{\"width\": 3, \"height\": 1, \"depth\": 32, \"background\": \"#6496c8\"}",
+        "--cmd",
+        "edit.assignProfile",
+        "--params",
+        "{\"profile\": \"none\"}",
+        "--cmd",
+        "document.pixel",
+        "--params",
+        "{\"x\":0,\"y\":0}",
+        "--out",
+        "/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/evidence/profile-preservation-fixtures/none-32.psd"
+      ],
+      "output": [
+        {
+          "command": "edit.assignProfile",
+          "result": {
+            "profile": "none"
+          }
+        },
+        {
+          "command": "document.pixel",
+          "result": [
+            0.3921568691730499,
+            0.5882353186607361,
+            0.7843137383460999,
+            1.0
+          ]
+        }
+      ]
+    }
+  ],
+  "portable_recipe": {
+    "build": [
+      "cargo",
+      "+1.95.0",
+      "build",
+      "-p",
+      "photocraft-cli"
+    ],
+    "profiles": [
+      "adobe-rgb-compat",
+      "display-p3",
+      "prophoto-compat",
+      "none"
+    ],
+    "depths": [
+      8,
+      16,
+      32
+    ],
+    "new": {
+      "width": 3,
+      "height": 1,
+      "depth": "each listed depth",
+      "background": "#6496c8"
+    },
+    "steps": [
+      [
+        "edit.assignProfile",
+        {
+          "profile": "each listed profile"
+        }
+      ],
+      [
+        "document.pixel",
+        {
+          "x": 0,
+          "y": 0
+        }
+      ]
+    ],
+    "output": "source-{profile}-{depth}.psd; verify [100,150,200,255] before conversion. Full subsequent native command arrays are retained per stack.",
+    "untagged": "Behavioral cases also create a fresh document and explicitly assign none, then independently check absent PSD ICC resources."
+  }
+}

@@ -1,0 +1,112 @@
+COMMAND cargo +1.95.0 clippy -p photocraft-ui-egui --no-deps --all-targets -- -D warnings
+SOURCE a22bbfc15bb35e249c326e330c6b77f5bda4e99a
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling ring v0.17.14
+    Checking photocraft-algo v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/algo)
+    Checking photocraft-text v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/text)
+   Compiling photocraft-ui-egui v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/ui-egui)
+   Compiling rustls v0.23.46
+    Checking rustls-webpki v0.103.15
+    Checking photocraft-io v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/io)
+    Checking photocraft-gpu v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/gpu)
+    Checking rustls-platform-verifier v0.7.1
+    Checking ureq v3.5.0
+    Checking craft-update v0.1.0 (https://github.com/storytold/craft-libs?rev=c5a1cbfb5f9049f9270955caffb5bee5997aebf7#c5a1cbfb)
+    Checking photocraft-engine v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/engine)
+error: this `if` can be collapsed into the outer `match`
+   --> crates/ui-egui/src/canvas/strokes.rs:495:13
+    |
+495 | /             if rest.is_empty() || live.push(&rest).is_ok() {
+496 | |                 let _ = app.session.offer_live_retouch(*live);
+497 | |             }
+    | |_____________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#collapsible_match
+    = note: `-D clippy::collapsible-match` implied by `-D warnings`
+    = help: to override `-D warnings` add `#[allow(clippy::collapsible_match)]`
+help: collapse nested if block
+    |
+494 ~         EngineStroke::Retouch(mut live) if !dab
+495 ~             && (rest.is_empty() || live.push(&rest).is_ok()) => {
+496 |                 let _ = app.session.offer_live_retouch(*live);
+497 ~             }
+    |
+
+error: this `if` can be collapsed into the outer `match`
+   --> crates/ui-egui/src/canvas/strokes.rs:500:13
+    |
+500 | /             if rest.is_empty() || live.push(&rest).is_ok() {
+501 | |                 let _ = app.session.offer_live_dab(*live);
+502 | |             }
+    | |_____________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#collapsible_match
+help: collapse nested if block
+    |
+499 ~         EngineStroke::Dab(mut live) if dab
+500 ~             && (rest.is_empty() || live.push(&rest).is_ok()) => {
+501 |                 let _ = app.session.offer_live_dab(*live);
+502 ~             }
+    |
+
+error: this function has too many arguments (8/7)
+   --> crates/ui-egui/src/dialogs.rs:233:1
+    |
+233 | / fn show_modal<T>(
+234 | |     modal: egui::Modal,
+235 | |     ctx: &egui::Context,
+236 | |     id: egui::Id,
+...   |
+241 | |     contents: impl FnOnce(&mut egui::Ui) -> T,
+242 | | ) -> egui::ModalResponse<T> {
+    | |___________________________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#too_many_arguments
+    = note: requested on the command line with `-D clippy::too-many-arguments`
+
+error: this boolean expression can be simplified
+   --> crates/ui-egui/src/dialogs/vp_ui.rs:989:12
+    |
+989 |         if !(0.0..=360.0).contains(&angle) || !(depth > 0.0 && depth <= 1000.0) {
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try: `!((0.0..=360.0).contains(&angle) && depth > 0.0 && depth <= 1000.0)`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#nonminimal_bool
+    = note: `-D clippy::nonminimal-bool` implied by `-D warnings`
+    = help: to override `-D warnings` add `#[allow(clippy::nonminimal_bool)]`
+
+error: this `if` can be collapsed into the outer `match`
+  --> crates/ui-egui/src/widgets/text_field.rs:29:17
+   |
+29 | /                 if cut(text) && active_range_chars.as_ref().is_some_and(|r| r.end > INPUT_EVENT_LIMIT) {
+30 | |                     *active_range_chars = None;
+31 | |                 }
+   | |_________________^
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#collapsible_match
+help: collapse nested if block
+   |
+28 ~             egui::Event::Ime(egui::ImeEvent::Preedit { text, active_range_chars })
+29 ~                 if cut(text) && active_range_chars.as_ref().is_some_and(|r| r.end > INPUT_EVENT_LIMIT) => {
+30 |                     *active_range_chars = None;
+31 ~                 }
+   |
+
+error: could not compile `photocraft-ui-egui` (lib) due to 5 previous errors
+warning: build failed, waiting for other jobs to finish...
+error: manual `!RangeInclusive::contains` implementation
+   --> crates/ui-egui/src/dialogs/color_picker_ui/tests.rs:130:13
+    |
+130 |     assert!(hue < 30.0 || hue > 330.0, "hue {hue}");
+    |             ^^^^^^^^^^^^^^^^^^^^^^^^^ help: use: `!(30.0..=330.0).contains(&hue)`
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#manual_range_contains
+    = note: `-D clippy::manual-range-contains` implied by `-D warnings`
+    = help: to override `-D warnings` add `#[allow(clippy::manual_range_contains)]`
+
+error: could not compile `photocraft-ui-egui` (lib test) due to 6 previous errors

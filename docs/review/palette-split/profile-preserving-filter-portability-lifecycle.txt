@@ -1,0 +1,176 @@
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+    Finished `test` profile [optimized] target(s) in 0.17s
+     Running unittests src/lib.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-profile-parity/debug/deps/photocraft_engine-41d13d98c70ad398)
+
+running 4 tests
+test filters::tests::palette_map_filter_uses_one_undo_step_and_last_filter_replay ... ok
+test filters::tests::palette_map_invalid_snapshot_has_no_mutation ... ok
+test filters::tests::palette_map_rgb_profile_roundtrips_through_srgb_kernel ... ok
+test filters::tests::palette_map_smart_filter_snapshot_roundtrips_through_pcraft ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 2505 filtered out; finished in 0.01s
+
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+    Finished `dev` profile [optimized] target(s) in 0.10s
+     Running `/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-profile-parity/debug/xtask layers`
+Dependency layering (docs/architecture.md §3)
+
+crate                        layer          workspace deps
+photocraft                   exempt         automation, codecs, color, compose, doc, engine, format, geom, io, raster, tablet, ui-egui, cms
+photocraft-affinity          L0 standalone  
+photocraft-algo              L2             color, geom, raster, testkit (dev)
+photocraft-automation        L6             codecs, compose, doc, engine, format, io, raster, raw (dev)
+photocraft-cli               exempt         automation, codecs, engine, format, io, raw (dev)
+photocraft-cms               L0             
+photocraft-codecs            L0 standalone  heif
+photocraft-color             L0             cms
+photocraft-compose           L3             color, doc, geom, raster, vector, cms (dev), paint (dev)
+photocraft-doc               L1             color, geom, raster
+photocraft-engine            L5             algo, cms, codecs, color, compose, doc, format, geom, io, ops, paint, plugins, psd, raster, text, vector, affinity (dev), raw (dev), testkit (dev), ipp
+photocraft-format            L3             codecs, color, doc, geom, raster
+photocraft-geom              L0             
+photocraft-gpu               L3             algo, color, compose, doc, geom, raster, cms (dev), vector (dev)
+photocraft-heif              L0 standalone  
+photocraft-io                L4             affinity, algo, cms, codecs, color, compose, doc, format, geom, paint, psd, raster, raw, text, vector, affinity (dev), psd (dev), raw (dev), testkit (dev)
+photocraft-ipp               L0 standalone  
+photocraft-ops               L2             doc
+photocraft-paint             L2             color, geom, raster, cms (dev)
+photocraft-plugins           L4             color, geom, raster
+photocraft-psd               L0 standalone  psd (dev)
+photocraft-raster            L0             color, geom
+photocraft-raw               L0 standalone  raw (dev)
+photocraft-tablet            L0 standalone  
+photocraft-testkit           testkit        
+photocraft-text              L2             color, doc, geom, psd, raster
+photocraft-ui-egui           L6             algo, cms, codecs, color, compose, doc, engine, format, geom, gpu, io, paint, plugins, raster, text, vector, psd (dev), raw (dev), testkit (dev)
+photocraft-vector            L2             color, doc, geom, raster
+photocraft-web               exempt         codecs, doc, engine, io, ui-egui, paint (dev), psd (dev)
+photocraft-web-boot          exempt         
+xtask                        exempt         
+
+OK: 31 crates, no layering violations.
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+    Finished `dev` profile [optimized] target(s) in 0.10s
+     Running `/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-profile-parity/debug/xtask wasm`
+$ cargo check --target wasm32-unknown-unknown --keep-going -p photocraft-affinity -p photocraft-algo -p photocraft-cms -p photocraft-codecs -p photocraft-color -p photocraft-compose -p photocraft-doc -p photocraft-engine -p photocraft-format -p photocraft-geom -p photocraft-gpu -p photocraft-heif -p photocraft-io -p photocraft-ipp -p photocraft-ops -p photocraft-paint -p photocraft-plugins -p photocraft-psd -p photocraft-raster -p photocraft-raw -p photocraft-tablet -p photocraft-text -p photocraft-ui-egui -p photocraft-vector
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+warning: function `map_items` is never used
+  --> crates/paint/src/render.rs:85:4
+   |
+85 | fn map_items<T: Sync, R: Send>(items: &[T], pixels: usize, f: impl Fn(&T) -> R + Sync) -> Vec<R> {
+   |    ^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `photocraft-paint` (lib) generated 1 warning
+   Compiling photocraft-ui-egui v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/ui-egui)
+warning: function `open_regular` is never used
+  --> crates/plugins/src/registry.rs:67:4
+   |
+67 | fn open_regular(path: &std::path::Path) -> std::io::Result<std::fs::File> {
+   |    ^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `photocraft-plugins` (lib) generated 1 warning
+warning: constant `PAR_PIXELS` is never used
+   --> crates/engine/src/display_color.rs:110:7
+    |
+110 | const PAR_PIXELS: usize = 16 * 1024;
+    |       ^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: constant `MAX_FOLDER_LUTS` is never used
+   --> crates/engine/src/cmd/adjust_cmds.rs:188:7
+    |
+188 | const MAX_FOLDER_LUTS: usize = 500;
+    |       ^^^^^^^^^^^^^^^
+
+warning: constant `MAX_FOLDER_LUT_BYTES` is never used
+   --> crates/engine/src/cmd/adjust_cmds.rs:190:7
+    |
+190 | const MAX_FOLDER_LUT_BYTES: u64 = 64 << 20;
+    |       ^^^^^^^^^^^^^^^^^^^^
+
+warning: constant `MAX_SUBFOLDER_DEPTH` is never used
+  --> crates/engine/src/cmd/file_cmds/batch_run.rs:25:18
+   |
+25 | pub(crate) const MAX_SUBFOLDER_DEPTH: usize = 32;
+   |                  ^^^^^^^^^^^^^^^^^^^
+
+warning: constant `MAX_SUBFOLDER_FILES` is never used
+  --> crates/engine/src/cmd/file_cmds/batch_run.rs:29:18
+   |
+29 | pub(crate) const MAX_SUBFOLDER_FILES: usize = 100_000;
+   |                  ^^^^^^^^^^^^^^^^^^^
+
+warning: `photocraft-engine` (lib) generated 5 warnings
+warning: function `effective_locale` is never used
+   --> crates/ui-egui/src/text/cjk_fonts.rs:564:4
+    |
+564 | fn effective_locale(ui_code: &str, os_locale: Option<&str>) -> Option<String> {
+    |    ^^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `photocraft-ui-egui` (lib) generated 1 warning
+    Finished `dev` profile [optimized] target(s) in 8.42s
+$ cargo check --target wasm32-unknown-unknown -p photocraft-codecs --features heif
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+    Finished `dev` profile [optimized] target(s) in 0.11s
+
+wasm32-unknown-unknown check:
+  ok     24 crates
+  ok     photocraft-codecs --features heif
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+    Finished `dev` profile [optimized] target(s) in 0.10s
+     Running `/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-profile-parity/debug/xtask parity`
+$ cargo run -p photocraft-ui-egui --example parity
+Photoshop menu parity: 631 / 631 live (100.0%)
+  File       52 / 52  
+  Edit       75 / 75  
+  Image      61 / 61  
+  Layer     163 / 163 
+  Type       45 / 45  
+  Select     25 / 25  
+  Filter     75 / 75  
+  View       74 / 74  
+  Window     61 / 61  
+wrote docs/parity-checklist.md

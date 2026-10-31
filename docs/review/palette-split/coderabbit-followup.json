@@ -1,5 +1,8 @@
 {
   "schema_version": 1,
+  "status": "historical_superseded",
+  "superseded_by": "profile-preservation.json",
+  "correction": "The forced-Indexed-sRGB premise was wrong. Stock Indexed must preserve document RGB samples and ICC; default Indexed-to-RGB must preserve that representation. The linked replacement records the corrected source and verification. Historical results below are retained at their exact original source heads, not relabeled as current or Photoshop-parity proof.",
   "recorded_at": "2026-10-29T16:40:56.963418+00:00",
   "source_heads": {
     "backend": "3a9e6bed6d131106f034babc86a9cb81813743d8",
@@ -77,6 +80,8 @@
   },
   "earlier_broad_validation": "coderabbit-earlier-validation-index.json",
   "performance": {
+    "withdrawn_as_current_or_parity_evidence": true,
+    "withdrawal_reason": "This compares serial and parallel implementations of the superseded forced-sRGB path. It is not a speedup measurement for the corrected profile-preserving Indexed workflow.",
     "raw": "coderabbit-icc-perf.json",
     "source": "52d52c015ba1608b163fc6a59e1c00e63d99e0a9",
     "scope": "Isolated two-order 24MP Display P3 Indexed command; not a later-head benchmark.",

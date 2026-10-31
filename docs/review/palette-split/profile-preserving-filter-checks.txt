@@ -1,0 +1,264 @@
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+     Removed 72 files, 1.4GiB total
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling photocraft-algo v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/algo)
+   Compiling photocraft-io v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/io)
+   Compiling photocraft-engine v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/engine)
+    Finished `test` profile [optimized] target(s) in 1m 42s
+     Running unittests src/lib.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-profile-parity/debug/deps/photocraft_engine-41d13d98c70ad398)
+
+running 40 tests
+test cmd::mode_cmds::tests::flattened_mode_pixels_match_the_allocating_conversion_at_every_channel_count ... ok
+test cmd::mode_cmds::tests::indexed_non_black_white_generation_keeps_existing_total_count_semantics ... ok
+test cmd::mode_cmds::tests::indexed_explicit_transparency_excludes_reserved_palette_entry ... ok
+test cmd::mode_cmds::tests::indexed_color_rejects_invalid_counts_without_editing_the_document ... ok
+test cmd::mode_cmds::tests::duotone_curve_points_must_be_finite ... ok
+test cmd::mode_cmds::tests::color_table_rejects_an_invalid_transparent_index_without_editing ... ok
+test cmd::mode_cmds::tests::bitmap_halftone_rejects_bad_angles_and_frequencies_without_editing_the_document ... ok
+test cmd::mode_cmds::tests::indexed_advanced_srgb_snapshot_maps_back_to_document_profile ... ok
+test cmd::mode_cmds::tests::live_brush_preview_matches_indexed_commit ... ok
+test cmd::mode_cmds::tests::indexed_black_white_generation_keeps_both_opaque_entries_and_replays ... ok
+test cmd::mode_cmds::tests::bitmap_rejects_bad_resolutions_and_patterns_without_editing_the_document ... ok
+test cmd::mode_cmds::tests::bitmap_lays_a_transparent_composite_over_white ... ok
+test cmd::mode_cmds::tests::pencil_auto_erase_knows_the_indexed_foreground ... ok
+test cmd::mode_cmds::tests::color_table_presets_and_entries ... ok
+test cmd::mode_cmds::tests::brush_stroke_keeps_indexed_transparency_binary ... ok
+test cmd::mode_cmds::tests::indexed_brush_stroke_leaves_pixels_it_did_not_paint ... ok
+test cmd::mode_cmds::tests::bitmap_custom_pattern_thresholds_against_the_tiled_pattern ... ok
+test cmd::mode_cmds::tests::modes_round_trip_through_pcraft ... ok
+test cmd::mode_cmds::tests::brush_stroke_stays_in_indexed_color_table ... ok
+test cmd::mode_cmds::tests::clearing_color_table_transparency_restores_indexed_pixels ... ok
+test cmd::mode_cmds::tests::duotone_inks_and_display ... ok
+test cmd::mode_cmds::tests::duotone_to_rgb_inks_fill_layer_colours ... ok
+test cmd::mode_cmds::tests::rotate_arbitrary_keeps_the_background_opaque_with_a_translucent_background_colour ... ok
+test cmd::mode_cmds::tests::bitmap_methods_need_grayscale ... ok
+test cmd::mode_cmds::tests::rotate_arbitrary_rotates_grouped_locked_children_and_preserves_lock ... ok
+test cmd::mode_cmds::tests::bitmap_halftone_screen_is_laid_out_at_the_output_resolution ... ok
+test cmd::mode_cmds::tests::bitmap_output_resolution_resamples_and_sets_the_resolution ... ok
+test cmd::mode_cmds::tests::bitmap_budgets_a_conversion_at_the_document_resolution_too ... ok
+test cmd::mode_cmds::tests::indexed_extended_mapping_is_opt_in_and_malformed_values_error ... ok
+test cmd::mode_cmds::tests::shrinking_the_color_table_drops_a_transparent_index_past_its_end ... ok
+test cmd::mode_cmds::tests::indexed_exact_transparency_and_sources ... ok
+test cmd::mode_cmds::tests::rotate_arbitrary_other_modes ... ok
+test cmd::mode_cmds::tests::indexed_exact_preserves_encoded_rgb_profile_through_rgb_at_all_depths ... ok
+test cmd::mode_cmds::tests::rotate_arbitrary_grows_canvas_and_keeps_background ... ok
+test cmd::mode_cmds::tests::rotate_arbitrary_keeps_the_full_precision_angle ... ok
+test cmd::mode_cmds::tests::rotate_arbitrary_turns_unlinked_layer_masks ... ok
+test cmd::mode_cmds::tests::indexed_color_palettes_and_dithers ... ok
+test cmd::mode_cmds::tests::duotone_to_colour_modes_keeps_the_ink_colours ... ok
+test cmd::mode_cmds::tests::bitmap_output_resolution_budgets_the_whole_conversion_not_just_the_resample ... ok
+test cmd::mode_cmds::tests::bitmap_in_bands_matches_one_full_canvas_conversion ... ok
+
+test result: ok. 40 passed; 0 failed; 0 ignored; 0 measured; 2469 filtered out; finished in 4.60s
+
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+    Finished `test` profile [optimized] target(s) in 0.13s
+     Running unittests src/lib.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-profile-parity/debug/deps/photocraft_engine-41d13d98c70ad398)
+
+running 10 tests
+test palette_cmds::tests::indexed_reduction_rejects_out_of_bounds_transparent_slot ... ok
+test palette_cmds::tests::malformed_legacy_dither_does_not_fall_back_to_stock_mapping ... ok
+test palette_cmds::tests::mapping_legacy_spellings_are_shared ... ok
+test palette_cmds::tests::malformed_palette_id_is_rejected_even_when_snapshot_is_present ... ok
+test palette_cmds::tests::palette_map_replay_rejects_fixed_color_surfaces ... ok
+test palette_cmds::tests::snapshot_wins_over_unknown_catalog_id ... ok
+test palette_cmds::tests::oversized_palette_region_returns_error_before_allocating ... ok
+test palette_cmds::tests::palette_map_cancels_before_source_conversion_and_during_icc_work ... ok
+test palette_cmds::tests::wrong_type_palette_id_does_not_fall_back_to_generated_indexing ... ok
+test palette_cmds::tests::palette_map_is_disabled_for_fixed_color_documents ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 2499 filtered out; finished in 0.01s
+
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling photocraft-algo v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/algo)
+   Compiling photocraft-ui-egui v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/ui-egui)
+   Compiling photocraft-io v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/io)
+   Compiling photocraft-gpu v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/gpu)
+   Compiling photocraft-engine v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/engine)
+    Finished `test` profile [optimized] target(s) in 1m 28s
+     Running unittests src/lib.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-profile-parity/debug/deps/photocraft_ui_egui-2597354be20dd143)
+
+running 3 tests
+test dialogs::tests::indexed_color_uses_stock_dialog_controls_and_commits ... ok
+test dialogs::filter_dialog::tests::stock_indexed_dialog_can_disable_transparency_with_stale_automation_settings ... ok
+test tools::type_tool::ime_tests::actual_font_search_owns_stock_input_without_a_speculative_custom_request ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 4508 filtered out; finished in 0.12s
+
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+    Finished `test` profile [optimized] target(s) in 0.23s
+     Running unittests src/lib.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-profile-parity/debug/deps/photocraft_ui_egui-2597354be20dd143)
+
+running 16 tests
+test dialogs::filter_dialog::tests::palette_map_live_preview_uses_the_document_proxy ... ok
+test dialogs::palette_map_ui::tests::legacy_mapping_fields_are_migrated ... ok
+test dialogs::palette_map_ui::tests::imported_threshold_matrix_obeys_custom_pattern_bounds ... ok
+test dialogs::palette_map_ui::tests::rgb_cube_library_thumbnail_shows_chromatic_colors ... ok
+test dialogs::palette_map_ui::tests::cancel_discards_palette_draft_without_document_mutation ... ok
+test dialogs::palette_map_ui::tests::invalid_matrix_import_preserves_a_confirmable_recipe ... ok
+test panels::smart_ui::tests::palette_map_smart_filter_reopens_state_and_reapplies_pixels ... ok
+test dialogs::filter_dialog::tests::fresh_palette_map_dialog_maps_a_pixel_on_confirm ... ok
+test dialogs::palette_map_ui::tests::mapping_wheel_scrolls_the_pane_instead_of_changing_values ... ok
+test canvas::tests::a_superseded_palette_map_preview_never_reaches_the_canvas ... ok
+test dialogs::filter_dialog::tests::palette_map_on_a_reduced_smart_object_replays_scaled_existing_filters ... ok
+test canvas::tests::cancelled_palette_map_preview_is_discarded_when_values_revert ... ok
+test canvas::tests::closing_palette_map_dialog_cancels_its_preview_worker ... ok
+test dialogs::tests::palette_map_owns_library_preview_and_apply_controls ... ok
+test dialogs::tests::palette_map_apply_cancel_is_transactional_and_commit_lands ... ok
+test canvas::tests::palette_map_preview_stays_bounded_at_any_canvas_zoom ... ok
+
+test result: ok. 16 passed; 0 failed; 0 ignored; 0 measured; 4495 filtered out; finished in 0.17s
+
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+    Finished `test` profile [optimized] target(s) in 0.17s
+     Running unittests src/lib.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-profile-parity/debug/deps/photocraft_ui_egui-2597354be20dd143)
+
+running 32 tests
+test dialogs::filter_preview_ui::tests::textures_are_reduced_to_fit_the_gpu ... ok
+test dialogs::filter_preview_ui::tests::the_image_keeps_square_pixels_when_the_region_overhangs_it ... ok
+test dialogs::filter_preview_ui::tests::a_click_maps_to_the_document_point_under_it ... ok
+test dialogs::filter_preview_ui::tests::a_hundred_percent_is_one_document_pixel_per_point ... ok
+test dialogs::filter_preview_ui::tests::a_zoomed_out_region_centres_the_whole_image ... ok
+test dialogs::filter_preview_worker::tests::request_identity_covers_dialog_revision_layer_and_params ... ok
+test dialogs::filter_preview_ui::tests::the_centre_is_clamped_to_the_document ... ok
+test dialogs::filter_preview_ui::tests::zoom_steps_walk_the_levels_and_stay_in_bounds ... ok
+test dialogs::filter_preview_ui::tests::only_filter_dialogs_get_the_preview_window ... ok
+test dialogs::filter_preview_ui::tests::the_source_rect_follows_the_centre_and_zoom ... ok
+test dialogs::filter_preview_worker::tests::a_stale_preview_is_cancelled_only_once_the_values_settle ... ok
+test dialogs::filter_preview_worker::tests::escaped_panic_is_an_error_and_worker_can_be_reused ... ok
+test dialogs::filter_preview_worker::tests::cancelled_completion_does_not_poison_a_request_after_reversion ... ok
+test dialogs::filter_preview_worker::tests::blocked_preview_does_not_block_ui_or_queue_slider_requests ... ok
+test canvas::tests::filter_preview_factor_caps_at_the_view_without_overriding_the_preference ... ok
+test dialogs::filter_preview_ui::tests::full_resolution_preview_textures_respect_the_device_limit ... ok
+test dialogs::filter_preview_worker::tests::closing_and_reopening_preview_cancels_the_off_screen_worker ... ok
+test dialogs::filter_preview_ui::tests::original_texture_refreshes_when_the_channel_view_changes_without_an_edit ... ok
+test dialogs::filter_preview_ui::tests::the_window_defaults_its_view_and_never_panics ... ok
+test canvas::rotation_preview_isolation_tests::channel_overlay_shows_filter_preview_and_restores_on_cancel ... ok
+test canvas::rotation_preview_isolation_tests::filter_preview_refreshes_when_channel_target_changes ... ok
+test panels::smart_ui::tests::an_edited_smart_filter_previews_what_ok_gives ... ok
+test canvas::tests::inline_filter_preview_is_composited_and_recorded_once ... ok
+test canvas::rotation_preview_isolation_tests::filter_preview_is_not_returned_for_inactive_document ... ok
+test canvas::rotation_preview_isolation_tests::filter_preview_overlay_matches_quick_mask_and_mixed_color_views ... ok
+test canvas::rotation_preview_isolation_tests::filter_preview_matches_applied_alpha_target ... ok
+test canvas::rotation_preview_isolation_tests::filter_preview_matches_applied_layer_mask_target ... ok
+test dialogs::filter_preview_ui::tests::uploaded_preview_shows_the_filtered_alpha_at_every_depth_and_proxy_scale ... ok
+test canvas::rotation_preview_isolation_tests::filter_preview_matches_applied_color_target ... ok
+test canvas::tests::filter_preview_at_100_percent_is_full_resolution ... ok
+test canvas::tests::every_filter_previews_off_the_ui_thread_and_a_newer_value_cancels_the_old ... ok
+test dialogs::filter_dialog::tests::core_filter_previews_keep_minimum_settings_after_downsampling ... ok
+
+test result: ok. 32 passed; 0 failed; 0 ignored; 0 measured; 4479 filtered out; finished in 0.47s
+
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling photocraft-engine v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/engine)
+    Finished `test` profile [optimized] target(s) in 33.45s
+     Running tests/panic_hunt.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-profile-parity/debug/deps/panic_hunt-a5a18aa743d43e3a)
+
+running 1 test
+test no_command_panics_or_hangs_on_adversarial_params ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out; finished in 36.60s
+
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling photocraft-algo v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/algo)
+   Compiling photocraft-cli v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/apps/photocraft-cli)
+   Compiling photocraft-io v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/io)
+   Compiling photocraft-engine v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/engine)
+   Compiling photocraft-automation v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/automation)
+    Finished `dev` profile [optimized] target(s) in 56.16s
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling photocraft-ui-egui v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/ui-egui)
+    Finished `dev` profile [optimized] target(s) in 47.03s
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+    Checking serde v1.0.229
+    Checking half v2.7.1
+    Checking serde_json v1.0.154
+    Checking anstyle v1.0.14
+    Checking ciborium-io v0.2.2
+    Checking clap_lex v1.1.1
+    Checking regex-syntax v0.8.11
+    Checking clap_builder v4.6.7
+    Checking photocraft-color v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/color)
+    Checking photocraft-geom v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/geom)
+    Checking ciborium-ll v0.2.2
+    Checking num-complex v0.4.6
+    Checking itertools v0.13.0
+    Checking cast v0.3.0
+    Checking regex-automata v0.4.18
+    Checking same-file v1.0.6
+    Checking walkdir v2.5.0
+    Checking rustfft v6.4.1
+    Checking clap v4.6.7
+    Checking photocraft-raster v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/raster)
+    Checking alloca v0.4.0
+    Checking ciborium v0.2.2
+    Checking criterion-plot v0.8.2
+    Checking tinytemplate v1.2.1
+    Checking page_size v0.6.0
+    Checking regex v1.13.1
+    Checking anes v0.1.6
+    Checking oorandom v11.1.5
+    Checking photocraft-testkit v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/testkit)
+    Checking criterion v0.8.2
+    Checking photocraft-algo v0.18.0 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/algo)
+    Finished `dev` profile [optimized] target(s) in 9.30s

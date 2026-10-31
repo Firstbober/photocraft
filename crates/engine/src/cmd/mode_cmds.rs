@@ -8,9 +8,9 @@
 //! conversions flatten (Indexed, Bitmap) and require a grayscale source (Bitmap, Duotone).
 
 use photocraft_algo::palette_map::{AlphaMode, Palette};
-use photocraft_algo::quantize::{self, BitmapMethod, Forced, HalftoneShape, PaletteKind};
+use photocraft_algo::quantize::{self, BitmapMethod, Dither, Forced, HalftoneShape, PaletteKind};
 use photocraft_algo::transform::{Homography, Interp};
-use photocraft_cms::{Builtin, TransformOptions};
+use photocraft_cms::{Builtin, ColorSpace, TransformOptions};
 use photocraft_color::{ColorMode, PixelFormat, SampleType};
 use photocraft_doc::adjust::CurvePoint;
 use photocraft_doc::{ColorTable, Document, Duotone, DuotoneInk, Layer, LayerContent, LayerId, Size};
@@ -185,54 +185,6 @@ fn with_released_movement_locks<R>(l: &mut Layer, f: impl FnOnce(&mut Layer) -> 
 fn composite(doc: &Document, opaque: bool) -> Vec<[f32; 4]> {
     let buf = photocraft_compose::flatten(doc);
     if opaque { buf.over_background([1.0, 1.0, 1.0]).px } else { buf.px }
-}
-
-/// Indexed storage and its palette are sRGB. Convert RGB/gray composites before quantisation so
-/// wide-gamut document samples are not interpreted as sRGB numbers by the quantizer.
-fn composite_in_srgb(doc: &Document, opaque: bool, options: TransformOptions) -> Result<Vec<[f32; 4]>> {
-    const CMD: &str = "image.mode.indexedColor";
-    let mut pixels = composite(doc, opaque);
-    let channels = match doc.mode {
-        ColorMode::Grayscale | ColorMode::Bitmap | ColorMode::Duotone => 1,
-        ColorMode::Rgb | ColorMode::Indexed => 3,
-        _ => return Ok(pixels),
-    };
-    let source = crate::color_cmds::document_profile(doc);
-    let srgb = Builtin::Srgb.profile();
-    if source.same_colors(srgb)
-        && (options.intent != photocraft_cms::Intent::AbsoluteColorimetric || source.same_bytes(srgb) || source.media_white() == srgb.media_white())
-    {
-        return Ok(pixels);
-    }
-    let transform = photocraft_cms::cached(&source, srgb, options).map_err(|e| bad(CMD, format!("could not convert the composite to sRGB: {e}")))?;
-    let convert = |converted: &mut [f32; 16], pixel: &mut [f32; 4]| {
-        let input = if channels == 1 { &pixel[..1] } else { &pixel[..3] };
-        transform.eval(input, converted);
-        pixel[..3].copy_from_slice(&converted[..3]);
-    };
-    #[cfg(not(target_arch = "wasm32"))]
-    {
-        const PAR_MIN_PIXELS: usize = 16 * 1024;
-        if pixels.len() >= PAR_MIN_PIXELS {
-            use rayon::prelude::*;
-            // `cached` returns an Arc<Transform>; Transform's evaluation reads only immutable
-            // tables, so the same cached transform is safe to share between Rayon workers.
-            pixels.par_iter_mut().for_each_init(|| [0.0f32; 16], convert);
-        } else {
-            let mut converted = [0.0f32; 16];
-            for pixel in &mut pixels {
-                convert(&mut converted, pixel);
-            }
-        }
-    }
-    #[cfg(target_arch = "wasm32")]
-    {
-        let mut converted = [0.0f32; 16];
-        for pixel in &mut pixels {
-            convert(&mut converted, pixel);
-        }
-    }
-    Ok(pixels)
 }
 
 /// Replace the document's layers by one 8-bit layer holding `px` in `mode`'s storage format.
@@ -414,9 +366,19 @@ fn indexed_color(s: &mut Session, raw: &Value) -> Result<Value> {
             ));
         }
     }
-    let options = TransformOptions { intent: s.color.settings.intent(), bpc: s.color.settings.bpc, ..TransformOptions::default() };
+    // Advanced palette-map comparisons use encoded sRGB, but stock Indexed Color stays in the
+    // document's encoded RGB coordinates and keeps its original profile.
+    let mapping_options = TransformOptions { intent: s.color.settings.intent(), bpc: s.color.settings.bpc, ..TransformOptions::default() };
     let (pal_len, transparent, palette_snapshot) = s.edit("Indexed Color", |doc, active| {
-        let mut px = composite_in_srgb(doc, !transparency, options)?;
+        let mut px = composite(doc, !transparency);
+        let source_profile = crate::color_cmds::document_profile(doc);
+        let srgb = Builtin::Srgb.profile();
+        let advanced_cms = advanced && source_profile.color_space == ColorSpace::Rgb && !source_profile.same_bytes(srgb);
+        if advanced_cms {
+            let transform = photocraft_cms::cached(&source_profile, srgb, mapping_options)
+                .map_err(|e| bad(CMD, format!("could not convert advanced Indexed mapping to sRGB: {e}")))?;
+            transform.apply(px.as_flattened_mut(), 4);
+        }
         let mut mapping = settings.clone().unwrap_or_default();
         let custom = custom_palette.clone();
         let mut palette = if let Some(custom) = custom {
@@ -502,13 +464,16 @@ fn indexed_color(s: &mut Session, raw: &Value) -> Result<Value> {
             let pal: Vec<[u8; 3]> = palette.colors.iter().map(|c| c.map(|v| (v.clamp(0.0, 1.0) * 255.0).round() as u8)).collect();
             quantize::quantize(&mut px, doc.size.width as usize, &pal, dither, amount, transparent);
         }
+        let snapshot = palette.clone();
+        if advanced_cms {
+            let transform = photocraft_cms::cached(srgb, &source_profile, mapping_options)
+                .map_err(|e| bad(CMD, format!("could not convert advanced Indexed mapping to document RGB: {e}")))?;
+            transform.apply(px.as_flattened_mut(), 4);
+            transform.apply(palette.colors.as_flattened_mut(), 3);
+        }
         single_layer(doc, active, ColorMode::Indexed, &px, if transparent.is_some() { "Index" } else { "Background" }, transparent.is_none());
-        // Indexed storage holds expanded sRGB samples; retaining an AdobeRGB/Display-P3 tag here
-        // would make those samples get transformed a second time by compositors and exporters.
-        doc.icc_profile = Some(photocraft_cms::Builtin::Srgb.profile().to_bytes());
         let mut table = crate::palette_cmds::palette_to_color_table(&palette);
         table.transparent = transparent.map(|index| index as u8);
-        let snapshot = palette.clone();
         doc.color_table = Some(table);
         Ok((palette.colors.len(), transparent, snapshot))
     })?;

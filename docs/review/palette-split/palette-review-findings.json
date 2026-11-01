@@ -1,0 +1,113 @@
+{
+  "format_version": 1,
+  "recorded_at": "2026-11-01T22:20:55.067728+00:00",
+  "scope": "Resolve automatic transparency-slot leakage in Indexed snapshots and preserve native samples in Palette Map selection holes. No new commands or UI changes.",
+  "findings": [
+    "https://github.com/storytold/photocraft/pull/8933#discussion_r4432047041",
+    "https://github.com/storytold/photocraft/pull/8933#discussion_r4432047046"
+  ],
+  "sources": {
+    "main_pin": "422ca7beda90d927643bcd074646ebbd37706d75",
+    "backend_baseline": "a9bcf686294b309d223ebb7b87a0ca4ef70d4a70",
+    "filter_baseline": "a7ab773951f2131c44690f4abfaf4b045f34eea2",
+    "before_fix_filter": "185c5bbc6138cb93eaeb77790d967999e4058c36",
+    "executed_backend": "7e0847620452a848b12983c4531cf0a807fe1441",
+    "executed_filter": "86e89a403e26f15c54aa1f23afe125b25e51072f",
+    "final_backend": "bf9b987ea47c8aab029309b18eeb9d170d5b9c08",
+    "final_filter": "974de089fef56d1542cb45f4d94e375dc935c1c3",
+    "executed_code_trees": {
+      "crates": "ad540a358994cdd2f65c63a895e658c7739d6eca",
+      "apps": "1075ed3a1790539da78dc8f10aa41ebcaa30475f",
+      "Cargo.toml": "da26a96405a4ec6636a21f452ab5c61be499ae34",
+      "Cargo.lock": "725776fa79fcc290994273ff80fda60f47751a3e"
+    },
+    "final_code_trees": {
+      "crates": "ad540a358994cdd2f65c63a895e658c7739d6eca",
+      "apps": "1075ed3a1790539da78dc8f10aa41ebcaa30475f",
+      "Cargo.toml": "da26a96405a4ec6636a21f452ab5c61be499ae34",
+      "Cargo.lock": "725776fa79fcc290994273ff80fda60f47751a3e"
+    },
+    "docs_only_restack": "Final crates/apps/Cargo.toml/Cargo.lock object IDs equal executed IDs; backend crates object ID unchanged. Final commits add development documentation only.",
+    "unchanged_ui_tree": "64b517dd3bfa84273d550c1bb594feaa959ca1f6",
+    "cli_sha256": "d5cfbaa824445668570e520c50c14555479409cdb4bb67b09d3847b5cc0c5760"
+  },
+  "verification": {
+    "before": {
+      "receipt": "palette-review-findings-before.txt",
+      "passed": 27,
+      "failed": 5,
+      "note": "Three snapshot assertions and two native selection-hole assertions failed. The later replay assertions ignore hidden RGB in a transparent slot, which intentionally differs between stock and advanced encoders; the failing opaque-palette assertion is retained."
+    },
+    "after": {
+      "receipt": "palette-review-findings-after.txt",
+      "command": "env CARGO_TARGET_DIR=/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-selection-fixes CARGO_INCREMENTAL=0 CARGO_PROFILE_DEV_DEBUG=0 CARGO_PROFILE_TEST_DEBUG=0 CARGO_BUILD_JOBS=4 CRAFT_FONTS_DIR=/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/craft-fonts CRAFT_FONTS_REQUIRED=1 RAYON_NUM_THREADS=8 PHOTOCRAFT_NO_PRINT=1 LPDEST=photocraft-no-such-printer cargo +1.95.0 test --release -p photocraft-engine --lib review_ && env CARGO_TARGET_DIR=/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-selection-fixes CARGO_INCREMENTAL=0 CARGO_PROFILE_DEV_DEBUG=0 CARGO_PROFILE_TEST_DEBUG=0 CARGO_BUILD_JOBS=4 CRAFT_FONTS_DIR=/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/craft-fonts CRAFT_FONTS_REQUIRED=1 RAYON_NUM_THREADS=8 PHOTOCRAFT_NO_PRINT=1 LPDEST=photocraft-no-such-printer cargo +1.95.0 test --release -p photocraft-engine --lib cmd::mode_cmds::tests:: && env CARGO_TARGET_DIR=/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-selection-fixes CARGO_INCREMENTAL=0 CARGO_PROFILE_DEV_DEBUG=0 CARGO_PROFILE_TEST_DEBUG=0 CARGO_BUILD_JOBS=4 CRAFT_FONTS_DIR=/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/craft-fonts CRAFT_FONTS_REQUIRED=1 RAYON_NUM_THREADS=8 PHOTOCRAFT_NO_PRINT=1 LPDEST=photocraft-no-such-printer cargo +1.95.0 test --release -p photocraft-engine --lib palette_map && env CARGO_TARGET_DIR=/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-selection-fixes CARGO_INCREMENTAL=0 CARGO_PROFILE_DEV_DEBUG=0 CARGO_PROFILE_TEST_DEBUG=0 CARGO_BUILD_JOBS=4 CRAFT_FONTS_DIR=/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/craft-fonts CRAFT_FONTS_REQUIRED=1 RAYON_NUM_THREADS=8 PHOTOCRAFT_NO_PRINT=1 LPDEST=photocraft-no-such-printer cargo +1.95.0 test --release -p photocraft-engine --lib palette_cmds::tests:: && env CARGO_TARGET_DIR=/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-selection-fixes CARGO_INCREMENTAL=0 CARGO_PROFILE_DEV_DEBUG=0 CARGO_PROFILE_TEST_DEBUG=0 CARGO_BUILD_JOBS=4 CRAFT_FONTS_DIR=/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/craft-fonts CRAFT_FONTS_REQUIRED=1 RAYON_NUM_THREADS=8 PHOTOCRAFT_NO_PRINT=1 LPDEST=photocraft-no-such-printer cargo +1.95.0 test --release -p photocraft-engine --test panic_hunt -- --ignored && env CARGO_TARGET_DIR=/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-selection-fixes CARGO_INCREMENTAL=0 CARGO_PROFILE_DEV_DEBUG=0 CARGO_PROFILE_TEST_DEBUG=0 CARGO_BUILD_JOBS=4 CRAFT_FONTS_DIR=/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/craft-fonts CRAFT_FONTS_REQUIRED=1 RAYON_NUM_THREADS=8 PHOTOCRAFT_NO_PRINT=1 LPDEST=photocraft-no-such-printer cargo +1.95.0 build --release -p photocraft-cli",
+      "suites": [
+        {
+          "filter": "review_",
+          "passed": 32
+        },
+        {
+          "filter": "cmd::mode_cmds::tests::",
+          "passed": 43
+        },
+        {
+          "filter": "palette_map",
+          "passed": 9
+        },
+        {
+          "filter": "palette_cmds::tests::",
+          "passed": 10
+        },
+        {
+          "target": "panic_hunt -- --ignored",
+          "passed": 1
+        }
+      ],
+      "note": "Filters overlap; counts are not a unique-test total. Executed on the dependent filter stack, including the backend fix. Release CLI built from the same physical filter tree."
+    },
+    "native": {
+      "receipt": "palette-review-findings-native.json",
+      "scenarios": 12,
+      "cli_processes": 24,
+      "coverage": "Display P3 holes, mode/depth/ICC, exact undo/redo at 8/16/32; stock/fixed and 256\u2192255 palette snapshot replay at 8/16/32. Unit regressions additionally check exact native CMYKA bytes.",
+      "runtime_cwd": "The retained native helper runs with matte as CWD, but explicitly executes the release binary built from filter-current; all document paths are explicit."
+    },
+    "platform": {
+      "layers": 31,
+      "wasm_crates": 24,
+      "heif": true,
+      "receipt": "palette-review-findings-platform.txt",
+      "command": "env CARGO_TARGET_DIR=/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-selection-fixes CARGO_INCREMENTAL=0 CARGO_PROFILE_DEV_DEBUG=0 CARGO_PROFILE_TEST_DEBUG=0 CARGO_BUILD_JOBS=4 CRAFT_FONTS_DIR=/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/craft-fonts CRAFT_FONTS_REQUIRED=1 RAYON_NUM_THREADS=8 PHOTOCRAFT_NO_PRINT=1 LPDEST=photocraft-no-such-printer cargo +1.95.0 xtask layers && env CARGO_TARGET_DIR=/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-selection-fixes CARGO_INCREMENTAL=0 CARGO_PROFILE_DEV_DEBUG=0 CARGO_PROFILE_TEST_DEBUG=0 CARGO_BUILD_JOBS=4 CRAFT_FONTS_DIR=/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/craft-fonts CRAFT_FONTS_REQUIRED=1 RAYON_NUM_THREADS=8 PHOTOCRAFT_NO_PRINT=1 LPDEST=photocraft-no-such-printer cargo +1.95.0 xtask wasm"
+    },
+    "resource_smoke": {
+      "receipt": "palette-review-findings-24mp.json",
+      "pixels": 24000000,
+      "elapsed_seconds": 2.718440947995987,
+      "max_rss_kib": 1339200,
+      "adapter_working_buffer_estimate_bytes": 1248000000,
+      "note": "Whole-process release run including import/setup. No before timing, speedup, parity or budget claim."
+    }
+  },
+  "implementation": {
+    "snapshot": "Clone once after final opaque reduction and before synthetic transparency append. Explicit transparentIndex semantics and snapshot coordinate conventions are unchanged.",
+    "selection": "Retain native input only for selected non-identity CMS regions, read mask once, reuse input as output, skip reverse CMS for zero coverage, account for retained native samples during blend, release mask before writeback."
+  },
+  "limits": [
+    "No Photoshop runtime oracle.",
+    "UI source is identical to the previously reviewed UI; no new UI capture was needed for engine-only corrections.",
+    "Strict Clippy is not claimed green: previously observed untouched text/psd_path.rs, engine crop_fill.rs and UI blockers remain; no suppressions or unrelated fixes.",
+    "Remote CI is not asserted. The new FredApps review on #9887 is a source-read comment, not approval; no new defect or code change is requested.",
+    "The withdrawn forced-sRGB 3.0976x timing is not current performance evidence."
+  ],
+  "agents": {
+    "SnapshotRegression": {
+      "commit": "c3da3852a676a6f8ed0aeddaea703f6b6e39f042",
+      "status": "test-only handoff complete; product integration owned by parent"
+    },
+    "SelectionHoleRegression": {
+      "original_amended_feature": "e8071df73daeba1ceb0c652655655265dbe2bc48",
+      "status": "test-only handoff complete; parent retains native buffer only with nonidentity CMS plus selection"
+    }
+  },
+  "posting": "No PR comments or replies; publication uses source refs, PR descriptions and review-thread resolution only."
+}

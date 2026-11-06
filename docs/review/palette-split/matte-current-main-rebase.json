@@ -196,5 +196,6 @@
   "agents": {
     "MatteLocaleRebase": "Complete: 26 locale conflicts; no builds.",
     "MatteCanvasRebase": "Complete: canvas merge and deterministic runtime regression; no builds."
-  }
+  },
+  "archival_correction": "The final evidence revision replaces the guarded unbounded-read notice accidentally archived as the gate log in 2e17bc15cf43ab75df4e9d59e8e576957041ab9c with the bounded complete original output. No rerun, source change or test-result change."
 }

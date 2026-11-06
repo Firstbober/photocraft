@@ -1,1 +1,1184 @@
-Unbounded raw read blocked for artifact://2278 (73.2KB). Reading the whole file verbatim can exhaust memory. Use artifact://2278:raw:1-3000 for bounded verbatim chunks, artifact://2278:1-3000 for numbered exploration, and the backing file path for search/copy workflows: ~/.omp/agent/sessions/-Documents-ProgrammingProjects-Git-photocraft/2026-10-21T18-33-37-016Z_01a15fbd-7ff8-704d-ab44-bbceb2facf25/2278.bash-original.log
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling proc-macro2 v1.0.107
+   Compiling unicode-ident v1.0.26
+   Compiling quote v1.0.47
+   Compiling cfg-if v1.0.5
+   Compiling bitflags v2.13.2
+   Compiling log v0.4.34
+   Compiling once_cell v1.21.4
+   Compiling serde_core v1.0.229
+   Compiling libc v0.2.191
+   Compiling smallvec v1.16.2
+   Compiling serde v1.0.229
+   Compiling syn v3.0.6
+   Compiling syn v2.0.119
+   Compiling autocfg v1.5.1
+   Compiling libm v0.2.16
+   Compiling rustix v1.1.5
+   Compiling linux-raw-sys v0.12.1
+   Compiling crossbeam-utils v0.8.23
+   Compiling thiserror v2.0.21
+   Compiling pin-project-lite v0.2.17
+   Compiling num-traits v0.2.19
+   Compiling memchr v2.8.3
+   Compiling shlex v2.0.1
+   Compiling find-msvc-tools v0.1.14
+   Compiling cc v1.5.1
+   Compiling equivalent v1.0.2
+   Compiling either v1.18.0
+   Compiling version_check v0.9.5
+   Compiling crc32fast v1.5.3
+   Compiling tracing-core v0.1.36
+   Compiling libloading v0.8.9
+   Compiling crossbeam-epoch v0.9.21
+   Compiling foldhash v0.2.0
+   Compiling crossbeam-deque v0.8.8
+   Compiling pkg-config v0.3.34
+   Compiling rayon-core v1.13.0
+   Compiling winnow v1.0.4
+   Compiling hashbrown v0.17.1
+   Compiling arrayvec v0.7.8
+   Compiling simd-adler32 v0.3.10
+   Compiling zlib-rs v0.6.8
+   Compiling zerocopy v0.8.59
+   Compiling rayon v1.12.0
+   Compiling wayland-sys v0.31.11
+   Compiling dlib v0.5.3
+   Compiling adler2 v2.0.1
+   Compiling toml_parser v1.1.3+spec-1.1.0
+   Compiling toml_datetime v1.1.1+spec-1.1.0
+   Compiling synstructure v0.14.0
+   Compiling miniz_oxide v0.9.1
+   Compiling tracing-attributes v0.1.31
+   Compiling zerocopy-derive v0.8.59
+   Compiling serde_derive v1.0.229
+   Compiling bytemuck_derive v1.12.1
+   Compiling thiserror-impl v2.0.21
+   Compiling tracing v0.1.44
+   Compiling bytemuck v1.25.2
+   Compiling zerofrom-derive v0.1.8
+   Compiling slab v0.4.12
+   Compiling yoke-derive v0.8.3
+   Compiling indexmap v2.14.2
+   Compiling flate2 v1.1.10
+   Compiling stable_deref_trait v1.2.1
+   Compiling cfg_aliases v0.2.2
+   Compiling toml_edit v0.25.15+spec-1.1.0
+   Compiling zerovec-derive v0.11.6
+   Compiling enumflags2_derive v0.7.12
+   Compiling polling v3.11.0
+   Compiling scopeguard v1.2.0
+   Compiling proc-macro-crate v3.5.0
+   Compiling zvariant_utils v4.2.0
+   Compiling displaydoc v0.2.7
+   Compiling wayland-backend v0.3.17
+   Compiling zerofrom v0.1.8
+   Compiling yoke v0.8.3
+   Compiling itoa v1.0.18
+   Compiling zerovec v0.11.8
+   Compiling parking v2.2.1
+   Compiling zmij v1.0.23
+   Compiling fastrand v2.5.0
+   Compiling futures-core v0.3.34
+   Compiling endi v1.1.1
+   Compiling scoped-tls v1.0.1
+   Compiling writeable v0.6.4
+   Compiling downcast-rs v1.2.1
+   Compiling quick-xml v0.41.0
+   Compiling wayland-client v0.31.15
+   Compiling wayland-scanner v0.31.11
+   Compiling miniz_oxide v0.8.9
+   Compiling uuid v1.26.1
+   Compiling litemap v0.8.3
+   Compiling parking_lot_core v0.9.12
+   Compiling tinystr v0.8.4
+   Compiling cobs v0.3.0
+   Compiling font-types v0.12.5
+   Compiling fdeflate v0.3.7
+   Compiling static_assertions v1.1.0
+   Compiling linebender_resource_handle v0.1.1
+   Compiling siphasher v1.0.4
+   Compiling futures-io v0.3.34
+   Compiling weezl v0.1.12
+   Compiling read-fonts v0.41.0
+   Compiling postcard v1.1.3
+   Compiling icu_locale_core v2.3.0
+   Compiling zvariant_derive v5.15.0
+   Compiling zerotrie v0.2.5
+   Compiling event-listener v5.4.2
+   Compiling lock_api v0.4.14
+   Compiling enumflags2 v0.7.12
+   Compiling half v2.7.1
+   Compiling zcheapstr v1.1.0
+   Compiling concurrent-queue v2.5.0
+   Compiling serde_json v1.0.154
+   Compiling color_quant v1.1.0
+   Compiling zvariant v5.15.0
+   Compiling parking_lot v0.12.5
+   Compiling event-listener-strategy v0.5.4
+   Compiling icu_provider v2.3.1
+   Compiling futures-lite v2.6.1
+   Compiling byteorder-lite v0.1.0
+   Compiling zune-core v0.5.3
+   Compiling zbus_names v4.3.4
+   Compiling photocraft-cms v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/cms)
+   Compiling async-io v2.6.0
+   Compiling memmap2 v0.9.11
+   Compiling unicode-bidi v0.3.18
+   Compiling unicode-properties v0.1.4
+   Compiling getrandom v0.3.4
+   Compiling profiling v1.0.18
+   Compiling photocraft-color v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/color)
+   Compiling zune-jpeg v0.5.15
+   Compiling skrifa v0.44.0
+   Compiling harfrust v0.12.0
+   Compiling wayland-protocols v0.32.13
+   Compiling accesskit v0.25.1
+   Compiling potential_utf v0.1.6
+   Compiling photocraft-geom v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/geom)
+   Compiling jxl-bitstream v1.1.0
+   Compiling polycool v0.4.0
+   Compiling ahash v0.8.12
+   Compiling sysinfo v0.40.1
+   Compiling errno v0.3.14
+   Compiling async-task v4.7.1
+   Compiling lz4_flex v0.11.6
+   Compiling raw-window-handle v0.6.2
+   Compiling pxfm v0.1.30
+   Compiling unicode-width v0.2.2
+   Compiling photocraft-raster v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/raster)
+   Compiling moxcms v0.8.1
+   Compiling signal-hook-registry v1.4.8
+   Compiling kurbo v0.13.1
+   Compiling async-channel v2.5.0
+   Compiling gif v0.14.2
+   Compiling png v0.18.1
+   Compiling color v0.3.3
+   Compiling qoi v0.4.1
+   Compiling euclid v0.22.14
+   Compiling rustc-hash v1.1.0
+   Compiling atomic-waker v1.1.2
+   Compiling piper v0.2.5
+   Compiling naga-types v30.0.1
+   Compiling guillotiere v0.7.0
+   Compiling image v0.25.10
+   Compiling peniko v0.6.1
+   Compiling async-signal v0.2.14
+   Compiling jxl-oxide-common v1.0.0
+   Compiling zbus_xml v5.2.1
+   Compiling async-lock v3.4.2
+   Compiling naga v30.0.1
+   Compiling jxl-grid v0.6.2
+   Compiling ash v0.38.0+1.3.281
+   Compiling fearless_simd v0.4.1
+   Compiling unicode-general-category v1.1.0
+   Compiling rustix v0.38.44
+   Compiling epaint_default_fonts v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+   Compiling utf8_iter v1.0.4
+   Compiling icu_locale_fallback_data v2.3.0
+   Compiling bit-vec v0.9.1
+   Compiling thiserror v1.0.69
+   Compiling bit-set v0.10.0
+   Compiling icu_collections v2.3.0
+   Compiling vello_common v0.2.0
+   Compiling zbus-lockstep v0.5.2
+   Compiling async-process v2.5.0
+   Compiling blocking v1.7.0
+   Compiling codespan-reporting v0.13.1
+   Compiling async-executor v1.14.0
+   Compiling jxl-coding v1.0.1
+   Compiling zbus_macros v5.19.0
+   Compiling async-broadcast v0.7.2
+   Compiling ordered-stream v0.2.0
+   Compiling emath v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+   Compiling jxl-threadpool v1.0.0
+   Compiling async-trait v0.1.92
+   Compiling serde_repr v0.1.21
+   Compiling async-recursion v1.1.1
+   Compiling thiserror-impl v1.0.69
+   Compiling spirv v0.4.0+sdk-1.4.341.0
+   Compiling allocator-api2 v0.2.21
+   Compiling linux-raw-sys v0.4.15
+   Compiling icu_properties_data v2.3.0
+   Compiling xkeysym v0.2.1
+   Compiling khronos-egl v6.0.0
+   Compiling xcursor v0.3.11
+   Compiling cursor-icon v1.2.0
+   Compiling hex v0.4.3
+   Compiling wayland-csd-frame v0.3.0
+   Compiling wayland-cursor v0.31.14
+   Compiling hashbrown v0.16.1
+   Compiling zbus v5.19.0
+   Compiling ecolor v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+   Compiling zbus-lockstep-macros v0.5.2
+   Compiling vello_cpu v0.2.0
+   Compiling wgpu-types v30.0.1
+   Compiling wayland-protocols-wlr v0.3.12
+   Compiling phf_shared v0.14.0
+   Compiling wgpu-hal v30.0.1
+   Compiling num-complex v0.4.6
+   Compiling percent-encoding v2.3.2
+   Compiling self_cell v1.3.0
+   Compiling unicode-segmentation v1.13.3
+   Compiling nohash-hasher v0.2.0
+   Compiling presser v0.3.1
+   Compiling icu_normalizer_data v2.3.0
+   Compiling rustversion v1.0.23
+   Compiling gpu-allocator v0.28.0
+   Compiling epaint v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+   Compiling phf_generator v0.14.0
+   Compiling wgpu-naga-bridge v30.0.1
+   Compiling icu_locale_fallback v2.3.0
+   Compiling atspi-common v0.13.0
+   Compiling calloop v0.13.0
+   Compiling jxl-modular v0.11.3
+   Compiling jxl-image v0.13.0
+   Compiling photocraft-doc v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/doc)
+   Compiling x11-dl v2.21.0
+   Compiling ring v0.17.14
+   Compiling slotmap v1.1.1
+   Compiling itertools v0.15.0
+   Compiling ordered-float v5.5.0
+   Compiling gethostname v1.1.0
+   Compiling core_maths v0.1.1
+   Compiling float-cmp v0.9.0
+   Compiling smithay-client-toolkit v0.19.2
+   Compiling renderdoc-sys v1.1.0
+   Compiling quick-error v2.0.1
+   Compiling x11rb-protocol v0.13.2
+   Compiling glow v0.17.0
+   Compiling paste v1.0.15
+   Compiling as-raw-xcb-connection v1.0.1
+   Compiling egui v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+   Compiling x11rb v0.13.2
+   Compiling strict-num v0.1.1
+   Compiling ttf-parser v0.25.1
+   Compiling jxl-vardct v0.11.1
+   Compiling icu_properties v2.3.0
+   Compiling calloop-wayland-source v0.3.0
+   Compiling phf_macros v0.14.0
+   Compiling accesskit_consumer v0.39.1
+   Compiling winit v0.30.13 (https://github.com/storytold/winit.git?rev=a517b3846ee8457d84ee4975110bfda6797c44dc#a517b384)
+   Compiling wgpu-core v30.0.1
+   Compiling pulp v0.22.3
+   Compiling generic-array v0.14.7
+   Compiling num-integer v0.1.47
+   Compiling roxmltree v0.20.0
+   Compiling icu_segmenter_data v2.3.0
+   Compiling litrs v1.0.0
+   Compiling alloc-no-stdlib v2.0.4
+   Compiling utf16_iter v1.0.5
+   Compiling rustc-hash v2.1.3
+   Compiling zeroize v1.9.1
+   Compiling write16 v1.0.0
+   Compiling arrayref v0.3.9
+   Compiling tiny-skia-path v0.11.4
+   Compiling document-features v0.2.12
+   Compiling icu_normalizer v2.3.0
+   Compiling rustls-pki-types v1.15.1
+   Compiling alloc-stdlib v0.2.4
+   Compiling fontconfig-parser v0.5.8
+   Compiling phf v0.14.0
+   Compiling encoding_rs v0.8.42
+   Compiling jxl-frame v0.13.3
+   Compiling wgpu-core-deps-windows-linux-android v30.0.1
+   Compiling image-webp v0.2.4
+   Compiling atspi-proxies v0.13.0
+   Compiling xkbcommon-dl v0.4.2
+   Compiling wayland-protocols-plasma v0.3.12
+   Compiling calloop v0.14.4
+   Compiling wgpu v30.0.1
+   Compiling futures-macro v0.3.34
+   Compiling fax_derive v0.2.0
+   Compiling kurbo v0.11.3
+   Compiling getrandom v0.2.17
+   Compiling raw-cpuid v11.6.0
+   Compiling getrandom v0.4.3
+   Compiling pulp-wasm-simd-flag v0.1.1
+   Compiling unicode-script v0.5.8
+   Compiling untrusted v0.9.0
+   Compiling typenum v1.20.1
+   Compiling unicode-ccc v0.4.0
+   Compiling strength_reduce v0.2.4
+   Compiling unicode-bidi-mirroring v0.4.0
+   Compiling futures-task v0.3.34
+   Compiling dpi v0.1.2
+   Compiling tinyvec v1.13.3
+   Compiling reborrow v0.5.5
+   Compiling smithay-client-toolkit v0.20.0
+   Compiling smol_str v0.2.2
+   Compiling bitflags v1.3.2
+   Compiling png v0.17.16
+   Compiling futures-util v0.3.34
+   Compiling fontdb v0.23.0
+   Compiling rustybuzz v0.20.1
+   Compiling transpose v0.2.3
+   Compiling fax v0.2.6
+   Compiling svgtypes v0.15.3
+   Compiling calloop-wayland-source v0.4.1
+   Compiling atspi v0.29.0
+   Compiling accesskit_atspi_common v0.21.0
+   Compiling brotli-decompressor v5.0.3
+   Compiling primal-check v0.3.4
+   Compiling jxl-color v0.11.0
+   Compiling wayland-protocols-misc v0.3.12
+   Compiling wayland-protocols-experimental v20250721.0.1
+   Compiling zune-inflate v0.2.54
+   Compiling blake3 v1.8.7
+   Compiling simplecss v0.2.2
+   Compiling web-time v1.1.0
+   Compiling twox-hash v2.1.4
+   Compiling pico-args v0.5.0
+   Compiling zune-core v0.4.12
+   Compiling rustls v0.23.46
+   Compiling multiversion_no_op v1.0.0
+   Compiling data-url v0.3.2
+   Compiling bit_field v0.10.3
+   Compiling xmlwriter v0.1.0
+   Compiling httparse v1.10.1
+   Compiling unicode-vo v0.1.0
+   Compiling wasmparser v0.228.0
+   Compiling simdutf8 v0.1.5
+   Compiling core_detect v1.0.0
+   Compiling wasmi_ir v2.0.0
+   Compiling lebe v0.5.3
+   Compiling imagesize v0.13.0
+   Compiling parlance v0.1.0
+   Compiling base64 v0.22.1
+   Compiling usvg v0.45.1
+   Compiling fontique v0.11.1
+   Compiling exr v1.74.2
+   Compiling zune-jpeg v0.4.21
+   Compiling ruzstd v0.9.1
+   Compiling jxl-render v0.12.4
+   Compiling rustfft v6.4.1
+   Compiling jxl-jbr v0.2.1
+   Compiling icu_segmenter v2.3.0
+   Compiling accesskit_unix v0.24.0
+   Compiling rustls-webpki v0.103.15
+   Compiling tiff v0.11.3
+   Compiling tiny-skia v0.11.4
+   Compiling photocraft-text v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/text)
+   Compiling parley_data v0.11.1
+   Compiling photocraft-vector v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/vector)
+   Compiling zune-jpegxl v0.5.2
+   Compiling gif v0.13.3
+   Compiling fixed_decimal v0.7.3
+   Compiling craft-jpeg v0.1.0 (https://github.com/storytold/craft-libs?rev=c5a1cbfb5f9049f9270955caffb5bee5997aebf7#c5a1cbfb)
+   Compiling rgb v0.8.53
+   Compiling wasmi_core v2.0.0
+   Compiling cpufeatures v0.3.1
+   Compiling subtle v2.6.1
+   Compiling openssl-probe v0.2.1
+   Compiling wasmi v2.0.0
+   Compiling bytes v1.12.1
+   Compiling jpeg-encoder v0.6.1
+   Compiling constant_time_eq v0.4.2
+   Compiling anyhow v1.0.104
+   Compiling http v1.5.0
+   Compiling photocraft-codecs v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/codecs)
+   Compiling rustls-native-certs v0.8.4
+   Compiling resvg v0.45.1
+   Compiling photocraft-compose v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/compose)
+   Compiling parley v0.11.1
+   Compiling tempfile v3.27.0
+   Compiling accesskit_winit v0.34.1
+   Compiling photocraft-algo v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/algo)
+   Compiling jxl-oxide v0.12.6
+   Compiling smithay-clipboard v0.7.3
+   Compiling photocraft-psd v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/psd)
+   Compiling crypto-common v0.1.7
+   Compiling block-buffer v0.10.4
+   Compiling type-map v0.5.1
+   Compiling arboard v3.7.0
+   Compiling craft-pcraft-format v0.1.0 (https://github.com/storytold/craft-libs?rev=b8f7d93b00dfb8f172938f3d2d796ae62dcfe123#b8f7d93b)
+   Compiling serde_spanned v1.1.1
+   Compiling is-docker v0.2.0
+   Compiling lazy_static v1.5.0
+   Compiling spin v0.9.9
+   Compiling toml_writer v1.1.2+spec-1.1.0
+   Compiling pollster v1.0.1
+   Compiling iana-time-zone v0.1.65
+   Compiling base64 v0.23.1
+   Compiling wasmi_collections v2.0.0
+   Compiling ureq-proto v0.6.5
+   Compiling chrono v0.4.45
+   Compiling toml v1.1.6+spec-1.1.0
+   Compiling colored v2.2.0
+   Compiling is-wsl v0.4.0
+   Compiling photocraft-format v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/format)
+   Compiling egui-winit v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+   Compiling egui-wgpu v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+   Compiling digest v0.10.7
+   Compiling photocraft-raw v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/raw)
+   Compiling rustls-platform-verifier v0.7.1
+   Compiling icu_plurals v2.3.0
+   Compiling icu_decimal v2.3.0
+   Compiling photocraft-affinity v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/affinity)
+   Compiling photocraft-paint v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/paint)
+   Compiling icu_provider_adapters v2.3.0
+   Compiling getopts v0.2.24
+   Compiling icu_provider_blob v2.3.0
+   Compiling enum-map-derive v1.0.1
+   Compiling roxmltree v0.21.1
+   Compiling filetime v0.2.29
+   Compiling semver v1.0.28
+   Compiling craft-winprint-gdi v0.1.0 (https://github.com/storytold/winprint.rs?rev=417ac3c4d14d3da5485a99c7d5ce8f05664ec312#417ac3c4)
+   Compiling sys-locale v0.3.2
+   Compiling cpufeatures v0.2.17
+   Compiling utf8-zero v0.8.1
+   Compiling craft-docpath v0.1.0 (https://github.com/storytold/craft-libs?rev=c5a1cbfb5f9049f9270955caffb5bee5997aebf7#c5a1cbfb)
+   Compiling ureq v3.5.0
+   Compiling sha2 v0.10.9
+   Compiling photocraft-io v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/io)
+   Compiling enum-map v3.1.0
+   Compiling craft-i18n v0.1.0 (https://github.com/storytold/craft-libs?rev=c5a1cbfb5f9049f9270955caffb5bee5997aebf7#c5a1cbfb)
+   Compiling craft-print v0.1.0 (https://github.com/storytold/craft-libs?rev=c5a1cbfb5f9049f9270955caffb5bee5997aebf7#c5a1cbfb)
+   Compiling tar v0.4.46
+   Compiling dify v0.8.0
+   Compiling photocraft-ui-egui v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/ui-egui)
+   Compiling eframe v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+   Compiling open v5.4.5
+   Compiling photocraft-plugins v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/plugins)
+   Compiling kittest v0.5.0
+   Compiling photocraft-ops v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/ops)
+   Compiling memory-stats v1.2.0
+   Compiling photocraft-ipp v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/ipp)
+   Compiling craft-fonts-build v0.1.0 (https://github.com/storytold/craft-libs?rev=c5a1cbfb5f9049f9270955caffb5bee5997aebf7#c5a1cbfb)
+   Compiling craft-ui v0.1.0 (https://github.com/storytold/craft-libs?rev=c5a1cbfb5f9049f9270955caffb5bee5997aebf7#c5a1cbfb)
+   Compiling photocraft-engine v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/engine)
+   Compiling photocraft-testkit v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/testkit)
+   Compiling egui_kittest v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+   Compiling craft-update v0.1.0 (https://github.com/storytold/craft-libs?rev=c5a1cbfb5f9049f9270955caffb5bee5997aebf7#c5a1cbfb)
+   Compiling egui_extras v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+   Compiling photocraft-gpu v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/gpu)
+    Finished `test` profile [optimized] target(s) in 4m 51s
+     Running unittests src/lib.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-matte-rebase/debug/deps/photocraft_ui_egui-2266f7402527996f)
+
+running 334 tests
+test blur_pins_tests::proxy_previews_scale_the_pins_blur ... ok
+test canvas::cam_preview::tests::a_failed_preview_is_not_retried ... ok
+test blend_dropdown_wheel_tests::a_wheel_step_ends_the_hover_preview_until_the_pointer_moves ... ok
+test canvas::cam_preview::tests::the_transform_on_drop_box_previews_the_dropped_patch ... ok
+test canvas::cpu_background_tests::pattern_preview_keeps_the_legacy_checker_for_every_copy ... ok
+test canvas::lasso_preview_tests::lasso_outlines_are_solid_until_the_selection_is_made ... ok
+test canvas::move_ui::tests::floating_selection_does_not_snap_to_its_own_starting_outline_or_preview_at_zero ... ok
+test canvas::layer_edges_tests::layer_edges_stay_with_unmoved_pixels_when_live_preview_is_disabled ... ok
+test canvas::pattern_preview::tests::copies_are_capped_and_centred_on_the_view ... ok
+test canvas::pattern_preview::tests::document_filling_the_view_has_no_copies ... ok
+test canvas::patch_preview::tests::dragging_the_patch_previews_the_heal_and_release_commits_it ... ok
+test canvas::pattern_preview::tests::fit_view_gets_the_neighbours_that_show ... ok
+test canvas::pattern_preview::tests::hostile_input_draws_nothing ... ok
+test canvas::pattern_preview::tests::panned_view_only_draws_what_shows ... ok
+test canvas::pattern_preview::tests::zoomed_out_fills_the_view ... ok
+test canvas::rotation_preview_isolation_tests::channel_overlay_shows_filter_preview_and_restores_on_cancel ... ok
+test canvas::rotation_preview_isolation_tests::filter_preview_is_not_returned_for_inactive_document ... ok
+test canvas::cam_preview::tests::the_drag_previews_the_move_after_it_rests_and_never_touches_the_document ... ok
+test canvas::rotation_preview_isolation_tests::filter_preview_matches_applied_alpha_target ... ok
+test canvas::rotation_preview_isolation_tests::filter_preview_matches_applied_color_target ... ok
+test canvas::rotation_preview_isolation_tests::filter_preview_overlay_matches_quick_mask_and_mixed_color_views ... ok
+test canvas::rotation_preview_isolation_tests::filter_preview_refreshes_when_channel_target_changes ... ok
+test canvas::rotation_preview_isolation_tests::rotation_preview_is_computed_headlessly_without_mutating_document ... ok
+test canvas::rotation_preview_isolation_tests::filter_preview_matches_applied_layer_mask_target ... ok
+test canvas::select_mask_view::preview_conversion_preserves_shared_solid_tiles ... ok
+test canvas::tests::a_channel_overlay_follows_a_size_changing_preview ... ok
+test canvas::select_mask_view::tests::brush_strokes_reach_the_preview ... ok
+test canvas::rotation_preview_isolation_tests::profile_dialogs_preview_through_the_profile_they_choose ... ok
+test canvas::tests::a_preview_computed_mid_drag_reaches_the_canvas_and_then_converges ... ok
+test canvas::tests::a_mid_drag_empty_result_leaves_the_preview_alone ... ok
+test canvas::tests::a_reopened_dialog_never_paints_the_previous_dialogs_preview ... ok
+test canvas::tests::a_held_preview_frame_stays_on_the_canvas_when_the_proxy_factor_changes ... ok
+test canvas::tests::every_filter_previews_off_the_ui_thread_and_a_newer_value_cancels_the_old ... ok
+test canvas::tests::filter_preview_factor_caps_at_the_view_without_overriding_the_preference ... ok
+test canvas::tests::guides_draw_over_the_puppet_perspective_and_vanishing_point_previews ... ok
+test canvas::tests::cross_scale_indexed_matte_preview_rejects_old_tool_colors_from_cached_and_worker_results ... ok
+test canvas::tests::guides_draw_over_the_transform_preview_and_under_its_box ... ok
+test canvas::tests::inline_filter_preview_is_composited_and_recorded_once ... ok
+test canvas::tests::layer_style_dialog_previews_live_and_cancel_restores ... ok
+test canvas::tests::filter_preview_at_100_percent_is_full_resolution ... ok
+test canvas::tests::layer_style_opened_during_free_transform_applies_the_box_and_previews ... ok
+test canvas::tests::mixer_control_tool_switch_before_release_cancels_every_preview_path ... ok
+test canvas::tests::smoothing_preview_redraws_the_tail_each_step ... ok
+test canvas::tests::the_cpu_canvas_shows_a_filter_dialogs_preview ... ok
+test canvas::tool_cursor::tests::write_bucket_cursor_preview ... ignored, writes tmp/cursor-verification/unified-bucket-preview.png for visual inspection
+test canvas::tool_cursor::tests::write_cursor_preview ... ignored, writes target/tool-cursor-preview.png for visual inspection
+test canvas::tool_feedback::tests::shape_previews_contrast_and_ellipses_close ... ok
+test canvas::viewport_pages::tests::reductions_show_a_quick_preview_before_the_exact_page ... ok
+test control::tests::layer_style_picker_control_binds_previews_confirms_and_cancels ... ok
+test dialogs::adjust_dialog::tests::curves_pointer_drag_previews_until_confirm_and_cancel_preserves_document ... ok
+test canvas::tests::mixer_drag_above_the_preview_size_paints_on_release ... ok
+test dialogs::adjust_dialog::tests::gradient_map_dialog_handles_preview_without_committing_until_ok ... ok
+test dialogs::adjust_dialog::tests::selective_color_preview_shows_every_colour_until_cancel ... ok
+test canvas::tests::indexed_matte_preview_matches_commit_and_refreshes_tool_colors_inline_and_on_worker ... ok
+test dialogs::adjust_dialog::tests::dialogs_preview_cancel_and_commit ... ok
+test dialogs::adjust_preview::tests::a_clipped_adjustment_preview_records_why_it_uses_the_proxy ... ok
+test dialogs::adjust_preview::tests::a_live_adjust_drag_damages_only_the_visible_part_of_its_layer ... ok
+test dialogs::adjust_preview::tests::a_reveal_all_mask_does_not_empty_the_damage_region ... ok
+test dialogs::adjust_preview::tests::an_adjustment_preview_keeps_the_canvas_reason ... ok
+test dialogs::adjust_preview::tests::captured_subset_preview_stays_on_the_command_path_when_the_panel_changes ... ok
+test dialogs::adjust_editors::ui_tests::photo_filter_colour_picker_previews_live_cancel_restores_and_ok_is_one_step ... ok
+test dialogs::adjust_editors::ui_tests::gradient_map_handle_drag_previews_and_commits_once_after_crossing_stops ... ok
+test dialogs::adjust_preview::tests::ineligible_targets_use_the_proxy_preview ... ok
+test dialogs::adjust_preview::tests::ineligible_dialogs_keep_the_proxy_preview ... ok
+test dialogs::adjust_preview::tests::dialog_previews_through_the_layer ... ok
+test dialogs::adjust_preview::tests::preview_leaves_the_document_alone_and_marks_its_layer ... ok
+test dialogs::adjust_preview::tests::proxy_factor_follows_the_zoom ... ok
+test dialogs::adjust_preview::tests::proxy_preview_has_its_own_ids ... ok
+test dialogs::adjust_preview::tests::preview_changes_nothing_outside_its_region ... ok
+test dialogs::bitmap_dialog::tests::the_preview_keeps_the_canvas_size ... ok
+test dialogs::caf_ui::tests::a_failing_preview_is_reported_once_not_restarted ... ok
+test dialogs::caf_ui::tests::an_erased_sampling_area_previews_as_an_error ... ok
+test dialogs::camera_raw_preview_ui::tests::shift_alt_snap_at_limits_does_not_move ... ok
+test dialogs::camera_raw_preview_ui::tests::shift_alt_wheel_snaps_zoom_in_camera_raw ... ok
+test dialogs::camera_raw_preview_ui::tests::snap_zoom_from_fit_enters_explicit_zoom ... ok
+test dialogs::camera_raw_preview_ui::tests::snap_zoom_preserves_point_under_pointer ... ok
+test dialogs::camera_raw_preview_ui::tests::tiny_images_nonfinite_state_and_resize_stay_centered_and_finite ... ok
+test dialogs::camera_raw_preview_ui::tests::zoom_preserves_the_point_under_the_pointer_and_pan_clamps ... ok
+test dialogs::camera_raw_ui::tests::calibration_changes_the_preview_and_round_trips_through_xmp ... ok
+test dialogs::camera_raw_ui::tests::histogram_follows_preview_and_view_changes_do_not_render_or_edit ... ok
+test dialogs::camera_raw_ui::tests::preview_texture_uses_linear_document_display_encoding ... ok
+test dialogs::caf_ui::tests::the_preview_texture_respects_the_device_limit ... ok
+test dialogs::camera_raw_ui::tests::shadows_of_a_raw_open_act_on_the_raw_data_and_the_preview_shows_it ... ok
+test dialogs::camera_raw_ui::tests::worker_preview_matches_the_synchronous_render_and_ends_on_the_latest_settings ... ok
+test dialogs::color_picker_preview::tests::a_gradient_stop_colour_is_previewed_before_ok_and_cancel_changes_nothing ... ok
+test dialogs::color_picker_preview::tests::a_refused_preview_is_not_rebuilt_every_frame ... ok
+test dialogs::color_picker_preview::tests::cancel_leaves_the_text_and_history_as_they_were_and_stops_the_preview ... ok
+test dialogs::color_picker_preview::tests::every_selected_type_layer_is_previewed_and_refreshed ... ok
+test dialogs::color_picker_preview::tests::damage_between_previews_is_the_text_layer_only ... ok
+test dialogs::color_picker_preview::tests::free_transform_keeps_its_preview_while_the_text_colour_picker_is_open ... ok
+test dialogs::color_picker_preview::tests::no_preview_for_other_pickers_other_tabs_or_bad_fields ... ok
+test dialogs::color_picker_preview::tests::no_preview_when_the_params_name_no_layer ... ok
+test dialogs::color_picker_preview::tests::ok_after_a_colour_the_canvas_never_drew_redraws_as_before ... ok
+test dialogs::color_picker_preview::tests::ok_commits_exactly_what_the_preview_showed_in_one_history_step ... ok
+test dialogs::color_picker_preview::tests::ok_commits_the_previewed_gradient_stop_in_one_history_step ... ok
+test dialogs::color_picker_preview::tests::only_the_selected_characters_are_previewed_in_the_new_colour ... ok
+test dialogs::color_picker_preview::tests::owns_only_the_previewed_pickers ... ok
+test dialogs::color_picker_preview::tests::ok_counts_the_previewed_canvas_as_the_document_so_only_the_layer_is_redrawn ... ok
+test canvas::cam_preview::tests::a_large_selection_shows_a_coarse_result_then_the_exact_one ... ok
+test dialogs::color_picker_preview::tests::the_preview_never_shows_on_a_document_switched_to_while_the_picker_is_open ... ok
+test dialogs::color_picker_preview::tests::the_preview_follows_every_colour_and_stops_at_the_opening_one ... ok
+test dialogs::color_picker_ui::live_preview::tests::a_dialog_colour_follows_the_picker_and_cancel_restores_it ... ok
+test dialogs::color_picker_preview::tests::the_canvas_shows_the_picked_colour_before_ok_without_touching_the_session ... ok
+test dialogs::color_picker_ui::live_preview::tests::a_picker_or_parent_closed_any_other_way_ends_the_preview ... ok
+test dialogs::color_picker_ui::live_preview::tests::a_pickers_target_stays_the_dialog_it_opened_on ... ok
+test dialogs::color_picker_ui::live_preview::tests::a_previewed_colour_is_no_dialog_undo_step ... ok
+test dialogs::color_picker_ui::live_preview::tests::control_edits_preview_at_once ... ok
+test dialogs::color_picker_ui::live_preview::tests::derived_settings_are_rebuilt_from_the_opening_ones ... ok
+test dialogs::color_picker_ui::live_preview::tests::ok_keeps_the_colour_and_the_dialog_makes_one_history_step ... ok
+test dialogs::color_picker_ui::live_preview::tests::preferences_apply_waits_for_an_open_picker ... ok
+test dialogs::color_picker_ui::live_preview::tests::the_crop_shield_colour_follows_its_picker ... ok
+test dialogs::color_picker_ui::live_preview::tests::the_crop_shield_keeps_a_colour_set_while_its_picker_is_open ... ok
+test dialogs::color_picker_ui::live_preview::tests::the_dialog_under_a_picker_refuses_control_edits ... ok
+test dialogs::color_picker_ui::live_preview::tests::the_dialog_waits_for_its_picker ... ok
+test dialogs::color_picker_ui::live_preview::tests::the_opening_colour_shows_the_original_value ... ok
+test dialogs::color_picker_ui::live_preview::tests::the_dialog_shows_the_colour_while_the_picker_is_open ... ok
+test dialogs::color_range_ui::tests::a_preview_failure_is_shown_not_silent ... ok
+test dialogs::color_range_ui::tests::eyedroppers_pick_on_the_preview ... ok
+test dialogs::color_range_ui::tests::eyedropper_hover_reuses_preview_textures_without_sampling ... ok
+test dialogs::color_range_ui::tests::preview_and_eyedropper_keep_the_original_selection_boundary ... ok
+test dialogs::color_range_ui::tests::preview_honours_sample_all_layers_like_ok ... ok
+test dialogs::color_range_ui::tests::preview_cache_refreshes_after_foreground_and_proof_changes ... ok
+test dialogs::color_range_ui::tests::preview_mode_is_view_state_and_cancel_preserves_selection ... ok
+test dialogs::color_range_ui::tests::selection_preview_modes_cover_only_unselected_pixels ... ok
+test dialogs::color_range_ui::tests::reduced_preview_matches_the_original_eyedropper_sample ... ok
+test dialogs::export_dialog::tests::layered_preview_runs_outside_the_ui_frame ... ok
+test dialogs::color_range_ui::tests::opens_and_previews_in_the_full_app_without_a_gpu ... ok
+test dialogs::export_dialog::tests::preview_workers_keep_the_captured_source_profile ... ok
+test dialogs::export_dialog::tests::preview_cache_tracks_working_profiles_but_prefers_embedded_profiles ... ok
+test dialogs::export_dialog::tests::export_as_downscales_stroke_only_shapes_and_preview ... ok
+test dialogs::file_ui::tests::web_preview_grows_with_resize_and_accepts_zoom_and_pan ... ok
+test dialogs::file_ui::web_playback_tests::frame_previews_preserve_source_and_match_colors_across_depths ... ok
+test dialogs::file_ui::web_playback_tests::preview_keeps_current_frame_edits_without_storing_into_source ... ok
+test dialogs::file_ui::web_playback_tests::save_for_web_reopens_on_the_last_preview_tab ... ok
+test dialogs::file_ui::web_preview::tests::absurd_dimensions_and_navigation_fields_are_safe ... ok
+test dialogs::file_ui::web_preview::tests::anchored_zoom_keeps_pixel_under_pointer_and_pan_is_bounded ... ok
+test dialogs::file_ui::web_preview::tests::palette_picker_reuses_indices_and_updates_preview_pixels ... ok
+test dialogs::file_ui::web_playback_tests::optimized_gif_preview_matches_each_frame_at_every_depth ... ok
+test dialogs::filter_dialog::multi_channel_dialog_tests::ordinary_filter_captures_the_set_and_preview_equals_confirmation ... ok
+test dialogs::filter_dialog::tests::color_to_alpha_dialog_defaults_draw_and_preview ... ok
+test dialogs::filter_dialog::tests::content_aware_fill_previews_at_full_resolution ... ok
+test dialogs::adjust_preview::tests::preview_composite_matches_the_destructive_command ... ok
+test dialogs::filter_dialog::multi_channel_dialog_tests::mask_view_dialogs_capture_the_mask_for_preview_and_confirmation ... ok
+test dialogs::filter_dialog::tests::core_filter_previews_keep_minimum_settings_after_downsampling ... ok
+test dialogs::filter_dialog::tests::match_color_preview_uses_the_source_document ... ok
+test dialogs::filter_dialog::tests::preview_runs_engine_command_on_proxy ... ok
+test dialogs::filter_dialog::tests::preview_stays_inside_the_selection_at_every_proxy_factor ... ok
+test dialogs::filter_dialog::tests::proxy_previews_never_clamp_pixel_sized_params ... ok
+test dialogs::filter_dialog::tests::proxy_previews_scale_only_lengths ... ok
+test dialogs::filter_dialog::tests::smart_displace_preview_uses_the_map_document ... ok
+test dialogs::filter_dialog::tests::smart_object_curves_preview_keeps_its_size_on_a_reduced_proxy ... ok
+test dialogs::filter_dialog::tests::sweep_all_previews ... ignored
+test dialogs::filter_dialog::tests::warp_text_preview_matches_the_full_size_result_on_a_reduced_proxy ... ok
+test dialogs::filter_preview_ui::tests::a_click_maps_to_the_document_point_under_it ... ok
+test dialogs::filter_preview_ui::tests::a_hundred_percent_is_one_document_pixel_per_point ... ok
+test dialogs::filter_preview_ui::tests::a_zoomed_out_region_centres_the_whole_image ... ok
+test dialogs::filter_preview_ui::tests::full_resolution_preview_textures_respect_the_device_limit ... ok
+test dialogs::filter_preview_ui::tests::only_filter_dialogs_get_the_preview_window ... ok
+test dialogs::filter_preview_ui::tests::original_texture_refreshes_when_the_channel_view_changes_without_an_edit ... ok
+test dialogs::filter_preview_ui::tests::textures_are_reduced_to_fit_the_gpu ... ok
+test dialogs::filter_preview_ui::tests::the_centre_is_clamped_to_the_document ... ok
+test dialogs::filter_preview_ui::tests::the_image_keeps_square_pixels_when_the_region_overhangs_it ... ok
+test dialogs::filter_preview_ui::tests::the_source_rect_follows_the_centre_and_zoom ... ok
+test dialogs::filter_preview_ui::tests::the_window_defaults_its_view_and_never_panics ... ok
+test dialogs::filter_preview_ui::tests::uploaded_preview_shows_the_filtered_alpha_at_every_depth_and_proxy_scale ... ok
+test dialogs::filter_preview_ui::tests::zoom_steps_walk_the_levels_and_stay_in_bounds ... ok
+test dialogs::filter_preview_worker::tests::a_stale_preview_is_cancelled_only_once_the_values_settle ... ok
+test dialogs::filter_preview_worker::tests::blocked_preview_does_not_block_ui_or_queue_slider_requests ... ok
+test dialogs::filter_preview_worker::tests::escaped_panic_is_an_error_and_worker_can_be_reused ... ok
+test dialogs::filter_preview_worker::tests::request_identity_covers_dialog_revision_layer_and_params ... ok
+test dialogs::gallery_ui::tests::background_preview_renders_off_the_ui_thread ... ok
+test dialogs::gallery_ui::tests::bench_gallery_preview ... ignored
+test dialogs::filter_dialog::tests::fixed_size_filters_preview_at_the_scale_they_apply ... ok
+test dialogs::gallery_ui::tests::preview_and_thumbnails_render ... ok
+test dialogs::gallery_ui::tests::native_component_gallery_previews_match_commit_and_capture_the_target ... ok
+test dialogs::gallery_ui::tests::zoomed_out_preview_matches_the_applied_result_scaled_down ... ok
+test dialogs::guide_layout_ui::tests::applying_a_previewed_layout_reveals_hidden_guides ... ok
+test dialogs::guide_layout_ui::tests::invalid_fields_keep_last_valid_preview_and_dialog_open ... ok
+test dialogs::guide_layout_ui::tests::ok_matches_preview_and_is_one_undo_step ... ok
+test dialogs::guide_layout_ui::tests::preview_cache_tracks_document_revision ... ok
+test dialogs::guide_layout_ui::tests::preview_off_and_foreign_document_never_replace_guides ... ok
+test dialogs::guide_layout_ui::tests::typing_previews_without_editing_and_cancel_restores_preferences_and_lines ... ok
+test dialogs::gallery_ui::tests::zoom_shortcuts_zoom_the_preview_not_the_canvas ... ok
+test dialogs::layer_style::color_picker::tests::preview_off_and_parent_confirmation_and_cancellation_keep_their_contract ... ok
+test dialogs::layer_style::color_picker::tests::preview_cancel_ok_parent_cancel_and_apply_are_transactional_at_every_depth ... ok
+test dialogs::layer_style::tests::bevel_shading_round_trips_through_dialog_preview_and_confirm ... ok
+test dialogs::layer_style::tests::issue_steps_disable_stroke_add_overlay_untick_preview ... ok
+test dialogs::layer_style::tests::last_angle_edit_wins_across_global_light_instances_and_preview ... ok
+test dialogs::layer_style::tests::preview_applies_the_style_without_touching_the_document ... ok
+test dialogs::layer_style::tests::preview_moves_shadow_pixels_when_shared_angle_changes ... ok
+test dialogs::layer_style::tests::preview_off_shows_the_original_until_reenabled ... ok
+test dialogs::layer_style::color_picker::tests::stale_targets_and_invalid_colors_never_apply_or_leave_preview ... ok
+test dialogs::layer_style::tests::preview_rejects_non_object_effect_params ... ok
+test dialogs::liquify_ui::tests::undo_dirties_the_zoomed_preview ... ok
+test dialogs::liquify_ui::tests::pinch_and_wheel_zoom_the_preview_about_the_pointer ... ok
+test dialogs::liquify_ui::tests::zoomed_liquify_preview_uses_only_the_visible_full_resolution_crop ... ok
+test dialogs::liquify_ui::tests::zoom_shortcuts_zoom_the_preview_not_the_canvas ... ok
+test dialogs::pattern_fill_ui::tests::new_pattern_fill_opens_the_dialog_previews_and_ok_is_one_step ... ok
+test dialogs::new_guide_ui::tests::draft_preview_is_isolated_and_invalid_text_keeps_the_last_good_preview ... ok
+test dialogs::select_mask_ui::tests::a_preview_of_an_old_revision_is_dropped ... ok
+test dialogs::select_mask_ui::tests::a_refused_stroke_leaves_no_trail_or_preview ... ok
+test dialogs::select_mask_ui::tests::control_preview_and_pointer_on_another_document_are_refused ... ok
+test dialogs::select_mask_ui::tests::high_quality_preview_is_full_size ... ok
+test dialogs::select_mask_ui::tests::sparse_large_preview_counts_coverage_without_a_dense_canvas_mask ... ok
+test dialogs::select_mask_ui::tests::real_time_refinement_previews_the_stroke_being_drawn ... ok
+test dialogs::select_mask_ui::tests::the_preview_recomputes_the_edits_after_the_document_changes ... ok
+test dialogs::shape_fill_ui::tests::stroke_picker_previews_a_stroke_that_is_off_as_ok_turns_it_on ... ok
+test dialogs::shape_fill_ui::tests::stroke_picker_previews_commits_and_rejects_stale_or_bad_targets ... ok
+test dialogs::select_mask_ui::tests::the_preview_reuses_the_edits_it_applied ... ok
+test dialogs::smart_filter_dialog::tests::preview_toggle_and_cancel_leave_document_and_history_untouched ... ok
+test dialogs::smart_filter_dialog::tests::reduced_preview_scales_placement_stack_and_mask_without_adding_filters ... ok
+test dialogs::smart_filter_dialog::tests::tiny_images_keep_a_usable_preview_viewport ... ok
+test dialogs::solid_fill_ui::tests::picker_previews_without_editing_cancel_discards_and_ok_is_one_step ... ok
+test dialogs::solid_fill_ui::tests::same_hex_inks_preview_and_thumbnail_as_ok_commits_them ... ok
+test dialogs::solid_fill_ui::tests::cmyk_lab_preview_thumbnail_cancel_and_ok_are_consistent ... ok
+test dialogs::vp_ui::tests::deleting_the_last_plane_drops_the_stamp_preview ... ok
+test dialogs::vp_ui::tests::moving_the_paste_repaints_the_stamp_preview ... ok
+test dialogs::vp_ui::tests::new_layer_stamp_preview_stays_on_the_canvas ... ok
+test dialogs::tests::a_filters_preview_stays_on_screen_until_its_job_lands ... ok
+test dialogs::vp_ui::tests::selecting_another_layer_keeps_the_stamp_preview ... ok
+test dialogs::vp_ui::tests::stamp_preview_is_not_shown_on_another_document ... ok
+test dialogs::vp_ui::tests::overlapping_stamp_preview_matches_commit_across_batches ... ok
+test dialogs::vp_ui::tests::stamp_preview_paints_over_the_paste_like_ok ... ok
+test dialogs::wide_angle_ui::tests::constraint_overlay_reuses_the_preview_mesh_on_redraw ... ok
+test dialogs::wide_angle_ui::tests::preview_mesh_refreshes_after_edits_and_history_steps ... ok
+test dock::tests::navigator_preview_fills_its_group_and_keeps_aspect ... ok
+test edit_session::tests::invalid_input_retains_preview_but_blocks_commit_until_corrected ... ok
+test edit_session::tests::many_previews_produce_one_final_change ... ok
+test file_open::tests::affinity_preview_does_not_acquire_the_source_path_even_when_renamed ... ok
+test home_recent_ui::tests::panicking_thumbnail_load_returns_no_preview ... ok
+test home_recent_ui::tests::recent_thumbnail_extracts_embedded_preview_from_large_psd_without_reading_payload ... ok
+test home_recent_ui::tests::recent_thumbnail_skips_composite_for_high_channel_psd_without_preview ... ok
+test home_recent_ui::tests::recent_thumbnail_skips_composite_for_oversized_psd_without_preview ... ok
+test i18n::live_tests::preferences_preview_does_not_commit_until_applied_and_survives_reload ... ok
+test i18n::live_tests::scoped_preview_restores_language_even_after_a_panic ... ok
+test jobs_ui::tests::a_free_transform_commit_runs_in_the_background_and_keeps_its_preview ... ok
+test jobs_ui::tests::a_warp_commit_runs_in_the_background_and_keeps_its_preview ... ok
+test menus::workspace_ui::tests::thirty_two_bit_preview_dialog ... ok
+test menus::workspace_ui::tests::thirty_two_bit_preview_window_fits_and_stops_growing ... ok
+test panels::blend_preview::tests::a_hovered_mode_previews_on_every_selected_layer ... ok
+test panels::blend_preview::tests::a_hovered_mode_shows_on_the_canvas_until_the_pointer_leaves ... ok
+test panels::blend_preview::tests::blend_hover_disjoint_coverage_retains_views_without_hiding_gaps ... ok
+test dialogs::filter_dialog::tests::every_preview_shows_what_ok_applies ... ok
+test panels::blend_preview::tests::hovering_the_layers_panel_blend_list_previews_and_a_click_commits ... ok
+test panels::brush_panel::tests::preview_strip_re_renders_only_when_the_brush_changes ... ok
+test panels::brush_preview::tests::preview_draws_a_stroke_that_fits ... ok
+test panels::brush_preview::tests::sig_cache_renders_only_on_change ... ok
+test panels::brush_preview::tests::stored_tips_draw_their_saved_preview_until_loaded ... ok
+test panels::brush_preview::tests::tip_thumbnails_follow_shape_angle_and_roundness ... ok
+test panels::blend_preview::tests::moving_between_modes_keeps_a_preview_across_the_gaps_between_them ... ok
+test panels::brushes_tab::tests::preview_scale_is_clamped_to_its_range ... ok
+test dialogs::wide_angle_ui::tests::native_component_wide_angle_previews_and_commit_keep_unselected_samples ... ok
+test panels::clipping_indicator_tests::write_adjustment_scope_preview ... ignored, writes synthetic compact adjustment-panel screenshots to log/adjustment-scope
+test panels::clipping_indicator_tests::write_clipping_indicator_preview ... ignored, writes synthetic English Layers-panel screenshots for before/after inspection
+test panels::histogram_panel::tests::adjustment_preview_is_counted_over_the_original ... ok
+test panels::histogram_panel::tests::inspect_preview_is_the_active_documents ... ok
+test panels::layers_panel_ui::tests::default_panel_options_match_medium_document_previews ... ok
+test panels::mask_properties_tests::mask_slider_drags_preview_live_and_undo_as_separate_gestures ... ok
+test panels::navigator_wheel_tests::navigator_wheel_changes_zoom_only_when_over_preview ... ok
+test panels::smart_ui::tests::an_edited_smart_filter_previews_what_ok_gives ... ok
+test panels::type_panels_ui::color_picker::tests::no_op_keeps_precise_imported_color_and_returning_to_original_removes_preview ... ok
+test panels::brushes_tab::tests::the_preview_slider_scales_the_previews_not_the_brush_size ... ok
+test panels::type_panels_ui::color_picker::tests::preview_timings ... ignored, manual preview performance comparison
+test save_identity_tests::image_previews_preference_reaches_the_exporter ... ok
+test smart_svg_ui::tests::active_gradient_preview_defers_save_until_gesture_ends ... ok
+test smart_svg_ui::tests::saved_changes_wait_on_document_switch_and_active_preview ... ok
+test panels::type_panels_ui::color_picker::tests::preview_is_cached_cancel_is_clean_and_ok_is_one_undo_step_at_all_depths ... ok
+test text::font_preview::tests::latin_only_families_get_no_arabic_sample ... ok
+test text::font_preview::tests::only_faces_with_both_scripts_get_the_arabic_sample ... ok
+test text::font_preview::tests::previews_use_the_requested_face_and_scale ... ok
+test text::font_preview::tests::the_preview_size_preference_scales_the_sample ... ok
+test tools::brush_resize::tests::liquify_density_preview_stays_inside_its_radius ... ok
+test tools::brush_resize::tests::the_tip_preview_follows_the_brush_falloff ... ok
+test tools::brush_resize::tests::the_tip_preview_uses_the_brush_preview_colour ... ok
+test tools::cas_transform::tests::on_the_background_the_preview_vacates_to_the_background_colour ... ok
+test text::font_preview::tests::a_system_arabic_face_renders_both_samples ... ok
+test tools::cas_transform::tests::partial_colour_sets_cannot_start_content_aware_or_mesh_transform_previews ... ok
+test tools::direct_select::tests::external_revision_cancels_preview_and_preserves_the_new_path ... ok
+test tools::direct_select::tests::the_preview_is_what_the_drag_commits ... ok
+test tools::frame_tool::tests::dragging_border_moves_only_frame_and_escape_discards_live_preview ... ok
+test tools::frame_tool::tests::hostile_frame_pointer_coordinates_never_publish_an_invalid_preview ... ok
+test tools::frame_tool::tests::free_transform_on_the_frame_thumbnail_previews_and_commits_only_the_clip ... ok
+test tools::gradient_ui::tests::preview_shows_the_drag_before_commit ... ok
+test tools::puppet_ui::tests::drag_preview_is_independent_of_pointer_path_and_honors_release_coordinates ... ok
+test tools::object_finder::tests::preview_clears_on_leave_tool_switch_button_option_and_edits ... ok
+test tools::retouch_ui::tests::clone_stamp_in_pattern_preview_wraps_a_dab_across_the_right_edge ... ok
+test tools::stroke_constraint::tests::line_preview_needs_shift_a_previous_stroke_and_no_stroke_in_progress ... ok
+test tools::symmetry_ui::tests::cancel_competing_edits_tool_document_and_focus_changes_drop_only_the_preview ... ok
+test tools::transform_tool::tests::artboard_solo_preview_keeps_holes_transparent_and_the_board_clip ... ok
+test tools::transform_tool::tests::edits_during_a_transform_show_in_the_preview ... ok
+test tools::transform_tool::tests::nested_group_preview_detaches_every_clipped_ancestor ... ok
+test tools::transform_tool::tests::nested_group_preview_excludes_its_siblings ... ok
+test tools::transform_tool::tests::preview_applies_the_linked_mask ... ok
+test tools::transform_tool::tests::preview_feathers_the_linked_mask ... ok
+test tools::transform_tool::tests::preview_of_a_clipped_smart_object_is_not_empty ... ok
+test tools::transform_tool::tests::preview_pixels_past_the_canvas_are_hidden ... ok
+test tools::transform_tool::tests::preview_texture_is_full_resolution ... ok
+test tools::transform_tool::tests::several_preview_detaches_clipped_ancestors ... ok
+test tools::transform_tool::tests::the_preview_leaves_out_cells_past_the_horizon ... ok
+test tools::transform_tool::tests::transform_preview_bench ... ignored
+test tools::puppet_ui::tests::drag_preview_matches_release_history_and_committed_geometry ... ok
+test tools::transform_tool::tests::transform_preview_preserves_displayed_profile_colors ... ok
+test tools::transform_tool::tests::unknown_preview_target_keeps_the_previous_document_fallback ... ok
+test tools::type_font_preview::tests::a_served_family_is_asked_for_only_once_the_pointer_rests_on_its_row ... ok
+test tools::transform_tool::tests::warp_surface_drag_commits_as_previewed ... ok
+test tools::type_tool::canvas_tests::temporary_type_transform_large_document_preview ... ignored, release benchmark for issue #1091: 24 MP, eight text layers, 60 preview updates
+test tools::type_font_preview::tests::an_installed_family_previews_at_once ... ok
+test tools::type_tool::font_picker_tests::hovering_a_font_previews_only_the_selected_characters ... ok
+test tools::type_tool::font_picker_tests::hovering_a_font_row_sets_preview_and_leaving_clears_it ... ok
+test tools::type_tool::font_picker_tests::open_menu_shows_a_lower_recent_family_with_large_previews ... ok
+test tools::type_tool::font_commit_tests::global_commit_clears_hover_before_preview_can_expand_to_the_whole_layer ... ok
+test tools::type_tool::font_picker_tests::options_bar_hover_previews_on_canvas_without_committing ... ok
+test tools::type_tool::font_picker_tests::the_preview_follows_the_font_under_the_pointer_and_the_menu_keeps_its_width ... ok
+test tools::type_tool::font_picker_tests::the_preview_sets_the_type_layers_text_or_the_selection_being_typed ... ok
+test tools::type_tool::font_picker_tests::the_preview_size_preference_resizes_or_removes_the_samples ... ok
+test tools::type_tool::font_picker_tests::options_bar_hover_previews_with_the_character_picker_also_shown ... ok
+test tools::vector_ui::paint_tests::tool_gradient_paints_reach_the_preview_and_the_next_shape ... ok
+test tools::vector_ui::tests::shape_preview_is_the_committed_path ... ok
+test tools::warp_preview::tests::a_bad_zoom_still_gives_samples ... ok
+test tools::warp_preview::tests::a_narrow_pulled_cell_gets_as_many_samples_as_its_stretch_needs ... ok
+test tools::warp_preview::tests::an_unwarped_mesh_stays_cheap ... ok
+test tools::warp_preview::tests::the_most_displaced_cells_are_drawn_first ... ok
+test transform_fx_tests::a_styled_group_previews_with_its_style_once ... ok
+test transform_fx_tests::edits_made_while_the_box_is_open_show_in_the_styled_preview ... ok
+test transform_fx_tests::layers_without_a_style_and_other_boxes_keep_the_plain_preview ... ok
+test tools::vector_ui::paint_tests::float_paints_match_preview_creation_native_roundtrip_and_document_depth ... ok
+test transform_fx_tests::the_canvas_draws_the_styled_preview_and_reuses_it_between_frames ... ok
+test transform_fx_tests::the_preview_matches_the_committed_layer ... ok
+test transform_several_tests::edits_to_the_children_of_a_moving_group_show_in_the_preview ... ok
+test transform_several_tests::hiding_or_fading_a_moving_layer_shows_in_the_preview_at_once ... ok
+test transform_undo_tests::transform_preview_stays_visible_while_panning ... ok
+test warp_text_dialog_tests::warp_text_dialog_previews_the_warp_without_editing_the_document ... ok
+test panels::brushes_tab::tests::dragging_a_brush_shows_its_tip_preview ... ok
+test dialogs::file_ui::tests::web_preview_keeps_its_size_and_zoom_while_the_pointer_moves ... ok
+
+test result: ok. 325 passed; 0 failed; 9 ignored; 0 measured; 5021 filtered out; finished in 18.79s
+
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+    Finished `test` profile [optimized] target(s) in 0.22s
+     Running unittests src/lib.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-matte-rebase/debug/deps/photocraft_ui_egui-2266f7402527996f)
+
+running 9 tests
+test dialogs::filter_dialog::tests::indexed_counts_are_integer_json_while_dither_amounts_keep_their_decimals ... ok
+test dialogs::file_ui::web_playback_tests::playback_refreshes_indexed_frames_without_resetting_palette_or_navigation ... ok
+test dialogs::filter_dialog::tests::indexed_matte_cancel_keeps_the_previous_choice ... ok
+test dialogs::filter_dialog::tests::indexed_matte_tool_seeds_use_document_encoded_rgb ... ok
+test dialogs::sizing::tests::indexed_color_resamples_with_nearest_neighbor_only ... ok
+test text::cjk_fonts::tests::craft_face_selection_ignores_empty_and_unindexed_faces ... ok
+test dialogs::filter_dialog::tests::indexed_matte_dropdown_and_picker_change_the_applied_edge_color ... ok
+test canvas::tests::cross_scale_indexed_matte_preview_rejects_old_tool_colors_from_cached_and_worker_results ... ok
+test canvas::tests::indexed_matte_preview_matches_commit_and_refreshes_tool_colors_inline_and_on_worker ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 5346 filtered out; finished in 0.29s
+
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling syn v3.0.6
+   Compiling either v1.18.0
+   Compiling serde_core v1.0.229
+   Compiling num-traits v0.2.19
+   Compiling rayon v1.12.0
+   Compiling serde v1.0.229
+   Compiling tracing v0.1.44
+   Compiling smallvec v1.16.2
+   Compiling rustix v1.1.5
+   Compiling synstructure v0.14.0
+   Compiling linux-raw-sys v0.12.1
+   Compiling photocraft-cms v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/cms)
+   Compiling jxl-bitstream v1.1.0
+   Compiling writeable v0.6.4
+   Compiling serde_json v1.0.154
+   Compiling jxl-oxide-common v1.0.0
+   Compiling jxl-grid v0.6.2
+   Compiling syn v2.0.119
+   Compiling litemap v0.8.3
+   Compiling jxl-coding v1.0.1
+   Compiling jxl-threadpool v1.0.0
+   Compiling jxl-modular v0.11.3
+   Compiling jxl-image v0.13.0
+   Compiling moxcms v0.8.1
+   Compiling jxl-vardct v0.11.1
+   Compiling bytemuck_derive v1.12.1
+   Compiling zerofrom-derive v0.1.8
+   Compiling bytemuck v1.25.2
+   Compiling yoke-derive v0.8.3
+   Compiling zerofrom v0.1.8
+   Compiling serde_derive v1.0.229
+   Compiling yoke v0.8.3
+   Compiling zerovec-derive v0.11.6
+   Compiling displaydoc v0.2.7
+   Compiling thiserror-impl v2.0.21
+   Compiling zerotrie v0.2.5
+   Compiling zerovec v0.11.8
+   Compiling tinystr v0.8.4
+   Compiling icu_locale_core v2.3.0
+   Compiling potential_utf v0.1.6
+   Compiling icu_collections v2.3.0
+   Compiling icu_provider v2.3.1
+   Compiling zerocopy-derive v0.8.59
+   Compiling thiserror v2.0.21
+   Compiling font-types v0.12.5
+   Compiling num-complex v0.4.6
+   Compiling read-fonts v0.41.0
+   Compiling fax_derive v0.2.0
+   Compiling photocraft-geom v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/geom)
+   Compiling photocraft-color v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/color)
+   Compiling photocraft-raster v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/raster)
+   Compiling qoi v0.4.1
+   Compiling jxl-frame v0.13.3
+   Compiling photocraft-doc v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/doc)
+   Compiling num-integer v0.1.47
+   Compiling pulp v0.22.3
+   Compiling zerocopy v0.8.59
+   Compiling hashbrown v0.17.1
+   Compiling half v2.7.1
+   Compiling tiny-skia-path v0.11.4
+   Compiling image v0.25.10
+   Compiling icu_locale_fallback v2.3.0
+   Compiling icu_properties v2.3.0
+   Compiling fax v0.2.6
+   Compiling jxl-color v0.11.0
+   Compiling kurbo v0.11.3
+   Compiling unicode-properties v0.1.4
+   Compiling linebender_resource_handle v0.1.1
+   Compiling exr v1.74.2
+   Compiling svgtypes v0.15.3
+   Compiling rustybuzz v0.20.1
+   Compiling fontique v0.11.1
+   Compiling transpose v0.2.3
+   Compiling jxl-render v0.12.4
+   Compiling parley_data v0.11.1
+   Compiling icu_segmenter v2.3.0
+   Compiling jxl-jbr v0.2.1
+   Compiling tiff v0.11.3
+   Compiling icu_normalizer v2.3.0
+   Compiling primal-check v0.3.4
+   Compiling harfrust v0.12.0
+   Compiling skrifa v0.44.0
+   Compiling craft-jpeg v0.1.0 (https://github.com/storytold/craft-libs?rev=c5a1cbfb5f9049f9270955caffb5bee5997aebf7#c5a1cbfb)
+   Compiling leb128fmt v0.1.0
+   Compiling usvg v0.45.1
+   Compiling wasm-encoder v0.262.0
+   Compiling photocraft-codecs v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/codecs)
+   Compiling parley v0.11.1
+   Compiling rustfft v6.4.1
+   Compiling jxl-oxide v0.12.6
+   Compiling tiny-skia v0.11.4
+   Compiling photocraft-psd v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/psd)
+   Compiling photocraft-vector v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/vector)
+   Compiling craft-pcraft-format v0.1.0 (https://github.com/storytold/craft-libs?rev=b8f7d93b00dfb8f172938f3d2d796ae62dcfe123#b8f7d93b)
+   Compiling rgb v0.8.53
+   Compiling bumpalo v3.20.3
+   Compiling wast v262.0.0
+   Compiling photocraft-paint v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/paint)
+   Compiling resvg v0.45.1
+   Compiling photocraft-format v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/format)
+   Compiling photocraft-text v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/text)
+   Compiling photocraft-compose v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/compose)
+   Compiling photocraft-algo v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/algo)
+   Compiling photocraft-raw v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/raw)
+   Compiling photocraft-affinity v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/affinity)
+   Compiling photocraft-io v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/io)
+   Compiling tempfile v3.27.0
+   Compiling chrono v0.4.45
+   Compiling photocraft-testkit v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/testkit)
+   Compiling wat v1.262.0
+   Compiling photocraft-plugins v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/plugins)
+   Compiling photocraft-ops v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/ops)
+   Compiling semver v1.0.28
+   Compiling photocraft-engine v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/engine)
+    Finished `test` profile [optimized] target(s) in 3m 08s
+     Running unittests src/lib.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-matte-rebase/debug/deps/photocraft_engine-c8b025d0f690f6f1)
+
+running 41 tests
+test cmd::mode_cmds::tests::flattened_mode_pixels_match_the_allocating_conversion_at_every_channel_count ... ok
+test cmd::mode_cmds::tests::bitmap_halftone_rejects_bad_angles_and_frequencies_without_editing_the_document ... ok
+test cmd::mode_cmds::tests::indexed_matte_without_transparency_fills_clear_pixels_and_rejects_bad_input_atomically ... ok
+test cmd::mode_cmds::tests::bitmap_rejects_bad_resolutions_and_patterns_without_editing_the_document ... ok
+test cmd::mode_cmds::tests::indexed_color_rejects_invalid_counts_without_editing_the_document ... ok
+test cmd::mode_cmds::tests::color_table_presets_and_entries ... ok
+test cmd::mode_cmds::tests::brush_stroke_keeps_indexed_transparency_binary ... ok
+test cmd::mode_cmds::tests::bitmap_lays_a_transparent_composite_over_white ... ok
+test cmd::mode_cmds::tests::live_brush_preview_matches_indexed_commit ... ok
+test cmd::mode_cmds::tests::duotone_curve_points_must_be_finite ... ok
+test cmd::mode_cmds::tests::indexed_brush_stroke_leaves_pixels_it_did_not_paint ... ok
+test cmd::mode_cmds::tests::color_table_rejects_an_invalid_transparent_index_without_editing ... ok
+test cmd::mode_cmds::tests::brush_stroke_stays_in_indexed_color_table ... ok
+test cmd::mode_cmds::tests::indexed_matte_named_gray_choices_use_their_document_samples ... ok
+test cmd::mode_cmds::tests::bitmap_custom_pattern_thresholds_against_the_tiled_pattern ... ok
+test cmd::mode_cmds::tests::modes_round_trip_through_pcraft ... ok
+test cmd::mode_cmds::tests::duotone_to_rgb_inks_fill_layer_colours ... ok
+test cmd::mode_cmds::tests::pencil_auto_erase_knows_the_indexed_foreground ... ok
+test cmd::mode_cmds::tests::indexed_matte_hex_stays_in_document_rgb_coordinates ... ok
+test cmd::mode_cmds::tests::rotate_arbitrary_rotates_grouped_locked_children_and_preserves_lock ... ok
+test cmd::mode_cmds::tests::clearing_color_table_transparency_restores_indexed_pixels ... ok
+test cmd::mode_cmds::tests::rotate_arbitrary_keeps_the_background_opaque_with_a_translucent_background_colour ... ok
+test cmd::mode_cmds::tests::bitmap_methods_need_grayscale ... ok
+test cmd::mode_cmds::tests::duotone_inks_and_display ... ok
+test cmd::mode_cmds::tests::bitmap_halftone_screen_is_laid_out_at_the_output_resolution ... ok
+test cmd::mode_cmds::tests::bitmap_output_resolution_resamples_and_sets_the_resolution ... ok
+test cmd::mode_cmds::tests::bitmap_output_resolution_budgets_the_hidden_pixels ... ok
+test cmd::mode_cmds::tests::shrinking_the_color_table_drops_a_transparent_index_past_its_end ... ok
+test cmd::mode_cmds::tests::rotate_arbitrary_other_modes ... ok
+test cmd::mode_cmds::tests::bitmap_budgets_a_conversion_at_the_document_resolution_too ... ok
+test cmd::mode_cmds::tests::rotate_arbitrary_grows_canvas_and_keeps_background ... ok
+test cmd::mode_cmds::tests::indexed_exact_preserves_profile_and_samples_through_default_rgb ... ok
+test cmd::mode_cmds::tests::indexed_exact_transparency_and_sources ... ok
+test cmd::mode_cmds::tests::rotate_arbitrary_keeps_the_full_precision_angle ... ok
+test cmd::mode_cmds::tests::rotate_arbitrary_turns_unlinked_layer_masks ... ok
+test cmd::mode_cmds::tests::indexed_matte_blends_edges_without_replacing_clear_pixels ... ok
+test cmd::mode_cmds::tests::indexed_matte_converts_working_rgb_to_document_profile_at_every_depth ... ok
+test cmd::mode_cmds::tests::indexed_color_palettes_and_dithers ... ok
+test cmd::mode_cmds::tests::duotone_to_colour_modes_keeps_the_ink_colours ... ok
+test cmd::mode_cmds::tests::bitmap_output_resolution_budgets_the_whole_conversion_not_just_the_resample ... ok
+test cmd::mode_cmds::tests::bitmap_in_bands_matches_one_full_canvas_conversion ... ok
+
+test result: ok. 41 passed; 0 failed; 0 ignored; 0 measured; 3068 filtered out; finished in 3.92s
+
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling photocraft-engine v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/engine)
+    Finished `test` profile [optimized] target(s) in 35.39s
+     Running tests/panic_hunt.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-matte-rebase/debug/deps/panic_hunt-d90f16c346af7fba)
+
+running 1 test
+test no_command_panics_or_hangs_on_adversarial_params ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out; finished in 51.28s
+
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling syn v3.0.6
+   Compiling smallvec v1.16.2
+   Compiling rustix v1.1.5
+   Compiling linux-raw-sys v0.12.1
+   Compiling tracing v0.1.44
+   Compiling serde_json v1.0.154
+   Compiling jxl-bitstream v1.1.0
+   Compiling jxl-oxide-common v1.0.0
+   Compiling jxl-grid v0.6.2
+   Compiling serde_core v1.0.229
+   Compiling indexmap v2.14.2
+   Compiling jxl-coding v1.0.1
+   Compiling synstructure v0.14.0
+   Compiling jxl-threadpool v1.0.0
+   Compiling jxl-modular v0.11.3
+   Compiling jxl-image v0.13.0
+   Compiling jxl-vardct v0.11.1
+   Compiling strsim v0.11.1
+   Compiling jxl-frame v0.13.3
+   Compiling parking_lot_core v0.9.12
+   Compiling wgpu-hal v30.0.1
+   Compiling futures-sink v0.3.34
+   Compiling parking_lot v0.12.5
+   Compiling jxl-color v0.11.0
+   Compiling kurbo v0.11.3
+   Compiling io-lifetimes v3.0.1
+   Compiling io-lifetimes v2.0.4
+   Compiling ident_case v1.0.1
+   Compiling darling_core v0.24.1
+   Compiling svgtypes v0.15.3
+   Compiling jxl-jbr v0.2.1
+   Compiling futures-channel v0.3.34
+   Compiling wgpu-core v30.0.1
+   Compiling ref-cast v1.0.27
+   Compiling utf8parse v0.2.2
+   Compiling futures-io v0.3.34
+   Compiling slab v0.4.12
+   Compiling winnow v1.0.4
+   Compiling io-extras v0.19.0
+   Compiling toml_parser v1.1.3+spec-1.1.0
+   Compiling anstyle-parse v1.0.0
+   Compiling serde_spanned v1.1.1
+   Compiling toml_datetime v1.1.1+spec-1.1.0
+   Compiling serde_derive_internals v0.30.0
+   Compiling bytemuck_derive v1.12.1
+   Compiling thiserror-impl v2.0.21
+   Compiling serde_derive v1.0.229
+   Compiling bytemuck v1.25.2
+   Compiling zerofrom-derive v0.1.8
+   Compiling yoke-derive v0.8.3
+   Compiling thiserror v2.0.21
+   Compiling zerovec-derive v0.11.6
+   Compiling displaydoc v0.2.7
+   Compiling num-complex v0.4.6
+   Compiling naga-types v30.0.1
+   Compiling font-types v0.12.5
+   Compiling serde v1.0.229
+   Compiling wgpu-types v30.0.1
+   Compiling read-fonts v0.41.0
+   Compiling photocraft-geom v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/geom)
+   Compiling zerofrom v0.1.8
+   Compiling yoke v0.8.3
+   Compiling zerovec v0.11.8
+   Compiling photocraft-color v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/color)
+   Compiling photocraft-raster v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/raster)
+   Compiling tinystr v0.8.4
+   Compiling icu_locale_core v2.3.0
+   Compiling potential_utf v0.1.6
+   Compiling zerotrie v0.2.5
+   Compiling icu_provider v2.3.1
+   Compiling icu_collections v2.3.0
+   Compiling photocraft-doc v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/doc)
+   Compiling naga v30.0.1
+   Compiling icu_properties v2.3.0
+   Compiling icu_locale_fallback v2.3.0
+   Compiling pulp v0.22.3
+   Compiling gpu-allocator v0.28.0
+   Compiling wgpu-naga-bridge v30.0.1
+   Compiling tiny-skia-path v0.11.4
+   Compiling qoi v0.4.1
+   Compiling image v0.25.10
+   Compiling exr v1.74.2
+   Compiling icu_segmenter v2.3.0
+   Compiling parley_data v0.11.1
+   Compiling photocraft-vector v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/vector)
+   Compiling icu_normalizer v2.3.0
+   Compiling skrifa v0.44.0
+   Compiling harfrust v0.12.0
+   Compiling fontique v0.11.1
+   Compiling rustfft v6.4.1
+   Compiling craft-jpeg v0.1.0 (https://github.com/storytold/craft-libs?rev=c5a1cbfb5f9049f9270955caffb5bee5997aebf7#c5a1cbfb)
+   Compiling jxl-render v0.12.4
+   Compiling rustybuzz v0.20.1
+   Compiling futures-macro v0.3.34
+   Compiling usvg v0.45.1
+   Compiling jxl-oxide v0.12.6
+   Compiling futures-util v0.3.34
+   Compiling photocraft-codecs v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/codecs)
+   Compiling photocraft-algo v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/algo)
+   Compiling parley v0.11.1
+   Compiling photocraft-compose v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/compose)
+   Compiling wgpu-core-deps-windows-linux-android v30.0.1
+   Compiling tiny-skia v0.11.4
+   Compiling craft-pcraft-format v0.1.0 (https://github.com/storytold/craft-libs?rev=b8f7d93b00dfb8f172938f3d2d796ae62dcfe123#b8f7d93b)
+   Compiling chrono v0.4.45
+   Compiling photocraft-psd v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/psd)
+   Compiling darling_macro v0.24.1
+   Compiling rgb v0.8.53
+   Compiling tokio-macros v2.7.2
+   Compiling ref-cast-impl v1.0.27
+   Compiling wgpu v30.0.1
+   Compiling mio v1.2.3
+   Compiling socket2 v0.6.5
+   Compiling cap-primitives v4.0.3
+   Compiling memchr v2.8.3
+   Compiling is_terminal_polyfill v1.70.2
+   Compiling anstyle v1.0.14
+   Compiling colorchoice v1.0.5
+   Compiling anstyle-query v1.1.5
+   Compiling anstream v1.0.0
+   Compiling photocraft-paint v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/paint)
+   Compiling tokio v1.54.1
+   Compiling resvg v0.45.1
+   Compiling darling v0.24.1
+   Compiling photocraft-text v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/text)
+   Compiling photocraft-format v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/format)
+   Compiling futures-executor v0.3.34
+   Compiling photocraft-raw v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/raw)
+   Compiling schemars_derive v1.2.3
+   Compiling toml v1.1.6+spec-1.1.0
+   Compiling fs-set-times v0.20.3
+   Compiling rustix-linux-procfs v0.1.1
+   Compiling clap_lex v1.1.1
+   Compiling ambient-authority v0.0.2
+   Compiling heck v0.5.0
+   Compiling ipnet v2.12.2
+   Compiling cap-std v4.0.3
+   Compiling rmcp v3.6.0
+   Compiling maybe-owned v0.3.4
+   Compiling dyn-clone v1.0.20
+   Compiling photocraft-io v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/io)
+   Compiling schemars v1.2.3
+   Compiling tempfile v3.27.0
+   Compiling clap_derive v4.6.7
+   Compiling clap_builder v4.6.7
+   Compiling winresource v0.1.34
+   Compiling futures v0.3.34
+   Compiling rmcp-macros v3.7.0
+   Compiling tokio-util v0.7.19
+   Compiling photocraft-plugins v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/plugins)
+   Compiling photocraft-ops v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/ops)
+   Compiling uuid v1.26.1
+   Compiling pastey v0.2.3
+   Compiling photocraft-gpu v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/gpu)
+   Compiling photocraft-engine v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/engine)
+   Compiling clap v4.6.7
+   Compiling photocraft-cli v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/apps/photocraft-cli)
+   Compiling photocraft-automation v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/automation)
+    Finished `dev` profile [optimized] target(s) in 2m 41s
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling photocraft-ui-egui v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/ui-egui)
+    Finished `dev` profile [optimized] target(s) in 47.80s

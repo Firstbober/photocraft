@@ -1,0 +1,217 @@
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+    Checking photocraft-cms v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/cms)
+    Checking photocraft-geom v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/geom)
+   Compiling photocraft-text v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/text)
+    Checking photocraft-codecs v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/codecs)
+    Checking photocraft-psd v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/psd)
+    Checking wasmi v2.0.0
+    Checking photocraft-color v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/color)
+    Checking photocraft-raster v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/raster)
+    Checking photocraft-doc v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/doc)
+    Checking photocraft-algo v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/algo)
+    Checking photocraft-paint v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/paint)
+    Checking photocraft-raw v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/raw)
+    Checking photocraft-vector v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/vector)
+    Checking photocraft-compose v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/compose)
+    Checking photocraft-format v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/format)
+    Checking photocraft-affinity v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/affinity)
+    Checking roxmltree v0.21.1
+    Checking semver v1.0.28
+    Checking craft-docpath v0.1.0 (https://github.com/storytold/craft-libs?rev=c5a1cbfb5f9049f9270955caffb5bee5997aebf7#c5a1cbfb)
+    Checking craft-winprint-gdi v0.1.0 (https://github.com/storytold/winprint.rs?rev=417ac3c4d14d3da5485a99c7d5ce8f05664ec312#417ac3c4)
+    Checking photocraft-plugins v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/plugins)
+    Checking craft-print v0.1.0 (https://github.com/storytold/craft-libs?rev=c5a1cbfb5f9049f9270955caffb5bee5997aebf7#c5a1cbfb)
+    Checking photocraft-ops v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/ops)
+    Checking photocraft-ipp v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/ipp)
+    Checking memory-stats v1.2.0
+    Checking photocraft-testkit v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/testkit)
+    Checking leb128fmt v0.1.0
+    Checking bumpalo v3.20.3
+    Checking libloading v0.8.9
+    Checking wasm-encoder v0.262.0
+    Checking dlib v0.5.3
+    Checking unicode-ident v1.0.26
+    Checking wayland-sys v0.31.11
+    Checking slab v0.4.12
+    Checking polling v3.11.0
+    Checking parking v2.2.1
+    Checking downcast-rs v1.2.1
+    Checking futures-core v0.3.34
+    Checking scoped-tls v1.0.1
+    Checking uuid v1.26.1
+    Checking wayland-backend v0.3.17
+    Checking proc-macro2 v1.0.107
+    Checking wast v262.0.0
+    Checking static_assertions v1.1.0
+    Checking winnow v1.0.4
+    Checking wayland-client v0.31.15
+    Checking futures-io v0.3.34
+    Checking quote v1.0.47
+    Checking parking_lot_core v0.9.12
+    Checking event-listener v5.4.2
+    Checking lock_api v0.4.14
+    Checking concurrent-queue v2.5.0
+    Checking parking_lot v0.12.5
+    Checking event-listener-strategy v0.5.4
+    Checking syn v3.0.6
+    Checking futures-lite v2.6.1
+    Checking photocraft-io v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/io)
+    Checking equivalent v1.0.2
+    Checking enumflags2 v0.7.12
+    Checking zcheapstr v1.1.0
+    Checking endi v1.1.1
+    Checking profiling v1.0.18
+    Checking wayland-protocols v0.32.13
+    Checking wat v1.262.0
+    Checking accesskit v0.25.1
+    Checking zvariant_utils v4.2.0
+    Checking polycool v0.4.0
+    Checking errno v0.3.14
+    Checking zvariant v5.15.0
+    Checking async-task v4.7.1
+    Checking raw-window-handle v0.6.2
+    Checking signal-hook-registry v1.4.8
+    Checking kurbo v0.13.1
+    Checking async-io v2.6.0
+    Checking photocraft-engine v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/matte/crates/engine)
+    Checking zbus_names v4.3.4
+    Checking getrandom v0.3.4
+    Checking indexmap v2.14.2
+    Checking async-channel v2.5.0
+    Checking euclid v0.22.14
+    Checking color v0.3.3
+    Checking rustc-hash v1.1.0
+    Checking atomic-waker v1.1.2
+    Checking piper v0.2.5
+    Checking naga-types v30.0.1
+    Checking guillotiere v0.7.0
+    Checking ahash v0.8.12
+    Checking peniko v0.6.1
+    Checking async-signal v0.2.14
+    Checking async-lock v3.4.2
+    Checking fearless_simd v0.4.1
+    Checking bit-vec v0.9.1
+    Checking bit-set v0.10.0
+    Checking blocking v1.7.0
+    Checking async-process v2.5.0
+    Checking zbus_xml v5.2.1
+    Checking async-executor v1.14.0
+    Checking async-broadcast v0.7.2
+    Checking ordered-stream v0.2.0
+    Checking codespan-reporting v0.13.1
+    Checking emath v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+    Checking spirv v0.4.0+sdk-1.4.341.0
+    Checking xkeysym v0.2.1
+    Checking hex v0.4.3
+    Checking xcursor v0.3.11
+    Checking allocator-api2 v0.2.21
+    Checking linux-raw-sys v0.4.15
+    Checking cursor-icon v1.2.0
+    Checking vello_common v0.2.0
+    Checking wayland-csd-frame v0.3.0
+    Checking rustix v0.38.44
+    Checking hashbrown v0.16.1
+    Checking naga v30.0.1
+    Checking vello_cpu v0.2.0
+    Checking wayland-cursor v0.31.14
+    Checking zbus v5.19.0
+    Checking ecolor v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+    Checking thiserror v1.0.69
+    Checking zbus-lockstep v0.5.2
+    Checking ash v0.38.0+1.3.281
+    Checking unicode-general-category v1.1.0
+    Checking wgpu-types v30.0.1
+    Checking wayland-protocols-wlr v0.3.12
+    Checking presser v0.3.1
+    Checking epaint_default_fonts v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+    Checking self_cell v1.3.0
+    Checking percent-encoding v2.3.2
+    Checking unicode-segmentation v1.13.3
+    Checking nohash-hasher v0.2.0
+    Checking epaint v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+    Checking wgpu-naga-bridge v30.0.1
+    Checking atspi-common v0.13.0
+    Checking calloop v0.13.0
+    Checking khronos-egl v6.0.0
+    Checking ordered-float v5.5.0
+    Checking itertools v0.15.0
+    Checking gpu-allocator v0.28.0
+    Checking gethostname v1.1.0
+    Checking glow v0.17.0
+    Checking as-raw-xcb-connection v1.0.1
+    Checking x11rb-protocol v0.13.2
+    Checking renderdoc-sys v1.1.0
+    Checking egui v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+    Checking wgpu-hal v30.0.1
+    Checking calloop-wayland-source v0.3.0
+    Checking accesskit_consumer v0.39.1
+    Checking phf_shared v0.14.0
+    Checking zeroize v1.9.1
+    Checking rustls-pki-types v1.15.1
+    Checking phf v0.14.0
+    Checking smithay-client-toolkit v0.19.2
+    Checking x11-dl v2.21.0
+    Checking wgpu-core-deps-windows-linux-android v30.0.1
+error: this `if` can be collapsed into the outer `match`
+  --> crates/engine/src/cmd/atn_cmds/steps_layer_style.rs:90:17
+   |
+90 | /                 if parts.iter().any(|part| matches!(part, ReferenceItem::Property { key, .. } if key.is("Lefx"))) {
+91 | |                     return true;
+92 | |                 }
+   | |_________________^
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#collapsible_match
+   = note: `-D clippy::collapsible-match` implied by `-D warnings`
+   = help: to override `-D warnings` add `#[allow(clippy::collapsible_match)]`
+help: collapse nested if block
+   |
+89 ~             D::Reference(parts)
+90 ~                 if parts.iter().any(|part| matches!(part, ReferenceItem::Property { key, .. } if key.is("Lefx"))) => {
+91 |                     return true;
+92 ~                 }
+   |
+
+    Checking atspi-proxies v0.13.0
+    Checking xkbcommon-dl v0.4.2
+    Checking wayland-protocols-plasma v0.3.12
+    Checking calloop v0.14.4
+    Checking getrandom v0.2.17
+    Checking futures-task v0.3.34
+    Checking dpi v0.1.2
+    Checking typenum v1.20.1
+    Checking untrusted v0.9.0
+    Checking smol_str v0.2.2
+    Checking ring v0.17.14
+    Checking generic-array v0.14.7
+    Checking futures-util v0.3.34
+    Checking x11rb v0.13.2
+    Checking calloop-wayland-source v0.4.1
+    Checking atspi v0.29.0
+    Checking wgpu-core v30.0.1
+error: this `if` can be collapsed into the outer `match`
+   --> crates/engine/src/cmd.rs:323:25
+    |
+323 | /                         if s.documents().get(i).ok_or(EngineError::NoDocument)?.is_dirty() {
+324 | |                             return Err(bad("file.close", "the document has unsaved changes; save it or explicitly discard them"));
+325 | |                         }
+    | |_________________________^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.95.0/index.html#collapsible_match
+help: collapse nested if block
+    |
+322 ~                     Some(v) if v == "ask"
+323 ~                         && s.documents().get(i).ok_or(EngineError::NoDocument)?.is_dirty() => {
+324 |                             return Err(bad("file.close", "the document has unsaved changes; save it or explicitly discard them"));
+325 ~                         }
+    |
+
+    Checking accesskit_atspi_common v0.21.0
+    Checking winit v0.30.13 (https://github.com/storytold/winit.git?rev=a517b3846ee8457d84ee4975110bfda6797c44dc#a517b384)
+error: could not compile `photocraft-engine` (lib) due to 2 previous errors
+warning: build failed, waiting for other jobs to finish...

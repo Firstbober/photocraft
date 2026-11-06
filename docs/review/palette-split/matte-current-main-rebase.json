@@ -1,0 +1,200 @@
+{
+  "format_version": 1,
+  "recorded_at": "2026-11-06T18:43:14.452971+00:00",
+  "request": "https://github.com/storytold/photocraft/pull/9887#issuecomment-6670439398",
+  "sources": {
+    "main": "2ff8f419cbef9c231a5647eebda43040f6dfa3fb",
+    "prior_matte": "360caa3cc6e5eee7032bcea07f70d68de0097e4f",
+    "matte": "7f96ce53433816fd12aec6c5ff822703c6082952"
+  },
+  "changes": [
+    "Rebase the four Matte commits onto current main without withdrawn #9882.",
+    "Preserve main same_target/same_target_at_any_scale split: tool colors are checked by the cross-scale comparator; k remains checked only by same_target.",
+    "Retain current-main cross-scale canvas regression and Matte inline/worker depth regression; add stale cached and completed-worker cross-scale rejection scenario.",
+    "Resolve canvas tests and all 26 locale conflicts, retaining upstream catalog strings plus translated Netscape Gray.",
+    "Update existing preview documentation."
+  ],
+  "verification": {
+    "fmt": "pass",
+    "preview": {
+      "passed": 325,
+      "ignored": 9
+    },
+    "indexed_ui": {
+      "passed": 9
+    },
+    "mode": {
+      "passed": 41
+    },
+    "panic_hunt": {
+      "passed": 1
+    },
+    "counts_overlap": true,
+    "native": {
+      "fixture_generation_cli": "candidate binary, not a historical generator",
+      "rgb_fixtures": 12,
+      "command_sequences": 51,
+      "profile_depth_cases": 12,
+      "matte_cases": 24,
+      "exact_exported_icc_identity_cases": 12,
+      "behavior_comparison": "Pixel values within 2e-6, exact mode/profile metadata; PSD ICC resource byte hashes exactly equal per candidate-generated source/Indexed/RGB triplet."
+    },
+    "layers": 31,
+    "wasm_crates": 24,
+    "wasm_optional_heif": true,
+    "snapshots_visually_inspected": [
+      "matte-current-main-preview.png",
+      "matte-current-main-options.png"
+    ],
+    "strict_clippy": "blocked by the documented untouched dependency/engine/UI sites; no suppression",
+    "commands": {
+      "native_gate": [
+        [
+          "cargo",
+          "+1.95.0",
+          "fmt",
+          "--all",
+          "--check"
+        ],
+        [
+          "cargo",
+          "+1.95.0",
+          "test",
+          "-p",
+          "photocraft-ui-egui",
+          "--lib",
+          "preview",
+          "--",
+          "--test-threads=4"
+        ],
+        [
+          "cargo",
+          "+1.95.0",
+          "test",
+          "-p",
+          "photocraft-ui-egui",
+          "--lib",
+          "indexed",
+          "--",
+          "--test-threads=4"
+        ],
+        [
+          "cargo",
+          "+1.95.0",
+          "test",
+          "-p",
+          "photocraft-engine",
+          "--lib",
+          "cmd::mode_cmds::tests::"
+        ],
+        [
+          "cargo",
+          "+1.95.0",
+          "test",
+          "-p",
+          "photocraft-engine",
+          "--test",
+          "panic_hunt",
+          "--",
+          "--ignored"
+        ],
+        [
+          "cargo",
+          "+1.95.0",
+          "build",
+          "-p",
+          "photocraft-cli"
+        ],
+        [
+          "cargo",
+          "+1.95.0",
+          "build",
+          "-p",
+          "photocraft-ui-egui",
+          "--example",
+          "snapshot"
+        ]
+      ],
+      "platform": [
+        [
+          "cargo",
+          "+1.95.0",
+          "xtask",
+          "layers"
+        ],
+        [
+          "cargo",
+          "+1.95.0",
+          "xtask",
+          "wasm"
+        ]
+      ],
+      "lint": [
+        [
+          "cargo",
+          "+1.95.0",
+          "clippy",
+          "-p",
+          "photocraft-engine",
+          "-p",
+          "photocraft-ui-egui",
+          "--all-targets",
+          "--",
+          "-D",
+          "warnings"
+        ],
+        [
+          "cargo",
+          "+1.95.0",
+          "clippy",
+          "-p",
+          "photocraft-engine",
+          "-p",
+          "photocraft-ui-egui",
+          "--all-targets",
+          "--no-deps",
+          "--",
+          "-D",
+          "warnings"
+        ],
+        [
+          "cargo",
+          "+1.95.0",
+          "clippy",
+          "-p",
+          "photocraft-ui-egui",
+          "--all-targets",
+          "--no-deps",
+          "--",
+          "-D",
+          "warnings"
+        ]
+      ]
+    },
+    "native_cli_sha256": "2ca57b4864ca8ec65195a5f48346efd38a3b1874d4e2a362a29ecf5dc6949161",
+    "snapshot_sha256": {
+      "matte-current-main-preview.png": "25d39dd9b715c48bb0c1ffcd761a1b18adbc1118b763b119300e7f5bb38bdf07",
+      "matte-current-main-options.png": "f003fcbab19bfa1efc5edc571b7284d7018235d8d659c38ef14904d3beac33c8"
+    }
+  },
+  "receipts": [
+    "matte-current-main-checks.txt",
+    "matte-current-main-platform.txt",
+    "matte-current-main-clippy.txt",
+    "matte-current-main-native.json",
+    "matte-current-main-engine-clippy.txt",
+    "matte-current-main-ui-clippy.txt"
+  ],
+  "limits": [
+    "Local verification, not remote CI or maintainer approval.",
+    "No Photoshop runtime oracle; generated compatible profiles and existing source-scoped native behavior recipes.",
+    "Strict dependency-inclusive Clippy blocked by untouched crates/psd/src/codepage.rs:243 nonminimal_bool. No suppression or unrelated fix.",
+    "No new performance or full-suite-green claim.",
+    "Engine-only no-deps strict Clippy blocked by untouched cmd/atn_cmds/steps_layer_style.rs:90 and cmd.rs:323 collapsible_match.",
+    "UI-only no-deps strict Clippy blocked by untouched canvas/strokes.rs:495/500, canvas/tool_cursor/pen.rs:95, menus/menu_keys.rs:376 and menus/menu_nav.rs:347. No owned diagnostic observed in the emitted results."
+  ],
+  "agents": {
+    "MatteLocaleRebase": "Complete: 26 locale conflicts; no builds.",
+    "MatteCanvasRebase": "Complete: canvas merge and deterministic runtime regression; no builds."
+  }
+}

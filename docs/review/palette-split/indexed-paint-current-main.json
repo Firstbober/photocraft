@@ -1,0 +1,645 @@
+{
+  "schema": 1,
+  "pull_request": "https://github.com/storytold/photocraft/pull/8926",
+  "source_head": "0c75011b56beee16983f1249f7afd6b73fbd6d05",
+  "base_main": "609e2aa72705ae8a43823f192d2aac9b51aa1620",
+  "replaces_remote_head": "2c279c4f89bc5f979ea788a30b2b2c5f5eedf980",
+  "source_worktree": "/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/indexed-paint-current",
+  "source_files": [
+    {
+      "status": "M",
+      "path": "contributors/people.toml",
+      "git_blob": "188915414c0d7bdf1eef7bea39b4c6dad4d5bfc7",
+      "size": 6374,
+      "sha256": "75b2a5914041a5a6d079a1fa08d4456ecde373b683ba5648f1547944317d4c0b"
+    },
+    {
+      "status": "M",
+      "path": "crates/engine/src/cmd/brush_cmds.rs",
+      "git_blob": "de15438f85851412abc9d5e9fe3e12a69843b428",
+      "size": 69473,
+      "sha256": "668aaf4e3f820a5be9f0af1213f4ce20eb95f23a6b7984252cf373afecb2dcfe"
+    },
+    {
+      "status": "M",
+      "path": "crates/engine/src/cmd/brush_cmds/tests.rs",
+      "git_blob": "06b50856eacc17ec1e6b861ac32902da2b8e6835",
+      "size": 90952,
+      "sha256": "dff6bc09d40b114085c38c480f0e56663f88b0fd9cdcf0088ba9e8fbb6ec520e"
+    },
+    {
+      "status": "M",
+      "path": "crates/engine/src/cmd/mode_cmds.rs",
+      "git_blob": "6a462e4c6237c63cbb30880052e4ac7acd9c4bbf",
+      "size": 36259,
+      "sha256": "6869bc1bcc096a03d3367e1b1d825f82d2379c9e71a36405f594fa55ccddd72f"
+    },
+    {
+      "status": "M",
+      "path": "crates/engine/src/cmd/mode_cmds/tests.rs",
+      "git_blob": "057b16ced45f3ee7c83b94147d796b9e0605aee8",
+      "size": 58497,
+      "sha256": "60574551f490810ab868635b631a748b28fac9cb806fa821ff032bda8101efc6"
+    },
+    {
+      "status": "M",
+      "path": "crates/engine/src/cmd/retouch_cmds.rs",
+      "git_blob": "fc242e17ac15e8f20435a873dd67368232db0a54",
+      "size": 21285,
+      "sha256": "7a10b9cc2c18d1f005e7fff00647c926f05345617f388cd372ce71bcdc3843aa"
+    },
+    {
+      "status": "M",
+      "path": "crates/engine/src/cmd/retouch_cmds/clone.rs",
+      "git_blob": "c1c6213dd794f3aedc3e049793de419636e5b00b",
+      "size": 20079,
+      "sha256": "aa992113177d158a1d78b66f3a92f229cc21e0f7e5cc5c120bdadec82343482a"
+    },
+    {
+      "status": "M",
+      "path": "crates/engine/src/cmd/retouch_cmds/dab.rs",
+      "git_blob": "d3a0aacc82a3a6211e22644bc5fa9226a66003f8",
+      "size": 32441,
+      "sha256": "475ec981fe2c2377776692e355de0e110443f1f2f88af02a26531ef2f290a816"
+    },
+    {
+      "status": "M",
+      "path": "crates/engine/src/cmd/retouch_cmds/tests.rs",
+      "git_blob": "1a4f0146821462c68321195602dc0962acc100f4",
+      "size": 163620,
+      "sha256": "7186713e72e7cded2e72c23c53d27ee3024b633d5723fab09f14402a85f4cd52"
+    },
+    {
+      "status": "A",
+      "path": "crates/engine/src/indexed_edit.rs",
+      "git_blob": "a36987f98b2f3510087f552947a1697798492843",
+      "size": 20943,
+      "sha256": "20b9e662ce12d617a6e584d465e9f8c2456a7f34a40e89055870020db406d413"
+    },
+    {
+      "status": "M",
+      "path": "crates/engine/src/lib.rs",
+      "git_blob": "53a98062a36106a0e6b46731115f6655d75f57d3",
+      "size": 16126,
+      "sha256": "603696690a366657f9594829e4891865da77d67e50d57464c6aa4ada55f2ec5f"
+    },
+    {
+      "status": "M",
+      "path": "crates/engine/src/session/execute.rs",
+      "git_blob": "18fecf29b87345a4ed17f4da60b6f1edd6845577",
+      "size": 20999,
+      "sha256": "a4ecf6e4b0a57284f4e8edb2914865c6afed42c6a302b8615cdec2720a807fd5"
+    },
+    {
+      "status": "A",
+      "path": "crates/engine/tests/indexed_painting.rs",
+      "git_blob": "c05a8e1c8338f03d299d20fbd015bd75afee4ba9",
+      "size": 15196,
+      "sha256": "683a33efd844b38aa90be38951273ea873bea75bf6fa41e03223fd9a8d17178f"
+    },
+    {
+      "status": "A",
+      "path": "crates/engine/tests/indexed_tool_matrix.rs",
+      "git_blob": "95f8e1c1fe5f79acf5c2177a8dab481e784f4133",
+      "size": 17252,
+      "sha256": "d62355fb2289f6e166132e732ec3cec168126db4ab41d1e0ad0040b4c490bbb4"
+    },
+    {
+      "status": "M",
+      "path": "docs/development.md",
+      "git_blob": "4c955acade49af6d046db153f36c4e2101ef7d26",
+      "size": 114986,
+      "sha256": "873791b24897b039a9bd9467e2452f5c3c58f9b34aae75a6a71d7ba0bb773afb"
+    }
+  ],
+  "attribution": {
+    "author": "@squintdev",
+    "commit": "59ca72b1b72dd930f7f43977de3c4817b2a301d0",
+    "url": "https://github.com/squintdev/photocraft/blob/59ca72b1b72dd930f7f43977de3c4817b2a301d0/crates/engine/tests/indexed_tool_matrix.rs"
+  },
+  "scope": [
+    "Central Session::edit fixed-palette constraint for accepted pixel edits, plus matching brush/retouch live previews.",
+    "Preserves merged8823 Brush/Pencil and Auto Erase; removes duplicated old mapping helpers.",
+    "Color Replacement, Mixer Brush and Dodge remain refused in Indexed; masks/channels/Quick Mask remain distinct targets.",
+    "No UI additions, quantizer or asset changes."
+  ],
+  "matrix": {
+    "operations": 12,
+    "palettes": 2,
+    "cases": 24,
+    "accepted_cases": 18,
+    "refused_cases": 6,
+    "checks": [
+      "Original table/mode/depth unchanged",
+      "original table sample membership",
+      "meaningful RGB or guaranteed-change controls",
+      "accepted-operation undo/redo",
+      "pasted layer count/content",
+      "bilinear geometry change",
+      "refusals leave all raster layers/history unchanged"
+    ]
+  },
+  "verification": {
+    "final_commands": [
+      [
+        "cargo",
+        "+1.95.0",
+        "fmt",
+        "--all",
+        "--check"
+      ],
+      [
+        "cargo",
+        "+1.95.0",
+        "test",
+        "-p",
+        "photocraft-engine",
+        "--test",
+        "indexed_painting",
+        "--test",
+        "indexed_tool_matrix",
+        "--",
+        "--test-threads=4"
+      ],
+      [
+        "cargo",
+        "+1.95.0",
+        "test",
+        "-p",
+        "photocraft-engine",
+        "--lib",
+        "indexed",
+        "--",
+        "--test-threads=4"
+      ],
+      [
+        "cargo",
+        "+1.95.0",
+        "test",
+        "-p",
+        "photocraft-engine",
+        "--lib",
+        "cmd::brush_cmds::tests::",
+        "--",
+        "--test-threads=4"
+      ],
+      [
+        "cargo",
+        "+1.95.0",
+        "test",
+        "-p",
+        "photocraft-engine",
+        "--lib",
+        "cmd::retouch_cmds::tests::",
+        "--",
+        "--test-threads=4"
+      ],
+      [
+        "cargo",
+        "+1.95.0",
+        "test",
+        "-p",
+        "photocraft-engine",
+        "--test",
+        "panic_hunt",
+        "--",
+        "--ignored"
+      ],
+      [
+        "cargo",
+        "+1.95.0",
+        "check",
+        "-p",
+        "photocraft-engine",
+        "--target",
+        "wasm32-unknown-unknown"
+      ]
+    ],
+    "final_head": "0c75011b56beee16983f1249f7afd6b73fbd6d05",
+    "integration_tests": 21,
+    "lib_filtered_suites": {
+      "indexed": 35,
+      "brush": {
+        "passed": 66,
+        "ignored": 1
+      },
+      "retouch": 113
+    },
+    "hostile_input_tests": 1,
+    "overlap_warning": "Filtered lib suites overlap; counts must not be summed.",
+    "native_attempts": [
+      {
+        "head": "3f37e0ba74a59d35fc3bd4826b9fe4608c1c2e29",
+        "result": "compile_failed",
+        "artifact": "artifact://2327",
+        "cause": "Current Tile::bytes returns borrowed TileBytes guard; add explicit borrows at three calls. Complete interrupted LiveDab field migration; remove owned unused import."
+      },
+      {
+        "head": "65d70e16a66d9654f070dd6d8cbbf9ae77fdfeed",
+        "result": "21 integration tests passed; Indexed lib filter 33 passed and 2 failed; remaining commands not reached",
+        "artifact": "artifact://2333",
+        "failures": [
+          "Existing untouched-pixel fixture seeds its out-of-table pixel through Session::edit, which now correctly quantizes it during setup. Seed pre-existing pixels before entering Indexed instead.",
+          "New live Blur fixture has a legitimate two-entry quantized no-op; narrow dark stripe so it proves a real edit."
+        ]
+      },
+      {
+        "head": "8610947f0bd8ad1731756d1e681e15a4b266fbf3",
+        "result": "passed",
+        "artifact": "artifact://2338",
+        "log": "local://indexed-paint-current/native-gate.log",
+        "summaries": [
+          "integration:21 passed across indexed_painting/indexed_tool_matrix",
+          "lib indexed:35 passed",
+          "lib brush:66 passed,1 ignored",
+          "lib retouch:113 passed",
+          "panic_hunt:1 passed,1 filtered"
+        ],
+        "note": "Filtered lib suites overlap; do not sum their counts."
+      },
+      {
+        "head": "99d632ea31de8fc63364d890172fcdab1eb2e3ff",
+        "result": "passed",
+        "artifact": "artifact://2360",
+        "log": "local://indexed-paint-current/native-final.log",
+        "commands": [
+          [
+            "cargo",
+            "+1.95.0",
+            "fmt",
+            "--all",
+            "--check"
+          ],
+          [
+            "cargo",
+            "+1.95.0",
+            "test",
+            "-p",
+            "photocraft-engine",
+            "--test",
+            "indexed_painting",
+            "--test",
+            "indexed_tool_matrix",
+            "--",
+            "--test-threads=4"
+          ],
+          [
+            "cargo",
+            "+1.95.0",
+            "test",
+            "-p",
+            "photocraft-engine",
+            "--lib",
+            "indexed",
+            "--",
+            "--test-threads=4"
+          ],
+          [
+            "cargo",
+            "+1.95.0",
+            "test",
+            "-p",
+            "photocraft-engine",
+            "--lib",
+            "cmd::brush_cmds::tests::",
+            "--",
+            "--test-threads=4"
+          ],
+          [
+            "cargo",
+            "+1.95.0",
+            "test",
+            "-p",
+            "photocraft-engine",
+            "--lib",
+            "cmd::retouch_cmds::tests::",
+            "--",
+            "--test-threads=4"
+          ],
+          [
+            "cargo",
+            "+1.95.0",
+            "test",
+            "-p",
+            "photocraft-engine",
+            "--test",
+            "panic_hunt",
+            "--",
+            "--ignored"
+          ],
+          [
+            "cargo",
+            "+1.95.0",
+            "check",
+            "-p",
+            "photocraft-engine",
+            "--target",
+            "wasm32-unknown-unknown"
+          ]
+        ],
+        "summaries": [
+          "integration21passed",
+          "Indexed lib35passed",
+          "Brush66passed1ignored",
+          "Retouch113passed",
+          "hostile-input1passed",
+          "final engine Wasm passed"
+        ],
+        "note": "Filtered lib suites overlap."
+      },
+      {
+        "head": "0c75011b56beee16983f1249f7afd6b73fbd6d05",
+        "result": "passed",
+        "artifact": "artifact://2368",
+        "log": "local://indexed-paint-current/native-final.log",
+        "commands": [
+          [
+            "cargo",
+            "+1.95.0",
+            "fmt",
+            "--all",
+            "--check"
+          ],
+          [
+            "cargo",
+            "+1.95.0",
+            "test",
+            "-p",
+            "photocraft-engine",
+            "--test",
+            "indexed_painting",
+            "--test",
+            "indexed_tool_matrix",
+            "--",
+            "--test-threads=4"
+          ],
+          [
+            "cargo",
+            "+1.95.0",
+            "test",
+            "-p",
+            "photocraft-engine",
+            "--lib",
+            "indexed",
+            "--",
+            "--test-threads=4"
+          ],
+          [
+            "cargo",
+            "+1.95.0",
+            "test",
+            "-p",
+            "photocraft-engine",
+            "--lib",
+            "cmd::brush_cmds::tests::",
+            "--",
+            "--test-threads=4"
+          ],
+          [
+            "cargo",
+            "+1.95.0",
+            "test",
+            "-p",
+            "photocraft-engine",
+            "--lib",
+            "cmd::retouch_cmds::tests::",
+            "--",
+            "--test-threads=4"
+          ],
+          [
+            "cargo",
+            "+1.95.0",
+            "test",
+            "-p",
+            "photocraft-engine",
+            "--test",
+            "panic_hunt",
+            "--",
+            "--ignored"
+          ],
+          [
+            "cargo",
+            "+1.95.0",
+            "check",
+            "-p",
+            "photocraft-engine",
+            "--target",
+            "wasm32-unknown-unknown"
+          ]
+        ],
+        "summaries": [
+          "integration21passed",
+          "Indexed lib35passed",
+          "Brush66passed1ignored",
+          "Retouch113passed",
+          "hostile-input1passed",
+          "final engine Wasm passed"
+        ],
+        "note": "Filtered lib suites overlap."
+      }
+    ],
+    "portability": {
+      "head": "8610947f0bd8ad1731756d1e681e15a4b266fbf3",
+      "result": "passed",
+      "artifact": "artifact://2348",
+      "layers_crates": 31,
+      "wasm_crates": 24,
+      "optional_heif": true,
+      "log": "local://indexed-paint-current/portability.log"
+    },
+    "portability_note": "Full31-crate layering and24-crate Wasm plus optional HEIF executed at8610947. Subsequent private engine-only guard corrections pass final engine Wasm; manifests/dependency graph and all other crates unchanged.",
+    "strict_clippy": {
+      "head": "8610947f0bd8ad1731756d1e681e15a4b266fbf3",
+      "result": "blocked_by_untouched_dependency",
+      "artifact": "artifact://2343",
+      "locations": [
+        "crates/psd/src/codepage.rs:243:17",
+        "crates/psd/src/codepage.rs:243:33"
+      ],
+      "lint": "clippy::nonminimal_bool",
+      "no_suppressions": true
+    },
+    "isolated_clippy": {
+      "result": "blocked_by_untouched_engine_code",
+      "head": "8610947f0bd8ad1731756d1e681e15a4b266fbf3",
+      "artifact": "artifact://2351",
+      "locations": [
+        "crates/engine/src/cmd/atn_cmds/steps_layer_style.rs:90:17",
+        "crates/engine/src/cmd.rs:339:25"
+      ],
+      "lint": "clippy::collapsible_match",
+      "no_suppressions": true
+    },
+    "untouched_lint_blocker_provenance": [
+      {
+        "file": "crates/psd/src/codepage.rs",
+        "lint": "nonminimal_bool",
+        "blob_ids": {
+          "main": "af472ea5747d5f5152506694fc102a725e02b8e1",
+          "candidate": "af472ea5747d5f5152506694fc102a725e02b8e1"
+        }
+      },
+      {
+        "file": "crates/engine/src/cmd/atn_cmds/steps_layer_style.rs",
+        "lint": "collapsible_match",
+        "blob_ids": {
+          "main": "4b85127cf4a0c6d534be37c84255db04b0cfb2d0",
+          "candidate": "4b85127cf4a0c6d534be37c84255db04b0cfb2d0"
+        }
+      },
+      {
+        "file": "crates/engine/src/cmd.rs",
+        "lint": "collapsible_match",
+        "blob_ids": {
+          "main": "c2efddcfdb6536a24bd7acfa655ee15ca2cc8b8e",
+          "candidate": "c2efddcfdb6536a24bd7acfa655ee15ca2cc8b8e"
+        }
+      }
+    ]
+  },
+  "performance": {
+    "file": "docs/review/palette-split/indexed-paint-current-main-performance.json",
+    "final_registration": "indexed-paint-20261110-v4",
+    "final_cases": [
+      {
+        "indexed": false,
+        "dense": false,
+        "medians_ms": {
+          "main": {
+            "commit_ms": 2.300038,
+            "live_total_ms": 4.963271
+          },
+          "candidate": {
+            "commit_ms": 2.74634,
+            "live_total_ms": 4.884854999999999
+          }
+        },
+        "commit_added_ms": 0.4463020000000002,
+        "live_added_per_update_ms": -0.0006480661157024852,
+        "investigation_flag": false,
+        "native_pixels_hash": "08ed4784c1624c7cc400774fdcbec918c8b6b02e430616531a0ff5456afe05de",
+        "candidate_commit_decreased_from_v3": false
+      },
+      {
+        "indexed": false,
+        "dense": true,
+        "medians_ms": {
+          "main": {
+            "commit_ms": 4.4747770000000004,
+            "live_total_ms": 4.722656
+          },
+          "candidate": {
+            "commit_ms": 4.5007470000000005,
+            "live_total_ms": 4.633716
+          }
+        },
+        "commit_added_ms": 0.02597000000000005,
+        "live_added_per_update_ms": -0.0007350413223140498,
+        "investigation_flag": false,
+        "native_pixels_hash": "5e613fec568b35ba50107c9a861b9e27c469d53affca69e3814c5e40de70cb57",
+        "candidate_commit_decreased_from_v3": false
+      },
+      {
+        "indexed": true,
+        "dense": false,
+        "medians_ms": {
+          "main": {
+            "commit_ms": 2.579994,
+            "live_total_ms": 14.248464000000006
+          },
+          "candidate": {
+            "commit_ms": 4.470530999999999,
+            "live_total_ms": 18.037257999999994
+          }
+        },
+        "commit_added_ms": 1.8905369999999992,
+        "live_added_per_update_ms": 0.031312347107437924,
+        "investigation_flag": false,
+        "native_pixels_hash": "1970f71480e29cc6bf026df92c216338fa1ed8fbb70f1f54ffbfbf4bcf91bcf1",
+        "candidate_commit_decreased_from_v3": true
+      },
+      {
+        "indexed": true,
+        "dense": true,
+        "medians_ms": {
+          "main": {
+            "commit_ms": 4.817813,
+            "live_total_ms": 14.061890999999996
+          },
+          "candidate": {
+            "commit_ms": 6.6873890000000005,
+            "live_total_ms": 18.184762
+          }
+        },
+        "commit_added_ms": 1.8695760000000003,
+        "live_added_per_update_ms": 0.03407331404958681,
+        "investigation_flag": false,
+        "native_pixels_hash": "b215ce9ba5d950b37313a7c60bf8ab12bb5bb7dbbce0bb6e72246177d5541c21",
+        "candidate_commit_decreased_from_v3": true
+      }
+    ],
+    "interpretation": "Measurable Indexed cold overhead about1.87-1.89ms; live overhead about0.031-0.034ms per update. Not zero-cost, no shipping performance/memory/Photoshop parity claim.",
+    "earlier_flagged_runs": "V2 andV3 valid, retained separately; not relabelled passing.",
+    "rss": "Unavailable; optional /usr/bin/time missing; initial launch failure retained.",
+    "profile": "opt3,LTOoff,codegen-units16,RAYON8; not shipping thin-LTO profile."
+  },
+  "agent_handoff": {
+    "IndexedToolMatrix": "Provider quota failure after partial edits; parent recovered, corrected, integrated and verified. Agent stopped.",
+    "IndexedRetouchRebase": "Provider usage-limit failure after partial edits; parent completed field migration, corrected meaningful live fixture, integrated and verified. Agent stopped.",
+    "integration_owner": "parent",
+    "active_agents": []
+  },
+  "environment": {
+    "CARGO_TARGET_DIR": "/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-indexed-paint-current",
+    "CARGO_INCREMENTAL": "0",
+    "CARGO_PROFILE_DEV_DEBUG": "0",
+    "CARGO_PROFILE_TEST_DEBUG": "0",
+    "CARGO_BUILD_JOBS": "4",
+    "RAYON_NUM_THREADS": "8",
+    "CRAFT_FONTS_DIR": "/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/craft-fonts",
+    "CRAFT_FONTS_REQUIRED": "1",
+    "PHOTOCRAFT_NO_PRINT": "1",
+    "LPDEST": "photocraft-no-such-printer",
+    "CARGO_PROFILE_RELEASE_LTO": "false",
+    "CARGO_PROFILE_RELEASE_CODEGEN_UNITS": "16",
+    "CARGO_PROFILE_RELEASE_DEBUG": "0"
+  },
+  "limits": [
+    "Local focused evidence, not a full-workspace-green or remote-CI claim.",
+    "No Photoshop runtime or independent Photoshop numeric oracle.",
+    "Small four-case local resource check does not establish general performance parity or a budget; measurable overhead remains.",
+    "Shared sibling craftrules checkout unavailable; existing repository conventions followed."
+  ],
+  "evidence_files": [
+    {
+      "path": "docs/review/palette-split/indexed-paint-current-main-native.log",
+      "size": 30379,
+      "sha256": "54cf65a280c8f03ef071c364441c1298bbbdc8f60ffd6352a3cb445e431fa253"
+    },
+    {
+      "path": "docs/review/palette-split/indexed-paint-current-main-portability.log",
+      "size": 24055,
+      "sha256": "95c5d1274a4b1b826aedf3cf924b6cf24bd7882ad2edb652c6d8bafbdab61a8f"
+    },
+    {
+      "path": "docs/review/palette-split/indexed-paint-current-main-lint.log",
+      "size": 16875,
+      "sha256": "a4cdc074c5148db68dd03c5f03b7e477399c9e30c61ecce80fc7b2997dcfc857"
+    },
+    {
+      "path": "docs/review/palette-split/indexed-paint-current-main-probe.rs",
+      "size": 4896,
+      "sha256": "2501e1f168b4411120166e230e598e0f9a537e4172975a2da7127c01a5286d8a"
+    },
+    {
+      "path": "docs/review/palette-split/indexed-paint-current-main-builds.json",
+      "size": 1269968,
+      "sha256": "3203e9e59f8ff255bd6737c1f182a80713f6127342d9198e9f54c206d4ae5b75"
+    },
+    {
+      "path": "docs/review/palette-split/indexed-paint-current-main-performance.json",
+      "size": 201353,
+      "sha256": "8008b7add838396162b15e26a89821731481cb9a247a5642d3d252e3e08054f4"
+    }
+  ]
+}

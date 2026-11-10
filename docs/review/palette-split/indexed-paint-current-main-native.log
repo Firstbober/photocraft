@@ -1,0 +1,365 @@
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling photocraft-engine v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/indexed-paint-current/crates/engine)
+    Finished `test` profile [optimized] target(s) in 39.17s
+     Running tests/indexed_painting.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-indexed-paint-current/debug/deps/indexed_painting-a82d020dc280d5e9)
+
+running 9 tests
+test indexed_new_layer_keeps_sparse_transparency_and_snaps_its_paint ... ok
+test indexed_bucket_edits_are_constrained_by_the_same_transaction_policy ... ok
+test indexed_undo_and_redo_restore_pixels_and_the_fixed_palette ... ok
+test masks_alpha_channels_and_quick_mask_keep_grayscale_coverage_outside_the_image_palette ... ok
+test indexed_brush_and_pencil_snap_unavailable_red_to_black_without_growing_the_table ... ok
+test rgb_mode_paint_remains_rgb_and_does_not_create_a_color_table ... ok
+test transparency_locked_background_erasure_stays_opaque_and_uses_the_existing_table ... ok
+test transparent_entry_is_excluded_from_opaque_matching_and_erase_is_binary ... ok
+test indexed_opacity_soft_edges_and_feathered_selection_quantize_after_blending ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/indexed_tool_matrix.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-indexed-paint-current/debug/deps/indexed_tool_matrix-b2ab37177176488d)
+
+running 12 tests
+test image_rotation_arbitrary_bilinear_stays_in_the_original_table_and_changes_geometry ... ok
+test edit_paste_stays_in_the_original_table_and_adds_a_layer ... ok
+test paint_blur_stays_in_the_original_table ... ok
+test paint_bucket_stays_in_the_original_table ... ok
+test paint_color_replacement_refuses_indexed_without_editing ... ok
+test paint_burn_stays_in_the_original_table ... ok
+test paint_dodge_refuses_indexed_without_editing ... ok
+test paint_gradient_stays_in_the_original_table ... ok
+test paint_sharpen_stays_in_the_original_table ... ok
+test paint_mixer_brush_refuses_indexed_without_editing ... ok
+test paint_smudge_stays_in_the_original_table ... ok
+test paint_sponge_stays_in_the_original_table ... ok
+
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s
+
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling photocraft-engine v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/indexed-paint-current/crates/engine)
+    Finished `test` profile [optimized] target(s) in 1m 36s
+     Running unittests src/lib.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-indexed-paint-current/debug/deps/photocraft_engine-e0cb2580f15d0e23)
+
+running 35 tests
+test cmd::image_cmds::tests::crop_target_resamples_indexed_color_with_nearest_neighbor ... ok
+test cmd::brush_cmds::tests::indexed_live_symmetric_early_return_matches_cold_and_offered_commits ... ok
+test cmd::image_cmds::tests::image_size_resamples_indexed_color_with_nearest_neighbor ... ok
+test cmd::brush_cmds::tests::indexed_live_mask_stays_grayscale_instead_of_palette_snapping ... ok
+test cmd::mode_cmds::tests::brush_stroke_keeps_indexed_transparency_binary ... ok
+test cmd::mode_cmds::tests::brush_stroke_stays_in_indexed_color_table ... ok
+test cmd::mode_cmds::tests::indexed_brush_stroke_leaves_pixels_it_did_not_paint ... ok
+test cmd::mode_cmds::tests::clearing_color_table_transparency_restores_indexed_pixels ... ok
+test cmd::mode_cmds::tests::indexed_color_rejects_invalid_counts_without_editing_the_document ... ok
+test cmd::brush_cmds::tests::indexed_live_brush_and_pencil_match_cold_offered_and_partitioned_commits ... ok
+test cmd::mode_cmds::tests::indexed_exact_transparency_and_sources ... ok
+test cmd::mode_cmds::tests::indexed_exact_preserves_profile_and_samples_through_default_rgb ... ok
+test cmd::mode_cmds::tests::indexed_matte_hex_stays_in_document_rgb_coordinates ... ok
+test cmd::mode_cmds::tests::indexed_matte_blends_edges_without_replacing_clear_pixels ... ok
+test cmd::mode_cmds::tests::indexed_matte_without_transparency_fills_clear_pixels_and_rejects_bad_input_atomically ... ok
+test cmd::mode_cmds::tests::indexed_matte_named_gray_choices_use_their_document_samples ... ok
+test cmd::mode_cmds::tests::live_brush_preview_matches_indexed_commit ... ok
+test cmd::mode_cmds::tests::pencil_auto_erase_knows_the_indexed_foreground ... ok
+test cmd::mode_cmds::tests::indexed_matte_converts_working_rgb_to_document_profile_at_every_depth ... ok
+test cmd::retouch_cmds::dab::dodge_refuses_indexed_tests::indexed_and_bitmap_documents_refuse_with_the_reference_words ... ok
+test cmd::mode_cmds::tests::indexed_color_palettes_and_dithers ... ok
+test cmd::photo_cmds::tests::crop_and_straighten_disabled_for_indexed ... ok
+test cmd::retouch_cmds::tests::indexed_live_dab_matches_cold_without_work_surface_feedback ... ok
+test cmd::retouch_cmds::tests::indexed_live_retouch_clone_matches_cold_and_wrapped_palette ... ok
+test cmd::retouch_cmds::dab::dodge_refuses_indexed_tests::other_modes_keep_dodging_at_every_depth ... ok
+test cmd::type_indexed_mode_tests::only_the_measured_horizontal_point_text_converts_in_these_modes ... ok
+test cmd::type_indexed_mode_tests::an_uncoalesced_edit_between_typing_and_the_commit_splits_the_states ... ok
+test cmd::type_indexed_mode_tests::a_refused_conversion_leaves_the_typed_text_and_the_document_alone ... ok
+test cmd::type_indexed_mode_tests::committing_in_indexed_color_or_bitmap_leaves_the_glyphs_selected_and_no_layer ... ok
+test cmd::type_indexed_mode_tests::the_type_layer_command_keeps_making_the_tools_working_layer_in_these_modes ... ok
+test mixer_indexed_bitmap_tests::bitmap_documents_are_refused_with_the_alert ... ok
+test mixer_indexed_bitmap_tests::indexed_color_documents_are_refused_with_the_alert ... ok
+test cmd::type_indexed_mode_tests::the_selection_is_the_glyph_shape_the_type_mask_of_the_same_text_makes ... ok
+test cmd::type_indexed_mode_tests::rgb_grayscale_cmyk_and_lab_keep_making_type_layers_at_every_depth ... ok
+test mixer_indexed_bitmap_tests::rgb_cmyk_lab_and_grayscale_documents_still_paint ... ok
+
+test result: ok. 35 passed; 0 failed; 0 ignored; 0 measured; 3409 filtered out; finished in 0.24s
+
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+    Finished `test` profile [optimized] target(s) in 0.14s
+     Running unittests src/lib.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-indexed-paint-current/debug/deps/photocraft_engine-e0cb2580f15d0e23)
+
+running 67 tests
+test cmd::brush_cmds::tests::a_captured_preset_size_is_not_scaled_twice ... ok
+test cmd::brush_cmds::tests::a_failed_set_brush_leaves_no_current_preset_behind ... ok
+test cmd::brush_cmds::tests::an_uncaptured_preset_size_keeps_dual_brush_proportions ... ok
+test cmd::brush_cmds::tests::bad_sizes_fail_and_leave_the_dual_tip_alone ... ok
+test cmd::brush_cmds::tests::behind_brush_and_pencil_preserve_foreground_and_round_trip_history ... ok
+test cmd::brush_cmds::tests::an_offer_that_does_not_match_the_commit_is_ignored ... ok
+test cmd::brush_cmds::tests::brush_blend_mode_multiply ... ok
+test cmd::brush_cmds::tests::clean_brush_keeps_the_foreground_out_of_the_next_stroke ... ok
+test cmd::brush_cmds::tests::clear_mode_erases_with_the_brush_or_pencil ... ok
+test cmd::brush_cmds::tests::color_replacement_modes ... ok
+test cmd::brush_cmds::tests::coalesced_set_brush_calls_journal_once_per_gesture ... ok
+test cmd::brush_cmds::tests::color_replacement_refuses_non_pixel_targets ... ok
+test cmd::brush_cmds::tests::define_brush_from_selection ... ok
+test cmd::brush_cmds::tests::define_brush_from_selection_survives_allocation_failure ... ok
+test cmd::brush_cmds::tests::define_brush_from_selection_survives_failure_of_the_second_allocation ... ok
+test cmd::brush_cmds::tests::eraser_on_background_layer_paints_the_background_colour ... ok
+test cmd::brush_cmds::tests::brush_and_pencil_paint_a_cmyk_pick_with_the_picked_inks ... ok
+test cmd::brush_cmds::tests::every_size_change_scales_the_dual_tip_and_keeps_its_proportion ... ok
+test cmd::brush_cmds::tests::fill_is_rejected_with_clear_mode ... ok
+test cmd::brush_cmds::tests::fill_fills_the_enclosed_region_not_the_outline ... ok
+test cmd::brush_cmds::tests::a_commit_takes_the_live_strokes_pixels_and_they_equal_a_fresh_render ... ok
+test cmd::brush_cmds::tests::fill_soft_edge_has_no_step ... ok
+test cmd::brush_cmds::tests::fill_survives_allocation_failure ... ok
+test cmd::brush_cmds::tests::fill_paints_a_cmyk_pick_with_the_picked_inks ... ok
+test cmd::brush_cmds::tests::indexed_live_mask_stays_grayscale_instead_of_palette_snapping ... ok
+test cmd::brush_cmds::tests::fill_works_on_cmyk_and_16_and_32_bit ... ok
+test cmd::brush_cmds::tests::indexed_live_symmetric_early_return_matches_cold_and_offered_commits ... ok
+test cmd::brush_cmds::tests::last_brush_is_remembered_when_the_revision_moves_only ... ok
+test cmd::brush_cmds::tests::live_pencil_matches_the_committed_pencil_and_auto_erases ... ok
+test cmd::brush_cmds::tests::indexed_live_brush_and_pencil_match_cold_offered_and_partitioned_commits ... ok
+test cmd::brush_cmds::tests::live_brush_and_pencil_reject_invalid_batches_without_changing_the_preview ... ok
+test cmd::brush_cmds::tests::load_and_clean_brush_refuse_bad_params_and_keep_the_paint ... ok
+test cmd::brush_cmds::tests::live_stroke_matches_the_committed_stroke ... ok
+test cmd::brush_cmds::tests::live_color_replacement_matches_the_commit ... ok
+test cmd::brush_cmds::tests::mixer_brush_reservoir_and_cleaning ... ok
+test cmd::brush_cmds::tests::load_brush_after_a_clean_paints_the_foreground_again ... ok
+test cmd::brush_cmds::tests::mixer_brush_uses_the_brush_mixer_settings ... ok
+test cmd::brush_cmds::tests::mixer_load_fills_the_reservoir_from_the_canvas_and_keeps_the_foreground ... ok
+test cmd::brush_cmds::tests::new_brush_controls_round_trip_through_set_brush ... ok
+test cmd::brush_cmds::tests::paint_commands_bound_hostile_time_and_reject_oversized_brushes ... ok
+test cmd::brush_cmds::tests::pencil_latency_24mp ... ignored
+test cmd::brush_cmds::tests::pencil_is_aliased_and_auto_erases ... ok
+test cmd::brush_cmds::tests::pose_axes_invalid_flags_fail_atomically ... ok
+test cmd::brush_cmds::tests::pose_axes_commands_keep_minimal_patches_legacy_alias_and_preset_replay ... ok
+test cmd::brush_cmds::tests::presets_save_appends_at_the_end_and_update_overwrites_in_place ... ok
+test cmd::brush_cmds::tests::presets_save_captures_size_tool_settings_and_color_as_asked ... ok
+test cmd::brush_cmds::tests::presets_save_load_delete_round_trip ... ok
+test cmd::brush_cmds::tests::remembered_brushes_never_embed_large_bitmaps ... ok
+test cmd::brush_cmds::tests::rejected_brush_changes_do_not_move_the_revision ... ok
+test cmd::brush_cmds::tests::resizing_a_brush_resizes_its_enabled_secondary_tip ... ok
+test cmd::brush_cmds::tests::restored_brush_opacity_floors_at_one_percent ... ok
+test cmd::brush_cmds::tests::restored_brush_settings_are_clamped_or_rejected ... ok
+test cmd::brush_cmds::tests::out_of_range_scatter_is_rejected_and_the_maximum_still_paints ... ok
+test cmd::brush_cmds::tests::replay_is_deterministic ... ok
+test cmd::brush_cmds::tests::set_brush_merges_fields ... ok
+test cmd::brush_cmds::tests::set_brush_takes_a_per_dynamic_curve_and_a_patch_resets_it ... ok
+test cmd::brush_cmds::tests::stroke_accepts_full_points_brush_and_preset ... ok
+test cmd::brush_cmds::tests::stroke_coordinate_validation_keeps_the_existing_bounds ... ok
+test cmd::brush_cmds::tests::stroke_backwards_compatible ... ok
+test cmd::brush_cmds::tests::set_brush_keeps_untouched_bitmaps_and_replaces_touched_ones ... ok
+test cmd::brush_cmds::tests::the_automatic_clean_empties_the_reservoir ... ok
+test cmd::brush_cmds::tests::the_remembered_brush_restores_at_launch ... ok
+test cmd::brush_cmds::tests::the_revision_tracks_the_picked_preset_too ... ok
+test cmd::brush_cmds::tests::works_on_cmyk_and_16_bit ... ok
+test cmd::brush_cmds::tests::with_the_automatic_load_off_a_new_foreground_loads_at_the_next_stroke ... ok
+test cmd::brush_cmds::tests::strokes_convert_through_the_documents_cmyk_profile ... ok
+test cmd::brush_cmds::tests::live_stroke_equals_the_commit_at_every_zoom_with_smoothing ... ok
+
+test result: ok. 66 passed; 0 failed; 1 ignored; 0 measured; 3377 filtered out; finished in 0.30s
+
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+    Finished `test` profile [optimized] target(s) in 0.15s
+     Running unittests src/lib.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-indexed-paint-current/debug/deps/photocraft_engine-e0cb2580f15d0e23)
+
+running 113 tests
+test cmd::retouch_cmds::tests::a_live_retouch_stroke_ignores_tilt_and_times ... ok
+test cmd::retouch_cmds::tests::a_live_retouch_offer_is_taken_only_by_its_own_commit ... ok
+test cmd::retouch_cmds::tests::a_wrapped_dab_bigger_than_the_canvas_stays_on_it ... ok
+test cmd::retouch_cmds::tests::clone_and_heal_with_a_far_source_are_plain_errors ... ok
+test cmd::retouch_cmds::tests::blur_reduces_local_variance_and_sharpen_increases_it ... ok
+test cmd::retouch_cmds::tests::clone_preview_matches_source_without_mutating_session ... ok
+test cmd::retouch_cmds::tests::clone_stamp_copies_exactly_at_all_depths ... ok
+test cmd::retouch_cmds::tests::clone_stamp_sample_all_layers_onto_empty_layer_and_opacity ... ok
+test cmd::retouch_cmds::tests::clone_stamp_samples_pre_stroke_state_and_non_aligned_returns_source ... ok
+test cmd::retouch_cmds::tests::clone_stamp_respects_selection_and_cmyk ... ok
+test cmd::retouch_cmds::tests::a_wrapped_stroke_inside_the_canvas_paints_as_an_ordinary_one ... ok
+test cmd::retouch_cmds::tests::content_aware_extend_keeps_the_original ... ok
+test cmd::retouch_cmds::tests::a_live_clone_or_history_stroke_commits_its_own_pixels ... ok
+test cmd::retouch_cmds::tests::content_aware_move_fails_gracefully ... ok
+test cmd::retouch_cmds::tests::content_aware_move_preview_shows_the_result_without_touching_the_session ... ok
+test cmd::retouch_cmds::tests::content_aware_move_moves_the_object_and_fills_its_place_at_all_depths ... ok
+test cmd::retouch_cmds::tests::content_aware_move_overlapping_at_the_edge_and_on_other_targets ... ok
+test cmd::retouch_cmds::tests::content_aware_move_samples_all_layers_onto_an_empty_layer ... ok
+test cmd::retouch_cmds::tests::content_aware_move_coarse_preview_handles_transform_extend_and_limits ... ok
+test cmd::retouch_cmds::tests::dodge_brightens_midtones_more_than_shadows_and_burn_darkens ... ok
+test cmd::retouch_cmds::tests::dodge_does_not_compound_within_a_stroke ... ok
+test cmd::retouch_cmds::tests::erase_to_history_on_a_new_layer_without_pixels_names_the_target_not_the_document ... ok
+test cmd::retouch_cmds::tests::erase_to_history_paints_a_new_layer_from_a_single_layer_state_background_or_not ... ok
+test cmd::retouch_cmds::tests::erase_to_history_paints_a_new_layer_with_the_single_layers_own_pixels_not_its_opacity ... ok
+test cmd::retouch_cmds::tests::erase_to_history_paints_a_single_solid_shapes_colour_past_its_path ... ok
+test cmd::retouch_cmds::tests::erase_to_history_paints_the_source_states_visible_image_at_every_depth ... ok
+test cmd::retouch_cmds::tests::erase_to_history_paints_white_past_a_shapes_path_in_every_colour_mode ... ok
+test cmd::retouch_cmds::tests::erase_to_history_paints_white_past_the_path_of_a_single_shape_without_a_solid_fill ... ok
+test cmd::retouch_cmds::tests::erase_to_history_refuses_a_new_layer_from_a_state_holding_one_group_of_several_layers ... ok
+test cmd::retouch_cmds::tests::erase_to_history_refuses_a_new_layer_from_a_state_holding_only_a_group ... ok
+test cmd::retouch_cmds::tests::erase_to_history_refuses_a_new_layer_from_a_state_holding_two_layers ... ok
+test cmd::retouch_cmds::tests::every_retouch_stroke_refuses_a_box_it_cannot_render ... ok
+test cmd::retouch_cmds::tests::content_aware_move_structure_and_color_shape_the_result ... ok
+test cmd::retouch_cmds::tests::healing_brush_takes_destination_colour_and_source_texture ... ok
+test cmd::retouch_cmds::tests::history_brush_errors_when_layer_is_new ... ok
+test cmd::retouch_cmds::tests::every_wrapping_stroke_paints_the_canvas_as_on_the_canvas_tiled_three_by_three ... ok
+test cmd::retouch_cmds::tests::history_brush_reads_a_source_when_its_pixels_were_locked ... ok
+test cmd::retouch_cmds::tests::history_brush_refuses_a_bad_brush_param ... ok
+test cmd::retouch_cmds::tests::history_brush_refuses_a_locked_destination_when_source_is_unlocked ... ok
+test cmd::retouch_cmds::tests::history_brush_refuses_a_stroke_too_large_to_render ... ok
+test cmd::retouch_cmds::tests::history_brush_restores_earlier_pixels ... ok
+test cmd::retouch_cmds::tests::history_brush_paints_with_its_brush_param_not_the_session_brush ... ok
+test cmd::retouch_cmds::tests::content_aware_move_transform_on_drop_scales_and_rotates_the_content ... ok
+test cmd::retouch_cmds::tests::live_clone_matches_the_commit ... ok
+test cmd::retouch_cmds::tests::indexed_live_dab_matches_cold_without_work_surface_feedback ... ok
+test cmd::retouch_cmds::tests::indexed_live_retouch_clone_matches_cold_and_wrapped_palette ... ok
+test cmd::retouch_cmds::tests::live_dab_offers_are_refused_or_dropped_when_they_dont_match ... ok
+test cmd::retouch_cmds::tests::live_dab_rejects_invalid_batches_without_changing_the_preview ... ok
+test cmd::retouch_cmds::tests::live_dodge_matches_the_commit_across_cells ... ok
+test cmd::retouch_cmds::tests::live_history_and_pattern_strokes_stop_at_the_canvas_edge ... ok
+test cmd::retouch_cmds::tests::live_pattern_stamp_matches_the_commit ... ok
+test cmd::retouch_cmds::tests::live_pattern_stamp_paints_the_targeted_mask ... ok
+test cmd::retouch_cmds::tests::live_retouch_rejects_invalid_batches_without_changing_the_preview ... ok
+test cmd::retouch_cmds::tests::patch_at_the_canvas_edge_stays_opaque_and_matches ... ok
+test cmd::retouch_cmds::tests::patch_content_aware_copies_the_dragged_to_content_into_the_selection ... ok
+test cmd::retouch_cmds::tests::patch_destination_repairs_the_drag_target_from_the_selection ... ok
+test cmd::retouch_cmds::tests::patch_fails_gracefully ... ok
+test cmd::retouch_cmds::tests::patch_follows_a_feathered_selection_and_a_mask_target ... ok
+test cmd::retouch_cmds::tests::patch_preview_matches_the_command_and_its_coarse_solve_is_close ... ok
+test cmd::retouch_cmds::tests::patch_source_repairs_the_selection_with_texture_from_the_drag_target ... ok
+test cmd::retouch_cmds::tests::pattern_stamp_aligned_keeps_document_phase_across_strokes ... ok
+test cmd::retouch_cmds::tests::pattern_stamp_impressionist_is_seeded_and_replayable ... ok
+test cmd::retouch_cmds::tests::pattern_stamp_integer_scale_reproduces_the_tile_in_the_dab ... ok
+test cmd::retouch_cmds::tests::pattern_stamp_paints_the_tile_at_every_depth_and_undoes ... ok
+test cmd::retouch_cmds::tests::pattern_stamp_rejects_hostile_input ... ok
+test cmd::retouch_cmds::tests::pattern_stamp_scaled_tiles_have_no_gaps ... ok
+test cmd::retouch_cmds::tests::pattern_stamp_tile_seam_matches_an_untilled_reference ... ok
+test cmd::retouch_cmds::tests::pattern_stamp_unaligned_restarts_at_each_stroke ... ok
+test cmd::retouch_cmds::tests::periodic_clone_destination_wraps_edges_and_undoes_at_every_depth ... ok
+test cmd::retouch_cmds::tests::periodic_clone_interior_matches_ordinary_brush_masks_and_transparency ... ok
+test cmd::retouch_cmds::tests::periodic_clone_large_footprint_applies_opacity_once_and_respects_destination_masks ... ok
+test cmd::retouch_cmds::tests::periodic_clone_live_matches_commit_through_a_corner ... ok
+test cmd::retouch_cmds::tests::periodic_clone_live_offer_commits_and_undoes_the_same_pixels_as_replay ... ok
+test cmd::retouch_cmds::tests::periodic_clone_low_flow_revisits_accumulate_across_tile_aliases ... ok
+test cmd::retouch_cmds::tests::periodic_clone_preview_interpolates_across_transformed_source_seam ... ok
+test cmd::retouch_cmds::tests::periodic_clone_projection_is_disjoint_and_matches_pixel_modulo ... ok
+test cmd::retouch_cmds::tests::periodic_clone_selection_uses_native_cmyk_pixels_across_seam ... ok
+test cmd::retouch_cmds::tests::periodic_clone_source_bounds_allocations_and_accepts_far_coordinates ... ok
+test cmd::retouch_cmds::tests::periodic_clone_source_repeats_both_axes_at_every_depth ... ok
+test cmd::retouch_cmds::tests::proximity_match_preserves_channels_and_unmasked_pixels ... ok
+test cmd::retouch_cmds::tests::proximity_match_reads_original_pixels_for_overlapping_offsets ... ok
+test cmd::retouch_cmds::tests::proximity_match_rejects_invalid_translations_without_panicking ... ok
+test cmd::retouch_cmds::tests::remove_a_ring_around_an_object_removes_it_in_one_undo_step ... ok
+test cmd::retouch_cmds::tests::remove_bad_params_are_errors ... ok
+test cmd::retouch_cmds::tests::remove_on_an_empty_layer_is_a_no_op_without_a_history_step ... ok
+test cmd::retouch_cmds::tests::live_dab_strokes_commit_their_pixels_and_they_are_the_commands ... ok
+test cmd::retouch_cmds::tests::remove_several_strokes_apply_as_one_job_and_one_undo_step ... ok
+test cmd::retouch_cmds::tests::remove_open_strokes_and_the_selection_limit_what_changes ... ok
+test cmd::retouch_cmds::tests::remove_thin_scratches_take_their_surroundings ... ok
+test cmd::retouch_cmds::tests::remove_to_a_new_layer_leaves_the_target_untouched ... ok
+test cmd::retouch_cmds::tests::remove_strokes_each_keep_their_own_brush ... ok
+test cmd::retouch_cmds::tests::retouch_rejects_brushes_larger_than_the_raster_budget ... ok
+test cmd::retouch_cmds::tests::retouch_strokes_refuse_absurd_point_coordinates ... ok
+test cmd::retouch_cmds::tests::retouch_commands_are_registered_and_need_a_pixel_layer ... ok
+test cmd::retouch_cmds::tests::retouch_tools_follow_the_channels_panel_target ... ok
+test cmd::retouch_cmds::tests::retouch_targets_fail_gracefully ... ok
+test cmd::retouch_cmds::tests::retouch_tools_paint_only_the_targeted_alpha_channel ... ok
+test cmd::retouch_cmds::tests::retouch_tools_paint_the_quick_mask ... ok
+test cmd::retouch_cmds::tests::sample_all_layers_blur_and_sharpen_work_on_an_empty_layer ... ok
+test cmd::retouch_cmds::tests::sample_all_layers_smudge_drags_colour_from_below ... ok
+test cmd::retouch_cmds::tests::retouch_tools_paint_only_the_targeted_mask ... ok
+test cmd::retouch_cmds::tests::smudge_across_a_transparent_edge_has_no_dark_fringe ... ok
+test cmd::retouch_cmds::tests::smudge_moves_colour_along_the_stroke ... ok
+test cmd::retouch_cmds::tests::smudge_uses_the_brush_settings_spacing ... ok
+test cmd::retouch_cmds::tests::sponge_reduces_and_increases_saturation ... ok
+test cmd::retouch_cmds::tests::content_aware_move_previews_large_selections_coarse_then_exact_at_all_depths ... ok
+test cmd::retouch_cmds::tests::sample_all_layers_spot_healing_heals_onto_an_empty_layer ... ok
+test cmd::retouch_cmds::tests::stroke_brush_takes_the_smoothing_param ... ok
+test cmd::retouch_cmds::tests::the_budget_is_applied_to_the_rendered_extent_not_the_input_points ... ok
+test cmd::retouch_cmds::tests::spot_healing_removes_blemish_all_types ... ok
+test cmd::retouch_cmds::tests::live_dab_batches_match_the_accumulating_renderer ... ok
+test cmd::retouch_cmds::tests::the_tools_the_reference_application_does_not_wrap_stop_at_the_canvas_edge ... ok
+test cmd::retouch_cmds::tests::spot_healing_keeps_film_grain_through_overlapping_strokes ... ok
+
+test result: ok. 113 passed; 0 failed; 0 ignored; 0 measured; 3331 filtered out; finished in 3.62s
+
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling photocraft-engine v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/indexed-paint-current/crates/engine)
+    Finished `test` profile [optimized] target(s) in 0.78s
+     Running tests/panic_hunt.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-indexed-paint-current/debug/deps/panic_hunt-9b2e482c131b12be)
+
+running 1 test
+test no_command_panics_or_hangs_on_adversarial_params has been running for over 60 seconds
+test no_command_panics_or_hangs_on_adversarial_params ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out; finished in 80.10s
+
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+warning: function `map_items` is never used
+  --> crates/paint/src/render.rs:90:4
+   |
+90 | fn map_items<T: Sync, R: Send>(items: &[T], pixels: usize, f: impl Fn(&T) -> R + Sync) -> Vec<R> {
+   |    ^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `photocraft-paint` (lib) generated 1 warning
+warning: function `open_regular` is never used
+  --> crates/plugins/src/registry.rs:67:4
+   |
+67 | fn open_regular(path: &std::path::Path) -> std::io::Result<std::fs::File> {
+   |    ^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `photocraft-plugins` (lib) generated 1 warning
+    Checking photocraft-engine v0.20.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/indexed-paint-current/crates/engine)
+warning: constant `PAR_PIXELS` is never used
+   --> crates/engine/src/display_color.rs:110:7
+    |
+110 | const PAR_PIXELS: usize = 16 * 1024;
+    |       ^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: constant `MAX_FOLDER_LUTS` is never used
+   --> crates/engine/src/cmd/adjust_cmds.rs:209:7
+    |
+209 | const MAX_FOLDER_LUTS: usize = 500;
+    |       ^^^^^^^^^^^^^^^
+
+warning: constant `MAX_FOLDER_LUT_BYTES` is never used
+   --> crates/engine/src/cmd/adjust_cmds.rs:211:7
+    |
+211 | const MAX_FOLDER_LUT_BYTES: u64 = 64 << 20;
+    |       ^^^^^^^^^^^^^^^^^^^^
+
+warning: `photocraft-engine` (lib) generated 3 warnings
+    Finished `dev` profile [optimized] target(s) in 6.46s

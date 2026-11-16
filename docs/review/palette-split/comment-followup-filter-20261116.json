@@ -1,0 +1,345 @@
+{
+  "pr": 8933,
+  "source_head": "9cfee7af79d05baada99f3a5c471c16cb855d4ac",
+  "backend_head": "e2d3921d1c4c7726874db7033c195bc572eba9aa",
+  "main": "6a82de14116499cca0df985a430bfdb5448085f6",
+  "supersedes": "974de089fef56d1542cb45f4d94e375dc935c1c3",
+  "parent_reviews": [
+    "https://github.com/storytold/photocraft/pull/8933#pullrequestreview-5916763678"
+  ],
+  "scope": [
+    "Advanced UI/workflow exclusively Filter > PhotoCraft > Palette Map; stock Indexed/SaveforWeb dialogs unchanged.",
+    "Preserve merged main Matte, shared CMS/craft_psd integration and Palette Map single-worker exact-result semantics.",
+    "Smart-filter replay carries JobCtx cancellation; selection holes keep native samples; working-memory bound remains.",
+    "No bundled historical palettes; external GPL/ACT import and original generated palettes retained."
+  ],
+  "checks": {
+    "engine_lib_all": "ok. 4090 passed; 0 failed; 16 ignored; 0 measured; 0 filtered out; finished in 16.22s",
+    "ui_preview_filter": "ok. 419 passed; 0 failed; 9 ignored; 0 measured; 7342 filtered out; finished in 19.42s",
+    "filter_dialog": "ok. 96 passed; 0 failed; 1 ignored; 0 measured; 7673 filtered out; finished in 3.20s",
+    "palette_map_ui": "ok. 6 passed; 0 failed; 0 ignored; 0 measured; 7764 filtered out; finished in 0.04s",
+    "panic_hunt": "ok. 1 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out; finished in 57.99s",
+    "algo_engine_strict_all_target_clippy": true,
+    "layering": true,
+    "wasm19_plus_heif": true,
+    "parity_unchanged": true,
+    "fmt_check": true,
+    "suites_overlap": "distinct filtered binary invocations; do not sum where narrowed names overlap"
+  },
+  "translation_dependency": {
+    "pr": "https://github.com/storytold/craft-i18n/pull/307",
+    "rows": 1510,
+    "locales": 21,
+    "state": "open; PhotoCraft pin e56d262 stays until upstream merge"
+  },
+  "source_files": [
+    {
+      "path": "ATTRIBUTION.md",
+      "status": "M",
+      "blob": "9d0accd0b653a32e5723df5f3e995569131084e6",
+      "size": 31156,
+      "sha256": "1ec4c91810f6f1ee82c8e21f2008c806a13500ceb446f1af7efb90ffe1d65765"
+    },
+    {
+      "path": "crates/algo/examples/generate_blue_noise.rs",
+      "status": "A",
+      "blob": "aabfdc0c5ca9b4c1a1ba9419811b699eeb9e0073",
+      "size": 5576,
+      "sha256": "48a2d5321ef4ea85018d4a6161b6d0e3d8b66f38c044852412dd6a6df744bd77"
+    },
+    {
+      "path": "crates/algo/src/blue_noise_data.rs",
+      "status": "A",
+      "blob": "73c7d693403588f64aabe55944f9a18c2dd8662c",
+      "size": 24212,
+      "sha256": "5439076fa8b4028848074c3d78a0c9a78bee0380bac8c86cb58525e1be78dda3"
+    },
+    {
+      "path": "crates/algo/src/lib.rs",
+      "status": "M",
+      "blob": "a9cd9422d365578157f77e2fc6c28fffd85c46a2",
+      "size": 75875,
+      "sha256": "b05645e38cf77d4c69125a11a51104df74bf16950b6dc5f0b9995b31aa6e6beb"
+    },
+    {
+      "path": "crates/algo/src/palette_map.rs",
+      "status": "A",
+      "blob": "742c3e571a9a802ab4867348d9132a4c9594f646",
+      "size": 66695,
+      "sha256": "028baabd2688a8e2d6bf65329e3e2b574ed158b8423c062fe2c87b9d19f4cc90"
+    },
+    {
+      "path": "crates/algo/src/palettes.rs",
+      "status": "A",
+      "blob": "0b1e939f49b28969a24b05530e8c3b092be719db",
+      "size": 14670,
+      "sha256": "fc1253b895674e2d094a9d854b2ed399431fe6db4a30f5d83d31a20741772dd9"
+    },
+    {
+      "path": "crates/algo/src/palettes_data.rs",
+      "status": "A",
+      "blob": "5226aa980619f972f69c45097b70707d23872953",
+      "size": 2643,
+      "sha256": "708eee8355861062a49ed82f9046059376fee91a85ab4d909deabad49ff6dd4b"
+    },
+    {
+      "path": "crates/algo/src/quantize.rs",
+      "status": "M",
+      "blob": "6516b2c5d16b6bfb260f20664e1e23ecd0ee4007",
+      "size": 33847,
+      "sha256": "336a0a7356c2c2f3e52c922084288d1277a687ca3a991e347eab4d54e4ecb21b"
+    },
+    {
+      "path": "crates/engine/src/cmd.rs",
+      "status": "M",
+      "blob": "52dc3c86e51b02ce077c10b2e5ae9c929f831a5c",
+      "size": 82847,
+      "sha256": "ba8dc412407a09de6bc10bfa4062f4973067855fb8138983e8d8f39e15ef4549"
+    },
+    {
+      "path": "crates/engine/src/cmd/adjust_cmds.rs",
+      "status": "M",
+      "blob": "9fbfcdb16e6c8f0d7f39a7ca7f5c5fda2145ee99",
+      "size": 42486,
+      "sha256": "87a8477f7b1a015a838665553ba46efa3ef670d719491d5488bb68af8714dc71"
+    },
+    {
+      "path": "crates/engine/src/cmd/distort_cmds.rs",
+      "status": "M",
+      "blob": "72ab72be56f64fdb75c7bf0864fc3d9f683fde6a",
+      "size": 23295,
+      "sha256": "35738c2a7c3008626ff9242ae30e4b862e3d2f8d94a19cd865f85c63d9b84733"
+    },
+    {
+      "path": "crates/engine/src/cmd/image_cmds.rs",
+      "status": "M",
+      "blob": "7501eb5f7980b94d7f1c5ee687a9efbf5f9d026c",
+      "size": 66558,
+      "sha256": "968bedfcc480158d21d120597609e4fac7dcb75dd35b941a0ace4f6941bfd097"
+    },
+    {
+      "path": "crates/engine/src/cmd/lens_cmds.rs",
+      "status": "M",
+      "blob": "5aaada44f4696527b906394e3b2748424e5ed9dc",
+      "size": 37278,
+      "sha256": "0b508d2b24f42c6620cc03fa9ac7d85d9eb6c19f8d9927e846f8cce8035df4bc"
+    },
+    {
+      "path": "crates/engine/src/cmd/mode_cmds.rs",
+      "status": "M",
+      "blob": "580b4d509373fea2d9c064db44837448c584568e",
+      "size": 51891,
+      "sha256": "c5c71238a5750441ae3bc99683c3645c0270ab38c734302253ad5e262c4fda4a"
+    },
+    {
+      "path": "crates/engine/src/cmd/mode_cmds/tests.rs",
+      "status": "M",
+      "blob": "0ee948d8841b9f5791205eb60a683555a31c56a1",
+      "size": 77270,
+      "sha256": "738caed1815252ae7621748edb8f06ed021107e2cc46c76de209e6874eb68647"
+    },
+    {
+      "path": "crates/engine/src/cmd/plugin_cmds.rs",
+      "status": "M",
+      "blob": "96cd50d17dc6cc637fcbcbc3ec0cf6a70262142f",
+      "size": 13510,
+      "sha256": "3e8e1b1cfc1d22299267f014a4549d41427c1acbed489cb162f5a4465a1b3a84"
+    },
+    {
+      "path": "crates/engine/src/cmd/smart_cmds/filters.rs",
+      "status": "M",
+      "blob": "12f052851fae98df3ea822b910009db452a98c32",
+      "size": 16258,
+      "sha256": "c803449e0ede25567818a6a4e692905f86de56ea36143e84682173217b1ec93f"
+    },
+    {
+      "path": "crates/engine/src/cmd/web_cmds.rs",
+      "status": "M",
+      "blob": "6030bab65508b255fd4c36f9564187d74b6ca900",
+      "size": 6939,
+      "sha256": "6f6008192d75c115f1931c7923e5caf1b775f92f3b97dc32ced98806a73b8953"
+    },
+    {
+      "path": "crates/engine/src/cmd/web_cmds/optimizer.rs",
+      "status": "M",
+      "blob": "b81476f4907120f370868605e7ed9917dc32b805",
+      "size": 33009,
+      "sha256": "0875926952d34e269ffcfc040ab6a8e20b56c3304d91a9992f1285de5290c886"
+    },
+    {
+      "path": "crates/engine/src/cmd/web_cmds/settings.rs",
+      "status": "M",
+      "blob": "c5589462a5e1cbc6ae2c1cdcd47e4239ee20f787",
+      "size": 17168,
+      "sha256": "693aa58709cf380f0bafa83ab29001d86b0e87f7d031732f55b68be5b4ca731f"
+    },
+    {
+      "path": "crates/engine/src/cmd/web_cmds/tests.rs",
+      "status": "M",
+      "blob": "c8aaf3d51ddf9833d543edd6e9b9ef50a369b93f",
+      "size": 97028,
+      "sha256": "91a04c26a2b5cdebeb32affcbff48530a1e09df38cf34353cf5be03b6d537a85"
+    },
+    {
+      "path": "crates/engine/src/filters.rs",
+      "status": "M",
+      "blob": "e541da80014d23fd23ac93a5e6c05ccfd0f56419",
+      "size": 34010,
+      "sha256": "1f6448e517a3f268eb15eb25b40f064bc226de6f919b2debd8630ac657ac42f0"
+    },
+    {
+      "path": "crates/engine/src/filters/tests.rs",
+      "status": "M",
+      "blob": "3f5d5764f8ba3bc4086f95b3365570c658257372",
+      "size": 39150,
+      "sha256": "acaf41ac0f43a93bb8776f4b0ae17879ef4201e4a1b4299b8af13c193daa918e"
+    },
+    {
+      "path": "crates/engine/src/lib.rs",
+      "status": "M",
+      "blob": "08951b11be92586bab00b2c85c71d933ec9484f5",
+      "size": 16785,
+      "sha256": "c07737facc274e65f5fcb83e849b969e9abf2cd0eb3f7bf79f2e10b8ad344fdd"
+    },
+    {
+      "path": "crates/engine/src/palette_cmds.rs",
+      "status": "A",
+      "blob": "f8f7a3a03cc56c27bda6679b24a6afdbe0407de2",
+      "size": 38336,
+      "sha256": "d5bf2f26343babe71615ef8c6090197c728f0335b516678f0a22874573946171"
+    },
+    {
+      "path": "crates/ui-egui/src/canvas/filter_preview.rs",
+      "status": "M",
+      "blob": "da907f433590d7d82c87341eaf3de14b04481def",
+      "size": 19618,
+      "sha256": "ef1f668db800aa5fe4de5b7f7493aad5f26ea52235f8a67f328e3883b95bacd8"
+    },
+    {
+      "path": "crates/ui-egui/src/canvas/tests.rs",
+      "status": "M",
+      "blob": "5f2e923b89970501689c6fd20c8b4d2bf8b2667e",
+      "size": 233936,
+      "sha256": "4ee88cd8f55a2d06c2adac6828958269370f518aafa6218a5f591a7e6520ef1e"
+    },
+    {
+      "path": "crates/ui-egui/src/dialogs.rs",
+      "status": "M",
+      "blob": "42b56ef5b237c2c421547c9733ccfe85ec375bc1",
+      "size": 88806,
+      "sha256": "32b01242d34591c570550c6c9b8d195f8186456b236c1e2a8661a795f7058c6e"
+    },
+    {
+      "path": "crates/ui-egui/src/dialogs/filter_dialog.rs",
+      "status": "M",
+      "blob": "984ea671601ee6e4222b631f8fcc47f0b0c03762",
+      "size": 104171,
+      "sha256": "ebcf45f84e89f8dcd2c3fee26a650d86f5e8bc163cfa0b206a6e3f9be784bfa6"
+    },
+    {
+      "path": "crates/ui-egui/src/dialogs/filter_dialog/tests.rs",
+      "status": "M",
+      "blob": "da58243da0c74ba5140e2fa176363289f3b20589",
+      "size": 140739,
+      "sha256": "32071236bb37d55b50cf44b2e6d32b9e92f64c5b52782dab745199d49f81a89e"
+    },
+    {
+      "path": "crates/ui-egui/src/dialogs/filter_preview_ui.rs",
+      "status": "M",
+      "blob": "4327a9a5116dc9502eef9f3073678318128f253c",
+      "size": 38477,
+      "sha256": "170cc2b95ed7a98bd09e43f49a9b3313df6ae9c6414a7b3e9871cc25268c872b"
+    },
+    {
+      "path": "crates/ui-egui/src/dialogs/filter_preview_worker.rs",
+      "status": "M",
+      "blob": "af85f2f44cd323a37f5dbc4eda5a62d17ab88bd5",
+      "size": 14524,
+      "sha256": "196bd018531f746f28bff1005978cd10a598a55beed3f41896d7abd0f6a905c3"
+    },
+    {
+      "path": "crates/ui-egui/src/dialogs/palette_map_ui.rs",
+      "status": "A",
+      "blob": "09cffc56d5fa1da57407dc5325516fa526cce091",
+      "size": 35541,
+      "sha256": "30488f3e44d75aefe47258557624e8f4a4d4b48eac928086c9e20d699abebd50"
+    },
+    {
+      "path": "crates/ui-egui/src/dialogs/palette_pattern_ui.rs",
+      "status": "A",
+      "blob": "227606c78c0b980006c885378dc7f327f883c7ef",
+      "size": 36202,
+      "sha256": "b8a90321aec6ca0ca2b716988c661d728bfdacd5a0b58141c1054070da0795b9"
+    },
+    {
+      "path": "crates/ui-egui/src/dialogs/tests.rs",
+      "status": "M",
+      "blob": "6e8c029ae7ac75b5107334b0ff6dd84b8ba876da",
+      "size": 38892,
+      "sha256": "034f725ff94229e604fb7772cc871e642178be050bd423ca83e966c79cb807c6"
+    },
+    {
+      "path": "crates/ui-egui/src/panels/smart_ui.rs",
+      "status": "M",
+      "blob": "f6d685714ba329c78b490fc62623610050bad2e1",
+      "size": 53443,
+      "sha256": "5bae61ba1fef4020ec78a7541cd48ba7e6cd7e733bd3d8156e85f7a46bfb207b"
+    },
+    {
+      "path": "crates/ui-egui/src/widgets/field_wheel.rs",
+      "status": "M",
+      "blob": "0a8a3c8fbb5132dd166c9d184d9ea925125161fb",
+      "size": 40710,
+      "sha256": "a2d7f2cb7637b483866ac040b83f6cb206b35139b6b16692732c318a2eb1baf7"
+    },
+    {
+      "path": "docs/control-protocol.md",
+      "status": "M",
+      "blob": "2f6de7284cb45f83729d3e75758cf3acb87fb8a6",
+      "size": 146096,
+      "sha256": "62f4100ac1b0f854801488ad33583235d7a2235d7234e7e494812d56a918d8c9"
+    },
+    {
+      "path": "docs/development.md",
+      "status": "M",
+      "blob": "87eb86c661d00a6313108d33c7728bb3c5efabbc",
+      "size": 125546,
+      "sha256": "8885b7e61409d68445d79901d9beab264595f75d4205bee58ccf485dbd0eb72a"
+    },
+    {
+      "path": "docs/ui-design.md",
+      "status": "M",
+      "blob": "2dc24e4eac9f3a0cddd08c8876042d6cb7ef8958",
+      "size": 27466,
+      "sha256": "89617f3e386b6ec4d2fd0bd7c3c040898a8fc9a2f2f004545057265b59ba8e7c"
+    }
+  ],
+  "limits": [
+    "UI strict Clippy not run clean here; known2byte-identical-to-main sites documented on #8929.",
+    "No exact-head GitHub CI approval; current base rebase removes the prior conflict.",
+    "Real preview/cancellation comparison remains in progress under the registered protocol and is not claimed by this source publication.",
+    "Earlier failed compiler/fixture attempts retained in state and not called passes."
+  ],
+  "files": [
+    {
+      "path": "docs/review/palette-split/comment-followup-filter-20261116-native.log",
+      "size": 41468,
+      "sha256": "a83edb33aa67e1223381acd1b154bf256c138c6d7a0f2a5038d79bb450c398d2"
+    },
+    {
+      "path": "docs/review/palette-split/comment-followup-filter-20261116-final.log",
+      "size": 465354,
+      "sha256": "e345bbe7ef826dbe651ef41a03877602a17cf50aa52fc57dd1b743a29a3867b6"
+    },
+    {
+      "path": "docs/review/palette-split/comment-followup-filter-20261116-earlier-ui.log",
+      "size": 73446,
+      "sha256": "e898b70c1f2584c864503ba1508970e506aefb47a2ade0224fdcffc1c50ab536"
+    },
+    {
+      "path": "docs/review/palette-split/comment-followup-filter-20261116-parity.log",
+      "size": 126,
+      "sha256": "b6b5c781113f4c93a3219be4f6fd089fcef2d2a3adbba996ecf97897c22dc740"
+    }
+  ]
+}

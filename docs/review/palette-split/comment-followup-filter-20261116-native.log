@@ -1,0 +1,644 @@
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling photocraft-engine v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/engine)
+    Finished `test` profile [optimized] target(s) in 1m 50s
+     Running unittests src/lib.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-palette-filter-20261116/debug/deps/photocraft_engine-d2d9912df2466783)
+
+running 10 tests
+test palette_cmds::tests::indexed_reduction_rejects_out_of_bounds_transparent_slot ... ok
+test palette_cmds::tests::malformed_palette_id_is_rejected_even_when_snapshot_is_present ... ok
+test palette_cmds::tests::mapping_legacy_spellings_are_shared ... ok
+test palette_cmds::tests::snapshot_wins_over_unknown_catalog_id ... ok
+test palette_cmds::tests::palette_map_replay_rejects_fixed_color_surfaces ... ok
+test palette_cmds::tests::malformed_legacy_dither_does_not_fall_back_to_stock_mapping ... ok
+test palette_cmds::tests::oversized_palette_region_returns_error_before_allocating ... ok
+test palette_cmds::tests::palette_map_cancels_before_source_conversion_and_during_icc_work ... ok
+test palette_cmds::tests::wrong_type_palette_id_does_not_fall_back_to_generated_indexing ... ok
+test palette_cmds::tests::palette_map_is_disabled_for_fixed_color_documents ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 4096 filtered out; finished in 0.01s
+
+    Blocking waiting for file lock on package cache
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Finished `test` profile [optimized] target(s) in 0.62s
+     Running unittests src/lib.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-palette-filter-20261116/debug/deps/photocraft_engine-d2d9912df2466783)
+
+running 81 tests
+test filters::tests::channel_filter_transparency_follows_native_alpha_format ... ok
+test filters::tests::filter_diagnostics_native_nonfinite_samples ... ok
+test filters::tests::filter_diagnostics_legacy_geometry_failure ... ok
+test filters::tests::disabled_without_pixel_layer ... ok
+test cmd::gallery_cmds::tests::sketch_filters_record_and_use_the_current_colours ... ok
+test cmd::smart_cmds::tests::svg_profile::warning_bearing_svg_render_keeps_visible_filters_without_poisoning_strict_cache ... ok
+test cmd::smart_svg_cmds::tests::native_update_authorizes_filters_on_every_shared_instance_before_editing ... ok
+test cmd::smart_svg_cmds::tests::shared_instances_keep_placement_filters_masks_and_one_undo_transaction ... ok
+test filters::tests::params_map_to_algorithm_units ... ok
+test cmd::plugin_cmds::tests::bitmap_documents_refuse_plugin_filters_but_keep_plugin_management ... ok
+test filters::tests::enormous_global_filter_is_refused_before_allocating_and_preserves_document ... ok
+test cmd::adjust_cmds::tests::adjustment_smart_filters_take_a_selection_as_their_mask ... ok
+test filters::tests::displace_on_a_smart_object_embeds_its_map ... ok
+test filters::tests::palette_map_filter_uses_one_undo_step_and_last_filter_replay ... ok
+test filters::tests::palette_map_invalid_snapshot_has_no_mutation ... ok
+test filters::tests::palette_map_rgb_profile_roundtrips_through_srgb_kernel ... ok
+test filters::tests::specs_are_complete_and_documented ... ok
+test filters::tests::last_filter_applies_to_the_active_layer ... ok
+test filters::tests::smart_object_records_smart_filter ... ok
+test cmd::smart_cmds::tests::reset_transform_clears_the_warp_and_keeps_the_smart_filters ... ok
+test filters::tests::huge_offsets_clamp_instead_of_wrapping ... ok
+test filters::tests::keep_alpha_stops_when_cancelled_and_keeps_the_tiles ... ok
+test doc_path::tests::smart_filters_reread_only_followed_files ... ok
+test filters::validation::tests::stored_extended_filter_records_still_decode_tolerantly ... ok
+test cmd::smart_cmds::tests::filters_follow_transforms ... ok
+test filters::tests::selection_limits_the_filter ... ok
+test filters::tests::last_filter_repeats_with_same_params ... ok
+test cmd::smart_cmds::tests::smart_filters_move_or_copy_to_another_smart_object ... ok
+test filters::validation::tests::strict_extended_filters_validate_before_floating_selection_commit_and_jobs ... ok
+test filters::validation::tests::invalid_filters_leave_floating_selection_and_background_jobs_alone ... ok
+test filters::validation::tests::core_filter_choices_booleans_seeds_and_shared_fields_are_validated ... ok
+test filters::tests::review_palette_map_command_preserves_display_p3_selection_holes_at_all_depths ... ok
+test filters::validation::tests::injected_channel_targets_and_extended_filter_colours_keep_working ... ok
+test filters_ext::tests::ids_match_the_menu_catalog_and_are_unique ... ok
+test filters::validation::tests::extended_filter_choices_match_their_specs_and_reject_unlisted_values ... ok
+test filters_ext::tests::disabled_without_pixel_layer ... ok
+test cmd::fx_view_cmds::tests::smart_filters_share_the_effects_disclosure_without_an_edit ... ok
+test filters::tests::palette_map_smart_filter_snapshot_roundtrips_through_pcraft ... ok
+test filters_ext::tests::lens_flare_keeps_off_canvas_centers_and_native_defaults ... ok
+test filters::tests::review_palette_map_render_surface_preserves_cmyk_selection_holes ... ok
+test filters_ext::tests::params_map_to_algorithm_units ... ok
+test filters_ext::tests::displace_reads_another_document ... ok
+test cmd::plugin_cmds::tests::locked_layers_refuse_plugin_filters ... ok
+test cmd::smart_cmds::tests::smart_filters_are_re_editable ... ok
+test filters_ext::tests::colour_filters_use_and_record_tool_colours ... ok
+test filters::validation::tests::core_filter_numbers_reject_wrong_types_and_documented_range_violations ... ok
+test filters::validation::tests::every_core_filter_rejects_unknown_keys_without_editing ... ok
+test cmd::adjust_cmds::tests::locked_smart_objects_refuse_adjustment_smart_filters ... ok
+test filters_ext::tests::relight_is_disabled_on_a_pixel_locked_layer ... ok
+test filters_ext::tests::relight_defaults_change_a_shaded_disc_and_undo ... ok
+test cmd::adjust_cmds::tests::desaturate_equalize_and_replace_color_record_smart_filters ... ok
+test filters::tests::recorded_last_filter_replays_the_filter_it_repeated ... ok
+test filters_ext::tests::relight_honours_the_selection ... ok
+test filters_ext::tests::relight_rejects_bad_params ... ok
+test filters_ext::tests::relight_records_a_smart_filter_and_can_be_hidden ... ok
+test filters_ext::tests::fibers_fill_an_empty_layer ... ok
+test session::execute::bitmap_mode_tests::bitmap_documents_refuse_filters_and_adjustments_but_invert ... ok
+test filters_ext::tests::last_filter_repeats_new_filters ... ok
+test installed_profiles::tests::command_filters_and_rejects_bad_params ... ok
+test filters_ext::tests::lens_blur_uses_the_layer_mask_as_depth ... ok
+test filters_ext::tests::selection_limits_new_filters ... ok
+test filters::tests::solarize_and_add_noise_process_untouched_reveal_all_masks ... ok
+test filters_ext::tests::lens_blur_reads_an_alpha_channel_as_depth ... ok
+test filters::tests::minimum_signed_offset_matches_its_wrapped_distance ... ok
+test filters::tests::minimum_maximum_preserve_roundness ... ok
+test cmd::smart_cmds::tests::clouds_on_a_smart_object_are_smart_filters_with_their_colours ... ok
+test filters::validation::tests::valid_filters_keep_defaults_explicit_targets_and_undo_redo ... ok
+test filters::validation::tests::strict_extended_filters_reject_bad_fields_without_editing ... ok
+test cmd::distort_cmds::tests::smart_objects_store_distortions_as_smart_filters_losslessly ... ok
+test filters::tests::preset_filters_record_their_own_name ... ok
+test cmd::gallery_cmds::tests::gallery_filters_run_in_other_colour_models ... ok
+test cmd::lens_cmds::tests::locked_smart_objects_refuse_lens_filters ... ok
+test filters_ext::tests::relight_command_exists_and_toggles_with_document ... ok
+test filters::validation::tests::strict_extended_filters_keep_defaults_targets_history_and_last_filter ... ok
+test filters::tests::every_filter_command_runs_changes_pixels_and_undoes ... ok
+test filters_ext::tests::lens_flare_extreme_centers_do_not_panic_or_corrupt_pixels ... ok
+test filters::tests::keep_alpha_matches_the_serial_pass_at_every_depth ... ok
+test filters_ext::tests::new_filters_work_at_16_and_32_bit ... ok
+test cmd::smart_cmds::tests::filter_mask_paint::painting_the_filter_mask_hides_the_filters_there_in_one_undo_step ... ok
+test filters_ext::tests::every_new_filter_runs_changes_pixels_and_undoes_in_one_step ... ok
+test cmd::atn_cmds::render_tests::render_actions_match_direct_filters_and_undo ... ok
+
+test result: ok. 81 passed; 0 failed; 0 ignored; 0 measured; 4025 filtered out; finished in 0.48s
+
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+    Finished `test` profile [optimized] target(s) in 0.34s
+     Running unittests src/lib.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-palette-filter-20261116/debug/deps/photocraft_engine-d2d9912df2466783)
+
+running 90 tests
+test cmd::smart_cmds::source::tests::blocks_are_whole_tiles_within_their_pixel_budget_however_wide_the_source ... ok
+test cmd::smart_cmds::source::tests::a_source_larger_than_the_limit_is_returned_but_not_cached ... ok
+test cmd::smart_cmds::source::tests::accounting_counts_the_real_tile_bytes ... ok
+test cmd::smart_cmds::tests::filter_strength_preserves_alpha_and_interpolates_changed_coverage ... ok
+test cmd::smart_cmds::tests::commands_are_registered_with_catalog_ids ... ok
+test cmd::smart_cmds::tests::empty_layer_cannot_be_converted ... ok
+test cmd::smart_cmds::tests::convert_to_smart_object_is_disabled_for_a_layer_that_is_already_smart ... ok
+test cmd::smart_cmds::tests::native_digest_cache_is_bounded_weak_and_never_stale ... ok
+test cmd::smart_cmds::tests::native_digest_cache_misses_after_copy_on_write_and_keeps_recently_used_sources ... ok
+test cmd::smart_cmds::tests::convert_to_smart_object_stays_enabled_for_a_selection_that_includes_a_smart_object ... ok
+test cmd::smart_cmds::tests::identity_mesh_on_a_skewed_smart_object_changes_nothing ... ok
+test cmd::smart_cmds::tests::lens_flare_centres_on_the_smart_object ... ok
+test cmd::smart_cmds::tests::filter_mask_paint::an_explicit_layer_checks_filter_mask_eligibility ... ok
+test cmd::smart_cmds::tests::filter_stack_order_blend_disable_and_clear ... ok
+test cmd::smart_cmds::tests::convert_to_layers_keeps_a_smart_layer_mask_on_a_group ... ok
+test cmd::smart_cmds::tests::automation_smart_contents_malformed_embedded_sources_leave_documents_unchanged ... ok
+test cmd::smart_cmds::tests::convert_to_layers_rejects_what_it_cannot_unpack ... ok
+test cmd::smart_cmds::tests::filter_mask_paint::a_shown_filter_mask_takes_the_paint ... ok
+test cmd::smart_cmds::tests::distort_survives_edit_contents ... ok
+test cmd::smart_cmds::tests::filters_follow_transforms ... ok
+test cmd::smart_cmds::tests::filter_mask_paint::the_filter_mask_target_leaves_the_smart_object_commands_alone ... ok
+test cmd::smart_cmds::tests::edit_contents_updates_the_parent ... ok
+test cmd::smart_cmds::tests::psd_placed_layer_renders_from_lnk2_data ... ok
+test cmd::smart_cmds::tests::inspect_reports_the_smart_source ... ok
+test cmd::smart_cmds::tests::convert_to_layers_unpacks_several_layers_into_a_group_with_the_smart_layers_properties ... ok
+test cmd::smart_cmds::tests::pattern_fill_converts_to_editable_smart_object_without_losing_its_pattern ... ok
+test cmd::smart_cmds::tests::selection::an_all_hidden_selection_is_rejected_without_changing_document_selection_or_history ... ok
+test cmd::smart_cmds::tests::non_normal_coverage_changes_retain_source_over_semantics ... ok
+test cmd::smart_cmds::tests::automation_smart_contents_checks_nested_reads_at_nontrivial_placements ... ok
+test cmd::smart_cmds::tests::clouds_and_fibers_move_with_the_smart_object ... ok
+test cmd::smart_cmds::tests::masked_layer_and_group_convert_within_rounding ... ok
+test cmd::smart_cmds::tests::convert_to_layers_applies_the_placement ... ok
+test cmd::smart_cmds::tests::reset_transform_centres_a_distorted_object_on_its_corner_average ... ok
+test cmd::smart_cmds::tests::rasterize_and_via_copy ... ok
+test cmd::smart_cmds::tests::automation_smart_contents_refuses_disk_sources_before_changes ... ok
+test cmd::smart_cmds::tests::export_replace_and_linked_contents ... ok
+test cmd::smart_cmds::tests::selection::selected_group_and_descendant_are_embedded_once ... ok
+test cmd::smart_cmds::tests::set_params_replace_drops_a_shape_blur_radius_it_leaves_out ... ok
+test cmd::smart_cmds::tests::source_flatten::a_source_past_the_render_limit_is_refused_not_emptied ... ok
+test cmd::smart_cmds::tests::source_flatten::a_lab_source_matches ... ok
+test cmd::smart_cmds::tests::selection::selected_ancestor_in_another_parent_cannot_remove_the_new_smart_object ... ok
+test cmd::smart_cmds::tests::removing_the_last_filter_removes_its_filter_mask ... ok
+test cmd::smart_cmds::tests::convert_to_layers_conforms_the_contents_to_the_document_mode_and_depth ... ok
+test cmd::smart_cmds::tests::selection::mixed_parent_selection_keeps_unselected_siblings_and_uses_the_top_selected_parent ... ok
+test cmd::smart_cmds::tests::selection_becomes_the_filter_mask ... ok
+test cmd::smart_cmds::tests::reset_transform_refuses_a_stack_it_cannot_re_render ... ok
+test cmd::smart_cmds::tests::reset_transform_needs_a_smart_object_and_undoes_in_one_step ... ok
+test cmd::smart_cmds::tests::source_flatten::rgb_sources_match_at_every_depth ... ok
+test cmd::smart_cmds::tests::reset_transform_clears_the_warp_and_keeps_the_smart_filters ... ok
+test cmd::smart_cmds::tests::smart_filter_commands_check_an_explicit_layer_target ... ok
+test cmd::smart_cmds::tests::selection::explicit_layer_converts_only_that_layer_despite_multi_selection ... ok
+test cmd::smart_cmds::tests::source_flatten::a_gray_source_in_an_rgb_document_and_back_matches ... ok
+test cmd::smart_cmds::tests::source_flatten::an_rgb_source_in_a_cmyk_or_lab_document_matches ... ok
+test cmd::smart_cmds::tests::source_flatten::a_layered_source_with_a_mask_blend_mode_and_effect_matches ... ok
+test cmd::smart_cmds::tests::convert_to_layers_round_trips_a_layer_at_every_depth ... ok
+test cmd::smart_cmds::tests::svg_profile::svg_smart_rerender_checks_embedded_raster_dimensions ... ok
+test cmd::smart_cmds::tests::set_params_replace_drops_the_keys_it_leaves_out ... ok
+test cmd::smart_cmds::tests::reset_transform_restores_100_percent_in_place ... ok
+test cmd::smart_cmds::tests::stack_cache::bad_smart_filter_edits_fail_at_once_with_start ... ok
+test cmd::smart_cmds::tests::source_flatten::an_8_bit_source_in_a_32_bit_document_matches ... ok
+test cmd::smart_cmds::tests::clouds_on_a_smart_object_are_smart_filters_with_their_colours ... ok
+test cmd::smart_cmds::tests::source_flatten::a_cmyk_source_matches ... ok
+test cmd::smart_cmds::tests::stack_cache::a_cancelled_render_stops_before_an_uncached_filter ... ok
+test cmd::smart_cmds::tests::svg_profile::warning_bearing_svg_render_keeps_visible_filters_without_poisoning_strict_cache ... ok
+test cmd::smart_cmds::tests::svg_profile::svg_builtin_srgb_keeps_direct_render_at_each_depth ... ok
+test cmd::smart_cmds::tests::svg_profile::svg_stack_mode_refuses_frames_past_its_budget ... ok
+test cmd::smart_cmds::tests::svg_profile::svg_with_an_unreadable_embedded_image_still_places ... ok
+test cmd::smart_cmds::tests::conversion_is_pixel_identical_at_every_depth ... ok
+test cmd::smart_cmds::tests::smart_filters_move_or_copy_to_another_smart_object ... ok
+test cmd::smart_cmds::tests::smart_filters_are_re_editable ... ok
+test cmd::smart_cmds::tests::warp_on_a_distorted_smart_object_follows_the_corners ... ok
+test cmd::smart_cmds::tests::filter_mask_paint::copying_the_filter_mask_never_copies_the_layer_mask ... ok
+test cmd::smart_cmds::tests::filter_mask_paint::blurring_the_filter_mask_feathers_it ... ok
+test cmd::smart_cmds::tests::displace_smart_filter_reads_its_map_path_on_re_render ... ok
+test cmd::smart_cmds::tests::transforms_re_render_from_source_losslessly ... ok
+test cmd::smart_cmds::tests::automation_smart_contents_accepts_memory_sources_and_explicit_targets ... ok
+test cmd::smart_cmds::tests::smart_filter_blur_repeats_the_canvas_edge_like_a_layer_filter ... ok
+test cmd::smart_cmds::tests::svg_profile::svg_stack_and_source_caches_refuse_omitted_images ... ok
+test cmd::smart_cmds::tests::pcraft_round_trip_keeps_live_smart_objects ... ok
+test cmd::smart_cmds::tests::filter_mask_paint::a_shown_filter_mask_wins_over_color_selection_for_cut_and_clear ... ok
+test cmd::smart_cmds::tests::svg_profile::svg_smart_render_cache_tracks_destination_profile_and_transform ... ok
+test cmd::smart_cmds::tests::stack_cache::renders_from_cached_stages_match_full_renders_at_every_depth ... ok
+test cmd::smart_cmds::tests::svg_profile::ordinary_layered_svg_contents_replace_and_convert_to_layers ... ok
+test cmd::smart_cmds::tests::selection::combined_contents_survive_native_and_psd_save_open ... ok
+test cmd::smart_cmds::tests::filter_mask_paint::painting_the_filter_mask_hides_the_filters_there_in_one_undo_step ... ok
+test cmd::smart_cmds::tests::svg_profile::convert_to_layers_unpacks_full_canvas_shapes_in_a_4k_document ... ok
+test cmd::smart_cmds::tests::source_flatten::effects_across_block_edges_match ... ok
+test cmd::smart_cmds::tests::selection::selected_pixels_become_one_editable_smart_object_in_every_mode_and_depth ... ok
+test cmd::smart_cmds::tests::svg_profile::svg_smart_contents_and_stack_open_many_shapes_as_layers ... ok
+test cmd::smart_cmds::tests::svg_profile::svg_warp_frame_uses_bounded_bounds ... ok
+
+test result: ok. 90 passed; 0 failed; 0 ignored; 0 measured; 4016 filtered out; finished in 1.34s
+
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling syn v3.0.6
+   Compiling syn v2.0.119
+   Compiling rustix v1.1.5
+   Compiling linux-raw-sys v0.12.1
+   Compiling either v1.18.0
+   Compiling serde_core v1.0.229
+   Compiling pkg-config v0.3.34
+   Compiling winnow v1.0.4
+   Compiling synstructure v0.14.0
+   Compiling rayon v1.12.0
+   Compiling wayland-sys v0.31.11
+   Compiling dlib v0.5.3
+   Compiling toml_parser v1.1.3+spec-1.1.0
+   Compiling toml_datetime v1.1.1+spec-1.1.0
+   Compiling serde v1.0.229
+   Compiling slab v0.4.12
+   Compiling hashbrown v0.17.1
+   Compiling indexmap v2.14.2
+   Compiling toml_edit v0.25.15+spec-1.1.0
+   Compiling polling v3.11.0
+   Compiling proc-macro-crate v3.5.0
+   Compiling wayland-backend v0.3.17
+   Compiling writeable v0.6.4
+   Compiling parking v2.2.1
+   Compiling downcast-rs v1.2.1
+   Compiling scoped-tls v1.0.1
+   Compiling futures-core v0.3.34
+   Compiling endi v1.1.1
+   Compiling crypto-common v0.1.7
+   Compiling litemap v0.8.3
+   Compiling wayland-client v0.31.15
+   Compiling digest v0.10.7
+   Compiling wayland-scanner v0.31.11
+   Compiling uuid v1.26.1
+   Compiling futures-io v0.3.34
+   Compiling event-listener v5.4.2
+   Compiling concurrent-queue v2.5.0
+   Compiling event-listener-strategy v0.5.4
+   Compiling futures-lite v2.6.1
+   Compiling md-5 v0.10.6
+   Compiling craft-cms v0.1.0 (https://github.com/storytold/craft-libs?rev=c6eb84d427d81b6d64207654c8ee0516cd3d7324#c6eb84d4)
+   Compiling zerocopy-derive v0.8.59
+   Compiling serde_derive v1.0.229
+   Compiling thiserror-impl v2.0.21
+   Compiling bytemuck_derive v1.12.1
+   Compiling smallvec v1.16.2
+   Compiling arrayvec v0.7.8
+   Compiling zerocopy v0.8.59
+   Compiling tracing-attributes v0.1.31
+   Compiling thiserror v2.0.21
+   Compiling polycool v0.4.0
+   Compiling half v2.7.1
+   Compiling kurbo v0.13.1
+   Compiling zerofrom-derive v0.1.8
+   Compiling yoke-derive v0.8.3
+   Compiling bytemuck v1.25.2
+   Compiling font-types v0.12.5
+   Compiling zerovec-derive v0.11.6
+   Compiling tracing v0.1.44
+   Compiling displaydoc v0.2.7
+   Compiling enumflags2_derive v0.7.12
+   Compiling zvariant_utils v4.2.0
+   Compiling zerofrom v0.1.8
+   Compiling read-fonts v0.41.0
+   Compiling yoke v0.8.3
+   Compiling zerovec v0.11.8
+   Compiling fax_derive v0.2.0
+   Compiling tinystr v0.8.4
+   Compiling color v0.3.3
+   Compiling fax v0.2.6
+   Compiling harfrust v0.12.0
+   Compiling skrifa v0.44.0
+   Compiling zvariant_derive v5.15.0
+   Compiling cobs v0.3.0
+   Compiling postcard v1.1.3
+   Compiling tiff v0.11.3
+   Compiling peniko v0.6.1
+   Compiling icu_locale_core v2.3.0
+   Compiling zerotrie v0.2.5
+   Compiling qoi v0.4.1
+   Compiling parking_lot_core v0.9.12
+   Compiling image v0.25.10
+   Compiling parking_lot v0.12.5
+   Compiling icu_provider v2.3.1
+   Compiling enumflags2 v0.7.12
+   Compiling jxl-bitstream v1.1.0
+   Compiling zcheapstr v1.1.0
+   Compiling zvariant v5.15.0
+   Compiling jxl-oxide-common v1.0.0
+   Compiling potential_utf v0.1.6
+   Compiling jxl-grid v0.6.2
+   Compiling async-io v2.6.0
+   Compiling zbus_names v4.3.4
+   Compiling jxl-coding v1.0.1
+   Compiling wayland-protocols v0.32.13
+   Compiling jxl-threadpool v1.0.0
+   Compiling photocraft-geom v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/geom)
+   Compiling photocraft-color v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/color)
+   Compiling accesskit v0.25.1
+   Compiling ahash v0.8.12
+   Compiling errno v0.3.14
+   Compiling async-task v4.7.1
+   Compiling photocraft-raster v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/raster)
+   Compiling naga-types v30.0.1
+   Compiling signal-hook-registry v1.4.8
+   Compiling async-channel v2.5.0
+   Compiling naga v30.0.1
+   Compiling atomic-waker v1.1.2
+   Compiling piper v0.2.5
+   Compiling icu_collections v2.3.0
+   Compiling async-signal v0.2.14
+   Compiling jxl-modular v0.11.3
+   Compiling zbus_xml v5.2.1
+   Compiling jxl-image v0.13.0
+   Compiling num-complex v0.4.6
+   Compiling async-lock v3.4.2
+   Compiling rustix v0.38.44
+   Compiling thiserror v1.0.69
+   Compiling unicode-general-category v1.1.0
+   Compiling khronos-egl v6.0.0
+   Compiling epaint_default_fonts v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+   Compiling async-process v2.5.0
+   Compiling zbus-lockstep v0.5.2
+   Compiling jxl-vardct v0.11.1
+   Compiling blocking v1.7.0
+   Compiling wgpu-types v30.0.1
+   Compiling async-executor v1.14.0
+   Compiling zbus_macros v5.19.0
+   Compiling vello_common v0.2.0
+   Compiling emath v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+   Compiling craft-tiff v0.1.0 (https://github.com/storytold/craft-libs?rev=fe6b443acf3eccaf514064812e6e6bf24257652a#fe6b443a)
+   Compiling serde_repr v0.1.21
+   Compiling async-trait v0.1.92
+   Compiling async-recursion v1.1.1
+   Compiling thiserror-impl v1.0.69
+   Compiling async-broadcast v0.7.2
+   Compiling ordered-stream v0.2.0
+   Compiling wgpu-hal v30.0.1
+   Compiling xcursor v0.3.11
+   Compiling xkeysym v0.2.1
+   Compiling linux-raw-sys v0.4.15
+   Compiling hex v0.4.3
+   Compiling cursor-icon v1.2.0
+   Compiling gpu-allocator v0.28.0
+   Compiling wayland-csd-frame v0.3.0
+   Compiling zbus v5.19.0
+   Compiling wayland-cursor v0.31.14
+   Compiling craft-metadata v0.1.0 (https://github.com/storytold/craft-libs?rev=fe6b443acf3eccaf514064812e6e6bf24257652a#fe6b443a)
+   Compiling ecolor v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+   Compiling vello_cpu v0.2.0
+   Compiling wgpu-naga-bridge v30.0.1
+   Compiling jxl-frame v0.13.3
+   Compiling zbus-lockstep-macros v0.5.2
+   Compiling wayland-protocols-wlr v0.3.12
+   Compiling craft-xml v0.1.0 (https://github.com/storytold/craft-libs?rev=fe6b443acf3eccaf514064812e6e6bf24257652a#fe6b443a)
+   Compiling phf_shared v0.14.0
+   Compiling self_cell v1.3.0
+   Compiling nohash-hasher v0.2.0
+   Compiling unicode-segmentation v1.13.3
+   Compiling percent-encoding v2.3.2
+   Compiling glow v0.17.0
+   Compiling epaint v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+   Compiling phf_generator v0.14.0
+   Compiling icu_locale_fallback v2.3.0
+   Compiling atspi-common v0.13.0
+   Compiling icu_properties v2.3.0
+   Compiling calloop v0.13.0
+   Compiling craft-zip v0.1.0 (https://github.com/storytold/craft-libs?rev=fe6b443acf3eccaf514064812e6e6bf24257652a#fe6b443a)
+   Compiling jxl-color v0.11.0
+   Compiling photocraft-doc v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/doc)
+   Compiling tiny-skia-path v0.12.0
+   Compiling rgb v0.8.53
+   Compiling wgpu-core v30.0.1
+   Compiling x11-dl v2.21.0
+   Compiling gethostname v1.1.0
+   Compiling itertools v0.15.0
+   Compiling ring v0.17.14
+   Compiling x11rb-protocol v0.13.2
+   Compiling as-raw-xcb-connection v1.0.1
+   Compiling smithay-client-toolkit v0.19.2
+   Compiling pulp v0.22.3
+   Compiling egui v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+   Compiling jxl-render v0.12.4
+   Compiling calloop-wayland-source v0.3.0
+   Compiling wgpu-core-deps-windows-linux-android v30.0.1
+   Compiling phf_macros v0.14.0
+   Compiling x11rb v0.13.2
+   Compiling jxl-jbr v0.2.1
+   Compiling accesskit_consumer v0.39.1
+   Compiling read-fonts v0.44.0
+   Compiling svgtypes v0.16.2
+   Compiling wgpu v30.0.1
+   Compiling winit v0.30.13 (https://github.com/storytold/winit.git?rev=a517b3846ee8457d84ee4975110bfda6797c44dc#a517b384)
+   Compiling write16 v1.0.0
+   Compiling utf16_iter v1.0.5
+   Compiling zeroize v1.9.1
+   Compiling rustls-pki-types v1.15.1
+   Compiling exr v1.74.2
+   Compiling usvg v0.48.1
+   Compiling phf v0.14.0
+   Compiling icu_normalizer v2.3.0
+   Compiling skrifa v0.47.0
+   Compiling jxl-oxide v0.12.6
+   Compiling phf_macros v0.13.1
+   Compiling tiny-skia v0.12.0
+   Compiling atspi-proxies v0.13.0
+   Compiling xkbcommon-dl v0.4.2
+   Compiling wayland-protocols-plasma v0.3.12
+   Compiling calloop v0.14.4
+   Compiling linesweeper v0.5.0
+   Compiling vectorcraft-geom v0.18.0 (https://github.com/storytold/vectorcraft.git?rev=6b3a6b8788ebcb420d69449199cbdf323888d27e#6b3a6b87)
+   Compiling craft-crw v0.1.0 (https://github.com/storytold/craft-libs?rev=fe6b443acf3eccaf514064812e6e6bf24257652a#fe6b443a)
+   Compiling craft-jpeg v0.1.0 (https://github.com/storytold/craft-libs?rev=fe6b443acf3eccaf514064812e6e6bf24257652a#fe6b443a)
+   Compiling futures-macro v0.3.34
+   Compiling getrandom v0.2.17
+   Compiling untrusted v0.9.0
+   Compiling dpi v0.1.2
+   Compiling smol_str v0.2.2
+   Compiling futures-task v0.3.34
+   Compiling smithay-client-toolkit v0.20.0
+   Compiling blake3 v1.8.7
+   Compiling craft-image-codecs v0.1.0 (https://github.com/storytold/craft-libs?rev=fe6b443acf3eccaf514064812e6e6bf24257652a#fe6b443a)
+   Compiling futures-util v0.3.34
+   Compiling craft-raw v0.1.0 (https://github.com/storytold/craft-libs?rev=fe6b443acf3eccaf514064812e6e6bf24257652a#fe6b443a)
+   Compiling vectorcraft-pathops v0.18.0 (https://github.com/storytold/vectorcraft.git?rev=6b3a6b8788ebcb420d69449199cbdf323888d27e#6b3a6b87)
+   Compiling calloop-wayland-source v0.4.1
+   Compiling atspi v0.29.0
+   Compiling resvg v0.48.1
+   Compiling phf v0.13.1
+   Compiling hayro-syntax v0.7.2 (https://github.com/storytold/craft-libs?rev=fe6b443acf3eccaf514064812e6e6bf24257652a#fe6b443a)
+   Compiling accesskit_atspi_common v0.21.0
+   Compiling wayland-protocols-experimental v20250721.0.1
+   Compiling wayland-protocols-misc v0.3.12
+   Compiling vello_common v0.0.8
+   Compiling craft-pcraft-format v0.1.0 (https://github.com/storytold/craft-libs?rev=fe6b443acf3eccaf514064812e6e6bf24257652a#fe6b443a)
+   Compiling craft-tiff v0.1.0 (https://github.com/storytold/craft-libs?rev=163f1b20315ffacaf8a6e085f4ae7fc568c08ff2#163f1b20)
+   Compiling httparse v1.10.1
+   Compiling rustls v0.23.46
+   Compiling craft-pcraft-bundle v0.1.0 (https://github.com/storytold/craft-libs?rev=fe6b443acf3eccaf514064812e6e6bf24257652a#fe6b443a)
+   Compiling fontique v0.11.1
+   Compiling craft-metadata v0.1.0 (https://github.com/storytold/craft-libs?rev=163f1b20315ffacaf8a6e085f4ae7fc568c08ff2#163f1b20)
+   Compiling vello_cpu v0.0.8
+   Compiling rustfft v6.4.1
+   Compiling icu_segmenter v2.3.0
+   Compiling accesskit_unix v0.24.0
+   Compiling hayro-interpret v0.7.0 (https://github.com/storytold/craft-libs?rev=fe6b443acf3eccaf514064812e6e6bf24257652a#fe6b443a)
+   Compiling craft-svg v0.1.0 (https://github.com/storytold/craft-libs?rev=fe6b443acf3eccaf514064812e6e6bf24257652a#fe6b443a)
+   Compiling rustls-webpki v0.103.16
+   Compiling photocraft-vector v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/vector)
+   Compiling craft-ora v0.1.0 (https://github.com/storytold/craft-libs?rev=fe6b443acf3eccaf514064812e6e6bf24257652a#fe6b443a)
+   Compiling craft-idml v0.1.0 (https://github.com/storytold/craft-libs?rev=fe6b443acf3eccaf514064812e6e6bf24257652a#fe6b443a)
+   Compiling craft-kra v0.1.0 (https://github.com/storytold/craft-libs?rev=fe6b443acf3eccaf514064812e6e6bf24257652a#fe6b443a)
+   Compiling parley_data v0.11.1
+   Compiling tiny-skia-path v0.11.4
+   Compiling fixed_decimal v0.7.3
+   Compiling kurbo v0.11.3
+   Compiling subtle v2.6.1
+   Compiling openssl-probe v0.2.1
+   Compiling bytes v1.12.1
+   Compiling bitflags v1.3.2
+   Compiling anyhow v1.0.104
+   Compiling serde_json v1.0.154
+   Compiling craft-file-formats v0.1.0 (https://github.com/storytold/craft-libs?rev=fe6b443acf3eccaf514064812e6e6bf24257652a#fe6b443a)
+   Compiling png v0.17.16
+   Compiling http v1.5.0
+   Compiling svgtypes v0.15.3
+   Compiling rustls-native-certs v0.8.4
+   Compiling hayro v0.7.1 (https://github.com/storytold/craft-libs?rev=fe6b443acf3eccaf514064812e6e6bf24257652a#fe6b443a)
+   Compiling parley v0.11.1
+   Compiling photocraft-compose v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/compose)
+   Compiling accesskit_winit v0.34.1
+   Compiling photocraft-algo v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/algo)
+   Compiling smithay-clipboard v0.7.3
+   Compiling arboard v3.7.0
+   Compiling craft-psd v0.1.0 (https://github.com/storytold/craft-libs?rev=eafb50aff3c6b1acc14dff53060157877e3e4fce#eafb50af)
+   Compiling tempfile v3.27.0
+   Compiling craft-plist v0.1.0 (https://github.com/storytold/craft-libs?rev=e2e3b4213afb2b5e7651bc1b1a1cf72a8bb6313d#e2e3b421)
+   Compiling type-map v0.5.1
+   Compiling serde_spanned v1.1.1
+   Compiling is-docker v0.2.0
+   Compiling pollster v1.0.1
+   Compiling toml_writer v1.1.2+spec-1.1.0
+   Compiling imagesize v0.13.0
+   Compiling icu_casemap_data v2.3.0
+   Compiling lazy_static v1.5.0
+   Compiling colored v2.2.0
+   Compiling usvg v0.45.1
+   Compiling toml v1.1.6+spec-1.1.0
+   Compiling is-wsl v0.4.0
+   Compiling egui-wgpu v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+   Compiling photocraft-text v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/text)
+   Compiling egui-winit v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+   Compiling ureq-proto v0.6.5
+   Compiling rustls-platform-verifier v0.7.1
+   Compiling craft-pdf v0.1.0 (https://github.com/storytold/craft-libs?rev=fe6b443acf3eccaf514064812e6e6bf24257652a#fe6b443a)
+   Compiling tiny-skia v0.11.4
+   Compiling photocraft-format v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/format)
+   Compiling icu_decimal v2.3.0
+   Compiling icu_plurals v2.3.0
+   Compiling photocraft-raw v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/raw)
+   Compiling craft-affinity v0.1.0 (https://github.com/storytold/craft-libs?rev=fe6b443acf3eccaf514064812e6e6bf24257652a#fe6b443a)
+   Compiling icu_provider_adapters v2.3.0
+   Compiling craft-crs v0.1.0 (https://github.com/storytold/craft-libs?rev=fe6b443acf3eccaf514064812e6e6bf24257652a#fe6b443a)
+   Compiling craft-psd v0.1.0 (https://github.com/storytold/craft-libs?rev=589842f0da5c5a11e71f39b70092dcb918b92f39#589842f0)
+   Compiling craft-psd v0.1.0 (https://github.com/storytold/craft-libs?rev=b9c22554ce0fd2caccdb53b417082a2ff2ef178f#b9c22554)
+   Compiling craft-psd v0.1.0 (https://github.com/storytold/craft-libs?rev=040b5202f9ca2ecaedcaea9351fc095c0d3dc5e8#040b5202)
+   Compiling craft-psd v0.1.0 (https://github.com/storytold/craft-libs?rev=5e2bc54a48c9f03e7ce4eca42775ce5cc051f5d6#5e2bc54a)
+   Compiling craft-psd v0.1.0 (https://github.com/storytold/craft-libs?rev=2823525586851bf81ccfe9daf838c7a4cafb8ab9#28235255)
+   Compiling photocraft-paint v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/paint)
+   Compiling getopts v0.2.24
+   Compiling icu_provider_blob v2.3.0
+   Compiling craft-xcf v0.1.0 (https://github.com/storytold/craft-libs?rev=fe6b443acf3eccaf514064812e6e6bf24257652a#fe6b443a)
+   Compiling craft-pdn v0.1.0 (https://github.com/storytold/craft-libs?rev=fe6b443acf3eccaf514064812e6e6bf24257652a#fe6b443a)
+   Compiling enum-map-derive v1.0.1
+   Compiling filetime v0.2.29
+   Compiling semver v1.0.28
+   Compiling cpufeatures v0.2.17
+   Compiling utf8-zero v0.8.1
+   Compiling sys-locale v0.3.2
+   Compiling photocraft-io v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/io)
+   Compiling craft-i18n v0.1.0 (https://github.com/storytold/craft-libs?rev=fe6b443acf3eccaf514064812e6e6bf24257652a#fe6b443a)
+   Compiling enum-map v3.1.0
+   Compiling ureq v3.5.0
+   Compiling sha2 v0.10.9
+   Compiling tar v0.4.46
+   Compiling dify v0.8.0
+   Compiling photocraft-ui-egui v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/ui-egui)
+   Compiling resvg v0.45.1
+   Compiling eframe v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+   Compiling open v5.4.5
+   Compiling photocraft-plugins v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/plugins)
+   Compiling kittest v0.5.0
+   Compiling photocraft-ops v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/ops)
+   Compiling craft-pcraft-format v0.1.0 (https://github.com/storytold/craft-libs?rev=3e970577b9bb446967c2003ec8ecaf4f28b0768c#3e970577)
+   Compiling craft-fonts-build v0.1.0 (https://github.com/storytold/craft-libs?rev=fe6b443acf3eccaf514064812e6e6bf24257652a#fe6b443a)
+   Compiling photocraft-engine v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/engine)
+   Compiling craft-ui v0.1.0 (https://github.com/storytold/craft-libs?rev=fe6b443acf3eccaf514064812e6e6bf24257652a#fe6b443a)
+   Compiling photocraft-testkit v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/testkit)
+   Compiling egui_kittest v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+   Compiling icu_casemap v2.3.0
+   Compiling egui_extras v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)
+   Compiling craft-update v0.1.0 (https://github.com/storytold/craft-libs?rev=fe6b443acf3eccaf514064812e6e6bf24257652a#fe6b443a)
+   Compiling photocraft-gpu v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/gpu)
+error[E0063]: missing fields `sources` and `tool_colors` in initializer of `filter_dialog::FilterPreviewKey`
+   --> crates/ui-egui/src/canvas/tests.rs:407:15
+    |
+407 |     let key = crate::filter_dialog::FilterPreviewKey {
+    |               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ missing `sources` and `tool_colors`
+
+error[E0061]: this function takes 10 arguments but 9 arguments were supplied
+    --> crates/ui-egui/src/canvas/tests.rs:429:26
+     |
+ 429 |               let result = crate::filter_dialog::preview_document_for_target(
+     |  __________________________^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-
+ 430 | |                 &doc,
+ 431 | |                 task.active,
+ 432 | |                 &task.command,
+...    |
+ 438 | |                 &Default::default(),
+ 439 | |             )
+     | |_____________- argument #10 of type `std::option::Option<([f32; 4], [f32; 4])>` is missing
+     |
+note: function defined here
+    --> crates/ui-egui/src/dialogs/filter_dialog.rs:1678:15
+     |
+1678 | pub(crate) fn preview_document_for_target(
+     |               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+1688 |     tool_colors: Option<([f32; 4], [f32; 4])>,
+     |     -----------------------------------------
+help: provide the argument
+     |
+ 429 |             let result = crate::filter_dialog::preview_document_for_target(
+ ...
+ 438 |                 &Default::default(),
+ 439 ~                 /* std::option::Option<([f32; 4], [f32; 4])> */,
+ 440 ~             )
+     |
+
+error[E0509]: cannot move out of type `photocraft_compose::Buffer`, which implements the `Drop` trait
+   --> crates/ui-egui/src/dialogs/tests.rs:131:18
+    |
+131 |     for pixel in pixels.px {
+    |                  ^^^^^^^^^
+    |                  |
+    |                  cannot move out of here
+    |                  move occurs because `pixels.px` has type `std::vec::Vec<[f32; 4]>`, which does not implement the `Copy` trait
+    |
+help: consider cloning the value if the performance cost is acceptable
+    |
+131 |     for pixel in pixels.px.clone() {
+    |                           ++++++++
+
+error[E0509]: cannot move out of type `photocraft_compose::Buffer`, which implements the `Drop` trait
+   --> crates/ui-egui/src/dialogs/tests.rs:164:18
+    |
+164 |     for pixel in after.px {
+    |                  ^^^^^^^^
+    |                  |
+    |                  cannot move out of here
+    |                  move occurs because `after.px` has type `std::vec::Vec<[f32; 4]>`, which does not implement the `Copy` trait
+    |
+help: consider cloning the value if the performance cost is acceptable
+    |
+164 |     for pixel in after.px.clone() {
+    |                          ++++++++
+
+Some errors have detailed explanations: E0061, E0063, E0509.
+For more information about an error, try `rustc --explain E0061`.
+error: could not compile `photocraft-ui-egui` (lib test) due to 4 previous errors

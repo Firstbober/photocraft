@@ -1,0 +1,28 @@
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+    Finished `test` profile [optimized + debuginfo] target(s) in 0.39s
+     Running tests/indexed_painting.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-indexed-paint-current/debug/deps/indexed_painting-43c3a41165d19ec2)
+
+running 1 test
+test unchanged_foreign_storage_layers_do_not_veto_non_pixel_edits ... FAILED
+
+failures:
+
+---- unchanged_foreign_storage_layers_do_not_veto_non_pixel_edits stdout ----
+
+thread 'unchanged_foreign_storage_layers_do_not_veto_non_pixel_edits' (1951195) panicked at crates/engine/tests/indexed_painting.rs:339:83:
+called `Result::unwrap()` on an `Err` value: Other("indexed color constraint: indexed raster surfaces must use RGB or RGBA storage")
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    unchanged_foreign_storage_layers_do_not_veto_non_pixel_edits
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 9 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `-p photocraft-engine --test indexed_painting`

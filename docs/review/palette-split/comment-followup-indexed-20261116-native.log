@@ -1,0 +1,630 @@
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling photocraft-engine v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/indexed-paint-current/crates/engine)
+    Finished `test` profile [optimized] target(s) in 1.30s
+     Running tests/indexed_painting.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-indexed-paint-current/debug/deps/indexed_painting-65451bb10f1b1b3d)
+
+running 10 tests
+test unchanged_foreign_storage_layers_do_not_veto_non_pixel_edits ... ok
+test transparent_entry_is_excluded_from_opaque_matching_and_erase_is_binary ... ok
+test rgb_mode_paint_remains_rgb_and_does_not_create_a_color_table ... ok
+test masks_alpha_channels_and_quick_mask_keep_grayscale_coverage_outside_the_image_palette ... ok
+test transparency_locked_background_erasure_stays_opaque_and_uses_the_existing_table ... ok
+test indexed_undo_and_redo_restore_pixels_and_the_fixed_palette ... ok
+test indexed_new_layer_keeps_sparse_transparency_and_snaps_its_paint ... ok
+test indexed_bucket_edits_are_constrained_by_the_same_transaction_policy ... ok
+test indexed_brush_and_pencil_snap_unavailable_red_to_black_without_growing_the_table ... ok
+test indexed_opacity_soft_edges_and_feathered_selection_quantize_after_blending ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests/indexed_tool_matrix.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-indexed-paint-current/debug/deps/indexed_tool_matrix-c4dcc6b65b3023b8)
+
+running 12 tests
+test image_rotation_arbitrary_bilinear_stays_in_the_original_table_and_changes_geometry ... ok
+test edit_paste_stays_in_the_original_table_and_adds_a_layer ... ok
+test paint_gradient_stays_in_the_original_table ... ok
+test paint_burn_refuses_indexed_without_editing ... ok
+test paint_dodge_refuses_indexed_without_editing ... ok
+test paint_color_replacement_refuses_indexed_without_editing ... ok
+test paint_bucket_stays_in_the_original_table ... ok
+test paint_blur_refuses_indexed_without_editing ... ok
+test paint_sponge_refuses_indexed_without_editing ... ok
+test paint_sharpen_refuses_indexed_without_editing ... ok
+test paint_smudge_refuses_indexed_without_editing ... ok
+test paint_mixer_brush_refuses_indexed_without_editing ... ok
+
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.10s
+
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling photocraft-engine v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/indexed-paint-current/crates/engine)
+    Finished `test` profile [optimized] target(s) in 1m 49s
+     Running unittests src/lib.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-indexed-paint-current/debug/deps/photocraft_engine-d2d9912df2466783)
+
+running 56 tests
+test cmd::mode_cmds::tests::indexed_matte_without_transparency_fills_clear_pixels_and_rejects_bad_input_atomically ... ok
+test cmd::retouch_cmds::dab::sharpen_refuses_indexed_tests::dodge_keeps_its_refusal_and_blur_never_gets_the_sharpen_text ... FAILED
+test cmd::retouch_cmds::dab::blur_refuses_indexed_tests::indexed_and_bitmap_documents_refuse_with_the_reference_words ... FAILED
+test cmd::color_cmds::assign_profile_enabled_modes_tests::indexed_stays_enabled ... ok
+test cmd::mode_cmds::tests::indexed_brush_stroke_leaves_pixels_it_did_not_paint ... ok
+test cmd::image_cmds::tests::crop_target_resamples_indexed_color_with_nearest_neighbor ... ok
+test cmd::image_cmds::tests::image_size_resamples_indexed_color_with_nearest_neighbor ... ok
+test cmd::mode_cmds::tests::brush_stroke_keeps_indexed_transparency_binary ... ok
+test cmd::mode_cmds::tests::live_brush_preview_matches_indexed_commit ... ok
+test cmd::redeye_cmds::redeye_color_mode_tests::indexed_color_documents_are_refused ... ok
+test cmd::mode_cmds::tests::indexed_color_rejects_invalid_counts_without_editing_the_document ... ok
+test cmd::mode_cmds::tests::brush_stroke_stays_in_indexed_color_table ... ok
+test cmd::mode_cmds::tests::pencil_auto_erase_knows_the_indexed_foreground ... ok
+test cmd::retouch_cmds::dab::dodge_refuses_indexed_tests::indexed_and_bitmap_documents_refuse_with_the_reference_words ... ok
+test cmd::color_cmds::convert_profile_same_tests::an_indexed_document_with_the_same_profile_converts_as_before ... ok
+test cmd::retouch_cmds::dab::sharpen_refuses_indexed_tests::indexed_and_bitmap_documents_refuse_with_the_reference_words ... FAILED
+test cmd::retouch_cmds::dab::smudge_refuses_indexed_tests::indexed_and_bitmap_documents_refuse_with_the_reference_words ... FAILED
+test cmd::retouch_cmds::dab::burn_refuses_indexed_tests::indexed_and_bitmap_documents_refuse_with_the_reference_words ... ok
+test cmd::mode_cmds::tests::indexed_matte_named_gray_choices_use_their_document_samples ... ok
+test cmd::retouch_cmds::heal::heal_indexed_tests::an_indexed_document_refuses_with_the_reference_words ... FAILED
+test cmd::brush_cmds::tests::indexed_live_mask_stays_grayscale_instead_of_palette_snapping ... ok
+test cmd::mode_cmds::tests::indexed_matte_hex_stays_in_document_rgb_coordinates ... ok
+test cmd::brush_cmds::tests::indexed_live_symmetric_early_return_matches_cold_and_offered_commits ... ok
+test cmd::retouch_cmds::dab::sponge_refuses_indexed_tests::indexed_and_bitmap_documents_refuse_with_the_reference_words ... ok
+test cmd::photo_cmds::tests::crop_and_straighten_disabled_for_indexed ... ok
+test cmd::retouch_cmds::pattern_stamp::pattern_stamp_indexed_tests::an_rgb_pattern_is_refused_in_an_indexed_document_with_the_reference_words ... ok
+test cmd::mode_cmds::tests::clearing_color_table_transparency_restores_indexed_pixels ... ok
+test cmd::type_indexed_mode_tests::only_the_measured_horizontal_point_text_converts_in_these_modes ... ok
+test cmd::retouch_cmds::heal::heal_indexed_tests::unmeasured_modes_never_get_the_indexed_refusal ... ok
+test mixer_indexed_bitmap_tests::indexed_color_documents_are_refused_with_the_alert ... ok
+test mixer_indexed_bitmap_tests::bitmap_documents_are_refused_with_the_alert ... ok
+test cmd::smartselect_cmds::object_mode_refusal_tests::indexed_and_bitmap_documents_refuse_with_the_reference_words ... ok
+test cmd::brush_cmds::tests::indexed_live_brush_and_pencil_match_cold_offered_and_partitioned_commits ... ok
+test cmd::mode_cmds::tests::indexed_exact_transparency_and_sources ... ok
+test cmd::retouch_cmds::pattern_stamp::pattern_stamp_indexed_tests::grayscale_cmyk_lab_and_indexed_patterns_are_refused_in_an_indexed_document_too ... ok
+test cmd::retouch_cmds::pattern_stamp::pattern_stamp_indexed_tests::other_documents_keep_painting_with_the_rgb_pattern ... ok
+test cmd::retouch_cmds::tests::indexed_live_retouch_clone_matches_cold_and_wrapped_palette ... ok
+test cmd::mode_cmds::tests::indexed_matte_converts_working_rgb_to_document_profile_at_every_depth ... ok
+test cmd::mode_cmds::tests::indexed_matte_blends_edges_without_replacing_clear_pixels ... ok
+test cmd::retouch_cmds::heal::heal_indexed_tests::other_modes_keep_healing_at_every_depth ... ok
+test cmd::mode_cmds::tests::indexed_exact_preserves_profile_and_samples_through_default_rgb ... ok
+test cmd::retouch_cmds::dab::dodge_refuses_indexed_tests::other_modes_keep_dodging_at_every_depth ... ok
+test cmd::retouch_cmds::dab::sponge_refuses_indexed_tests::other_modes_keep_working_at_every_depth ... ok
+test cmd::retouch_cmds::dab::smudge_refuses_indexed_tests::other_modes_keep_working_at_every_depth ... ok
+test mixer_indexed_bitmap_tests::rgb_cmyk_lab_and_grayscale_documents_still_paint ... ok
+test cmd::eraser_cmds::magic_eraser_mode_refusal_tests::magic_eraser_refuses_indexed_and_bitmap_with_the_reference_alerts ... ok
+test cmd::retouch_cmds::dab::burn_refuses_indexed_tests::other_modes_keep_working_at_every_depth ... ok
+test cmd::retouch_cmds::dab::sharpen_refuses_indexed_tests::other_modes_keep_sharpening_at_every_depth ... ok
+test cmd::retouch_cmds::dab::blur_refuses_indexed_tests::other_modes_keep_working_at_every_depth ... ok
+test cmd::mode_cmds::tests::indexed_color_palettes_and_dithers ... ok
+test cmd::type_indexed_mode_tests::the_type_layer_command_keeps_making_the_tools_working_layer_in_these_modes ... ok
+test cmd::type_indexed_mode_tests::an_uncoalesced_edit_between_typing_and_the_commit_splits_the_states ... ok
+test cmd::type_indexed_mode_tests::a_refused_conversion_leaves_the_typed_text_and_the_document_alone ... ok
+test cmd::type_indexed_mode_tests::the_selection_is_the_glyph_shape_the_type_mask_of_the_same_text_makes ... ok
+test cmd::type_indexed_mode_tests::committing_in_indexed_color_or_bitmap_leaves_the_glyphs_selected_and_no_layer ... ok
+test cmd::type_indexed_mode_tests::rgb_grayscale_cmyk_and_lab_keep_making_type_layers_at_every_depth ... ok
+
+failures:
+
+---- cmd::retouch_cmds::dab::sharpen_refuses_indexed_tests::dodge_keeps_its_refusal_and_blur_never_gets_the_sharpen_text stdout ----
+
+thread 'cmd::retouch_cmds::dab::sharpen_refuses_indexed_tests::dodge_keeps_its_refusal_and_blur_never_gets_the_sharpen_text' (1970781) panicked at crates/engine/src/cmd/retouch_cmds/sharpen_refuses_indexed_tests.rs:18:78:
+called `Result::unwrap()` on an `Err` value: Other("indexed color constraint: indexed document has no color table")
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+---- cmd::retouch_cmds::dab::blur_refuses_indexed_tests::indexed_and_bitmap_documents_refuse_with_the_reference_words stdout ----
+
+thread 'cmd::retouch_cmds::dab::blur_refuses_indexed_tests::indexed_and_bitmap_documents_refuse_with_the_reference_words' (1970775) panicked at crates/engine/src/cmd/retouch_cmds/blur_refuses_indexed_tests.rs:18:78:
+called `Result::unwrap()` on an `Err` value: Other("indexed color constraint: indexed document has no color table")
+
+---- cmd::retouch_cmds::dab::sharpen_refuses_indexed_tests::indexed_and_bitmap_documents_refuse_with_the_reference_words stdout ----
+
+thread 'cmd::retouch_cmds::dab::sharpen_refuses_indexed_tests::indexed_and_bitmap_documents_refuse_with_the_reference_words' (1970815) panicked at crates/engine/src/cmd/retouch_cmds/sharpen_refuses_indexed_tests.rs:18:78:
+called `Result::unwrap()` on an `Err` value: Other("indexed color constraint: indexed document has no color table")
+
+---- cmd::retouch_cmds::dab::smudge_refuses_indexed_tests::indexed_and_bitmap_documents_refuse_with_the_reference_words stdout ----
+
+thread 'cmd::retouch_cmds::dab::smudge_refuses_indexed_tests::indexed_and_bitmap_documents_refuse_with_the_reference_words' (1970818) panicked at crates/engine/src/cmd/retouch_cmds/smudge_refuses_indexed_tests.rs:18:78:
+called `Result::unwrap()` on an `Err` value: Other("indexed color constraint: indexed document has no color table")
+
+---- cmd::retouch_cmds::heal::heal_indexed_tests::an_indexed_document_refuses_with_the_reference_words stdout ----
+
+thread 'cmd::retouch_cmds::heal::heal_indexed_tests::an_indexed_document_refuses_with_the_reference_words' (1970822) panicked at crates/engine/src/cmd/retouch_cmds/heal_indexed_tests.rs:18:78:
+called `Result::unwrap()` on an `Err` value: Other("indexed color constraint: indexed document has no color table")
+
+
+failures:
+    cmd::retouch_cmds::dab::blur_refuses_indexed_tests::indexed_and_bitmap_documents_refuse_with_the_reference_words
+    cmd::retouch_cmds::dab::sharpen_refuses_indexed_tests::dodge_keeps_its_refusal_and_blur_never_gets_the_sharpen_text
+    cmd::retouch_cmds::dab::sharpen_refuses_indexed_tests::indexed_and_bitmap_documents_refuse_with_the_reference_words
+    cmd::retouch_cmds::dab::smudge_refuses_indexed_tests::indexed_and_bitmap_documents_refuse_with_the_reference_words
+    cmd::retouch_cmds::heal::heal_indexed_tests::an_indexed_document_refuses_with_the_reference_words
+
+test result: FAILED. 51 passed; 5 failed; 0 ignored; 0 measured; 4020 filtered out; finished in 0.19s
+
+error: test failed, to rerun pass `-p photocraft-engine --lib`
+
+## Corrected fixture final gate
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling photocraft-engine v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/indexed-paint-current/crates/engine)
+    Finished `test` profile [optimized] target(s) in 1m 50s
+     Running unittests src/lib.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-indexed-paint-current/debug/deps/photocraft_engine-d2d9912df2466783)
+
+running 56 tests
+test cmd::mode_cmds::tests::indexed_matte_without_transparency_fills_clear_pixels_and_rejects_bad_input_atomically ... ok
+test cmd::retouch_cmds::dab::sharpen_refuses_indexed_tests::dodge_keeps_its_refusal_and_blur_never_gets_the_sharpen_text ... ok
+test cmd::mode_cmds::tests::live_brush_preview_matches_indexed_commit ... ok
+test cmd::color_cmds::assign_profile_enabled_modes_tests::indexed_stays_enabled ... ok
+test cmd::image_cmds::tests::image_size_resamples_indexed_color_with_nearest_neighbor ... ok
+test cmd::redeye_cmds::redeye_color_mode_tests::indexed_color_documents_are_refused ... ok
+test cmd::image_cmds::tests::crop_target_resamples_indexed_color_with_nearest_neighbor ... ok
+test cmd::color_cmds::convert_profile_same_tests::an_indexed_document_with_the_same_profile_converts_as_before ... ok
+test cmd::mode_cmds::tests::pencil_auto_erase_knows_the_indexed_foreground ... ok
+test cmd::retouch_cmds::dab::burn_refuses_indexed_tests::indexed_and_bitmap_documents_refuse_with_the_reference_words ... ok
+test cmd::mode_cmds::tests::indexed_matte_named_gray_choices_use_their_document_samples ... ok
+test cmd::mode_cmds::tests::indexed_color_rejects_invalid_counts_without_editing_the_document ... ok
+test cmd::retouch_cmds::dab::dodge_refuses_indexed_tests::indexed_and_bitmap_documents_refuse_with_the_reference_words ... ok
+test cmd::retouch_cmds::dab::blur_refuses_indexed_tests::indexed_and_bitmap_documents_refuse_with_the_reference_words ... ok
+test cmd::mode_cmds::tests::indexed_matte_hex_stays_in_document_rgb_coordinates ... ok
+test cmd::mode_cmds::tests::clearing_color_table_transparency_restores_indexed_pixels ... ok
+test cmd::mode_cmds::tests::brush_stroke_keeps_indexed_transparency_binary ... ok
+test cmd::brush_cmds::tests::indexed_live_mask_stays_grayscale_instead_of_palette_snapping ... ok
+test cmd::retouch_cmds::dab::sponge_refuses_indexed_tests::indexed_and_bitmap_documents_refuse_with_the_reference_words ... ok
+test cmd::retouch_cmds::dab::smudge_refuses_indexed_tests::indexed_and_bitmap_documents_refuse_with_the_reference_words ... ok
+test cmd::mode_cmds::tests::indexed_brush_stroke_leaves_pixels_it_did_not_paint ... ok
+test cmd::mode_cmds::tests::brush_stroke_stays_in_indexed_color_table ... ok
+test cmd::retouch_cmds::dab::sharpen_refuses_indexed_tests::indexed_and_bitmap_documents_refuse_with_the_reference_words ... ok
+test cmd::photo_cmds::tests::crop_and_straighten_disabled_for_indexed ... ok
+test cmd::type_indexed_mode_tests::only_the_measured_horizontal_point_text_converts_in_these_modes ... ok
+test cmd::retouch_cmds::pattern_stamp::pattern_stamp_indexed_tests::an_rgb_pattern_is_refused_in_an_indexed_document_with_the_reference_words ... ok
+test cmd::retouch_cmds::heal::heal_indexed_tests::an_indexed_document_refuses_with_the_reference_words ... ok
+test cmd::brush_cmds::tests::indexed_live_symmetric_early_return_matches_cold_and_offered_commits ... ok
+test mixer_indexed_bitmap_tests::bitmap_documents_are_refused_with_the_alert ... ok
+test mixer_indexed_bitmap_tests::indexed_color_documents_are_refused_with_the_alert ... ok
+test cmd::retouch_cmds::heal::heal_indexed_tests::unmeasured_modes_never_get_the_indexed_refusal ... ok
+test cmd::smartselect_cmds::object_mode_refusal_tests::indexed_and_bitmap_documents_refuse_with_the_reference_words ... ok
+test cmd::brush_cmds::tests::indexed_live_brush_and_pencil_match_cold_offered_and_partitioned_commits ... ok
+test cmd::mode_cmds::tests::indexed_exact_transparency_and_sources ... ok
+test cmd::retouch_cmds::pattern_stamp::pattern_stamp_indexed_tests::other_documents_keep_painting_with_the_rgb_pattern ... ok
+test cmd::retouch_cmds::pattern_stamp::pattern_stamp_indexed_tests::grayscale_cmyk_lab_and_indexed_patterns_are_refused_in_an_indexed_document_too ... ok
+test cmd::retouch_cmds::tests::indexed_live_retouch_clone_matches_cold_and_wrapped_palette ... ok
+test cmd::mode_cmds::tests::indexed_matte_blends_edges_without_replacing_clear_pixels ... ok
+test cmd::mode_cmds::tests::indexed_matte_converts_working_rgb_to_document_profile_at_every_depth ... ok
+test cmd::mode_cmds::tests::indexed_exact_preserves_profile_and_samples_through_default_rgb ... ok
+test cmd::retouch_cmds::dab::burn_refuses_indexed_tests::other_modes_keep_working_at_every_depth ... ok
+test cmd::retouch_cmds::heal::heal_indexed_tests::other_modes_keep_healing_at_every_depth ... ok
+test cmd::retouch_cmds::dab::dodge_refuses_indexed_tests::other_modes_keep_dodging_at_every_depth ... ok
+test cmd::retouch_cmds::dab::sponge_refuses_indexed_tests::other_modes_keep_working_at_every_depth ... ok
+test cmd::retouch_cmds::dab::smudge_refuses_indexed_tests::other_modes_keep_working_at_every_depth ... ok
+test cmd::eraser_cmds::magic_eraser_mode_refusal_tests::magic_eraser_refuses_indexed_and_bitmap_with_the_reference_alerts ... ok
+test mixer_indexed_bitmap_tests::rgb_cmyk_lab_and_grayscale_documents_still_paint ... ok
+test cmd::retouch_cmds::dab::sharpen_refuses_indexed_tests::other_modes_keep_sharpening_at_every_depth ... ok
+test cmd::retouch_cmds::dab::blur_refuses_indexed_tests::other_modes_keep_working_at_every_depth ... ok
+test cmd::mode_cmds::tests::indexed_color_palettes_and_dithers ... ok
+test cmd::type_indexed_mode_tests::the_type_layer_command_keeps_making_the_tools_working_layer_in_these_modes ... ok
+test cmd::type_indexed_mode_tests::an_uncoalesced_edit_between_typing_and_the_commit_splits_the_states ... ok
+test cmd::type_indexed_mode_tests::a_refused_conversion_leaves_the_typed_text_and_the_document_alone ... ok
+test cmd::type_indexed_mode_tests::committing_in_indexed_color_or_bitmap_leaves_the_glyphs_selected_and_no_layer ... ok
+test cmd::type_indexed_mode_tests::the_selection_is_the_glyph_shape_the_type_mask_of_the_same_text_makes ... ok
+test cmd::type_indexed_mode_tests::rgb_grayscale_cmyk_and_lab_keep_making_type_layers_at_every_depth ... ok
+
+test result: ok. 56 passed; 0 failed; 0 ignored; 0 measured; 4020 filtered out; finished in 0.24s
+
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+    Finished `test` profile [optimized] target(s) in 0.36s
+     Running unittests src/lib.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-indexed-paint-current/debug/deps/photocraft_engine-d2d9912df2466783)
+
+running 93 tests
+test cmd::brush_cmds::color_replacement_history_name_tests::recorded_steps_use_the_same_name ... ok
+test cmd::brush_cmds::mixer_live_tests::mixer_default_does_not_sample_other_layers ... ok
+test cmd::brush_cmds::tests::an_uncaptured_preset_size_keeps_dual_brush_proportions ... ok
+test cmd::brush_cmds::mixer_live_tests::mixer_load_commands_preserve_floating_selection_and_history ... ok
+test cmd::brush_cmds::tests::a_captured_preset_size_is_not_scaled_twice ... ok
+test cmd::brush_cmds::tests::a_failed_set_brush_leaves_no_current_preset_behind ... ok
+test cmd::brush_cmds::tests::bad_sizes_fail_and_leave_the_dual_tip_alone ... ok
+test cmd::brush_cmds::mixer_live_tests::mixer_empty_samples_preserve_the_previous_load_and_document ... ok
+test cmd::brush_cmds::mixer_live_tests::mixer_overlapping_dabs_resample_the_evolving_composite ... ok
+test cmd::brush_cmds::mixer_live_tests::mixer_sample_is_spatial_and_never_edits_document ... ok
+test cmd::brush_cmds::tests::behind_brush_and_pencil_preserve_foreground_and_round_trip_history ... ok
+test cmd::brush_cmds::tests::define_brush_from_selection ... ok
+test cmd::brush_cmds::tests::color_replacement_refuses_non_pixel_targets ... ok
+test cmd::brush_cmds::mixer_live_tests::mixer_sampling_obeys_masks_opacity_blend_and_current_layer_switch ... ok
+test cmd::brush_cmds::mixer_live_tests::mixer_rejects_malformed_load_and_retains_or_reloads_paint ... ok
+test cmd::brush_cmds::mixer_live_tests::mixer_live_current_layer_matches_reference_and_cancels ... ok
+test cmd::brush_cmds::tests::define_brush_from_selection_survives_allocation_failure ... ok
+test cmd::brush_cmds::tests::color_replacement_modes ... ok
+test cmd::brush_cmds::tests::define_brush_from_selection_survives_failure_of_the_second_allocation ... ok
+test cmd::brush_cmds::mixer_live_tests::mixer_prepared_commit_uses_displayed_pixels_and_rejects_stale_documents ... ok
+test cmd::brush_cmds::tests::clean_brush_keeps_the_foreground_out_of_the_next_stroke ... ok
+test cmd::brush_cmds::tests::brush_blend_mode_multiply ... ok
+test cmd::brush_cmds::mixer_live_tests::mixer_shared_live_commit_keeps_the_journal_compact ... ok
+test cmd::brush_cmds::tests::eraser_on_background_layer_paints_the_background_colour ... ok
+test cmd::brush_cmds::tests::clear_mode_erases_with_the_brush_or_pencil ... ok
+test cmd::brush_cmds::color_replacement_history_name_tests::every_click_stroke_and_segment_is_one_color_replacement_tool_state ... ok
+test cmd::brush_cmds::mixer_live_tests::mixer_rotated_hard_tip_samples_safely_and_preserves_the_document ... ok
+test cmd::brush_cmds::tests::fill_survives_allocation_failure ... ok
+test cmd::brush_cmds::tests::fill_is_rejected_with_clear_mode ... ok
+test cmd::brush_cmds::tests::fill_soft_edge_has_no_step ... ok
+test cmd::brush_cmds::tests::a_stroke_from_far_off_the_canvas_paints_only_what_reaches_it ... ok
+test cmd::brush_cmds::mixer_live_tests::mixer_live_smoothing_tail_and_invalid_input ... ok
+test cmd::brush_cmds::tests::last_brush_is_remembered_when_the_revision_moves_only ... ok
+test cmd::brush_cmds::tests::every_size_change_scales_the_dual_tip_and_keeps_its_proportion ... ok
+test cmd::brush_cmds::tests::coalesced_set_brush_calls_journal_once_per_gesture ... ok
+test cmd::brush_cmds::tests::fill_paints_a_cmyk_pick_with_the_picked_inks ... ok
+test cmd::brush_cmds::mixer_live_tests::mixer_prepared_offer_is_dropped_on_every_early_dispatch_failure ... ok
+test cmd::brush_cmds::tests::an_offer_that_does_not_match_the_commit_is_ignored ... ok
+test cmd::brush_cmds::tests::pencil_latency_24mp ... ignored
+test cmd::brush_cmds::tests::live_pencil_matches_the_committed_pencil_and_auto_erases ... ok
+test cmd::brush_cmds::tests::paint_commands_bound_hostile_time_and_reject_oversized_brushes ... ok
+test cmd::brush_cmds::color_replacement_modes_tests::refused_modes_say_why_and_paint_nothing ... ok
+test cmd::brush_cmds::tests::pencil_is_aliased_and_auto_erases ... ok
+test cmd::brush_cmds::tests::load_and_clean_brush_refuse_bad_params_and_keep_the_paint ... ok
+test cmd::brush_cmds::tests::indexed_live_mask_stays_grayscale_instead_of_palette_snapping ... ok
+test cmd::brush_cmds::tests::remembered_brushes_never_embed_large_bitmaps ... ok
+test cmd::brush_cmds::tests::fill_fills_the_enclosed_region_not_the_outline ... ok
+test cmd::brush_cmds::tests::fill_works_on_cmyk_and_16_and_32_bit ... ok
+test cmd::brush_cmds::tests::mixer_load_fills_the_reservoir_from_the_canvas_and_keeps_the_foreground ... ok
+test cmd::brush_cmds::color_replacement_modes_tests::full_colour_documents_still_paint ... ok
+test cmd::brush_cmds::tests::resizing_a_brush_resizes_its_enabled_secondary_tip ... ok
+test cmd::brush_cmds::tests::rejected_brush_changes_do_not_move_the_revision ... ok
+test cmd::brush_cmds::tests::new_brush_controls_round_trip_through_set_brush ... ok
+test cmd::brush_cmds::tests::presets_save_captures_size_tool_settings_and_color_as_asked ... ok
+test cmd::brush_cmds::tests::indexed_live_symmetric_early_return_matches_cold_and_offered_commits ... ok
+test cmd::brush_cmds::tests::pose_axes_invalid_flags_fail_atomically ... ok
+test cmd::brush_cmds::tests::mixer_brush_uses_the_brush_mixer_settings ... ok
+test cmd::brush_cmds::tests::live_stroke_matches_the_committed_stroke ... ok
+test cmd::brush_cmds::tests::restored_brush_settings_are_clamped_or_rejected ... ok
+test cmd::brush_cmds::tests::pencil_auto_erase_probes_a_cmyk_pick_with_the_picked_inks ... ok
+test cmd::brush_cmds::tests::stroke_coordinate_validation_keeps_the_existing_bounds ... ok
+test cmd::brush_cmds::tests::presets_save_appends_at_the_end_and_update_overwrites_in_place ... ok
+test cmd::brush_cmds::tests::pose_axes_commands_keep_minimal_patches_legacy_alias_and_preset_replay ... ok
+test cmd::brush_cmds::tests::brush_and_pencil_paint_a_cmyk_pick_with_the_picked_inks ... ok
+test cmd::brush_cmds::tests::live_brush_and_pencil_reject_invalid_batches_without_changing_the_preview ... ok
+test cmd::brush_cmds::tests::presets_save_load_delete_round_trip ... ok
+test cmd::brush_cmds::tests::set_brush_takes_a_per_dynamic_curve_and_a_patch_resets_it ... ok
+test cmd::brush_cmds::tests::set_brush_merges_fields ... ok
+test cmd::brush_cmds::tests::mixer_brush_reservoir_and_cleaning ... ok
+test cmd::brush_cmds::tests::restored_brush_opacity_floors_at_one_percent ... ok
+test cmd::brush_cmds::tests::stroke_backwards_compatible ... ok
+test cmd::brush_cmds::tests::the_revision_tracks_the_picked_preset_too ... ok
+test cmd::brush_cmds::tests::stroke_accepts_full_points_brush_and_preset ... ok
+test cmd::brush_cmds::tests::load_brush_after_a_clean_paints_the_foreground_again ... ok
+test cmd::brush_cmds::tests::works_on_cmyk_and_16_bit ... ok
+test cmd::brush_cmds::tests::the_automatic_clean_empties_the_reservoir ... ok
+test cmd::brush_cmds::tests::the_remembered_brush_restores_at_launch ... ok
+test cmd::brush_cmds::tests::indexed_live_brush_and_pencil_match_cold_offered_and_partitioned_commits ... ok
+test cmd::brush_cmds::tests::with_the_automatic_load_off_a_new_foreground_loads_at_the_next_stroke ... ok
+test cmd::brush_cmds::mixer_live_tests::mixer_live_empty_layer_exact_commit_undo_source_preservation_and_chunking ... ok
+test cmd::brush_cmds::tests::live_color_replacement_matches_the_commit ... ok
+test cmd::brush_cmds::tests::set_brush_keeps_untouched_bitmaps_and_replaces_touched_ones ... ok
+test cmd::brush_cmds::tests::replay_is_deterministic ... ok
+test cmd::brush_cmds::mixer_live_tests::dry_mixer_live_matches_commit_with_and_without_all_layer_sampling ... ok
+test cmd::brush_cmds::tests::a_commit_takes_the_live_strokes_pixels_and_they_equal_a_fresh_render ... ok
+test cmd::brush_cmds::tests::out_of_range_scatter_is_rejected_and_the_maximum_still_paints ... ok
+test cmd::brush_cmds::mixer_live_tests::mixer_large_tip_retains_off_canvas_paint_and_commits_the_live_result ... ok
+test cmd::brush_cmds::tests::strokes_convert_through_the_documents_cmyk_profile ... ok
+test cmd::brush_cmds::mixer_live_tests::mixer_long_segments_are_interpolated_and_replay_matches_live ... ok
+test cmd::brush_cmds::tests::live_stroke_equals_the_commit_at_every_zoom_with_smoothing ... ok
+test cmd::brush_cmds::mixer_live_tests::mixer_command_outgrows_the_preview_tile_budget_without_losing_the_stroke ... ok
+test cmd::brush_cmds::mixer_live_tests::mixer_large_brushes_replay_after_the_preview_budget ... ok
+test cmd::brush_cmds::mixer_live_tests::mixer_command_paints_strokes_beyond_the_preview_sample_and_dab_budgets ... ok
+
+test result: ok. 92 passed; 0 failed; 1 ignored; 0 measured; 3983 filtered out; finished in 2.22s
+
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+    Finished `test` profile [optimized] target(s) in 0.34s
+     Running unittests src/lib.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-indexed-paint-current/debug/deps/photocraft_engine-d2d9912df2466783)
+
+running 265 tests
+test cmd::retouch_cmds::art_history::art_history_noop_state_tests::a_held_back_click_across_part_of_the_selection_adds_one_unchanged_state ... ok
+test cmd::retouch_cmds::art_history::tests::paints_from_the_history_panel_source ... ok
+test cmd::retouch_cmds::art_history::tests::only_the_normal_mode_paints ... ok
+test cmd::retouch_cmds::art_history::art_history_depth_tests::a_layered_16_bit_document_is_not_directly_editable ... ok
+test cmd::retouch_cmds::art_history::tests::opacity_out_of_range_is_an_error ... ok
+test cmd::retouch_cmds::art_history::tests::stroke_under_the_tolerance_records_an_unchanged_step ... ok
+test cmd::retouch_cmds::art_history::tests::a_source_of_another_canvas_size_is_refused ... ok
+test cmd::retouch_cmds::art_history::tests::state_one_uses_that_snapshot ... ok
+test cmd::retouch_cmds::art_history::tests::default_tolerance_paints_a_moderate_history_edit ... ok
+test cmd::retouch_cmds::art_history::art_history_depth_tests::a_source_of_another_color_mode_gives_the_color_mode_text ... ok
+test cmd::retouch_cmds::art_history::tests::command_is_registered ... ok
+test cmd::retouch_cmds::clone_source_layer_tests::clone_closed_source_cannot_be_revived_by_reopening_a_saved_copy ... ok
+test cmd::retouch_cmds::clone_source_layer_tests::clone_maximum_size_stamp_keeps_straight_source_edges ... ignored, allocates full 5,000 px clone coverage and pixel buffers; run explicitly with one test thread
+test cmd::retouch_cmds::clone_source_layer_tests::clone_closed_source_document_and_stale_live_pixels_fail_gracefully ... ok
+test cmd::retouch_cmds::art_history::tests::cmyk_does_not_panic ... ok
+test cmd::retouch_cmds::clone_source_layer_tests::clone_clipped_source_preserves_existing_destination_pixels_on_the_original_layer ... ok
+test cmd::retouch_cmds::art_history::tests::a_stroke_that_writes_nothing_is_a_quiet_no_op ... ok
+test cmd::retouch_cmds::clone_source_layer_tests::clone_cross_document_mask_targets_refuse_instead_of_sampling_the_wrong_document ... ok
+test cmd::retouch_cmds::art_history::tests::bad_params_are_errors ... ok
+test cmd::retouch_cmds::art_history::art_history_noop_state_tests::strokes_that_can_write_nothing_stay_quiet ... ok
+test cmd::retouch_cmds::clone_source_layer_tests::clone_between_documents_preserves_float_hdr_and_source_alpha ... ok
+test cmd::retouch_cmds::art_history::art_history_depth_tests::a_single_layer_16_bit_document_is_refused ... ok
+test cmd::retouch_cmds::clone_source_layer_tests::clone_deleted_source_and_invalid_source_layer_fail_without_edits ... ok
+test cmd::retouch_cmds::art_history::art_history_depth_tests::a_32_bit_document_is_refused ... ok
+test cmd::retouch_cmds::art_history::art_history_depth_tests::an_8_bit_document_with_a_deeper_source_still_paints ... ok
+test cmd::retouch_cmds::clone_source_layer_tests::clone_live_commit_rejects_a_changed_source_layer_with_the_same_coordinates ... ok
+test cmd::retouch_cmds::clone_source_layer_tests::clone_offsets_accept_a_preview_reference_and_reject_invalid_points_atomically ... ok
+test cmd::retouch_cmds::clone_source_layer_tests::clone_pattern_preview_wraps_at_the_source_document_edges ... ok
+test cmd::retouch_cmds::clone_source_layer_tests::clone_offsets_keep_legacy_pairings_and_clear_readouts_when_a_source_is_repicked ... ok
+test cmd::retouch_cmds::clone_source_layer_tests::clone_cross_document_hover_rejects_targeted_masks_and_channels_like_strokes ... ok
+test cmd::retouch_cmds::art_history::tests::restores_open_state_in_8_bit_modes_and_undoes ... ok
+test cmd::retouch_cmds::art_history::art_history_depth_tests::the_history_brush_still_paints_at_every_depth ... ok
+test cmd::retouch_cmds::clone_source_layer_tests::clone_source_document_json_and_legacy_slots_are_compatible ... ok
+test cmd::retouch_cmds::art_history::art_history_depth_tests::a_depth_change_to_16_bits_after_the_source_is_not_directly_editable ... ok
+test cmd::retouch_cmds::clone_source_layer_tests::clone_offsets_do_not_record_previews_failed_strokes_or_explicit_command_sources ... ok
+test cmd::retouch_cmds::clone_source_layer_tests::clone_source_replies_keep_document_identity_when_resetting_transforms ... ok
+test cmd::retouch_cmds::clone_source_layer_tests::clone_offsets_scaled_source_reads_are_bounded_before_allocation ... ok
+test cmd::retouch_cmds::clone_source_layer_tests::clone_cross_document_mismatched_surface_models_fail_without_panicking_or_editing ... ok
+test cmd::retouch_cmds::content_aware_move::color_tests::the_core_fit_shifts_brightness_and_leaves_a_hue_alone ... ok
+test cmd::retouch_cmds::clone_source_layer_tests::clone_null_document_matches_omission_for_source_and_slot_edits ... ok
+test cmd::retouch_cmds::clone_source_layer_tests::clone_source_layer_does_not_change_composite_sampling_modes ... ok
+test cmd::retouch_cmds::clone_source_layer_tests::clone_offsets_null_optional_coordinates_keep_the_picked_source_document ... ok
+test cmd::retouch_cmds::art_history::tests::opacity_scales_the_stroke ... ok
+test cmd::retouch_cmds::clone_source_layer_tests::clone_transparent_source_and_explicit_source_layer_are_respected ... ok
+test cmd::retouch_cmds::clone_source_layer_tests::clone_offsets_report_each_unaligned_stroke_without_persisting_its_alignment ... ok
+test cmd::retouch_cmds::clone_source_layer_tests::clone_repicking_on_the_original_layer_updates_both_layers ... ok
+test cmd::retouch_cmds::clone_source_layer_tests::clone_cross_document_matching_color_modes_and_profiles_use_cms ... ok
+test cmd::retouch_cmds::art_history::art_history_mode_mismatch_tests::a_source_in_the_current_color_mode_still_paints ... ok
+test cmd::retouch_cmds::art_history::art_history_depth_tests::eight_bit_documents_paint_as_before ... ok
+test cmd::retouch_cmds::dab::dodge_refuses_indexed_tests::indexed_and_bitmap_documents_refuse_with_the_reference_words ... ok
+test cmd::retouch_cmds::dab::burn_refuses_indexed_tests::indexed_and_bitmap_documents_refuse_with_the_reference_words ... ok
+test cmd::retouch_cmds::clone_source_layer_tests::clone_offsets_follow_mode_toggles_and_manual_edits_use_the_reported_pairing ... ok
+test cmd::retouch_cmds::dab::blur_refuses_indexed_tests::indexed_and_bitmap_documents_refuse_with_the_reference_words ... ok
+test cmd::retouch_cmds::art_history::art_history_noop_state_tests::a_click_held_back_by_the_tolerance_adds_one_unchanged_state ... ok
+test cmd::retouch_cmds::art_history::art_history_noop_state_tests::refusals_under_the_tolerance_add_no_state ... ok
+test cmd::retouch_cmds::dab::sharpen_refuses_indexed_tests::dodge_keeps_its_refusal_and_blur_never_gets_the_sharpen_text ... ok
+test cmd::retouch_cmds::dab::sharpen_refuses_indexed_tests::indexed_and_bitmap_documents_refuse_with_the_reference_words ... ok
+test cmd::retouch_cmds::dab::smudge_mode_tests::the_live_stroke_previews_the_mode ... ok
+test cmd::retouch_cmds::clone_source_layer_tests::clone_and_heal_transformed_far_sources_are_finite_and_preserve_the_destination ... ok
+test cmd::retouch_cmds::dab::smudge_mode_tests::no_mode_and_normal_are_todays_smudge ... ok
+test cmd::retouch_cmds::dab::smudge_mode_tests::darken_keeps_the_minimum_and_lighten_the_maximum ... ok
+test cmd::retouch_cmds::dab::smudge_mode_tests::component_modes_match_the_reference_at_the_boundary ... ok
+test cmd::retouch_cmds::dab::sponge_refuses_indexed_tests::indexed_and_bitmap_documents_refuse_with_the_reference_words ... ok
+test cmd::retouch_cmds::dab::smudge_mode_tests::a_transparent_pixel_takes_the_smudged_colour ... ok
+test cmd::retouch_cmds::heal::heal_indexed_tests::an_indexed_document_refuses_with_the_reference_words ... ok
+test cmd::retouch_cmds::dab::smudge_refuses_indexed_tests::indexed_and_bitmap_documents_refuse_with_the_reference_words ... ok
+test cmd::retouch_cmds::art_history::tests::pixel_lock_and_type_layer_error ... ok
+test cmd::retouch_cmds::heal::heal_indexed_tests::unmeasured_modes_never_get_the_indexed_refusal ... ok
+test cmd::retouch_cmds::dab::smudge_mode_tests::black_into_white_changes_only_in_normal_darken_and_luminosity ... ok
+test cmd::retouch_cmds::dab::burn_refuses_indexed_tests::other_modes_keep_working_at_every_depth ... ok
+test cmd::retouch_cmds::patch::patch_destination_selection_tests::destination_moves_the_selection_with_the_patch_and_undo_restores_both ... ok
+test cmd::retouch_cmds::clone_source_layer_tests::clone_sources_work_between_documents_with_preview_live_commit_and_undo ... ok
+test cmd::retouch_cmds::dab::dodge_refuses_indexed_tests::other_modes_keep_dodging_at_every_depth ... ok
+test cmd::retouch_cmds::clone_source_layer_tests::clone_null_source_layer_matches_omission_for_clone_and_heal ... ok
+test cmd::retouch_cmds::patch::patch_destination_selection_tests::destination_moves_a_hard_rectangle_that_extends_past_the_canvas ... ok
+test cmd::retouch_cmds::dab::smudge_refuses_indexed_tests::other_modes_keep_working_at_every_depth ... ok
+test cmd::retouch_cmds::patch_history_names_tests::a_name_joining_its_letters_with_a_zero_width_joiner_is_kept ... ok
+test cmd::retouch_cmds::patch_history_names_tests::a_hostile_history_name_is_refused_without_a_step ... ok
+test cmd::retouch_cmds::patch::patch_destination_selection_tests::hard_rect_check_is_capped_and_scans_every_band ... ok
+test cmd::retouch_cmds::patch::patch_destination_selection_tests::destination_without_a_selection_fails_and_leaves_history_alone ... ok
+test cmd::retouch_cmds::patch_history_names_tests::spaces_and_joiners_at_the_ends_are_trimmed_and_only_what_is_left_counts ... ok
+test cmd::retouch_cmds::pattern_stamp::pattern_stamp_behind_tests::behind_follows_opacity_on_transparency ... ok
+test cmd::retouch_cmds::patch_history_names_tests::the_lasso_is_named_for_the_tool_that_drew_it ... ok
+test cmd::retouch_cmds::patch::patch_destination_selection_tests::partial_coverage_and_oversized_rectangles_are_not_constructible_apart_from_the_hole_case ... ok
+test cmd::retouch_cmds::clone_source_layer_tests::clone_no_alpha_soft_stroke_matches_reference_across_multiple_working_patches ... ok
+test cmd::retouch_cmds::pattern_stamp::pattern_stamp_behind_tests::behind_respects_the_selection ... ok
+test cmd::retouch_cmds::patch::patch_destination_selection_tests::redo_restores_the_patched_pixels_and_the_moved_selection ... ok
+test cmd::retouch_cmds::clone_source_layer_tests::clone_no_alpha_healing_sources_match_alpha_sources_in_preview_and_commit ... ok
+test cmd::retouch_cmds::patch::patch_destination_selection_tests::source_mode_keeps_the_selection ... ok
+test cmd::retouch_cmds::pattern_stamp::pattern_stamp_behind_tests::behind_goes_beneath_partly_transparent_pixels ... ok
+test cmd::retouch_cmds::heal::heal_indexed_tests::other_modes_keep_healing_at_every_depth ... ok
+test cmd::retouch_cmds::pattern_stamp::pattern_stamp_behind_tests::behind_paints_nothing_without_transparency_to_paint_into ... ok
+test cmd::retouch_cmds::pattern_stamp::pattern_stamp_origin_tests::aligned_strokes_keep_document_origin ... ok
+test cmd::retouch_cmds::clone_source_layer_tests::clone_and_heal_cross_document_mode_compatibility_matches_preview_live_and_commit ... ok
+test cmd::retouch_cmds::pattern_stamp::pattern_stamp_indexed_tests::an_rgb_pattern_is_refused_in_an_indexed_document_with_the_reference_words ... ok
+test cmd::retouch_cmds::pattern_stamp::pattern_stamp_behind_tests::the_live_behind_stroke_matches_the_commit ... ok
+test cmd::retouch_cmds::pattern_stamp::pattern_stamp_origin_tests::explicit_phase_overrides_both_alignment_modes ... ok
+test cmd::retouch_cmds::pattern_stamp::pattern_stamp_origin_tests::one_stroke_keeps_its_origin_and_new_stroke_resets_it ... ok
+test cmd::retouch_cmds::pattern_stamp::pattern_stamp_origin_tests::rectangular_pattern_uses_each_axis_size ... ok
+test cmd::retouch_cmds::pattern_stamp::pattern_stamp_indexed_tests::grayscale_cmyk_lab_and_indexed_patterns_are_refused_in_an_indexed_document_too ... ok
+test cmd::retouch_cmds::pattern_stamp::pattern_stamp_indexed_tests::other_documents_keep_painting_with_the_rgb_pattern ... ok
+test cmd::retouch_cmds::dab::smudge_mode_tests::component_modes_take_one_component_from_the_smudged_colour ... ok
+test cmd::retouch_cmds::pattern_stamp::pattern_stamp_behind_tests::other_modes_still_paint_over_the_pixels ... ok
+test cmd::retouch_cmds::dab::sponge_refuses_indexed_tests::other_modes_keep_working_at_every_depth ... ok
+test cmd::retouch_cmds::remove::remove_new_layer_name_tests::without_create_new_layer_the_fill_goes_into_the_active_layer ... ok
+test cmd::retouch_cmds::pattern_stamp::pattern_stamp_behind_tests::behind_paints_only_where_the_layer_is_transparent ... ok
+test cmd::retouch_cmds::dab::smudge_mode_tests::mode_takes_the_seven_names_and_refuses_anything_else ... ok
+test cmd::retouch_cmds::dab::smudge_mode_tests::unmeasured_colour_modes_and_depths_smudge_as_normal ... ok
+test cmd::retouch_cmds::tests::a_hugely_scaled_clone_source_is_refused_before_the_dense_read ... ok
+test cmd::retouch_cmds::patch::patch_destination_selection_tests::destination_selection_stays_when_it_is_not_a_plain_rectangle ... ok
+test cmd::retouch_cmds::tests::a_copy_opened_after_the_clone_source_document_closed_is_not_the_source ... ok
+test cmd::retouch_cmds::tests::a_live_retouch_offer_is_taken_only_by_its_own_commit ... ok
+test cmd::retouch_cmds::tests::a_live_retouch_stroke_ignores_tilt_and_times ... ok
+test cmd::retouch_cmds::remove_history_name_tests::waiting_strokes_applied_together_are_one_step_named_remove_tool ... ok
+test cmd::retouch_cmds::pattern_stamp::pattern_stamp_behind_tests::impressionist_paints_as_in_normal_when_behind_is_picked ... ok
+test cmd::retouch_cmds::tests::clone_and_heal_with_a_far_source_are_plain_errors ... ok
+test cmd::retouch_cmds::tests::a_wrapped_dab_bigger_than_the_canvas_stays_on_it ... ok
+test cmd::retouch_cmds::tests::clone_from_another_document_samples_the_layer_it_was_set_on ... ok
+test cmd::retouch_cmds::remove::remove_new_layer_name_tests::two_strokes_without_sample_all_layers_name_remove_tool_edits_then_1 ... ok
+test cmd::retouch_cmds::pattern_stamp::tests::a_diagonal_across_a_24_mp_canvas_is_not_too_large ... ok
+test cmd::retouch_cmds::remove::remove_new_layer_name_tests::undo_frees_the_name_for_the_next_stroke ... ok
+test cmd::retouch_cmds::tests::clone_preview_reads_another_document ... ok
+test cmd::retouch_cmds::remove_history_name_tests::sample_all_layers_and_create_new_layer_are_one_step_named_remove_tool ... ok
+test cmd::retouch_cmds::tests::clone_from_another_document_converts_depth_but_requires_matching_colour_modes ... ok
+test cmd::retouch_cmds::tests::clone_source_in_the_painted_document_still_samples_it ... ok
+test cmd::retouch_cmds::tests::clone_preview_matches_source_without_mutating_session ... ok
+test cmd::retouch_cmds::remove_history_name_tests::the_background_job_records_remove_tool_and_undo_redo_keep_the_name ... ok
+test cmd::retouch_cmds::tests::clone_source_document_closed_or_invalid_is_an_error ... ok
+test cmd::retouch_cmds::tests::clone_source_set_names_the_source_document ... ok
+test cmd::retouch_cmds::tests::clone_stamp_samples_pre_stroke_state_and_non_aligned_returns_source ... ok
+test cmd::retouch_cmds::tests::clone_stamp_sample_all_layers_onto_empty_layer_and_opacity ... ok
+test cmd::retouch_cmds::tests::clone_stamp_respects_selection_and_cmyk ... ok
+test cmd::retouch_cmds::tests::clone_stamp_copies_exactly_at_all_depths ... ok
+test cmd::retouch_cmds::art_history::art_history_mode_mismatch_tests::a_source_of_another_color_mode_is_refused ... ok
+test cmd::retouch_cmds::clone_source_layer_tests::clone_current_layer_keeps_the_picked_source_for_preview_live_commit_and_undo ... ok
+test cmd::retouch_cmds::tests::clone_stamp_paints_from_the_document_the_source_was_set_in ... ok
+test cmd::retouch_cmds::tests::a_wrapped_stroke_inside_the_canvas_paints_as_an_ordinary_one ... ok
+test cmd::retouch_cmds::remove::remove_new_layer_name_tests::successive_strokes_name_remove_tool_edits_then_1_then_2_each_above_the_active_layer ... ok
+test cmd::retouch_cmds::tests::dodge_does_not_compound_within_a_stroke ... ok
+test cmd::retouch_cmds::tests::erase_to_history_on_a_new_layer_without_pixels_names_the_target_not_the_document ... ok
+test cmd::retouch_cmds::tests::dodge_brightens_midtones_more_than_shadows_and_burn_darkens ... ok
+test cmd::retouch_cmds::tests::erase_to_history_paints_a_new_layer_from_a_single_layer_state_background_or_not ... ok
+test cmd::retouch_cmds::tests::erase_to_history_paints_a_new_layer_with_the_single_layers_own_pixels_not_its_opacity ... ok
+test cmd::retouch_cmds::tests::erase_to_history_paints_a_single_solid_shapes_colour_past_its_path ... ok
+test cmd::retouch_cmds::tests::erase_to_history_paints_white_past_a_shapes_path_in_every_colour_mode ... ok
+test cmd::retouch_cmds::tests::erase_to_history_paints_the_source_states_visible_image_at_every_depth ... ok
+test cmd::retouch_cmds::remove::remove_new_layer_name_tests::a_taken_name_gives_the_first_free_one ... ok
+test cmd::retouch_cmds::tests::erase_to_history_refuses_a_new_layer_from_a_state_holding_one_group_of_several_layers ... ok
+test cmd::retouch_cmds::pattern_stamp::pattern_stamp_origin_tests::measured_origins_paint_reference_pixels_independent_of_tip_size ... ok
+test cmd::retouch_cmds::tests::erase_to_history_refuses_a_new_layer_from_a_state_holding_only_a_group ... ok
+test cmd::retouch_cmds::tests::erase_to_history_refuses_a_new_layer_from_a_state_holding_two_layers ... ok
+test cmd::retouch_cmds::tests::erase_to_history_paints_white_past_the_path_of_a_single_shape_without_a_solid_fill ... ok
+test cmd::retouch_cmds::tests::healing_brush_heals_from_another_document ... ok
+test cmd::retouch_cmds::tests::history_brush_errors_when_layer_is_new ... ok
+test cmd::retouch_cmds::tests::healing_brush_takes_destination_colour_and_source_texture ... ok
+test cmd::retouch_cmds::tests::history_brush_reads_a_source_when_its_pixels_were_locked ... ok
+test cmd::retouch_cmds::tests::history_brush_refuses_a_bad_brush_param ... ok
+test cmd::retouch_cmds::clone_source_layer_tests::clone_no_alpha_sources_match_alpha_sources_with_transforms_and_composites ... ok
+test cmd::retouch_cmds::tests::history_brush_refuses_a_locked_destination_when_source_is_unlocked ... ok
+test cmd::retouch_cmds::tests::history_brush_restores_earlier_pixels ... ok
+test cmd::retouch_cmds::tests::history_brush_refuses_a_stroke_too_large_to_render ... ok
+test cmd::retouch_cmds::tests::every_wrapping_stroke_paints_the_canvas_as_on_the_canvas_tiled_three_by_three ... ok
+test cmd::retouch_cmds::clone_source_layer_tests::clone_source_edges_clip_preview_live_and_committed_stamps ... ok
+test cmd::retouch_cmds::tests::live_clone_matches_the_commit ... ok
+test cmd::retouch_cmds::tests::live_clone_rejects_a_source_document_changed_during_the_stroke ... ok
+test cmd::retouch_cmds::tests::history_brush_paints_with_its_brush_param_not_the_session_brush ... ok
+test cmd::retouch_cmds::patch_history_names_tests::applying_a_patch_is_one_step_named_patch_selection_in_every_mode ... ok
+test cmd::retouch_cmds::tests::live_clone_from_another_document_matches_the_commit ... ok
+test cmd::retouch_cmds::tests::every_retouch_stroke_refuses_a_box_it_cannot_render ... ok
+test cmd::retouch_cmds::remove_history_name_tests::one_stroke_is_one_step_named_remove_tool_in_every_mode_and_depth ... ok
+test cmd::retouch_cmds::tests::blur_reduces_local_variance_and_sharpen_increases_it ... ok
+test cmd::retouch_cmds::tests::live_dodge_matches_the_commit_across_cells ... ok
+test cmd::retouch_cmds::tests::live_pattern_stamp_paints_the_targeted_mask ... ok
+test cmd::retouch_cmds::tests::a_live_clone_or_history_stroke_commits_its_own_pixels ... ok
+test cmd::retouch_cmds::tests::indexed_live_retouch_clone_matches_cold_and_wrapped_palette ... ok
+test cmd::retouch_cmds::tests::patch_at_the_canvas_edge_stays_opaque_and_matches ... ok
+test cmd::retouch_cmds::tests::live_history_and_pattern_strokes_stop_at_the_canvas_edge ... ok
+test cmd::retouch_cmds::tests::patch_fails_gracefully ... ok
+test cmd::retouch_cmds::tests::patch_destination_repairs_the_drag_target_from_the_selection ... ok
+test cmd::retouch_cmds::tests::patch_follows_a_feathered_selection_and_a_mask_target ... ok
+test cmd::retouch_cmds::tests::pattern_stamp_aligned_keeps_document_phase_across_strokes ... ok
+test cmd::retouch_cmds::tests::patch_preview_matches_the_command_and_its_coarse_solve_is_close ... ok
+test cmd::retouch_cmds::tests::patch_source_repairs_the_selection_with_texture_from_the_drag_target ... ok
+test cmd::retouch_cmds::tests::live_retouch_rejects_invalid_batches_without_changing_the_preview ... ok
+test cmd::retouch_cmds::tests::pattern_stamp_impressionist_is_seeded_and_replayable ... ok
+test cmd::retouch_cmds::tests::pattern_stamp_integer_scale_reproduces_the_tile_in_the_dab ... ok
+test cmd::retouch_cmds::tests::live_pattern_stamp_matches_the_commit ... ok
+test cmd::retouch_cmds::tests::pattern_stamp_rejects_hostile_input ... ok
+test cmd::retouch_cmds::tests::pattern_stamp_unaligned_restarts_at_each_stroke ... ok
+test cmd::retouch_cmds::tests::pattern_stamp_tile_seam_matches_an_untilled_reference ... ok
+test cmd::retouch_cmds::tests::pattern_stamp_scaled_tiles_have_no_gaps ... ok
+test cmd::retouch_cmds::tests::pattern_stamp_paints_the_tile_at_every_depth_and_undoes ... ok
+test cmd::retouch_cmds::tests::periodic_clone_destination_wraps_edges_and_undoes_at_every_depth ... ok
+test cmd::retouch_cmds::tests::periodic_clone_large_footprint_applies_opacity_once_and_respects_destination_masks ... ok
+test cmd::retouch_cmds::tests::periodic_clone_live_offer_commits_and_undoes_the_same_pixels_as_replay ... ok
+test cmd::retouch_cmds::tests::periodic_clone_projection_is_disjoint_and_matches_pixel_modulo ... ok
+test cmd::retouch_cmds::tests::periodic_clone_selection_uses_native_cmyk_pixels_across_seam ... ok
+test cmd::retouch_cmds::tests::periodic_clone_low_flow_revisits_accumulate_across_tile_aliases ... ok
+test cmd::retouch_cmds::tests::periodic_clone_preview_interpolates_across_transformed_source_seam ... ok
+test cmd::retouch_cmds::tests::periodic_clone_source_bounds_allocations_and_accepts_far_coordinates ... ok
+test cmd::retouch_cmds::tests::protect_detail_dabs_on_one_centre_apply_at_most_one_dab_at_each_pixel ... ok
+test cmd::retouch_cmds::tests::content_aware_move_fails_gracefully ... ok
+test cmd::retouch_cmds::tests::content_aware_extend_keeps_the_original ... ok
+test cmd::retouch_cmds::tests::proximity_match_preserves_channels_and_unmasked_pixels ... ok
+test cmd::retouch_cmds::tests::proximity_match_reads_original_pixels_for_overlapping_offsets ... ok
+test cmd::retouch_cmds::tests::proximity_match_rejects_invalid_translations_without_panicking ... ok
+test cmd::retouch_cmds::tests::periodic_clone_source_repeats_both_axes_at_every_depth ... ok
+test cmd::retouch_cmds::tests::content_aware_move_preview_shows_the_result_without_touching_the_session ... ok
+test cmd::retouch_cmds::tests::protect_detail_click_on_a_step_follows_strength ... ok
+test cmd::retouch_cmds::tests::periodic_clone_live_matches_commit_through_a_corner ... ok
+test cmd::retouch_cmds::tests::remove_on_an_empty_layer_is_a_no_op_without_a_history_step ... ok
+test cmd::retouch_cmds::dab::smudge_mode_tests::blur_and_sharpen_keep_ignoring_a_mode ... ok
+test cmd::retouch_cmds::tests::remove_several_strokes_apply_as_one_job_and_one_undo_step ... ok
+test cmd::retouch_cmds::tests::protect_detail_sharpens_with_every_stamp_of_a_count_but_not_with_airbrush_repeats ... ok
+test cmd::retouch_cmds::tests::remove_thin_scratches_take_their_surroundings ... ok
+test cmd::retouch_cmds::tests::retouch_rejects_brushes_larger_than_the_raster_budget ... ok
+test cmd::retouch_cmds::tests::retouch_strokes_refuse_absurd_point_coordinates ... ok
+test cmd::retouch_cmds::tests::remove_to_a_new_layer_leaves_the_target_untouched ... ok
+test cmd::retouch_cmds::tests::remove_bad_params_are_errors ... ok
+test cmd::retouch_cmds::tests::retouch_commands_are_registered_and_need_a_pixel_layer ... ok
+test cmd::retouch_cmds::tests::patch_content_aware_copies_the_dragged_to_content_into_the_selection ... ok
+test cmd::retouch_cmds::tests::retouch_tools_paint_the_quick_mask ... ok
+test cmd::retouch_cmds::tests::periodic_clone_interior_matches_ordinary_brush_masks_and_transparency ... ok
+test cmd::retouch_cmds::art_history::tests::large_brush_click_is_not_too_large ... ok
+test cmd::retouch_cmds::tests::retouch_tools_follow_the_channels_panel_target ... ok
+test cmd::retouch_cmds::tests::sample_all_layers_smudge_drags_colour_from_below ... ok
+test cmd::retouch_cmds::tests::smudge_across_a_transparent_edge_has_no_dark_fringe ... ok
+test cmd::retouch_cmds::tests::remove_a_ring_around_an_object_removes_it_in_one_undo_step ... ok
+test cmd::retouch_cmds::tests::smudge_moves_colour_along_the_stroke ... ok
+test cmd::retouch_cmds::tests::sample_all_layers_blur_and_sharpen_work_on_an_empty_layer ... ok
+test cmd::retouch_cmds::tests::live_dab_offers_are_refused_or_dropped_when_they_dont_match ... ok
+test cmd::retouch_cmds::tests::stroke_brush_takes_the_smoothing_param ... ok
+test cmd::retouch_cmds::tests::the_budget_is_applied_to_the_rendered_extent_not_the_input_points ... ok
+test cmd::retouch_cmds::tests::smudge_uses_the_brush_settings_spacing ... ok
+test cmd::retouch_cmds::tests::sponge_reduces_and_increases_saturation ... ok
+test cmd::retouch_cmds::tests::remove_strokes_each_keep_their_own_brush ... ok
+test cmd::retouch_cmds::tests::retouch_targets_fail_gracefully ... ok
+test cmd::retouch_cmds::tests::content_aware_move_samples_all_layers_onto_an_empty_layer ... ok
+test cmd::retouch_cmds::tests::retouch_tools_paint_only_the_targeted_mask ... ok
+test cmd::retouch_cmds::tests::retouch_tools_paint_only_the_targeted_alpha_channel ... ok
+test cmd::retouch_cmds::dab::blur_refuses_indexed_tests::other_modes_keep_working_at_every_depth ... ok
+test cmd::retouch_cmds::tests::content_aware_move_overlapping_at_the_edge_and_on_other_targets ... ok
+test cmd::retouch_cmds::tests::remove_open_strokes_and_the_selection_limit_what_changes ... ok
+test cmd::retouch_cmds::tests::the_tools_the_reference_application_does_not_wrap_stop_at_the_canvas_edge ... ok
+test cmd::retouch_cmds::patch::patch_destination_selection_tests::content_aware_keeps_the_selection_and_changes_the_pixels ... ok
+test cmd::retouch_cmds::dab::sharpen_refuses_indexed_tests::other_modes_keep_sharpening_at_every_depth ... ok
+test cmd::retouch_cmds::tests::spot_healing_removes_blemish_all_types ... ok
+test cmd::retouch_cmds::tests::content_aware_move_moves_the_object_and_fills_its_place_at_all_depths ... ok
+test cmd::retouch_cmds::tests::sample_all_layers_spot_healing_heals_onto_an_empty_layer ... ok
+test cmd::retouch_cmds::tests::live_dab_rejects_invalid_batches_without_changing_the_preview ... ok
+test cmd::retouch_cmds::tests::content_aware_move_structure_and_color_shape_the_result ... ok
+test cmd::retouch_cmds::tests::protect_detail_drags_at_the_default_spacing_widen_the_halo_without_banding ... ok
+test cmd::retouch_cmds::tests::content_aware_move_transform_on_drop_scales_and_rotates_the_content ... ok
+test cmd::retouch_cmds::clone_source_layer_tests::clone_healing_absent_source_preserves_nonuniform_destinations ... ok
+test cmd::retouch_cmds::content_aware_move::color_tests::color_ten_on_green_leaves_the_middle_and_blends_the_edge ... ok
+test cmd::retouch_cmds::content_aware_move::tests::a_preview_within_the_full_resolution_budget_is_the_plain_solve_bit_for_bit ... ok
+test cmd::retouch_cmds::content_aware_move::color_tests::a_brightness_change_shifts_the_middle_only_past_color_five ... ok
+test cmd::retouch_cmds::tests::content_aware_move_coarse_preview_handles_transform_extend_and_limits ... ok
+test cmd::retouch_cmds::tests::spot_healing_keeps_film_grain_through_overlapping_strokes ... ok
+test cmd::retouch_cmds::tests::live_dab_strokes_commit_their_pixels_and_they_are_the_commands ... ok
+test cmd::retouch_cmds::clone_source_layer_tests::clone_no_alpha_sources_clip_preview_live_and_commit_at_all_canvas_corners ... ok
+test cmd::retouch_cmds::content_aware_move::tests::a_coarse_preview_keeps_a_faint_sparse_selection ... ok
+test cmd::retouch_cmds::tests::live_dab_batches_match_the_accumulating_renderer ... ok
+test cmd::retouch_cmds::content_aware_move::color_tests::a_flat_patch_matches_the_new_surroundings_at_color_ten ... ok
+test cmd::retouch_cmds::tests::content_aware_move_previews_large_selections_coarse_then_exact_at_all_depths ... ok
+
+test result: ok. 264 passed; 0 failed; 1 ignored; 0 measured; 3811 filtered out; finished in 4.64s
+
+INDEXED_REMAINING_NATIVE_PASSED
+
+## Final adversarial gate
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a#6d518fc7)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling photocraft-engine v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/indexed-paint-current/crates/engine)
+    Finished `test` profile [optimized] target(s) in 0.98s
+     Running tests/panic_hunt.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-indexed-paint-current/debug/deps/panic_hunt-4dab5855b6c99553)
+
+running 1 test
+test no_command_panics_or_hangs_on_adversarial_params has been running for over 60 seconds
+test no_command_panics_or_hangs_on_adversarial_params ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out; finished in 63.08s
+

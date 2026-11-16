@@ -1,0 +1,240 @@
+{
+  "pr": 8926,
+  "source_head": "ff9f942efe9af162ff507527e8e3a88378821a9a",
+  "base": "6a82de14116499cca0df985a430bfdb5448085f6",
+  "supersedes_source": "0c75011b56beee16983f1249f7afd6b73fbd6d05",
+  "finding": {
+    "comment": "https://github.com/storytold/photocraft/pull/8926#discussion_r4529280602",
+    "thread": "PRRT_kwDOU1UDD8612wzo",
+    "reproduced": true,
+    "fix": "Determine storage changes before validate_surface; untouched foreign-format rasters cannot veto metadata edits; rewritten unsupported storage remains refused atomically.",
+    "regression": "unchanged_foreign_storage_layers_do_not_veto_non_pixel_edits"
+  },
+  "current_main_policy": {
+    "matrix_operations": 12,
+    "palettes": 2,
+    "accepted_cases": 8,
+    "refused_cases": 16,
+    "refused_tools": [
+      "colorReplacement",
+      "mixerBrush",
+      "dodge",
+      "burn",
+      "sponge",
+      "blur",
+      "sharpen",
+      "smudge"
+    ],
+    "accepted_matrix_operations": [
+      "gradient",
+      "bucket",
+      "paste",
+      "bilinear rotation"
+    ],
+    "live_clone_coverage": true,
+    "attribution": "https://github.com/squintdev/photocraft/blob/59ca72b1b72dd930f7f43977de3c4817b2a301d0/crates/engine/tests/indexed_tool_matrix.rs"
+  },
+  "checks": {
+    "fmt": true,
+    "integration": {
+      "indexed_painting": 10,
+      "indexed_tool_matrix": 12
+    },
+    "indexed_filtered_lib": 56,
+    "brush": {
+      "passed": 92,
+      "ignored": 1
+    },
+    "retouch": {
+      "passed": 264,
+      "ignored": 1
+    },
+    "panic_hunt": 1,
+    "strict_all_target_clippy": true,
+    "layering": true,
+    "wasm_crates": 19,
+    "optional_heif": true,
+    "filtered_suites_overlap": true,
+    "native_log": "/tmp/photocraft-8926-unit-final-20261116.log",
+    "clippy_log": "/tmp/photocraft-8926-clippy-20261116.log"
+  },
+  "source_files": [
+    {
+      "path": "contributors/people.toml",
+      "status": "M",
+      "blob": "f46004f0ea6affbc42a96d5c01c773916550cebc",
+      "size": 6782,
+      "sha256": "50fee06c01ad60aa416e20c3bd299a7b233ea129d2b13b9f924f4f5e71367450"
+    },
+    {
+      "path": "crates/engine/src/cmd/brush_cmds.rs",
+      "status": "M",
+      "blob": "1a9de4ee413f5f249b8b07620547dfcb0ba5d2af",
+      "size": 73273,
+      "sha256": "2a6ba2a0ec5c4f52a6ebe88b66fce4c5d400ec95b87923d901e2ec8fd943760f"
+    },
+    {
+      "path": "crates/engine/src/cmd/brush_cmds/tests.rs",
+      "status": "M",
+      "blob": "6b3dd341961a9015193c4916e7d87d04c0471485",
+      "size": 94028,
+      "sha256": "8eafb9d1b1d50c0aa243c998ba4ee077289679a19eaf28d22aa40af04994a47b"
+    },
+    {
+      "path": "crates/engine/src/cmd/mode_cmds.rs",
+      "status": "M",
+      "blob": "0693aafc4a687e91ec9ff3a022728d5d532ab5f1",
+      "size": 38382,
+      "sha256": "fd3c6a89f1c4e39438c5218684aa1172cba53eccc79fb3da752d3bcfa8191615"
+    },
+    {
+      "path": "crates/engine/src/cmd/mode_cmds/tests.rs",
+      "status": "M",
+      "blob": "136fc5f1daeffdab29a7822212608abe8267d973",
+      "size": 63750,
+      "sha256": "876547405fb3cc10021c9ebc54616e5efb4361e6edfdb6d53b4b21a519a3ee5e"
+    },
+    {
+      "path": "crates/engine/src/cmd/retouch_cmds.rs",
+      "status": "M",
+      "blob": "3c9035cabb6d7b7b8ead52e21d696aa4d5d2c338",
+      "size": 21883,
+      "sha256": "88be6ec41cdf9bb675fe1464c58dd5f6079d0dac40a60cabeee3b6f010dbfddd"
+    },
+    {
+      "path": "crates/engine/src/cmd/retouch_cmds/blur_refuses_indexed_tests.rs",
+      "status": "M",
+      "blob": "72b4ea6ae2ff984f9a2cb68ea28fb47b073c927b",
+      "size": 3335,
+      "sha256": "23599e4e12b2ec1edb716c184da9a7134e1e9b0bc8892e2f08c49e06583c2649"
+    },
+    {
+      "path": "crates/engine/src/cmd/retouch_cmds/clone.rs",
+      "status": "M",
+      "blob": "0f63ed2186b4958649a0d744ab2110b874b3b2f3",
+      "size": 26579,
+      "sha256": "9367e2dc8eed37404232982fb462fe3eaef28d74e4666648c83198ecec6595ed"
+    },
+    {
+      "path": "crates/engine/src/cmd/retouch_cmds/dab.rs",
+      "status": "M",
+      "blob": "b4c522f31534dc01bbf52027d20cf8fcfc90d439",
+      "size": 39067,
+      "sha256": "80122a7b965d943f9fc5078c41594e4dc7a24963ca4bc4a0010c20b9c3a2b2e0"
+    },
+    {
+      "path": "crates/engine/src/cmd/retouch_cmds/heal_indexed_tests.rs",
+      "status": "M",
+      "blob": "0221e41ffbc264bcff566ddd3985e57687c32ced",
+      "size": 3242,
+      "sha256": "ab283a1cc4042bb24824704ca8fefccea2fa75dc26c9fba42dca5e75c98bac1d"
+    },
+    {
+      "path": "crates/engine/src/cmd/retouch_cmds/sharpen_refuses_indexed_tests.rs",
+      "status": "M",
+      "blob": "ed0180ecc618582e4db2602ed5c1ac30f9365bb5",
+      "size": 4228,
+      "sha256": "ccf8479f2c36f88dd7b2ad3a4fde079952156b07f1a6c2c11f6c33ba05d022ec"
+    },
+    {
+      "path": "crates/engine/src/cmd/retouch_cmds/smudge_refuses_indexed_tests.rs",
+      "status": "M",
+      "blob": "e66dc822cd64bce27cd9a3dcab0c842175bf8fc1",
+      "size": 3349,
+      "sha256": "9c1b712e924ac8b872c6ec8cfc2526c2460376bf17cef1ab1c46ddd496efe238"
+    },
+    {
+      "path": "crates/engine/src/cmd/retouch_cmds/tests.rs",
+      "status": "M",
+      "blob": "0575631f5d6397a69a5c670d6d30f68858a5b860",
+      "size": 186203,
+      "sha256": "593a2496f3f595eb16dd578d4057d5dc4be01c6462aa046bc6d6369a58e01e5f"
+    },
+    {
+      "path": "crates/engine/src/indexed_edit.rs",
+      "status": "A",
+      "blob": "ced759989dcd050f4d9c63bdf930f17c1b4aa896",
+      "size": 21071,
+      "sha256": "55297befd865c78bddc6338ad955fcd41a440f97c79a37d8b5d6037bb912dbfd"
+    },
+    {
+      "path": "crates/engine/src/lib.rs",
+      "status": "M",
+      "blob": "f3e6a1bc9de2840e79f7ba4cf9530890a53e2c60",
+      "size": 16781,
+      "sha256": "08e1a351d69ecb3f78beeb21f61749c3fcc67096c65ecd2a3fafd85b9c80b487"
+    },
+    {
+      "path": "crates/engine/src/session/execute.rs",
+      "status": "M",
+      "blob": "e6f74c9f49da8fd2f90a87af5b5bde8042199810",
+      "size": 25078,
+      "sha256": "40b5482f24a8c6d8089b06067d6b2f59420c48246775ab2d1755fc99d62c25ed"
+    },
+    {
+      "path": "crates/engine/tests/indexed_painting.rs",
+      "status": "A",
+      "blob": "68e1632ecdcaf42d5ad5087320c3473bfd05168b",
+      "size": 16926,
+      "sha256": "15f0d72150edc7b5988fdf8d19557750609b134ee1e0c25bacc7f155555db561"
+    },
+    {
+      "path": "crates/engine/tests/indexed_tool_matrix.rs",
+      "status": "A",
+      "blob": "5dfdbc55ede59296d870ad4a23a14c85b7adb042",
+      "size": 16999,
+      "sha256": "60dbb25176be0ba5677fd236c8ecbaf882a825496fa3a10e51b64c34d6ec7d18"
+    },
+    {
+      "path": "docs/development.md",
+      "status": "M",
+      "blob": "5a351e463139394c9eae0508c9aa843b3b322d19",
+      "size": 119324,
+      "sha256": "0a6f5aa2f9b2062e2ab34a4c61c39de47302c2da4c7fc35b64ea94ae57aed9cc"
+    }
+  ],
+  "environment": {
+    "toolchain": "1.95.0",
+    "jobs": 4,
+    "incremental": false,
+    "dev_debug": 0,
+    "test_debug": 0,
+    "fonts": "/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/craft-fonts",
+    "indexed_target": "/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-indexed-paint-current"
+  },
+  "limits": [
+    "Focused local evidence, not full-workspace or exact-head GitHub CI approval.",
+    "Filtered unit suites overlap; do not add counts.",
+    "No new Indexed performance or Photoshop runtime/oracle claim; Nov10 timings remain historical at their exact old source hashes.",
+    "Wasm and layering exercised final production code before test-only fixture changes.",
+    "Earlier no-test/compiler/fixture attempts retained in local state and not called passes."
+  ],
+  "earlier_native_attempt_limit": "First native segment records22passed integration checks and5unit fixture failures; the following corrected-fixture segment supersedes only those failures and passes all56Indexed/92Brush/264Retouch units. This combined log intentionally retains the failures.",
+  "files": [
+    {
+      "path": "docs/review/palette-split/comment-followup-indexed-20261116-regression-before.log",
+      "size": 1880,
+      "sha256": "7c133360b0cb5670aed2503618d65e98b5d072f69d77c8fd065a95519a2c95e5"
+    },
+    {
+      "path": "docs/review/palette-split/comment-followup-indexed-20261116-regression-after.log",
+      "size": 1414,
+      "sha256": "096c4babf67a2235c68e58cda99c294ae3e5c2a909d2f026fd08abdcadb1a8a1"
+    },
+    {
+      "path": "docs/review/palette-split/comment-followup-indexed-20261116-native.log",
+      "size": 61381,
+      "sha256": "26d80d9ea583af08916c71078c8532a6e47ea88dfcada7bbca4493c99f6f86bf"
+    },
+    {
+      "path": "docs/review/palette-split/comment-followup-indexed-20261116-portability.log",
+      "size": 34334,
+      "sha256": "cd29cf39720cb97f34ef51a5cdde04fc86476f78eeb324ee34e65f7166848eab"
+    },
+    {
+      "path": "docs/review/palette-split/comment-followup-indexed-20261116-clippy.log",
+      "size": 16274,
+      "sha256": "18272b4675aeae532705069d417c029ed16ce8b64010b7b2c31e88170694b31b"
+    }
+  ]
+}

@@ -1,0 +1,386 @@
+{
+  "pr": 8929,
+  "source_head": "e2d3921d1c4c7726874db7033c195bc572eba9aa",
+  "base": "6a82de14116499cca0df985a430bfdb5448085f6",
+  "supersedes": "bf9b987ea47c8aab029309b18eeb9d170d5b9c08",
+  "review": "https://github.com/storytold/photocraft/pull/8929#pullrequestreview-5916945153",
+  "scope": [
+    "Preserve stock Indexed/GIF/PNG8 paths and document RGB/profile.",
+    "Explicit palettes/mapping opt into advanced backend only.",
+    "Keep merged main Matte and current sharedCMS APIs.",
+    "Original generated palettes only; externalGPL/ACT import retained, no bundledhistoricalGIMP data."
+  ],
+  "native_results": [
+    "ok. 1005 passed; 0 failed; 27 ignored; 0 measured; 0 filtered out; finished in 11.41s",
+    "ok. 58 passed; 0 failed; 0 ignored; 0 measured; 4038 filtered out; finished in 4.32s",
+    "ok. 71 passed; 0 failed; 0 ignored; 0 measured; 4025 filtered out; finished in 0.16s",
+    "ok. 6 passed; 0 failed; 0 ignored; 0 measured; 4090 filtered out; finished in 0.00s"
+  ],
+  "finish_checks": {
+    "passed": true,
+    "path": "/tmp/photocraft-8929-final-v2-20261116.log",
+    "algo_engine_strict_all_targets_clippy": true,
+    "ui_clippy_limit": {
+      "passed": false,
+      "blockers": [
+        {
+          "path": "crates/ui-egui/src/dialogs/new_doc_ui.rs",
+          "main_blob": "73a0bdd243023ef9cd969bf9070b81b217bb8ed8",
+          "sha256": "6f87c3e70234e5f707bb492cdb4df45606df6063b5498a06c5a7ee991334eb8f",
+          "byte_identical_to_pinned_main": true
+        },
+        {
+          "path": "crates/ui-egui/src/panels/actions/library.rs",
+          "main_blob": "f78d12363213109ff7c9560f98bbd7242035d8bf",
+          "sha256": "45b17a7dd068e7aedb96d8a6da3956778eddb6364a01aac1eca5c57c0383f25e",
+          "byte_identical_to_pinned_main": true
+        }
+      ],
+      "log": "/tmp/photocraft-8929-final-gates-20261116.log",
+      "owned_optimizer_blankline_fixed": true,
+      "no_suppressions": true
+    },
+    "results": [
+      "ok. 93 passed; 0 failed; 1 ignored; 0 measured; 7649 filtered out; finished in 2.71s",
+      "ok. 1 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out; finished in 64.17s"
+    ],
+    "layering": true,
+    "wasm19_plus_heif": true,
+    "fonts": "fixed review craft-fonts",
+    "catalog_pin": "e56d26244bbac099bfd42e23fb12f78a4be418a7",
+    "catalog_required": true
+  },
+  "source_files": [
+    {
+      "path": "ATTRIBUTION.md",
+      "status": "M",
+      "blob": "9d0accd0b653a32e5723df5f3e995569131084e6",
+      "size": 31156,
+      "sha256": "1ec4c91810f6f1ee82c8e21f2008c806a13500ceb446f1af7efb90ffe1d65765"
+    },
+    {
+      "path": "crates/algo/examples/generate_blue_noise.rs",
+      "status": "A",
+      "blob": "aabfdc0c5ca9b4c1a1ba9419811b699eeb9e0073",
+      "size": 5576,
+      "sha256": "48a2d5321ef4ea85018d4a6161b6d0e3d8b66f38c044852412dd6a6df744bd77"
+    },
+    {
+      "path": "crates/algo/src/blue_noise_data.rs",
+      "status": "A",
+      "blob": "73c7d693403588f64aabe55944f9a18c2dd8662c",
+      "size": 24212,
+      "sha256": "5439076fa8b4028848074c3d78a0c9a78bee0380bac8c86cb58525e1be78dda3"
+    },
+    {
+      "path": "crates/algo/src/lib.rs",
+      "status": "M",
+      "blob": "a9cd9422d365578157f77e2fc6c28fffd85c46a2",
+      "size": 75875,
+      "sha256": "b05645e38cf77d4c69125a11a51104df74bf16950b6dc5f0b9995b31aa6e6beb"
+    },
+    {
+      "path": "crates/algo/src/palette_map.rs",
+      "status": "A",
+      "blob": "742c3e571a9a802ab4867348d9132a4c9594f646",
+      "size": 66695,
+      "sha256": "028baabd2688a8e2d6bf65329e3e2b574ed158b8423c062fe2c87b9d19f4cc90"
+    },
+    {
+      "path": "crates/algo/src/palettes.rs",
+      "status": "A",
+      "blob": "0b1e939f49b28969a24b05530e8c3b092be719db",
+      "size": 14670,
+      "sha256": "fc1253b895674e2d094a9d854b2ed399431fe6db4a30f5d83d31a20741772dd9"
+    },
+    {
+      "path": "crates/algo/src/palettes_data.rs",
+      "status": "A",
+      "blob": "5226aa980619f972f69c45097b70707d23872953",
+      "size": 2643,
+      "sha256": "708eee8355861062a49ed82f9046059376fee91a85ab4d909deabad49ff6dd4b"
+    },
+    {
+      "path": "crates/algo/src/quantize.rs",
+      "status": "M",
+      "blob": "6516b2c5d16b6bfb260f20664e1e23ecd0ee4007",
+      "size": 33847,
+      "sha256": "336a0a7356c2c2f3e52c922084288d1277a687ca3a991e347eab4d54e4ecb21b"
+    },
+    {
+      "path": "crates/engine/src/cmd/image_cmds.rs",
+      "status": "M",
+      "blob": "7501eb5f7980b94d7f1c5ee687a9efbf5f9d026c",
+      "size": 66558,
+      "sha256": "968bedfcc480158d21d120597609e4fac7dcb75dd35b941a0ace4f6941bfd097"
+    },
+    {
+      "path": "crates/engine/src/cmd/mode_cmds.rs",
+      "status": "M",
+      "blob": "580b4d509373fea2d9c064db44837448c584568e",
+      "size": 51891,
+      "sha256": "c5c71238a5750441ae3bc99683c3645c0270ab38c734302253ad5e262c4fda4a"
+    },
+    {
+      "path": "crates/engine/src/cmd/mode_cmds/tests.rs",
+      "status": "M",
+      "blob": "0ee948d8841b9f5791205eb60a683555a31c56a1",
+      "size": 77270,
+      "sha256": "738caed1815252ae7621748edb8f06ed021107e2cc46c76de209e6874eb68647"
+    },
+    {
+      "path": "crates/engine/src/cmd/web_cmds.rs",
+      "status": "M",
+      "blob": "6030bab65508b255fd4c36f9564187d74b6ca900",
+      "size": 6939,
+      "sha256": "6f6008192d75c115f1931c7923e5caf1b775f92f3b97dc32ced98806a73b8953"
+    },
+    {
+      "path": "crates/engine/src/cmd/web_cmds/optimizer.rs",
+      "status": "M",
+      "blob": "b81476f4907120f370868605e7ed9917dc32b805",
+      "size": 33009,
+      "sha256": "0875926952d34e269ffcfc040ab6a8e20b56c3304d91a9992f1285de5290c886"
+    },
+    {
+      "path": "crates/engine/src/cmd/web_cmds/settings.rs",
+      "status": "M",
+      "blob": "c5589462a5e1cbc6ae2c1cdcd47e4239ee20f787",
+      "size": 17168,
+      "sha256": "693aa58709cf380f0bafa83ab29001d86b0e87f7d031732f55b68be5b4ca731f"
+    },
+    {
+      "path": "crates/engine/src/cmd/web_cmds/tests.rs",
+      "status": "M",
+      "blob": "c8aaf3d51ddf9833d543edd6e9b9ef50a369b93f",
+      "size": 97028,
+      "sha256": "91a04c26a2b5cdebeb32affcbff48530a1e09df38cf34353cf5be03b6d537a85"
+    },
+    {
+      "path": "crates/engine/src/lib.rs",
+      "status": "M",
+      "blob": "08951b11be92586bab00b2c85c71d933ec9484f5",
+      "size": 16785,
+      "sha256": "c07737facc274e65f5fcb83e849b969e9abf2cd0eb3f7bf79f2e10b8ad344fdd"
+    },
+    {
+      "path": "crates/engine/src/palette_cmds.rs",
+      "status": "A",
+      "blob": "e80db7aab9cfc951a30f52a426d25029c9a6ffd3",
+      "size": 13531,
+      "sha256": "0c2e26c7d7470e38134ed65dbfd542e6ff3c5deabe776cd3578573cb806bed9f"
+    },
+    {
+      "path": "crates/ui-egui/src/dialogs/filter_dialog.rs",
+      "status": "M",
+      "blob": "71146854149fb4ee9819dc0191ea6193f02714e4",
+      "size": 99752,
+      "sha256": "b91debd21ae679c0a73af0fdfca7d1af41de7c1e8b0f2d5cac1450b13311cfff"
+    },
+    {
+      "path": "crates/ui-egui/src/dialogs/filter_dialog/tests.rs",
+      "status": "M",
+      "blob": "790803601b4e36070a9d768785587657bdd9af34",
+      "size": 136447,
+      "sha256": "aa89c36ebf970ec169b01285563870352190eed4c6be6ff3fc12746e2dd5ae0a"
+    },
+    {
+      "path": "docs/development.md",
+      "status": "M",
+      "blob": "20d227f5dd9886eac0df452450e42354cc25a1dc",
+      "size": 121794,
+      "sha256": "897bb01607e10cb298d1f68f315b92ff9e171663b8b8d541ad75cf58d2363423"
+    }
+  ],
+  "visual": {
+    "source_head": "e2d3921d1c4c7726874db7033c195bc572eba9aa",
+    "inspected": true,
+    "surface": [
+      "Stock Indexed Color dialog with main Matte and no advanced mapping/browser fields.",
+      "Default stock SaveforWeb dialog with unchanged layout and no advanced palette browser."
+    ],
+    "scripts": {
+      "indexed": [
+        [
+          "engine.execute",
+          {
+            "command": "file.new",
+            "params": {
+              "width": 480,
+              "height": 320,
+              "background": "#305a80"
+            }
+          }
+        ],
+        [
+          "engine.execute",
+          {
+            "command": "select.rect",
+            "params": {
+              "x": 40,
+              "y": 40,
+              "width": 220,
+              "height": 180
+            }
+          }
+        ],
+        [
+          "engine.execute",
+          {
+            "command": "edit.fill",
+            "params": {
+              "color": "#e0a040"
+            }
+          }
+        ],
+        [
+          "engine.execute",
+          {
+            "command": "select.deselect",
+            "params": {}
+          }
+        ],
+        [
+          "ui.menu.invoke",
+          {
+            "id": "image.mode.indexedColor"
+          }
+        ]
+      ],
+      "web": [
+        [
+          "engine.execute",
+          {
+            "command": "file.new",
+            "params": {
+              "width": 480,
+              "height": 320,
+              "background": "#305a80"
+            }
+          }
+        ],
+        [
+          "engine.execute",
+          {
+            "command": "select.rect",
+            "params": {
+              "x": 40,
+              "y": 40,
+              "width": 220,
+              "height": 180
+            }
+          }
+        ],
+        [
+          "engine.execute",
+          {
+            "command": "edit.fill",
+            "params": {
+              "color": "#e0a040"
+            }
+          }
+        ],
+        [
+          "engine.execute",
+          {
+            "command": "select.deselect",
+            "params": {}
+          }
+        ],
+        [
+          "ui.menu.invoke",
+          {
+            "id": "file.export.saveForWebLegacy"
+          }
+        ]
+      ],
+      "palette-map": [
+        [
+          "engine.execute",
+          {
+            "command": "file.new",
+            "params": {
+              "width": 480,
+              "height": 320,
+              "background": "#305a80"
+            }
+          }
+        ],
+        [
+          "engine.execute",
+          {
+            "command": "select.rect",
+            "params": {
+              "x": 40,
+              "y": 40,
+              "width": 220,
+              "height": 180
+            }
+          }
+        ],
+        [
+          "engine.execute",
+          {
+            "command": "edit.fill",
+            "params": {
+              "color": "#e0a040"
+            }
+          }
+        ],
+        [
+          "engine.execute",
+          {
+            "command": "select.deselect",
+            "params": {}
+          }
+        ],
+        [
+          "ui.menu.invoke",
+          {
+            "id": "filter.paletteMap"
+          }
+        ]
+      ]
+    },
+    "runtime": "Real native offscreen snapshot; CPU canvas with actual Vulkan offscreen rendering;1440x960,scale1.",
+    "license": "Existing wildcard attribution/notice docs/review/palette-split/*.png and LICENSE covers originalsyntheticartwork."
+  },
+  "limits": [
+    "UI strictClippy has2main-identical sites:new_doc_ui.rs282 and actions/library.rs201; no suppressions or unrelated fixes.",
+    "Owned optimizer empty-line-after-attribute lint fixed; algorithm+engine strictall-target Clippy pass.",
+    "No exact-head remoteCI/approval, no Photoshop runtime oracle and no performance/budget claim.",
+    "Passed filteredunit suites overlap; do notsum."
+  ],
+  "files": [
+    {
+      "path": "docs/review/palette-split/comment-followup-backend-20261116-native.log",
+      "size": 116957,
+      "sha256": "4f4a3fed74312d347dae3c8fb5260e5aae7390ecfb8a025cc8ebbc4f1425e737"
+    },
+    {
+      "path": "docs/review/palette-split/comment-followup-backend-20261116-final-gates.log",
+      "size": 71663,
+      "sha256": "14efceac1df7e17421b386f141233c44266cd0e23cb2a28e83a0f08e6762f3b1"
+    },
+    {
+      "path": "docs/review/palette-split/comment-followup-backend-20261116-lint-attempt.log",
+      "size": 27299,
+      "sha256": "255cd4faee332b5b079c554db2f7d27811dc7f13f8550e252b8103fb71d588d5"
+    },
+    {
+      "path": "docs/review/palette-split/comment-followup-backend-20261116-visual.log",
+      "size": 5092,
+      "sha256": "3114750dbf3957d7b3dfa5fb7219d2cdbf98b834d51ac7d81cd855b5a1eb71a3"
+    },
+    {
+      "path": "docs/review/palette-split/comment-followup-backend-20261116-indexed.png",
+      "size": 155232,
+      "sha256": "52ab772326fbf92cbae866028b07c528ce7cc33aab09ad61ef4a9c92318a9afc"
+    },
+    {
+      "path": "docs/review/palette-split/comment-followup-backend-20261116-web.png",
+      "size": 169752,
+      "sha256": "e14b09db2835b87ab0a16976edd8fa763c7f4ab996cc867b6793771551b3870a"
+    }
+  ]
+}

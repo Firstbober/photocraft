@@ -1,0 +1,325 @@
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=f5025284445ea19c35f746d96fc0b75468b3f560#f5025284)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=f5025284445ea19c35f746d96fc0b75468b3f560#f5025284)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=f5025284445ea19c35f746d96fc0b75468b3f560#f5025284)` was not used in the crate graph
+warning: patch `hayro-cmap v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)` was not used in the crate graph
+warning: patch `hayro-postscript v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)` was not used in the crate graph
+warning: patch `krilla v0.8.2 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling photocraft-text v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/text)
+   Compiling photocraft-ui-egui v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/ui-egui)
+   Compiling photocraft-io v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/io)
+   Compiling photocraft-engine v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/engine)
+    Finished `test` profile [optimized] target(s) in 57.74s
+     Running unittests src/lib.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-merge-8933-20261122/debug/deps/photocraft_ui_egui-f5a2902544adc081)
+
+running 292 tests
+test canvas::channel_view::tests::spot_overlay_previews_with_the_spot_dot_gain ... ok
+test canvas::rotation_preview_isolation_tests::filter_preview_is_not_returned_for_inactive_document ... ok
+test canvas::filter_preview::tests::the_preview_is_computed_again_after_a_scratch_read_error_transition ... ok
+test canvas::rotation_preview_isolation_tests::filter_preview_refreshes_when_channel_target_changes ... ok
+test canvas::filter_preview::tests::a_reopened_dialog_never_paints_the_previous_dialogs_preview ... ok
+test canvas::move_ui::tests::pattern_preview_drag_wraps_pixels_across_the_canvas_edge ... ok
+test canvas::move_ui::tests::floating_selection_does_not_snap_to_its_own_starting_outline_or_preview_at_zero ... ok
+test canvas::patch_preview::tests::dragging_the_patch_previews_the_heal_and_release_commits_it ... ok
+test canvas::tests::gpu_texture_key_follows_the_ink_preview ... ok
+test canvas::paint_tool::tests::smoothing_preview_redraws_the_tail_each_step ... ok
+test canvas::filter_preview::tests::a_mid_drag_frame_does_not_replace_a_frame_that_is_already_exact ... ok
+test canvas::pattern_drag_tests::a_pattern_drag_previews_without_editing_masks_selection_or_the_tool ... ok
+test canvas::viewport_pages::tests::reductions_show_a_quick_preview_before_the_exact_page ... ok
+test canvas::filter_preview::tests::inline_filter_preview_is_composited_and_recorded_once ... ok
+test canvas::tests::clone_overlay_strength_changes_leave_the_healing_preview_at_full_strength ... ok
+test canvas::tests::clone_overlay_repicking_on_the_original_layer_updates_preview_and_both_layers ... ok
+test canvas::select_mask_view::tests::brush_strokes_reach_the_preview ... ok
+test canvas::filter_preview::tests::match_color_preview_rejects_cached_and_late_frames_from_an_old_source_layer_or_revision ... ok
+test canvas::raster_source::tests::a_size_changing_preview_lies_centred_on_the_document ... ok
+test dialogs::adjust_preview::tests::a_clipped_target_preview_keeps_its_place_and_properties ... ok
+test canvas::select_mask_view::preview_conversion_preserves_shared_solid_tiles ... ok
+test dialogs::adjust_preview::tests::a_styled_clipped_target_keeps_the_proxy_preview ... ok
+test canvas::filter_preview::tests::a_mid_drag_empty_result_leaves_the_preview_alone ... ok
+test canvas::filter_preview::tests::a_preview_computed_mid_drag_reaches_the_canvas_and_then_converges ... ok
+test canvas::rotation_preview_isolation_tests::channel_overlay_shows_filter_preview_and_restores_on_cancel ... ok
+test dialogs::adjust_preview::tests::a_clipped_target_preview_changes_nothing_outside_its_region ... ok
+test canvas::tests::guides_draw_over_the_transform_preview_and_under_its_box ... ok
+test dialogs::adjust_preview::tests::ineligible_targets_use_the_proxy_preview ... ok
+test dialogs::adjust_preview::tests::a_live_adjust_drag_damages_only_the_visible_part_of_its_layer ... ok
+test canvas::tests::layer_style_dialog_previews_live_and_cancel_restores ... ok
+test dialogs::adjust_preview::tests::preview_leaves_the_document_alone_and_marks_its_layer ... ok
+test canvas::raster_source::tests::gpu_tests::during_a_proxy_adjustment_the_overlay_reads_the_preview_and_the_composite_the_document ... ok
+test dialogs::adjust_preview::tests::a_reveal_all_mask_does_not_empty_the_damage_region ... ok
+test dialogs::adjust_preview::tests::a_clipped_target_dialog_previews_through_the_layer ... ok
+test dialogs::adjust_preview::tests::proxy_preview_has_its_own_ids ... ok
+test dialogs::adjust_preview::tests::preview_changes_nothing_outside_its_region ... ok
+test canvas::cam_preview::tests::a_failed_preview_is_not_retried ... ok
+test canvas::layer_edges_tests::layer_edges_stay_with_unmoved_pixels_when_live_preview_is_disabled ... ok
+test canvas::rotation_preview_isolation_tests::rotation_preview_is_computed_headlessly_without_mutating_document ... ok
+test canvas::rotation_preview_isolation_tests::filter_preview_overlay_matches_quick_mask_and_mixed_color_views ... ok
+test control::tests::layer_style_picker_control_binds_previews_confirms_and_cancels ... ok
+test dialogs::adjust_preview::tests::an_ineligible_adjustment_preview_records_why_it_uses_the_proxy ... ok
+test dialogs::camera_raw_ui::tests::preview_texture_uses_linear_document_display_encoding ... ok
+test canvas::rotation_preview_isolation_tests::profile_dialogs_preview_through_the_profile_they_choose ... ok
+test canvas::tests::layer_style_opened_during_free_transform_applies_the_box_and_previews ... ok
+test dialogs::adjust_preview::tests::an_adjustment_preview_keeps_the_canvas_reason ... ok
+test canvas::filter_preview::tests::every_filter_previews_off_the_ui_thread_and_a_newer_value_cancels_the_old ... ok
+test brush_resize_overlay_tests::the_resize_drag_shows_the_size_preview_in_the_canvas_body ... ok
+test dialogs::bitmap_dialog::tests::the_preview_keeps_the_canvas_size ... ok
+test dialogs::adjust_preview::tests::ineligible_dialogs_keep_the_proxy_preview ... ok
+test dialogs::adjust_preview::tests::captured_subset_preview_stays_on_the_command_path_when_the_panel_changes ... ok
+test dialogs::color_picker_preview::tests::a_gradient_stop_colour_is_previewed_before_ok_and_cancel_changes_nothing ... ok
+test dialogs::color_picker_preview::tests::ok_commits_the_previewed_gradient_stop_in_one_history_step ... ok
+test dialogs::adjust_preview::tests::dialog_previews_through_the_layer ... ok
+test dialogs::camera_raw_ui::tests::a_raw_left_before_its_preview_lands_gets_a_thumbnail_of_its_settings ... ok
+test canvas::raster_source::tests::the_composite_shows_a_filter_dialogs_preview ... ok
+test canvas::filter_preview::tests::filter_preview_at_100_percent_is_full_resolution ... ok
+test canvas::paint_tool::tests::mixer_drag_above_the_preview_size_paints_on_release ... ok
+test dialogs::camera_raw_ui::tests::histogram_follows_preview_and_view_changes_do_not_render_or_edit ... ok
+test canvas::filter_preview::tests::a_held_preview_frame_stays_on_the_canvas_when_the_proxy_factor_changes ... ok
+test canvas::rotation_preview_isolation_tests::filter_preview_matches_the_applied_result_for_every_channel_target ... ok
+test dialogs::color_picker_ui::live_preview::tests::a_dialog_colour_follows_the_picker_and_cancel_restores_it ... ok
+test dialogs::color_picker_ui::live_preview::tests::a_picker_or_parent_closed_any_other_way_ends_the_preview ... ok
+test dialogs::color_picker_ui::live_preview::tests::ok_keeps_the_colour_and_the_dialog_makes_one_history_step ... ok
+test dialogs::color_picker_ui::live_preview::tests::the_crop_shield_colour_follows_its_picker ... ok
+test dialogs::color_picker_ui::live_preview::tests::the_crop_shield_keeps_a_colour_set_while_its_picker_is_open ... ok
+test dialogs::color_picker_ui::live_preview::tests::preferences_apply_waits_for_an_open_picker ... ok
+test dialogs::color_picker_ui::live_preview::tests::the_dialog_under_a_picker_refuses_control_edits ... ok
+test dialogs::color_range_ui::tests::a_preview_failure_is_shown_not_silent ... ok
+test dialogs::color_picker_ui::live_preview::tests::the_dialog_waits_for_its_picker ... ok
+test dialogs::camera_raw_ui::tests::calibration_changes_the_preview_and_round_trips_through_xmp ... ok
+test dialogs::color_picker_ui::live_preview::tests::the_opening_colour_shows_the_original_value ... ok
+test canvas::filter_preview::tests::cross_scale_indexed_matte_preview_rejects_old_tool_colors_from_cached_and_worker_results ... ok
+test dialogs::color_range_ui::tests::preview_honours_sample_all_layers_like_ok ... ok
+test dialogs::color_range_ui::tests::preview_cache_refreshes_after_foreground_and_proof_changes ... ok
+test dialogs::color_range_ui::tests::preview_mode_is_view_state_and_cancel_preserves_selection ... ok
+test dialogs::camera_raw_ui::tests::worker_preview_matches_the_synchronous_render_and_ends_on_the_latest_settings ... ok
+test dialogs::export_dialog::tests::layered_preview_runs_outside_the_ui_frame ... ok
+test canvas::cam_preview::tests::the_transform_on_drop_box_previews_the_dropped_patch ... ok
+test dialogs::export_dialog::tests::preview_workers_keep_the_captured_source_profile ... ok
+test dialogs::color_range_ui::tests::reduced_preview_matches_the_original_eyedropper_sample ... ok
+test dialogs::file_ui::print::scratch_tests::the_preview_picture_draws_again_after_a_scratch_read_error_transition ... ok
+test dialogs::caf_ui::tests::the_preview_texture_respects_the_device_limit ... ok
+test dialogs::file_ui::tests::the_web_preview_selects_slices_and_saves_only_the_selected_ones ... ok
+test dialogs::export_dialog::tests::export_as_downscales_stroke_only_shapes_and_preview ... ok
+test dialogs::color_range_ui::tests::eyedropper_hover_reuses_preview_textures_without_sampling ... ok
+test dialogs::file_ui::web_preview::tests::absurd_dimensions_are_refused ... ok
+test dialogs::file_ui::web_preview::tests::palette_picker_reuses_indices_and_updates_preview_pixels ... ok
+test dialogs::color_range_ui::tests::preview_and_eyedropper_keep_the_original_selection_boundary ... ok
+test dialogs::camera_raw_ui::tests::shadows_of_a_raw_open_act_on_the_raw_data_and_the_preview_shows_it ... ok
+test dialogs::filter_dialog::tests::content_aware_fill_previews_at_full_resolution ... ok
+test dialogs::file_ui::web_playback_tests::preview_keeps_current_frame_edits_without_storing_into_source ... ok
+test dialogs::filter_dialog::multi_channel_dialog_tests::ordinary_filter_captures_the_set_and_preview_equals_confirmation ... ok
+test dialogs::export_dialog::tests::the_preview_is_made_again_after_a_scratch_read_error_transition ... ok
+test dialogs::file_ui::web_playback_tests::frame_previews_preserve_source_and_match_colors_across_depths ... ok
+test dialogs::filter_dialog::tests::match_color_preview_refreshes_when_a_source_job_lands ... ok
+test dialogs::filter_dialog::tests::palette_map_live_preview_uses_the_document_proxy ... ok
+test dialogs::export_dialog::tests::preview_cache_tracks_working_profiles_but_prefers_embedded_profiles ... ok
+test dialogs::filter_dialog::tests::preview_source_revisions_follow_only_referenced_documents ... ok
+test dialogs::file_ui::web_playback_tests::optimized_gif_preview_matches_each_frame_at_every_depth ... ok
+test dialogs::filter_dialog::tests::proxy_previews_never_clamp_pixel_sized_params ... ok
+test dialogs::filter_dialog::tests::match_color_preview_uses_the_source_document ... ok
+test canvas::filter_preview::tests::indexed_matte_preview_matches_commit_and_refreshes_tool_colors_inline_and_on_worker ... ok
+test dialogs::filter_dialog::tests::smart_object_curves_preview_keeps_its_size_on_a_reduced_proxy ... ok
+test dialogs::filter_dialog::tests::sweep_all_previews ... ignored
+test dialogs::filter_dialog::tests::smart_displace_preview_uses_the_map_document ... ok
+test dialogs::filter_preview_ui::tests::a_click_maps_to_the_document_point_under_it ... ok
+test dialogs::filter_dialog::tests::preview_stays_inside_the_selection_at_every_proxy_factor ... ok
+test dialogs::filter_dialog::tests::preview_runs_engine_command_on_proxy ... ok
+test dialogs::filter_preview_ui::tests::only_filter_dialogs_get_the_preview_pane ... ok
+test dialogs::filter_preview_ui::tests::original_texture_refreshes_after_a_scratch_read_error_transition ... ok
+test dialogs::filter_preview_ui::tests::full_resolution_preview_textures_respect_the_device_limit ... ok
+test dialogs::filter_preview_ui::tests::textures_are_reduced_to_fit_the_gpu ... ok
+test dialogs::filter_preview_ui::tests::original_texture_refreshes_when_the_channel_view_changes_without_an_edit ... ok
+test dialogs::filter_preview_worker::tests::a_stale_preview_is_cancelled_only_once_the_values_settle ... ok
+test dialogs::filter_preview_worker::tests::blocked_preview_does_not_block_ui_or_queue_slider_requests ... ok
+test dialogs::filter_preview_worker::tests::cancelled_completion_does_not_poison_a_request_after_reversion ... ok
+test canvas::cam_preview::tests::the_drag_previews_the_move_after_it_rests_and_never_touches_the_document ... ok
+test dialogs::filter_preview_worker::tests::escaped_panic_is_an_error_and_worker_can_be_reused ... ok
+test dialogs::filter_preview_worker::tests::request_identity_covers_dialog_revision_layer_and_params ... ok
+test dialogs::filter_preview_worker::tests::closing_and_reopening_preview_cancels_the_off_screen_worker ... ok
+test dialogs::gallery_ui::tests::bench_gallery_preview ... ignored
+test dialogs::filter_preview_ui::tests::a_point_on_the_image_centres_the_top_preview_pane ... ok
+test dialogs::gallery_ui::tests::background_preview_renders_off_the_ui_thread ... ok
+test dialogs::filter_preview_ui::tests::uploaded_preview_shows_the_filtered_alpha_at_every_depth_and_proxy_scale ... ok
+test dialogs::adjust_preview::tests::preview_composite_matches_the_destructive_command ... ok
+test dialogs::color_picker_preview::tests::a_refused_preview_is_not_rebuilt_every_frame ... ok
+test dialogs::adjust_preview::tests::a_clipped_target_previews_like_the_destructive_command ... ok
+test dialogs::color_picker_preview::tests::free_transform_keeps_its_preview_while_the_text_colour_picker_is_open ... ok
+test dialogs::color_picker_preview::tests::damage_between_previews_is_the_text_layer_only ... ok
+test dialogs::color_picker_preview::tests::every_selected_type_layer_is_previewed_and_refreshed ... ok
+test dialogs::color_range_ui::tests::opens_and_previews_in_the_full_app_without_a_gpu ... ok
+test dialogs::color_picker_preview::tests::no_preview_for_other_pickers_other_tabs_or_other_commands ... ok
+test dialogs::color_picker_preview::tests::the_preview_never_shows_on_a_document_switched_to_while_the_picker_is_open ... ok
+test dialogs::color_picker_preview::tests::only_the_selected_characters_are_previewed_in_the_new_colour ... ok
+test dialogs::gallery_ui::tests::preview_and_thumbnails_render ... ok
+test dialogs::color_picker_preview::tests::ok_after_a_colour_the_canvas_never_drew_redraws_as_before ... ok
+test dialogs::color_picker_preview::tests::the_preview_follows_every_colour_and_stops_at_the_opening_one ... ok
+test dialogs::color_picker_preview::tests::cancel_leaves_the_text_and_history_as_they_were_and_stops_the_preview ... ok
+test dialogs::color_picker_preview::tests::ok_commits_exactly_what_the_preview_showed_in_one_history_step ... ok
+test dialogs::color_picker_preview::tests::no_preview_when_the_params_name_no_layer ... ok
+test dialogs::caf_ui::tests::a_failing_preview_is_reported_once_not_restarted ... ok
+test dialogs::palette_pattern_ui::tests::preview_strength_phase_and_scale_follow_kernel_visual_invariants ... ok
+test dialogs::color_picker_preview::tests::ok_counts_the_previewed_canvas_as_the_document_so_only_the_layer_is_redrawn ... ok
+test dialogs::layer_style::tests::issue_steps_disable_stroke_add_overlay_untick_preview ... ok
+test dialogs::layer_style::tests::preview_off_shows_the_original_until_reenabled ... ok
+test dialogs::pattern_fill_ui::tests::a_replaced_or_deleted_edit_target_is_not_previewed_or_committed ... ok
+test dialogs::layer_style::tests::preview_applies_the_style_without_touching_the_document ... ok
+test dialogs::filter_dialog::tests::warp_text_preview_matches_the_full_size_result_on_a_reduced_proxy ... ok
+test dialogs::layer_style::tests::the_preview_swatch_follows_a_scratch_read_error_transition ... ok
+test dialogs::shape_fill_ui::tests::stroke_picker_previews_commits_and_rejects_stale_or_bad_targets ... ok
+test dialogs::guide_layout_ui::tests::preview_off_and_foreign_document_never_replace_guides ... ok
+test dialogs::guide_layout_ui::tests::invalid_fields_keep_last_valid_preview_and_dialog_open ... ok
+test dialogs::pattern_fill_ui::tests::new_pattern_fill_opens_the_dialog_previews_and_ok_is_one_step ... ok
+test dialogs::color_picker_preview::tests::the_canvas_shows_the_picked_colour_before_ok_without_touching_the_session ... ok
+test dialogs::guide_layout_ui::tests::ok_matches_preview_and_is_one_undo_step ... ok
+test dialogs::guide_layout_ui::tests::applying_a_previewed_layout_reveals_hidden_guides ... ok
+test dialogs::smart_filter_dialog::tests::reduced_preview_scales_placement_stack_and_mask_without_adding_filters ... ok
+test dialogs::smart_filter_dialog::tests::preview_toggle_and_cancel_leave_document_and_history_untouched ... ok
+test dialogs::solid_fill_ui::tests::same_hex_inks_preview_and_thumbnail_as_ok_commits_them ... ok
+test dialogs::guide_layout_ui::tests::typing_previews_without_editing_and_cancel_restores_preferences_and_lines ... ok
+test dialogs::shape_fill_ui::tests::stroke_picker_previews_a_stroke_that_is_off_as_ok_turns_it_on ... ok
+test edit_session::tests::invalid_input_retains_preview_but_blocks_commit_until_corrected ... ok
+test edit_session::tests::many_previews_produce_one_final_change ... ok
+test dialogs::liquify_ui::tests::a_stroke_with_preview_off_changes_the_field_but_not_the_display ... ok
+test dialogs::adjust_editors::ui_tests::photo_filter_colour_picker_previews_live_cancel_restores_and_ok_is_one_step ... ok
+test dialogs::gallery_ui::tests::zoomed_out_preview_matches_the_applied_result_scaled_down ... ok
+test dialogs::liquify_ui::tests::a_targeted_channels_preview_shows_liquify_only_inside_the_selection ... ok
+test home_recent_ui::tests::panicking_thumbnail_load_returns_no_preview ... ok
+test dialogs::layer_style::color_picker::tests::preview_cancel_ok_parent_cancel_and_apply_are_transactional_at_every_depth ... ok
+test home_recent_ui::tests::recent_thumbnail_skips_composite_for_high_channel_psd_without_preview ... ok
+test home_recent_ui::tests::recent_thumbnail_skips_composite_for_oversized_psd_without_preview ... ok
+test dialogs::liquify_ui::tests::preview_off_shows_the_original_and_p_toggles_it ... ok
+test i18n::live_tests::scoped_preview_restores_language_even_after_a_panic ... ok
+test home_recent_ui::tests::recent_thumbnail_extracts_embedded_preview_from_large_psd_without_reading_payload ... ok
+test dialogs::liquify_ui::tests::the_preview_shows_liquify_only_inside_the_selection ... ok
+test dialogs::vp_ui::tests::new_layer_stamp_preview_stays_on_the_canvas ... ok
+test dialogs::vp_ui::tests::deleting_the_last_plane_drops_the_stamp_preview ... ok
+test dialogs::layer_style::color_picker::tests::stale_targets_and_invalid_colors_never_apply_or_leave_preview ... ok
+test dialogs::liquify_ui::tests::the_preview_on_a_smart_object_follows_its_filter_mask ... ok
+test dialogs::vp_ui::tests::a_torn_wall_and_clone_strokes_are_one_step_and_preview_on_the_source ... ok
+test menus::workspace_ui::tests::thirty_two_bit_preview_dialog ... ok
+test dialogs::caf_ui::tests::an_erased_sampling_area_previews_as_an_error ... ok
+test panels::blend_preview::tests::a_hovered_mode_previews_on_every_selected_layer ... ok
+test panels::brush_preview::tests::preview_sig_follows_the_brush_not_its_colour ... ok
+test panels::blend_preview::tests::a_hovered_mode_shows_on_the_canvas_until_the_pointer_leaves ... ok
+test panels::blend_preview::tests::blend_hover_disjoint_coverage_retains_views_without_hiding_gaps ... ok
+test panels::brush_preview::tests::tip_thumbnails_follow_shape_angle_and_roundness ... ok
+test panels::brush_preview::tests::preview_draws_a_stroke_that_fits ... ok
+test panels::brush_preview::tests::stored_tips_draw_their_saved_preview_until_loaded ... ok
+test panels::actions::panel_menu_tests::paused_menu_preview_keeps_the_requesting_gate_and_rejects_retargeting ... ok
+test dialogs::liquify_ui::tests::ok_with_preview_off_applies_the_warp ... ok
+test dialogs::vp_ui::tests::moving_the_paste_repaints_the_stamp_preview ... ok
+test panels::histogram_panel::tests::inspect_preview_is_the_active_documents ... ok
+test panels::histogram_panel::tests::adjustment_preview_is_counted_over_the_original ... ok
+test panels::smart_ui::tests::an_edited_smart_filter_previews_what_ok_gives ... ok
+test dialogs::wide_angle_ui::tests::constraint_overlay_reuses_the_preview_mesh_on_redraw ... ok
+test panels::type_panels_ui::color_picker::tests::no_op_keeps_precise_imported_color_and_returning_to_original_removes_preview ... ok
+test file_open::tests::affinity_preview_does_not_acquire_the_source_path_even_when_renamed ... ok
+test tools::crop_ui::tests::the_grown_area_previews_in_the_background_colour_the_crop_fills_it_with ... ok
+test smart_svg_ui::tests::saved_changes_wait_on_document_switch_and_active_preview ... ok
+test panels::mask_properties_tests::mask_slider_drags_preview_live_and_undo_as_separate_gestures ... ok
+test tools::cas_transform::tests::partial_colour_sets_cannot_start_content_aware_or_mesh_transform_previews ... ok
+test dialogs::vp_ui::tests::overlapping_stamp_preview_matches_commit_across_batches ... ok
+test tools::cas_transform::tests::on_the_background_the_preview_vacates_to_the_background_colour ... ok
+test panels::preset_panels::clone_offsets::tests::clone_offset_edit_before_painting_uses_the_preview_reference_and_matches_pixels ... ok
+test dialogs::solid_fill_ui::tests::picker_previews_without_editing_cancel_discards_and_ok_is_one_step ... ok
+test panels::blend_rows_tests::blend_rows_edits_become_previews_and_history_steps ... ok
+test dialogs::tests::a_filters_preview_stays_on_screen_until_its_job_lands ... ok
+test dialogs::filter_dialog::tests::proxy_previews_scale_only_lengths ... ok
+test filter_preview_locator_tests::a_click_on_the_image_centres_the_smart_sharpen_preview ... ok
+test tools::transform_tool::tests::artboard_solo_preview_keeps_holes_transparent_and_the_board_clip ... ok
+test tools::transform_tool::tests::nested_group_preview_detaches_every_clipped_ancestor ... ok
+test tools::symmetry_ui::tests::cancel_competing_edits_tool_document_and_focus_changes_drop_only_the_preview ... ok
+test tools::transform_tool::tests::nested_group_preview_excludes_its_siblings ... ok
+test tools::frame_tool::tests::free_transform_on_the_frame_thumbnail_previews_and_commits_only_the_clip ... ok
+test tools::gradient_ui::tests::the_preview_of_a_new_gradient_goes_inside_the_selected_artboard ... ok
+test tools::stroke_constraint::tests::line_preview_needs_shift_a_previous_stroke_and_no_stroke_in_progress ... ok
+test tools::transform_tool::tests::several_preview_detaches_clipped_ancestors ... ok
+test dialogs::filter_dialog::tests::core_filter_previews_keep_minimum_settings_after_downsampling ... ok
+test tools::object_finder::tests::preview_clears_on_leave_tool_switch_button_option_and_edits ... ok
+test tools::transform_tool::tests::preview_of_a_clipped_smart_object_is_not_empty ... ok
+test tools::transform_tool::tests::preview_feathers_the_linked_mask ... ok
+test tools::gradient_ui::tests::preview_shows_the_drag_before_commit ... ok
+test tools::transform_tool::tests::warp_mode_previews_a_stored_smart_warp_from_the_unwarped_source ... ok
+test dialogs::vp_ui::tests::stamp_preview_paints_over_the_paste_like_ok ... ok
+test panels::actions::record_again_tests::filter_and_adjustment_previews_retain_permissions_before_evaluation ... ok
+test tools::transform_tool::tests::unknown_preview_target_keeps_the_previous_document_fallback ... ok
+test filter_preview_locator_tests::a_crop_drag_begun_before_the_dialog_still_ends_under_it ... ok
+test tools::transform_tool::tests::warp_surface_drag_commits_as_previewed ... ok
+test patch_shift_constrain_tests::the_outline_the_preview_and_the_applied_patch_use_the_snapped_offset ... ok
+test tools::retouch_ui::tests::clone_stamp_in_pattern_preview_wraps_a_dab_across_the_right_edge ... ok
+test jobs_ui::tests::a_warp_commit_runs_in_the_background_and_keeps_its_preview ... ok
+test i18n::live_tests::preferences_preview_does_not_commit_until_applied_and_survives_reload ... FAILED
+test filter_preview_locator_tests::a_tool_gesture_begun_before_the_dialog_still_ends_under_it ... ok
+test tools::transform_tool::tests::preview_applies_the_linked_mask ... ok
+test jobs_ui::tests::a_free_transform_commit_runs_in_the_background_and_keeps_its_preview ... ok
+test tools::transform_tool::tests::transform_preview_preserves_displayed_profile_colors ... ok
+test dialogs::wide_angle_ui::tests::preview_mesh_refreshes_after_edits_and_history_steps ... ok
+test dialogs::file_ui::custom_paper_tests::custom_paper_ui_edits_reach_preview_and_pdf_and_restore_when_reopened ... ok
+test tools::type_font_preview::tests::an_installed_family_previews_at_once ... ok
+test tools::type_box_preview::tests::a_stale_preview_ends_the_drag_instead_of_applying_the_press_time_box ... ok
+test tools::type_box_preview::tests::deleting_the_layer_mid_drag_clears_the_preview_without_a_panic ... ok
+test tools::type_box_preview::tests::a_view_command_that_edits_the_document_ends_the_drag_first ... ok
+test tools::type_font_preview::tests::a_served_family_is_asked_for_only_once_the_pointer_rests_on_its_row ... ok
+test tools::type_tool::font_picker_tests::the_preview_sets_the_type_layers_text_or_the_selection_being_typed ... ok
+test tools::type_path_placement::tests::damage_tracks_preview_and_return ... ok
+test tools::type_box_preview::tests::one_undo_restores_the_box_after_an_async_drag ... ok
+test tools::type_tool::font_picker_tests::hovering_a_font_previews_only_the_selected_characters ... ok
+test tools::type_box_preview::tests::free_transform_mid_drag_sees_the_dragged_box ... ok
+test tools::type_box_preview::tests::switching_documents_mid_drag_ends_the_drag ... ok
+test tools::type_path_placement::tests::the_preview_follows_the_proposed_range_without_a_history_step ... ok
+test tools::vector_ui::path_drag_preview_tests::a_click_shows_no_move ... ok
+test tools::type_box_preview::tests::toggling_a_panel_mid_drag_leaves_the_drag_going ... ok
+test tools::transform_tool::tests::edits_during_a_transform_show_in_the_preview ... ok
+test tools::type_box_preview::tests::a_sync_drag_applies_every_move_at_once ... ok
+test tools::type_box_preview::tests::committing_mid_drag_keeps_the_dragged_box_and_cancelling_drops_it ... ok
+test tools::type_box_preview::tests::a_type_mask_edit_keeps_the_synchronous_drag ... ok
+test transform_fx_tests::a_styled_group_previews_with_its_style_once ... ok
+test tools::vector_ui::path_drag_preview_tests::a_shape_layer_drag_previews_no_outline ... ok
+test tools::vector_ui::path_drag_preview_tests::a_stale_drag_previews_nothing ... ok
+test tools::vector_ui::path_drag_preview_tests::only_the_selected_component_moves_in_the_preview ... ok
+test tools::vector_ui::paint_tests::tool_gradient_paints_reach_the_preview_and_the_next_shape ... ok
+test transform_several_tests::edits_to_the_children_of_a_moving_group_show_in_the_preview ... ok
+test tools::type_box_preview::tests::the_newest_box_wins_with_one_render_at_a_time ... ok
+test tools::type_box_preview::tests::a_drag_that_ends_without_a_release_is_applied_by_the_frame_step ... ok
+test tools::vector_ui::path_drag_preview_tests::a_work_path_drag_shows_the_path_where_the_release_puts_it ... ok
+test transform_fx_tests::edits_made_while_the_box_is_open_show_in_the_styled_preview ... ok
+test transform_several_tests::hiding_or_fading_a_moving_layer_shows_in_the_preview_at_once ... ok
+test tools::type_box_preview::tests::a_command_mid_drag_applies_the_box_and_ends_the_drag_but_a_view_command_does_not ... ok
+test dialogs::solid_fill_ui::tests::cmyk_lab_preview_thumbnail_cancel_and_ok_are_consistent ... ok
+test tools::vector_ui::path_drag_preview_tests::the_selected_saved_path_previews_too ... ok
+test panels::type_panels_ui::color_picker::tests::preview_is_cached_cancel_is_clean_and_ok_is_one_undo_step_at_all_depths ... ok
+test transform_task_bar_tests::transform_task_bar_ignores_a_foreign_preview_after_a_document_switch ... ok
+test tools::type_box_preview::tests::control_commands_mid_drag_see_the_dragged_box ... ok
+test transform_fx_tests::layers_without_a_style_and_other_boxes_keep_the_plain_preview ... ok
+test transform_undo_tests::transform_preview_stays_visible_while_panning ... ok
+test tools::vector_ui::tests::shape_preview_is_the_committed_path ... ok
+test tools::type_box_preview::tests::a_width_drag_rewraps_the_preview_and_ends_as_the_sync_drag ... ok
+test warp_text_dialog_tests::warp_text_dialog_previews_the_warp_without_editing_the_document ... ok
+test dialogs::filter_dialog::multi_channel_dialog_tests::mask_view_dialogs_capture_the_mask_for_preview_and_confirmation ... ok
+test transform_fx_tests::the_preview_matches_the_committed_layer ... ok
+test tools::type_box_preview::tests::an_async_drag_leaves_the_document_alone_until_release_and_ends_as_the_sync_drag ... ok
+test tools::puppet_ui::tests::preview_matches_the_canonical_deformation_and_the_committed_layer ... ok
+test tools::vector_ui::paint_tests::float_paints_match_preview_creation_native_roundtrip_and_document_depth ... ok
+test dialogs::gallery_ui::tests::native_component_gallery_previews_match_commit_and_capture_the_target ... ok
+test tools::type_tool::font_commit_tests::global_commit_clears_hover_before_preview_can_expand_to_the_whole_layer ... ok
+test dialogs::filter_dialog::tests::fixed_size_filters_preview_at_the_scale_they_apply ... ok
+test tools::type_tool::font_picker_tests::options_bar_hover_previews_with_the_character_picker_also_shown ... ok
+test canvas::cam_preview::tests::a_large_selection_shows_a_coarse_result_then_the_exact_one ... ok
+test dialogs::wide_angle_ui::tests::native_component_wide_angle_previews_and_commit_keep_unselected_samples ... ok
+test dialogs::filter_dialog::tests::every_preview_shows_what_ok_applies ... ok
+
+failures:
+
+---- i18n::live_tests::preferences_preview_does_not_commit_until_applied_and_survives_reload stdout ----
+
+thread 'i18n::live_tests::preferences_preview_does_not_commit_until_applied_and_survives_reload' (732218) panicked at /home/bober/.cargo/git/checkouts/egui-057e9a0485eda407/f502528/crates/epaint/src/text/fonts.rs:893:9:
+No glyph for "த" (U+0BA4) in Proportional. Installed fonts: ["Inter", "Shippori Mincho Regular", "BIZ UDPGothic Regular", "BIZ UDMincho Regular", "Noto Sans CJK SC Regular", "Noto Sans Arabic Regular", "Noto Sans Thai Regular", "Noto Sans Georgian Regular", "NanumGothic Regular", "Noto Sans Symbols Regular", "Noto Sans Symbols 2 Regular", "Noto Sans Hebrew Regular", "Noto Sans Devanagari Regular"]. Install a font that has it, add a `FontProvider` or `GlyphRasterizer` that can draw it, or allow tofu with `MissingGlyphPolicy::Tofu`.
+
+
+failures:
+    i18n::live_tests::preferences_preview_does_not_commit_until_applied_and_survives_reload
+
+test result: FAILED. 289 passed; 1 failed; 2 ignored; 0 measured; 3598 filtered out; finished in 8.82s
+
+error: test failed, to rerun pass `-p photocraft-ui-egui --lib`

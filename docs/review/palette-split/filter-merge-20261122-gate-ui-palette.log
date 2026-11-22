@@ -1,0 +1,26 @@
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=f5025284445ea19c35f746d96fc0b75468b3f560#f5025284)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=f5025284445ea19c35f746d96fc0b75468b3f560#f5025284)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=f5025284445ea19c35f746d96fc0b75468b3f560#f5025284)` was not used in the crate graph
+warning: patch `hayro-cmap v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)` was not used in the crate graph
+warning: patch `hayro-postscript v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)` was not used in the crate graph
+warning: patch `krilla v0.8.2 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+    Finished `test` profile [optimized] target(s) in 0.28s
+     Running unittests src/lib.rs (../../photocraft/target/review-merge-8933-20261122/debug/deps/photocraft_ui_egui-f5a2902544adc081)
+
+running 9 tests
+test dialogs::filter_dialog::tests::palette_map_live_preview_uses_the_document_proxy ... ok
+test dialogs::palette_map_ui::tests::legacy_mapping_fields_are_migrated ... ok
+test dialogs::palette_map_ui::tests::imported_threshold_matrix_obeys_custom_pattern_bounds ... ok
+test dialogs::palette_map_ui::tests::rgb_cube_library_thumbnail_shows_chromatic_colors ... ok
+test dialogs::filter_dialog::tests::palette_map_on_a_reduced_smart_object_replays_scaled_existing_filters ... ok
+test dialogs::palette_map_ui::tests::cancel_discards_palette_draft_without_document_mutation ... ok
+test dialogs::palette_map_ui::tests::invalid_matrix_import_preserves_a_confirmable_recipe ... ok
+test dialogs::filter_dialog::tests::fresh_palette_map_dialog_maps_a_pixel_on_confirm ... ok
+test dialogs::palette_map_ui::tests::remembered_palette_values_must_still_validate ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 3881 filtered out; finished in 0.07s
+

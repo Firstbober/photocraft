@@ -1,0 +1,869 @@
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=f5025284445ea19c35f746d96fc0b75468b3f560#f5025284)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=f5025284445ea19c35f746d96fc0b75468b3f560#f5025284)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=f5025284445ea19c35f746d96fc0b75468b3f560#f5025284)` was not used in the crate graph
+warning: patch `hayro-cmap v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)` was not used in the crate graph
+warning: patch `hayro-postscript v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)` was not used in the crate graph
+warning: patch `krilla v0.8.2 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+    Finished `dev` profile [optimized] target(s) in 0.19s
+     Running `/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-merge-8933-20261122/debug/xtask wasm`
+$ cargo check --target wasm32-unknown-unknown --keep-going -p photocraft-algo -p photocraft-color -p photocraft-compose -p photocraft-doc -p photocraft-engine -p photocraft-format -p photocraft-geom -p photocraft-gpu -p photocraft-io -p photocraft-ipp -p photocraft-ops -p photocraft-paint -p photocraft-plugins -p photocraft-raster -p photocraft-raw -p photocraft-tablet -p photocraft-text -p photocraft-ui-egui -p photocraft-vector
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=f5025284445ea19c35f746d96fc0b75468b3f560#f5025284)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=f5025284445ea19c35f746d96fc0b75468b3f560#f5025284)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=f5025284445ea19c35f746d96fc0b75468b3f560#f5025284)` was not used in the crate graph
+warning: patch `hayro-cmap v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)` was not used in the crate graph
+warning: patch `hayro-postscript v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)` was not used in the crate graph
+warning: patch `krilla v0.8.2 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling serde_core v1.0.229
+   Compiling serde v1.0.229
+    Checking cfg-if v1.0.5
+   Compiling thiserror v2.0.21
+   Compiling libm v0.2.16
+    Checking bytemuck v1.25.2
+    Checking once_cell v1.21.4
+   Compiling num-traits v0.2.19
+    Checking pin-project-lite v0.2.17
+   Compiling wasm-bindgen-shared v0.2.130
+    Checking unicode-ident v1.0.27
+   Compiling wasm-bindgen v0.2.130
+    Checking simd-adler32 v0.3.10
+    Checking bitflags v2.13.2
+   Compiling wasm-bindgen-macro-support v0.2.130
+   Compiling crc32fast v1.5.5
+    Checking memchr v2.8.3
+    Checking adler2 v2.0.1
+    Checking either v1.19.0
+    Checking futures-core v0.3.34
+    Checking futures-task v0.3.34
+    Checking slab v0.4.12
+    Checking miniz_oxide v0.9.1
+    Checking futures-util v0.3.34
+    Checking smallvec v1.16.5
+    Checking arrayvec v0.7.8
+    Checking foldhash v0.2.0
+    Checking log v0.4.35
+    Checking hashbrown v0.17.1
+    Checking zlib-rs v0.6.8
+    Checking zerofrom v0.1.8
+    Checking stable_deref_trait v1.2.1
+   Compiling zerocopy v0.8.63
+    Checking yoke v0.8.4
+    Checking polycool v0.4.0
+    Checking flate2 v1.1.11
+    Checking font-types v0.12.7
+    Checking kurbo v0.13.1
+    Checking zerovec v0.11.9
+    Checking writeable v0.6.4
+    Checking fearless_simd v0.4.1
+   Compiling zmij v1.0.23
+    Checking litemap v0.8.3
+    Checking unicode-bidi v0.3.18
+   Compiling serde_json v1.0.154
+    Checking tinystr v0.8.5
+    Checking cobs v0.3.0
+    Checking itoa v1.0.19
+    Checking postcard v1.1.3
+    Checking icu_locale_core v2.3.0
+   Compiling toml_datetime v1.1.3+spec-1.1.0
+    Checking zerotrie v0.2.5
+    Checking equivalent v1.0.3
+    Checking linebender_resource_handle v0.1.1
+    Checking indexmap v2.14.2
+    Checking read-fonts v0.41.0
+    Checking icu_provider v2.3.1
+    Checking scopeguard v1.2.0
+    Checking euclid v0.22.14
+    Checking color v0.3.3
+   Compiling parking_lot_core v0.9.12
+    Checking peniko v0.6.1
+    Checking guillotiere v0.7.0
+    Checking miniz_oxide v0.8.9
+    Checking quick-xml v0.41.0
+    Checking zune-core v0.5.3
+    Checking lock_api v0.4.14
+    Checking half v2.7.1
+    Checking fdeflate v0.3.7
+    Checking unicode-properties v0.1.5
+    Checking parking_lot v0.12.5
+   Compiling toml_edit v0.25.19+spec-1.1.0
+    Checking zune-jpeg v0.5.15
+    Checking potential_utf v0.1.6
+    Checking profiling v1.0.18
+   Compiling proc-macro-crate v3.5.0
+    Checking skrifa v0.44.0
+    Checking harfrust v0.12.0
+    Checking utf_types v1.0.0
+    Checking craft-tracked v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking emath v0.37.0 (https://github.com/storytold/egui.git?rev=f5025284445ea19c35f746d96fc0b75468b3f560#f5025284)
+   Compiling craft-ui-macros v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+   Compiling ahash v0.8.12
+   Compiling unicode-general-category v1.1.0
+    Checking ecolor v0.37.0 (https://github.com/storytold/egui.git?rev=f5025284445ea19c35f746d96fc0b75468b3f560#f5025284)
+    Checking utf8_iter v1.1.0
+    Checking vello_common v0.2.0
+   Compiling slotmap v1.1.1
+    Checking unicode-segmentation v1.13.3
+    Checking alloc-no-stdlib v3.0.0
+    Checking siphasher v1.0.4
+    Checking alloc-stdlib v0.3.0
+    Checking icu_collections v2.3.0
+    Checking vello_cpu v0.2.0
+    Checking png v0.18.1
+    Checking uuid v1.29.2
+    Checking nohash-hasher v0.2.0
+    Checking self_cell v1.3.0
+    Checking epaint v0.37.0 (https://github.com/storytold/egui.git?rev=f5025284445ea19c35f746d96fc0b75468b3f560#f5025284)
+   Compiling icu_properties_data v2.3.0
+   Compiling icu_locale_fallback_data v2.3.0
+    Checking accesskit v0.25.2
+    Checking brotli-decompressor v6.3.2
+    Checking itertools v0.15.0
+    Checking float-cmp v0.9.0
+    Checking weezl v0.1.12
+    Checking pxfm v0.1.30
+    Checking rustc-hash v2.1.3
+    Checking quick-error v2.0.1
+   Compiling icu_normalizer_data v2.3.0
+    Checking strict-num v0.1.1
+    Checking core_maths v0.1.1
+    Checking byteorder-lite v0.1.0
+    Checking arrayref v0.3.9
+    Checking color_quant v1.1.0
+    Checking tinyvec v1.13.3
+    Checking gif v0.14.2
+    Checking moxcms v0.8.1
+    Checking image-webp v0.2.4
+    Checking calendrical_calculations v0.2.4
+    Checking icu_properties v2.3.0
+    Checking icu_locale_fallback v2.3.0
+    Checking utf16_iter v1.1.0
+    Checking fixed_decimal v0.7.3
+    Checking fax v0.2.7
+    Checking raw-window-handle v0.6.2
+    Checking write16 v1.0.0
+    Checking icu_normalizer v2.3.0
+    Checking tiff v0.11.3
+    Checking icu_calendar v2.3.0
+    Checking craft-xml v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking qoi v0.4.1
+    Checking winnow v1.0.5
+    Checking alloc-no-stdlib v2.0.4
+    Checking alloc-stdlib v0.2.4
+    Checking image v0.25.10
+    Checking toml_parser v1.1.5+spec-1.1.0
+    Checking icu_time v2.3.0
+   Compiling generic-array v0.14.7
+    Checking icu_plurals v2.3.0
+    Checking icu_decimal v2.3.0
+    Checking hayro-jpeg2000 v0.3.5
+    Checking icu_pattern v0.5.1
+    Checking craft-tiff v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking serde_spanned v1.1.3
+    Checking typenum v1.20.1
+    Checking icu_datetime v2.3.0
+    Checking brotli-decompressor v5.0.3
+    Checking icu_collator v2.3.1
+    Checking icu_provider_adapters v2.3.0
+    Checking icu_provider_blob v2.3.0
+    Checking simplecss v0.2.2
+    Checking data-url v0.3.2
+    Checking pico-args v0.5.0
+    Checking xmlwriter v0.1.0
+    Checking toml v1.2.1+spec-1.1.0
+    Checking read-fonts v0.44.0
+    Checking craft-atomic v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking block-buffer v0.10.4
+    Checking crypto-common v0.1.7
+    Checking tiny-skia-path v0.12.0
+    Checking roxmltree v0.21.2
+    Checking zune-inflate v0.2.54
+    Checking rgb v0.8.53
+    Checking lebe v0.5.3
+    Checking bit_field v0.10.4
+    Checking base64 v0.23.1
+    Checking skrifa v0.47.0
+    Checking exr v1.74.3
+    Checking digest v0.10.7
+    Checking fontdb v0.24.0
+    Checking svgtypes v0.16.2
+    Checking zune-jpegxl v0.5.2
+    Checking craft-jpeg v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking imagesize v0.15.0
+    Checking jpeg-encoder v0.6.1
+    Checking craft-dds v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking unicode-vo v0.1.0
+    Checking unicode-script v0.5.9
+    Checking zeroize v1.9.1
+    Checking usvg v0.48.1
+    Checking tiny-skia v0.12.0
+    Checking linesweeper v0.5.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking vectorcraft-geom v0.18.0 (https://github.com/storytold/vectorcraft.git?rev=6b3a6b8788ebcb420d69449199cbdf323888d27e#6b3a6b87)
+    Checking toml_writer v1.2.0+spec-1.1.0
+   Compiling rfd v0.17.2
+    Checking vectorcraft-pathops v0.18.0 (https://github.com/storytold/vectorcraft.git?rev=6b3a6b8788ebcb420d69449199cbdf323888d27e#6b3a6b87)
+    Checking craft-theme v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking resvg v0.48.1
+    Checking read-fonts v0.43.3
+   Compiling typeid v1.0.3
+   Compiling craft-ui-contract v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-docpath v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking unicode-normalization v0.1.26
+    Checking inventory v0.3.25
+    Checking scoped-tls v1.0.1
+    Checking craft-codepage v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-fonts-build v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking hayro-ccitt v0.3.0
+    Checking hayro-jbig2 v0.3.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking stringprep v0.1.5
+    Checking md-5 v0.10.6
+    Checking brotli v8.0.4
+    Checking phf_shared v0.13.1
+    Checking tracing-core v0.1.36
+    Checking hayro-postscript v0.2.0
+    Checking tracing v0.1.44
+    Checking phf v0.13.1
+    Checking hayro-syntax v0.7.2 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking hayro-cmap v0.1.1
+    Checking harfrust v0.13.3
+    Checking vello_common v0.0.8 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking hayro-interpret v0.7.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking vello_cpu v0.0.8 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking pic-scale v0.7.12
+    Checking jxl-bitstream v1.1.0
+    Checking craft-cms v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-font-catalog v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking hayro v0.7.1 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking jxl-oxide-common v1.0.0
+    Checking craft-pdf v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking jxl-grid v0.6.2
+    Checking jxl-coding v1.0.1
+    Checking jxl-threadpool v1.0.0
+   Compiling crossbeam-utils v0.8.23
+    Checking jxl-modular v0.11.3
+    Checking jxl-image v0.13.0
+   Compiling crossbeam-epoch v0.9.21
+    Checking photocraft-color v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/color)
+    Checking jxl-vardct v0.11.1
+    Checking photocraft-geom v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/geom)
+    Checking lz4_flex v0.11.6
+   Compiling crossbeam-deque v0.8.8
+    Checking photocraft-raster v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/raster)
+    Checking jxl-frame v0.13.3
+   Compiling getrandom v0.4.3
+   Compiling rayon-core v1.13.0
+   Compiling constant_time_eq v0.6.1
+    Checking jxl-color v0.11.0
+    Checking rustc-hash v1.1.0
+    Checking bitflags v1.3.2
+    Checking naga-types v30.0.1
+    Checking png v0.17.16
+    Checking jxl-jbr v0.2.1
+    Checking jxl-render v0.12.4
+   Compiling naga v30.0.1
+    Checking bit-vec v0.9.1
+    Checking typed-path v0.13.0
+    Checking base64 v0.22.1
+    Checking unicode-width v0.2.3
+    Checking jxl-oxide v0.12.6
+    Checking codespan-reporting v0.13.1
+    Checking bit-set v0.10.0
+    Checking rayon v1.12.0
+    Checking sha2 v0.10.9
+    Checking craft-tiff v0.1.0 (https://github.com/storytold/craft-libs?rev=7631ed550ef6b1abcc90a095dd7338e1b2c67c26#7631ed55)
+    Checking static_assertions v1.1.0
+    Checking craft-font-store v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking photocraft-doc v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/doc)
+   Compiling wgpu-hal v30.0.1
+    Checking craft-cms v0.1.0 (https://github.com/storytold/craft-libs?rev=7631ed550ef6b1abcc90a095dd7338e1b2c67c26#7631ed55)
+    Checking craft-control v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-color v0.1.0 (https://github.com/storytold/craft-libs?rev=7631ed550ef6b1abcc90a095dd7338e1b2c67c26#7631ed55)
+    Checking craft-geom v0.1.0 (https://github.com/storytold/craft-libs?rev=7631ed550ef6b1abcc90a095dd7338e1b2c67c26#7631ed55)
+    Checking craft-time v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking num-integer v0.1.47
+    Checking craft-crw v0.1.0 (https://github.com/storytold/craft-libs?rev=7631ed550ef6b1abcc90a095dd7338e1b2c67c26#7631ed55)
+    Checking craft-winprint-gdi v0.1.0 (https://github.com/storytold/winprint.rs?rev=64e7afd4d1483512385012c340ecaaaf0f3beb7f#64e7afd4)
+    Checking unicode-linebreak v0.1.5
+    Checking unicode-bidi-mirroring v0.4.0
+    Checking hypher v0.1.8
+   Compiling icu_segmenter_data v2.3.0
+    Checking craft-color-transform v0.1.0 (https://github.com/storytold/craft-libs?rev=7631ed550ef6b1abcc90a095dd7338e1b2c67c26#7631ed55)
+   Compiling blake3 v1.8.7
+   Compiling wgpu-core v30.0.1
+    Checking ruzstd v0.9.1
+    Checking constant_time_eq v0.4.2
+    Checking strength_reduce v0.2.4
+    Checking transpose v0.2.3
+   Compiling encoding_rs v0.8.44
+    Checking primal-check v0.3.4
+    Checking craft-pcraft-format v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking num-complex v0.4.6
+    Checking craft-crw v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking memmap2 v0.9.12
+    Checking parlance v0.1.1
+   Compiling wasmparser v0.228.0
+   Compiling wasmi_ir v2.0.0
+    Checking rustfft v6.4.1
+    Checking fontique v0.11.1
+   Compiling wgpu v30.0.1
+    Checking icu_segmenter v2.3.0
+    Checking photocraft-vector v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/vector)
+    Checking parley_data v0.11.1
+    Checking tiny-skia-path v0.11.4
+    Checking kurbo v0.11.3
+    Checking wasmi_core v2.0.0
+   Compiling wasmi v2.0.0
+    Checking photocraft-compose v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/compose)
+    Checking svgtypes v0.15.3
+    Checking parley v0.11.1
+    Checking craft-psd v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+   Compiling wasm-bindgen-macro v0.2.130
+   Compiling photocraft-text v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/text)
+    Checking craft-plist v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking roxmltree v0.20.0
+    Checking spin v0.9.9
+    Checking imagesize v0.13.0
+    Checking js-sys v0.3.107
+    Checking zip v9.5.1
+    Checking craft-zip v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking wasmi_collections v2.0.0
+    Checking craft-pcraft-bundle v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-ora v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-kra v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-idml v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-eps v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking usvg v0.45.1
+    Checking tiny-skia v0.11.4
+    Checking craft-affinity v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking photocraft-paint v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/paint)
+    Checking type-map v0.5.1
+    Checking web-sys v0.3.107
+    Checking chrono v0.4.45
+warning: function `map_items` is never used
+  --> crates/paint/src/render.rs:90:4
+   |
+90 | fn map_items<T: Sync, R: Send>(items: &[T], pixels: usize, f: impl Fn(&T) -> R + Sync) -> Vec<R> {
+   |    ^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `photocraft-paint` (lib) generated 1 warning
+    Checking web-time v1.1.0
+    Checking wasm-bindgen-futures v0.4.80
+    Checking craft-metadata v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-metadata v0.1.0 (https://github.com/storytold/craft-libs?rev=7631ed550ef6b1abcc90a095dd7338e1b2c67c26#7631ed55)
+    Checking craft-pdn v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-xcf v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-image-codecs v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-develop-model v0.1.0 (https://github.com/storytold/craft-libs?rev=7631ed550ef6b1abcc90a095dd7338e1b2c67c26#7631ed55)
+    Checking craft-raw v0.1.0 (https://github.com/storytold/craft-libs?rev=7631ed550ef6b1abcc90a095dd7338e1b2c67c26#7631ed55)
+    Checking craft-raw v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-svg v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-develop v0.1.0 (https://github.com/storytold/craft-libs?rev=7631ed550ef6b1abcc90a095dd7338e1b2c67c26#7631ed55)
+    Checking photocraft-format v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/format)
+    Checking craft-file-formats v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-crs v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking ttf-parser v0.25.1
+    Checking enum-map v3.1.0
+    Checking photocraft-plugins v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/plugins)
+    Checking photocraft-raw v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/raw)
+warning: function `open_regular` is never used
+  --> crates/plugins/src/registry.rs:67:4
+   |
+67 | fn open_regular(path: &std::path::Path) -> std::io::Result<std::fs::File> {
+   |    ^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `photocraft-plugins` (lib) generated 1 warning
+   Compiling photocraft-ui-egui v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/ui-egui)
+    Checking resvg v0.45.1
+    Checking photocraft-ops v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/ops)
+    Checking send_wrapper v0.6.0
+    Checking semver v1.0.28
+    Checking percent-encoding v2.3.2
+    Checking craft-ipp v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking photocraft-tablet v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/tablet)
+    Checking egui v0.37.0 (https://github.com/storytold/egui.git?rev=f5025284445ea19c35f746d96fc0b75468b3f560#f5025284)
+    Checking sys-locale v0.3.2
+    Checking wgpu-types v30.0.1
+    Checking craft-i18n v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking glow v0.17.0
+    Checking photocraft-ipp v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/ipp)
+    Checking wgpu-naga-bridge v30.0.1
+    Checking wgpu-core-deps-wasm v30.0.1
+    Checking craft-host v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-quit v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-cloud-ui v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking egui_extras v0.37.0 (https://github.com/storytold/egui.git?rev=f5025284445ea19c35f746d96fc0b75468b3f560#f5025284)
+    Checking craft-keymap v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-settings v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-platform v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-behavior v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-window v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking egui-wgpu v0.37.0 (https://github.com/storytold/egui.git?rev=f5025284445ea19c35f746d96fc0b75468b3f560#f5025284)
+    Checking eframe v0.37.0 (https://github.com/storytold/egui.git?rev=f5025284445ea19c35f746d96fc0b75468b3f560#f5025284)
+    Checking craft-ui-widgets v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-ui-panels v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-ui-canvas v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-ui-patterns v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-ui-shell v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-ui v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-color-ui v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-font-manager v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-print v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-layers v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-menu v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-timeline v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-text v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-theme-store v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-imaging v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-draw v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-automation v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking photocraft-algo v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/algo)
+warning: constant `MACOS_PRIVATE_FONTS` is never used
+   --> crates/text/src/fonts.rs:915:7
+    |
+915 | const MACOS_PRIVATE_FONTS: &str = "/System/Library/PrivateFrameworks";
+    |       ^^^^^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `is_private_font_path` is never used
+   --> crates/text/src/fonts.rs:918:4
+    |
+918 | fn is_private_font_path(path: &std::path::Path) -> bool {
+    |    ^^^^^^^^^^^^^^^^^^^^
+
+warning: `photocraft-text` (lib) generated 2 warnings
+    Checking photocraft-io v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/io)
+    Checking photocraft-gpu v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/gpu)
+warning: function `classify_build_diagnostic` is never used
+  --> crates/gpu/src/setup.rs:37:4
+   |
+37 | fn classify_build_diagnostic(diagnostic: &str) -> BuildFailureKind {
+   |    ^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `photocraft-gpu` (lib) generated 1 warning
+warning: function `has_extension` is never used
+    --> crates/io/src/lib.rs:1097:4
+     |
+1097 | fn has_extension(name: &str, expected: &str) -> bool {
+     |    ^^^^^^^^^^^^^
+     |
+     = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `photocraft-io` (lib) generated 1 warning
+    Checking photocraft-engine v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/engine)
+warning: unused import: `std::io::Read`
+  --> crates/engine/src/preset_store.rs:51:5
+   |
+51 | use std::io::Read;
+   |     ^^^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: constant `PAR_PIXELS` is never used
+   --> crates/engine/src/display_color.rs:110:7
+    |
+110 | const PAR_PIXELS: usize = 16 * 1024;
+    |       ^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: constant `MAX_FOLDER_LUTS` is never used
+   --> crates/engine/src/cmd/adjust_cmds.rs:209:7
+    |
+209 | const MAX_FOLDER_LUTS: usize = 500;
+    |       ^^^^^^^^^^^^^^^
+
+warning: constant `MAX_FOLDER_LUT_BYTES` is never used
+   --> crates/engine/src/cmd/adjust_cmds.rs:211:7
+    |
+211 | const MAX_FOLDER_LUT_BYTES: u64 = 64 << 20;
+    |       ^^^^^^^^^^^^^^^^^^^^
+
+warning: `photocraft-engine` (lib) generated 4 warnings
+warning: unused import: `AtomicBool`
+  --> crates/ui-egui/src/dialogs/select_mask_ui.rs:12:25
+   |
+12 | use std::sync::atomic::{AtomicBool, AtomicU32, AtomicU64, AtomicUsize, Ordering};
+   |                         ^^^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `PATH_OPS`
+  --> crates/ui-egui/src/tools/vector_ui.rs:47:22
+   |
+47 | pub(crate) use pen::{PATH_OPS, path_op_field, pen_path};
+   |                      ^^^^^^^^
+
+warning: field `updates_rt` is never read
+   --> crates/ui-egui/src/lib.rs:670:16
+    |
+307 | pub struct PhotocraftApp {
+    |            ------------- field in this struct
+...
+670 |     pub(crate) updates_rt: updates_ui::Runtime,
+    |                ^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `labels` is never used
+   --> crates/ui-egui/src/brush_mode_menu.rs:121:15
+    |
+121 | pub(crate) fn labels(tool: Tool) -> Vec<&'static str> {
+    |               ^^^^^^
+
+warning: function `same_target` is never used
+   --> crates/ui-egui/src/canvas/filter_preview.rs:254:15
+    |
+254 | pub(crate) fn same_target(app: &PhotocraftApp, key: &crate::filter_dialog::FilterPreviewKey) -> bool {
+    |               ^^^^^^^^^^^
+
+warning: variants `Building` and `Ready` are never constructed
+ --> crates/ui-egui/src/canvas/gpu_canvas/compositor_build.rs:8:5
+  |
+5 | pub(super) enum BuildState {
+  |                 ---------- variants in this enum
+...
+8 |     Building,
+  |     ^^^^^^^^
+9 |     Ready(Box<photocraft_gpu::Compositor>),
+  |     ^^^^^
+
+warning: function `dismiss` is never used
+   --> crates/ui-egui/src/dialogs/camera_raw_ui.rs:605:15
+    |
+605 | pub(crate) fn dismiss(app: &mut PhotocraftApp, ctx: &egui::Context) {
+    |               ^^^^^^^
+
+warning: function `host_id` is never used
+   --> crates/ui-egui/src/dialogs/discard_ui.rs:426:15
+    |
+426 | pub(crate) fn host_id(app: &PhotocraftApp) -> Option<craft::ui::dialog::DialogId> {
+    |               ^^^^^^^
+
+warning: function `describe` is never used
+   --> crates/ui-egui/src/dialogs/discard_ui.rs:433:15
+    |
+433 | pub(crate) fn describe(app: &PhotocraftApp, dialogs: &mut Value) {
+    |               ^^^^^^^^
+
+warning: fields `signature` and `key` are never read
+   --> crates/ui-egui/src/dialogs/export_dialog.rs:216:5
+    |
+213 | struct PreviewWork {
+    |        ----------- fields in this struct
+...
+216 |     signature: String,
+    |     ^^^^^^^^^
+217 |     key: egui::Id,
+    |     ^^^
+
+warning: function `open` is never used
+  --> crates/ui-egui/src/dialogs/format_prompts.rs:98:8
+   |
+98 | pub fn open(app: &mut PhotocraftApp, _ctx: &egui::Context, params: &Value) -> Result<DialogId, String> {
+   |        ^^^^
+
+warning: function `describe_params` is never used
+   --> crates/ui-egui/src/dialogs/layer_style.rs:361:15
+    |
+361 | pub(crate) fn describe_params(app: &PhotocraftApp, dialogs: &mut Value) {
+    |               ^^^^^^^^^^^^^^^
+
+warning: function `open` is never used
+  --> crates/ui-egui/src/dialogs/layer_style/color_picker.rs:60:15
+   |
+60 | pub(crate) fn open(app: &mut PhotocraftApp, parent: u64, effect: &str, field: &str, stop: Option<usize>) -> Result<DialogId, String> {
+   |               ^^^^
+
+warning: function `allows` is never used
+  --> crates/ui-egui/src/menus.rs:71:15
+   |
+71 | pub(crate) fn allows(app: &PhotocraftApp, command: &CommandRef) -> bool {
+   |               ^^^^^^
+
+warning: function `check` is never used
+   --> crates/ui-egui/src/panels/panel_docking.rs:116:15
+    |
+116 | pub(crate) fn check(app: &PhotocraftApp, actions: &[Action<String>]) -> Result<(), String> {
+    |               ^^^^^
+
+warning: function `width_actions` is never used
+   --> crates/ui-egui/src/panels/panel_docking.rs:344:15
+    |
+344 | pub(crate) fn width_actions(app: &PhotocraftApp, ctx: &egui::Context, total: f32) -> Vec<Action<String>> {
+    |               ^^^^^^^^^^^^^
+
+warning: function `selected` is never used
+   --> crates/ui-egui/src/panels/panel_docking.rs:900:4
+    |
+900 | fn selected(layout: &Layout<String>, panel: &String) -> bool {
+    |    ^^^^^^^^
+
+warning: function `legacy_actions` is never used
+   --> crates/ui-egui/src/panels/panel_docking.rs:916:15
+    |
+916 | pub(crate) fn legacy_actions(
+    |               ^^^^^^^^^^^^^^
+
+warning: function `legacy_view` is never used
+    --> crates/ui-egui/src/panels/panel_docking.rs:1002:15
+     |
+1002 | pub(crate) fn legacy_view(app: &PhotocraftApp) -> Value {
+     |               ^^^^^^^^^^^
+
+warning: function `status_message` is never used
+   --> crates/ui-egui/src/updates_ui.rs:132:15
+    |
+132 | pub(crate) fn status_message(_app: &PhotocraftApp) -> Option<String> {
+    |               ^^^^^^^^^^^^^^
+
+warning: field `has_links` is never read
+  --> crates/ui-egui/src/app/doc_queries.rs:46:5
+   |
+40 | struct Entry {
+   |        ----- field in this struct
+...
+46 |     has_links: Option<bool>,
+   |     ^^^^^^^^^
+
+warning: method `has_linked_files` is never used
+   --> crates/ui-egui/src/app/doc_queries.rs:120:19
+    |
+ 64 | impl DocQueries {
+    | --------------- method in this implementation
+...
+120 |     pub(crate) fn has_linked_files(&self, session: &Session, st: &DocState) -> bool {
+    |                   ^^^^^^^^^^^^^^^^
+
+warning: function `inspect` is never used
+   --> crates/ui-egui/src/prefs/prefs_ui/shortcuts.rs:136:15
+    |
+136 | pub(crate) fn inspect(app: &PhotocraftApp) -> Option<Value> {
+    |               ^^^^^^^
+
+warning: function `cancel` is never used
+   --> crates/ui-egui/src/prefs/prefs_ui/shortcuts.rs:142:15
+    |
+142 | pub(crate) fn cancel(app: &mut PhotocraftApp) -> bool {
+    |               ^^^^^^
+
+warning: function `editing` is never used
+  --> crates/ui-egui/src/tools/gradient_ui.rs:57:15
+   |
+57 | pub(crate) fn editing(app: &PhotocraftApp) -> bool {
+   |               ^^^^^^^
+
+warning: function `inspect` is never used
+  --> crates/ui-egui/src/tools/magnetic_lasso_ui.rs:91:15
+   |
+91 | pub(crate) fn inspect(app: &PhotocraftApp) -> Value {
+   |               ^^^^^^^
+
+warning: fields `session`, `pass`, and `rect` are never read
+  --> crates/ui-egui/src/tools/transform_task_bar.rs:24:5
+   |
+23 | struct ShownRect {
+   |        --------- fields in this struct
+24 |     session: u64,
+   |     ^^^^^^^
+25 |     pass: u64,
+   |     ^^^^
+26 |     rect: [f32; 4],
+   |     ^^^^
+   |
+   = note: `ShownRect` has a derived impl for the trait `Clone`, but this is intentionally ignored during dead code analysis
+
+warning: function `shown_rect` is never used
+  --> crates/ui-egui/src/tools/transform_task_bar.rs:57:15
+   |
+57 | pub(crate) fn shown_rect(app: &PhotocraftApp, ctx: &egui::Context) -> Option<[f32; 4]> {
+   |               ^^^^^^^^^^
+
+warning: function `inspect` is never used
+   --> crates/ui-egui/src/tools/type_transform.rs:352:15
+    |
+352 | pub(crate) fn inspect(app: &PhotocraftApp) -> serde_json::Value {
+    |               ^^^^^^^
+
+warning: `photocraft-ui-egui` (lib) generated 29 warnings (run `cargo fix --lib -p photocraft-ui-egui` to apply 2 suggestions)
+    Finished `dev` profile [optimized] target(s) in 1m 10s
+$ cargo check --target wasm32-unknown-unknown -p photocraft-io --features heif
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=f5025284445ea19c35f746d96fc0b75468b3f560#f5025284)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=f5025284445ea19c35f746d96fc0b75468b3f560#f5025284)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=f5025284445ea19c35f746d96fc0b75468b3f560#f5025284)` was not used in the crate graph
+warning: patch `hayro-cmap v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)` was not used in the crate graph
+warning: patch `hayro-postscript v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)` was not used in the crate graph
+warning: patch `krilla v0.8.2 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling num-traits v0.2.19
+    Checking smallvec v1.16.5
+    Checking either v1.19.0
+    Checking postcard v1.1.3
+    Checking writeable v0.6.4
+    Checking font-types v0.12.7
+    Checking hashbrown v0.17.1
+    Checking icu_locale_core v2.3.0
+    Checking potential_utf v0.1.6
+    Checking kurbo v0.13.1
+    Checking chrono v0.4.45
+    Checking icu_collections v2.3.0
+    Checking fixed_decimal v0.7.3
+    Checking indexmap v2.14.2
+    Checking icu_provider v2.3.1
+    Checking icu_pattern v0.5.1
+    Checking icu_locale_fallback v2.3.0
+    Checking icu_calendar v2.3.0
+    Checking icu_properties v2.3.0
+    Checking icu_decimal v2.3.0
+    Checking icu_plurals v2.3.0
+    Checking icu_normalizer v2.3.0
+    Checking web-sys v0.3.107
+    Checking icu_provider_adapters v2.3.0
+    Checking icu_provider_blob v2.3.0
+    Checking read-fonts v0.41.0
+    Checking half v2.7.1
+    Checking read-fonts v0.44.0
+    Checking icu_time v2.3.0
+    Checking icu_datetime v2.3.0
+    Checking sys-locale v0.3.2
+    Checking emath v0.37.0 (https://github.com/storytold/egui.git?rev=f5025284445ea19c35f746d96fc0b75468b3f560#f5025284)
+    Checking ecolor v0.37.0 (https://github.com/storytold/egui.git?rev=f5025284445ea19c35f746d96fc0b75468b3f560#f5025284)
+    Checking moxcms v0.8.1
+    Checking craft-i18n v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-host v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking tiff v0.11.3
+    Checking craft-metadata v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-theme v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking skrifa v0.44.0
+    Checking photocraft-color v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/color)
+    Checking skrifa v0.47.0
+    Checking photocraft-geom v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/geom)
+    Checking zip v9.5.1
+    Checking photocraft-raster v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/raster)
+    Checking image v0.25.10
+   Compiling slotmap v1.1.1
+    Checking rayon v1.12.0
+    Checking craft-zip v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking harfrust v0.12.0
+    Checking read-fonts v0.43.3
+    Checking uuid v1.29.2
+    Checking toml_edit v0.25.19+spec-1.1.0
+    Checking accesskit v0.25.2
+    Checking craft-metadata v0.1.0 (https://github.com/storytold/craft-libs?rev=7631ed550ef6b1abcc90a095dd7338e1b2c67c26#7631ed55)
+    Checking craft-platform v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-keymap v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking euclid v0.22.14
+    Checking heic-rs v0.1.4
+    Checking exr v1.74.3
+    Checking craft-heif v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking peniko v0.6.1
+    Checking craft-behavior v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking guillotiere v0.7.0
+    Checking craft-font-store v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking fontdb v0.24.0
+    Checking craft-color-ui v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-settings v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking photocraft-doc v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/doc)
+    Checking svgtypes v0.16.2
+    Checking harfrust v0.13.3
+    Checking num-integer v0.1.47
+    Checking usvg v0.48.1
+    Checking craft-window v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-image-codecs v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-raw v0.1.0 (https://github.com/storytold/craft-libs?rev=7631ed550ef6b1abcc90a095dd7338e1b2c67c26#7631ed55)
+    Checking craft-font-catalog v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-develop-model v0.1.0 (https://github.com/storytold/craft-libs?rev=7631ed550ef6b1abcc90a095dd7338e1b2c67c26#7631ed55)
+    Checking craft-font-manager v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-imaging v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking vello_common v0.0.8 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking hayro-syntax v0.7.2 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking linesweeper v0.5.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking vectorcraft-geom v0.18.0 (https://github.com/storytold/vectorcraft.git?rev=6b3a6b8788ebcb420d69449199cbdf323888d27e#6b3a6b87)
+    Checking fontique v0.11.1
+    Checking craft-develop v0.1.0 (https://github.com/storytold/craft-libs?rev=7631ed550ef6b1abcc90a095dd7338e1b2c67c26#7631ed55)
+    Checking vectorcraft-pathops v0.18.0 (https://github.com/storytold/vectorcraft.git?rev=6b3a6b8788ebcb420d69449199cbdf323888d27e#6b3a6b87)
+    Checking hayro-interpret v0.7.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking transpose v0.2.3
+    Checking craft-raw v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking resvg v0.48.1
+    Checking craft-pcraft-bundle v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking icu_segmenter v2.3.0
+    Checking vello_cpu v0.0.8 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking primal-check v0.3.4
+    Checking pic-scale v0.7.12
+    Checking parley_data v0.11.1
+    Checking num-complex v0.4.6
+    Checking rustfft v6.4.1
+    Checking parley v0.11.1
+    Checking hayro v0.7.1 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+   Compiling photocraft-text v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/text)
+    Checking craft-svg v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking photocraft-vector v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/vector)
+    Checking craft-idml v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-ora v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-kra v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking photocraft-raw v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/raw)
+    Checking photocraft-compose v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/compose)
+    Checking photocraft-algo v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/algo)
+    Checking craft-file-formats v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking craft-pdf v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+warning: constant `MACOS_PRIVATE_FONTS` is never used
+   --> crates/text/src/fonts.rs:915:7
+    |
+915 | const MACOS_PRIVATE_FONTS: &str = "/System/Library/PrivateFrameworks";
+    |       ^^^^^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `is_private_font_path` is never used
+   --> crates/text/src/fonts.rs:918:4
+    |
+918 | fn is_private_font_path(path: &std::path::Path) -> bool {
+    |    ^^^^^^^^^^^^^^^^^^^^
+
+warning: `photocraft-text` (lib) generated 2 warnings
+    Checking photocraft-format v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/format)
+    Checking craft-affinity v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+    Checking photocraft-paint v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/paint)
+    Checking craft-crs v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)
+warning: function `map_items` is never used
+  --> crates/paint/src/render.rs:90:4
+   |
+90 | fn map_items<T: Sync, R: Send>(items: &[T], pixels: usize, f: impl Fn(&T) -> R + Sync) -> Vec<R> {
+   |    ^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `photocraft-paint` (lib) generated 1 warning
+    Checking photocraft-io v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/io)
+warning: function `has_extension` is never used
+    --> crates/io/src/lib.rs:1097:4
+     |
+1097 | fn has_extension(name: &str, expected: &str) -> bool {
+     |    ^^^^^^^^^^^^^
+     |
+     = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `photocraft-io` (lib) generated 1 warning
+    Finished `dev` profile [optimized] target(s) in 15.07s
+
+wasm32-unknown-unknown check:
+  ok     19 crates
+  ok     photocraft-io --features heif

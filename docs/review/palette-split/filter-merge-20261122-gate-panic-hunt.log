@@ -1,0 +1,21 @@
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=f5025284445ea19c35f746d96fc0b75468b3f560#f5025284)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=f5025284445ea19c35f746d96fc0b75468b3f560#f5025284)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=f5025284445ea19c35f746d96fc0b75468b3f560#f5025284)` was not used in the crate graph
+warning: patch `hayro-cmap v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)` was not used in the crate graph
+warning: patch `hayro-postscript v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)` was not used in the crate graph
+warning: patch `krilla v0.8.2 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling photocraft-text v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/text)
+   Compiling photocraft-io v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/io)
+   Compiling photocraft-engine v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/engine)
+    Finished `test` profile [optimized] target(s) in 20.17s
+     Running tests/panic_hunt.rs (/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-merge-8933-20261122/debug/deps/panic_hunt-b74aac2235398e59)
+
+running 1 test
+test no_command_panics_or_hangs_on_adversarial_params ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out; finished in 46.60s
+

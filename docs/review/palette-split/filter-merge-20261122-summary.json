@@ -1,0 +1,42 @@
+{
+  "published_head": "e850ee17754cc97d42d8b69629bdbae2d12cec54",
+  "stack": [
+    {
+      "cef034bb9": "merge backend 46e1b0ae1 (incl. main 65fc546bb) into feat/palette-map-filter"
+    },
+    {
+      "083e5e824": "merge backend lint fix 92a695707"
+    },
+    {
+      "e850ee177": "fix(ui): popup menu replaces disallowed ComboBox; fmt/lint pass"
+    }
+  ],
+  "remote_before": "9cfee7af79d05baada99f3a5c471c16cb855d4ac (fast-forward push, no force)",
+  "gates": {
+    "engine-full": "4505 passed / 0 failed / 17 ignored",
+    "ui-filter_dialog": "65 passed / 1 ignored",
+    "ui-palette_map_engine": "9 passed",
+    "ui-palette_map_ui": "9 passed",
+    "panic_hunt": "passed",
+    "layers": "passed (27 crates)",
+    "wasm": "passed (19 crates + HEIF)",
+    "clippy_algo_engine": "strict clean with inherited nonminimal_bool (cmd/type_spell_order_tests.rs:73, byte-identical to main) allowed on CLI",
+    "clippy_ui": "8 hits, all in files byte-identical to main 65fc546bb (caf_ui/lifecycle.rs:181, shape_dialog.rs:16, menus/items.rs:81, panels/actions.rs:358, layers_events.rs:104, preset_browser.rs:857, swatches_ui.rs:112,120), collapsible_match+nonminimal_bool allowed on CLI",
+    "fmt": "rustfmt --check clean on all 18 branch .rs files",
+    "inherited_failure": "i18n::live_tests::preferences_preview_does_not_commit_until_applied_and_survives_reload fails on merged main too (Tamil glyph missing from pinned craft-fonts checkout); reproduced on backend tree 92a695707"
+  },
+  "port": {
+    "dialog": "craft framework HostedParamDialog; palette browser + mapping as full-width Param::custom rows",
+    "preview": "framework preview pane; proxy-factor exception, cancel-stale, no stale mid-drag frame, exact-request-only final frame",
+    "dropdown": "popup menu replaces disallowed egui::ComboBox",
+    "registry": "filter.paletteMap in install.rs after filter.lastFilter; palette_cmds specs registered",
+    "removed_tests": [
+      "palette_map_apply_cancel_is_transactional_and_commit_lands",
+      "palette_map_owns_library_preview_and_apply_controls (main removed the app.ui.dialogs/show harness; coverage kept via ported tests)"
+    ]
+  },
+  "receipts": {
+    "body_update": "2026-11-22 section \"Merged with current main\"",
+    "reply": "https://github.com/storytold/photocraft/pull/8933#issuecomment-7084832197"
+  }
+}

@@ -1,0 +1,87 @@
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=f5025284445ea19c35f746d96fc0b75468b3f560#f5025284)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=f5025284445ea19c35f746d96fc0b75468b3f560#f5025284)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=f5025284445ea19c35f746d96fc0b75468b3f560#f5025284)` was not used in the crate graph
+warning: patch `hayro-cmap v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)` was not used in the crate graph
+warning: patch `hayro-postscript v0.1.0 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)` was not used in the crate graph
+warning: patch `krilla v0.8.2 (https://github.com/storytold/craft-libs?rev=e953d47a378776dea207899b10baf969fc8cbe53#e953d47a)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+   Compiling photocraft-text v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/text)
+   Compiling photocraft-ui-egui v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/ui-egui)
+   Compiling photocraft-io v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/io)
+   Compiling photocraft-engine v0.23.1 (/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/filter-current/crates/engine)
+    Finished `test` profile [optimized] target(s) in 57.57s
+     Running unittests src/lib.rs (../../photocraft/target/review-merge-8933-20261122/debug/deps/photocraft_ui_egui-f5a2902544adc081)
+
+running 66 tests
+test dialogs::filter_dialog::tests::color_settings_working_spaces_list_installed_profiles_of_their_space ... ok
+test dialogs::filter_dialog::tests::content_aware_fill_previews_at_full_resolution ... ok
+test dialogs::filter_dialog::tests::match_color_preview_uses_the_source_document ... ok
+test dialogs::filter_dialog::global_light_angle_range_tests::a_scripted_global_light_angle_wraps_into_a_turn_and_keeps_180 ... ok
+test dialogs::filter_dialog::tests::new_filters_have_dialogs_or_run_directly ... ok
+test dialogs::filter_dialog::tests::layer_id_params_stay_out_of_the_dialog ... ok
+test dialogs::filter_dialog::tests::palette_map_live_preview_uses_the_document_proxy ... ok
+test dialogs::filter_dialog::tests::indexed_matte_tool_seeds_use_document_encoded_rgb ... ok
+test dialogs::filter_dialog::tests::color_lookup_dialog_defaults_run_a_3dl_file ... ok
+test dialogs::filter_dialog::tests::fresh_palette_map_dialog_maps_a_pixel_on_confirm ... ok
+test dialogs::filter_dialog::tests::preview_source_revisions_follow_only_referenced_documents ... ok
+test dialogs::filter_dialog::tests::color_lookup_dialog_lists_and_applies_lut_folder_files ... ok
+test dialogs::filter_dialog::tests::artboard_from_layers_opens_at_the_selected_layers_size ... ok
+test dialogs::filter_dialog::multi_channel_dialog_tests::filter_mask_dialog_keeps_its_target_when_color_channels_change ... ok
+test dialogs::filter_dialog::tests::arbitrary_rotation_interpolation_reopens_at_the_preference ... ok
+test dialogs::filter_dialog::tests::lens_blur_source_lists_the_alpha_channels ... ok
+test dialogs::filter_dialog::tests::displace_asks_for_its_map_after_ok ... ok
+test dialogs::filter_dialog::tests::global_light_dialog_reflects_active_document_light ... ok
+test dialogs::filter_dialog::tests::palette_map_on_a_reduced_smart_object_replays_scaled_existing_filters ... ok
+test dialogs::filter_dialog::tests::proxy_previews_never_clamp_pixel_sized_params ... ok
+test dialogs::filter_dialog::tests::define_pattern_asks_for_a_name ... ok
+test dialogs::filter_dialog::tests::only_direction_angles_get_the_dial ... ok
+test dialogs::filter_dialog::tests::sweep_all_previews ... ignored
+test dialogs::filter_dialog::multi_channel_dialog_tests::ordinary_filter_captures_the_set_and_preview_equals_confirmation ... ok
+test dialogs::filter_preview_ui::tests::only_filter_dialogs_get_the_preview_pane ... ok
+test dialogs::filter_dialog::tests::proof_setup_dialog_reflects_active_document_proof_condition ... ok
+test dialogs::filter_dialog::tests::smart_displace_preview_uses_the_map_document ... ok
+test dialogs::filter_dialog::tests::smart_object_curves_preview_keeps_its_size_on_a_reduced_proxy ... ok
+test dialogs::filter_dialog::tests::remembering_dialogs_never_persists_paths_or_document_indices ... ok
+test dialogs::filter_dialog::tests::preview_runs_engine_command_on_proxy ... ok
+test dialogs::filter_dialog::tests::match_color_source_layer_picker_keeps_references_with_the_source ... ok
+test dialogs::filter_dialog::tests::preview_stays_inside_the_selection_at_every_proxy_factor ... ok
+test dialogs::filter_dialog::tests::match_color_preview_refreshes_when_a_source_job_lands ... ok
+test dialogs::filter_dialog::tests::lens_blur_alpha_channel_source_runs ... ok
+test dialogs::filter_dialog::tests::replace_color_localized_color_clusters ... ok
+test dialogs::filter_dialog::tests::match_color_refuses_a_changed_destination_without_closing ... ok
+test dialogs::smart_filter_dialog::tests::closing_the_document_cancels_its_open_smart_filter_dialog ... ok
+test dialogs::filter_dialog::tests::match_color_control_source_changes_reset_layer_even_with_copied_ids ... ok
+test panels::actions::stop_tests::a_filter_dialog_inside_a_called_action_continues_its_callers_after_ok ... ok
+test dialogs::smart_filter_dialog::tests::blending_edits_one_filter_with_percent_opacity_and_undo_redo ... ok
+test dialogs::filter_dialog::tests::replace_color_eyedropper_samples_the_image ... ok
+test dialogs::smart_filter_dialog::tests::native_save_preserves_edited_blending_and_existing_invert ... ok
+test dialogs::smart_filter_dialog::tests::reduced_preview_scales_placement_stack_and_mask_without_adding_filters ... ok
+test dialogs::filter_dialog::tests::lens_blur_refuses_a_depth_channel_after_the_document_changed ... ok
+test dialogs::smart_filter_dialog::tests::blending_does_not_follow_layer_selection_or_the_layer_mask_target ... ok
+test dialogs::smart_filter_dialog::tests::preview_toggle_and_cancel_leave_document_and_history_untouched ... ok
+test dialogs::smart_filter_dialog::tests::invert_blending_keeps_transparency_at_every_depth ... ok
+test dialogs::filter_dialog::tests::assign_profile_offers_only_profiles_of_the_documents_colour_mode ... ok
+test dialogs::filter_dialog::tests::match_color_explicit_unavailable_source_layer_is_refused_with_or_without_a_frame ... ok
+test dialogs::smart_filter_dialog::tests::stale_filter_dialogs_cannot_edit_a_switched_or_changed_target ... ok
+test dialogs::filter_dialog::tests::replace_color_reset_forgets_the_click_order ... ok
+test canvas::raster_source::tests::the_composite_shows_a_filter_dialogs_preview ... ok
+test dialogs::filter_dialog::tests::indexed_matte_other_shows_the_color_row_and_none_hides_it ... ok
+test dialogs::filter_dialog::tests::stock_indexed_dialog_can_disable_transparency_with_stale_automation_settings ... ok
+test dialogs::filter_dialog::tests::replace_color_result_swatch_sets_the_sliders ... ok
+test panels::smart_ui::editor_tests::rabbit_stale_tone_filter_dialog_hides_controls_until_the_original_document_returns ... ok
+test dialogs::filter_dialog::tests::match_color_source_identity_follows_the_documents ... ok
+test dialogs::filter_dialog::tests::indexed_matte_dropdown_and_picker_change_the_applied_edge_color ... ok
+test dialogs::filter_dialog::tests::core_filter_previews_keep_minimum_settings_after_downsampling ... ok
+test dialogs::filter_dialog::tests::proxy_previews_scale_only_lengths ... ok
+test dialogs::filter_dialog::multi_channel_dialog_tests::mask_view_dialogs_capture_the_mask_for_preview_and_confirmation ... ok
+test dialogs::filter_dialog::tests::warp_text_preview_matches_the_full_size_result_on_a_reduced_proxy ... ok
+test color_swatch_tests::filter_dialog_colours_open_the_color_picker ... ok
+test dialogs::filter_dialog::tests::fixed_size_filters_preview_at_the_scale_they_apply ... ok
+test dialogs::filter_dialog::tests::every_dialog_default_runs_without_float_type_errors ... ok
+test dialogs::filter_dialog::tests::every_preview_shows_what_ok_applies ... ok
+
+test result: ok. 65 passed; 0 failed; 1 ignored; 0 measured; 3824 filtered out; finished in 5.91s
+

@@ -1,0 +1,12 @@
+before trial=0 exit=0 wall_s=0.5 log=/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/preview-runs-20261116/runs/trial-0-before.log
+after trial=0 exit=0 wall_s=0.5 log=/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/preview-runs-20261116/runs/trial-0-after.log
+after trial=1 exit=0 wall_s=0.5 log=/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/preview-runs-20261116/runs/trial-1-after.log
+before trial=1 exit=0 wall_s=0.5 log=/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/preview-runs-20261116/runs/trial-1-before.log
+after trial=3 exit=0 wall_s=0.5 log=/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/preview-runs-20261116/runs/trial-3-after.log
+before trial=3 exit=0 wall_s=0.5 log=/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/preview-runs-20261116/runs/trial-3-before.log
+after trial=5 exit=0 wall_s=0.5 log=/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/preview-runs-20261116/runs/trial-5-after.log
+before trial=5 exit=0 wall_s=0.5 log=/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/preview-runs-20261116/runs/trial-5-before.log
+before trial=2 exit=0 wall_s=0.5 log=/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/preview-runs-20261116/runs/trial-2-before.log
+after trial=2 exit=0 wall_s=0.5 log=/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/preview-runs-20261116/runs/trial-2-after.log
+before trial=4 exit=0 wall_s=0.5 log=/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/preview-runs-20261116/runs/trial-4-before.log
+after trial=4 exit=0 wall_s=0.5 log=/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/preview-runs-20261116/runs/trial-4-after.log

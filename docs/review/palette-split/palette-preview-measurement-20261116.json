@@ -1,0 +1,323 @@
+{
+  "registration": "palette-preview-20261116-v1",
+  "question": "Comparable current real preview/cancellation for #8933 after rebase, per FredApps review 5916763678.",
+  "comparison": {
+    "before": "published 974de089fef56d1542cb45f4d94e375dc935c1c3 (old upstream base)",
+    "after": "rebased 9cfee7af79d05baada99f3a5c471c16cb855d4ac on backend e2d3921d1c4c7726874db7033c195bc572eba9aa, main 6a82de14116499cca0df985a430bfdb5448085f6"
+  },
+  "confounder": "Different upstream bases/shared CMS/renderer revisions; observed matched-workload comparison, no causal attribution.",
+  "protocol": "Registered pre-execution; oracle review fixed 6 defects before any timing; first build attempt cancelled, not a run.",
+  "temporary_feature": "photocraft-engine/preview-probe in BOTH builds only; no production publication contains it",
+  "execution": {
+    "registration": "palette-preview-20261116-v1",
+    "protocol_path": "local://comments-20261116/specs/PLANS.md",
+    "protocol_amended_pre_execution": true,
+    "comparison": {
+      "before": {
+        "worktree": "palette-preview-before-20261116",
+        "source_head": "974de089fef56d1542cb45f4d94e375dc935c1c3",
+        "base": "old published #8933 base"
+      },
+      "after": {
+        "worktree": "palette-preview-after-20261116",
+        "source_head": "0e3010d755b14a3ecb12e7613bf0d08ad0477b62",
+        "main": "6a82de14116499cca0df985a430bfdb5448085f6",
+        "backend": "e2d3921d1c4c7726874db7033c195bc572eba9aa"
+      }
+    },
+    "confounder": "Different upstream bases, shared CMS and UI integration revisions; observed matched-workload comparison only, no causal attribution.",
+    "temporary_feature": "photocraft-engine/preview-probe (both builds; removed before production publication)",
+    "transfer_sources_sha256": {
+      "crates/ui-egui/src/canvas/tests/palette_preview_resource_probe.rs": "25513ee4d7815377bf637fa464053c98a6d5ccc99e54d80b65a155f885e686df",
+      "crates/engine/src/palette_cmds.rs": "70ef9c5d755e9eb7fd0d01ad1857ee5aa82298e22916233935ea614f39fe8a29",
+      "crates/engine/src/preview_probe.rs": "84f96dc79e5da39943b1e1c13854111c7ba0001ebc07037556e228eecc01b45a",
+      "crates/engine/Cargo.toml": "bdb4c8957d8a8d85b3821b8264a2189e0f70598e85e6efafcf744c367d8ac48b",
+      "crates/ui-egui/src/dialogs/filter_preview_worker.rs": "c9ebc61a147bb55ac991572affd86671f6456bb2dce56612e32be64ba5d2b401",
+      "crates/ui-egui/src/canvas/tests.rs": "eac89a31f03bd6fe919de2d870ba1d16ec391f072af0564928ca085e293f7680",
+      "crates/engine/src/lib.rs": "f0b67b4f6543f56a0c0a74d0bd3b8d8c2f502d81927336c3142b7527c7ffb43f"
+    },
+    "instrumentation_phase": "Palette Map render_surface after source preparation, before mapping kernel; does not claim mapped output pixels",
+    "fixtures": [
+      "2048x1536 dense opaque RGB/U8",
+      "6000x4000 dense opaque RGB/U8"
+    ],
+    "scenarios": [
+      "isolated final request",
+      "stale real render then final request (burst)",
+      "dialog close during real render"
+    ],
+    "pairs": {
+      "total_scheduled": 6,
+      "warmup": 0,
+      "retained": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "order": {
+        "1": "after->before",
+        "2": "before->after",
+        "3": "after->before",
+        "4": "before->after",
+        "5": "after->before"
+      }
+    },
+    "affinity": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "rayon": 8,
+    "toolchain": "1.95.0",
+    "profile": "release opt3 LTOoff 16cgu incremental0 debug0",
+    "env": {
+      "CRAFT_FONTS_DIR": "/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/craft-fonts",
+      "CRAFT_I18N_DIR": "/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/catalogs-20261116",
+      "CRAFT_I18N_REQUIRED": "1"
+    },
+    "targets": {
+      "before": "/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-preview-before-20261116",
+      "after": "/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-preview-after-20261116"
+    },
+    "output_root": "/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/preview-runs-20261116",
+    "correctness_conditions": [
+      "original session document pixels/revision/history unchanged",
+      "isolated and burst final native bytes identical within process and across revisions",
+      "no stale final request accepted",
+      "no preview after close",
+      "max active computations<=1",
+      "all actual worker tasks drained"
+    ],
+    "investigation_thresholds": {
+      "relative": 1.1,
+      "absolute_ready_ms": 20,
+      "cancel_exit_ms": 500,
+      "ensure_call_ms": 16
+    },
+    "timing_executed": true,
+    "binaries": {
+      "before": {
+        "path": "target/review-preview-before-20261116/release/deps/photocraft_ui_egui-6f2d74b4a3bbf9db",
+        "sha256": "e033628c3fd567d7e73f3a3ada9081cca1b109ab116b0cdae15a25a09d70516c",
+        "size": 191606200
+      },
+      "after": {
+        "path": "target/review-preview-after-20261116/release/deps/photocraft_ui_egui-1aa88fa2c389094e",
+        "sha256": "05665afa2838d17997cf0cf0b4b35517a408a1ede553974ed9717ae1415c9496",
+        "size": 243926752
+      }
+    },
+    "executed_utc": [
+      "2026-11-22T15:36:43Z",
+      "2026-11-22T15:36:49Z"
+    ]
+  },
+  "correctness": {
+    "processes": 12,
+    "recorded_failures": 0,
+    "max_active_computations": 1,
+    "isolated_vs_superseded_native_equal_per_process": true,
+    "cross_version_native_files_identical": "24/24 isolated-final files",
+    "stale_accepted_after_latest": false,
+    "preview_published_after_close": false,
+    "cancel_classification": {
+      "cancel_requested_during_compute_and_flag_seen_at_done": 24,
+      "races_or_gated": 0
+    },
+    "original_document_unchanged": true
+  },
+  "estimators_medians_ms": [
+    {
+      "fixture": "2048x1536 k=1",
+      "isolated_ready_ms": {
+        "before": 74.770247,
+        "after": 74.506992
+      },
+      "burst_final_ready_ms": {
+        "before": 66.180476,
+        "after": 66.083407
+      },
+      "cancel_to_exit_ms": {
+        "before": 0.144338,
+        "after": 0.17355
+      },
+      "close_to_exit_ms": {
+        "before": 0.142312,
+        "after": 0.195964
+      },
+      "close_to_drain_ms": {
+        "before": 1.124449,
+        "after": 1.131027
+      },
+      "max_ensure_call_ms": {
+        "before": 0.303998,
+        "after": 0.068731
+      },
+      "burst_minus_isolated_ms": {
+        "before": -8.758071999999999,
+        "after": -8.795508999999996
+      }
+    },
+    {
+      "fixture": "6000x4000 k=4",
+      "isolated_ready_ms": {
+        "before": 40.287712,
+        "after": 39.935236
+      },
+      "burst_final_ready_ms": {
+        "before": 40.391172,
+        "after": 38.023018
+      },
+      "cancel_to_exit_ms": {
+        "before": 0.051107,
+        "after": 0.120491
+      },
+      "close_to_exit_ms": {
+        "before": 0.064279,
+        "after": 0.115159
+      },
+      "close_to_drain_ms": {
+        "before": 1.170341,
+        "after": 1.161239
+      },
+      "max_ensure_call_ms": {
+        "before": 0.046889,
+        "after": 0.034468000000000006
+      },
+      "burst_minus_isolated_ms": {
+        "before": 0.7604639999999989,
+        "after": -0.7921559999999985
+      }
+    }
+  ],
+  "thresholds": {
+    "rule": "flag only if ratio>1.10 AND added>20ms (ready metrics), or median cancel/close-to-task-exit>500ms, or max synchronous ensure call>16ms",
+    "isolated_ready_k1": {
+      "before": 74.770247,
+      "after": 74.506992,
+      "ratio": 0.996479147648128,
+      "added_ms": -0.2632550000000009
+    },
+    "isolated_ready_k4": {
+      "before": 40.287712,
+      "after": 39.935236,
+      "ratio": 0.991251029594334,
+      "added_ms": -0.3524759999999958
+    },
+    "burst_ready_k1": {
+      "before": 66.180476,
+      "after": 66.083407,
+      "ratio": 0.9985332683312824
+    },
+    "burst_ready_k4": {
+      "before": 40.391172,
+      "after": 38.023018,
+      "ratio": 0.9413695151009731
+    },
+    "max_cancel_or_close_to_exit_ms": 0.195964,
+    "max_ensure_call_ms": 0.303998,
+    "flags_crossed": 0
+  },
+  "verdict": "No preregistered investigation flag crossed; all correctness conditions hold. The registered directional prediction (cooperative single computation, identical outputs, latest-frame latency similar to isolated work plus ~1ms drain overhead) is confirmed by these runs.",
+  "limits": [
+    "CPU/headless egui preview acceptance, not screen-present or input latency.",
+    "Medians of 5 retained process pairs on one i9-13900K host, affinity0-7/Rayon8, release opt3/LTO-off; not a budget, speedup, zero-overhead or Photoshop-parity claim.",
+    "Sub-millisecond cancel/close-to-exit differences (after 0.12-0.20ms vs before 0.05-0.14ms) are observed numbers, far below the 500ms threshold.",
+    "Burst-vs-isolated differences are negative at k=1 (warm-cache ordering within each process) and sub-millisecond at k=4; the interference estimator is within-process by registration.",
+    "Raw per-run JSON embedded verbatim in the 12 published trial logs; native bytes published as a SHA256 inventory (425MiB too large for the repo)."
+  ],
+  "files": [
+    {
+      "path": "docs/review/palette-split/palette-preview-measurement-20261116-trial-0-after.log",
+      "size": 64532,
+      "sha256": "3bced1aa509ffd6eafb7a20f17f4d5d2469b3b54b2f6f6416588e564345085a0"
+    },
+    {
+      "path": "docs/review/palette-split/palette-preview-measurement-20261116-trial-0-before.log",
+      "size": 64553,
+      "sha256": "935beb584119bc65d94a1df91d4be299639780cdb40e22b7af10e35b9853ed95"
+    },
+    {
+      "path": "docs/review/palette-split/palette-preview-measurement-20261116-trial-1-after.log",
+      "size": 64542,
+      "sha256": "0ae04d5d0962159fea8cfb87361fb9094b9ecde1759338e9f29add197f577b3c"
+    },
+    {
+      "path": "docs/review/palette-split/palette-preview-measurement-20261116-trial-3-before.log",
+      "size": 64517,
+      "sha256": "995998b8c75bebed5e72a893e40c6749751b9a70b71632b01d427ca778dc4c38"
+    },
+    {
+      "path": "docs/review/palette-split/palette-preview-measurement-20261116-trial-5-after.log",
+      "size": 64545,
+      "sha256": "87fbda8f8882b49c506e5b3e6ab25718477b6e284d4e219792862a3f0234140c"
+    },
+    {
+      "path": "docs/review/palette-split/palette-preview-measurement-20261116-trial-3-after.log",
+      "size": 64552,
+      "sha256": "135857b4a898b6b5b106d47d79ca5e9aae8996d6e625ce0c8a709fa1f5864233"
+    },
+    {
+      "path": "docs/review/palette-split/palette-preview-measurement-20261116-trial-2-before.log",
+      "size": 64545,
+      "sha256": "9367042e2114009e89fb813b33192739615bdf588694f30e9cd5e4e017ffbe5c"
+    },
+    {
+      "path": "docs/review/palette-split/palette-preview-measurement-20261116-trial-4-after.log",
+      "size": 64533,
+      "sha256": "e7e48e35a6bc262922075637ac40279c01a8953a8c05a01499b02d4b6577134e"
+    },
+    {
+      "path": "docs/review/palette-split/palette-preview-measurement-20261116-trial-1-before.log",
+      "size": 64550,
+      "sha256": "27ecdeef043dc731389aa6654b3406bc22b2c4b9614d40d3ff40bc6a27c1779c"
+    },
+    {
+      "path": "docs/review/palette-split/palette-preview-measurement-20261116-trial-2-after.log",
+      "size": 64550,
+      "sha256": "ecda24658ebe262ad704e4c941f8e833cd297c4e15777ad8412fed8bc396ba00"
+    },
+    {
+      "path": "docs/review/palette-split/palette-preview-measurement-20261116-trial-5-before.log",
+      "size": 64528,
+      "sha256": "b9a30a46781d331051350465d85935c371b96761b55055114ff36559402f1841"
+    },
+    {
+      "path": "docs/review/palette-split/palette-preview-measurement-20261116-trial-4-before.log",
+      "size": 64547,
+      "sha256": "6ad6140f44d44e743ea7e9b2b91e9a166e9def1b3eec28077087674a70e55bb1"
+    },
+    {
+      "path": "docs/review/palette-split/palette-preview-measurement-20261116-exit-status.txt",
+      "size": 1752,
+      "sha256": "f89ae868b58497d3a83e2bee0c84e9018553fa6aec524d5aca98f5941ff7e7ce"
+    },
+    {
+      "path": "docs/review/palette-split/palette-preview-measurement-20261116-driver.sh",
+      "size": 1237,
+      "sha256": "72d85453189131d14378d9b6736d9fa17687a0c224d76eacd235a0b2d1f801ff"
+    },
+    {
+      "path": "docs/review/palette-split/palette-preview-measurement-20261116-protocol.md",
+      "size": 7212,
+      "sha256": "c9f46404c56f194a0b4f246e00554a66b878639618b689daf406447f1ff2be1c"
+    },
+    {
+      "path": "docs/review/palette-split/palette-preview-measurement-20261116-execution-manifest.json",
+      "size": 4228,
+      "sha256": "8c012b2b1023706a3ad211be0084b5deef226074b30a0121b6b9c6dce64a275b"
+    },
+    {
+      "path": "docs/review/palette-split/palette-preview-measurement-20261116-native-inventory.json",
+      "size": 11066,
+      "sha256": "b5bcbf50af9db332448ede478694d1e5bc70fa00bbf44face271cef2a7e742e7"
+    }
+  ]
+}

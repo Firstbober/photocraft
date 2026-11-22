@@ -1,0 +1,111 @@
+{
+  "registration": "palette-preview-20261116-v1",
+  "protocol_path": "local://comments-20261116/specs/PLANS.md",
+  "protocol_amended_pre_execution": true,
+  "comparison": {
+    "before": {
+      "worktree": "palette-preview-before-20261116",
+      "source_head": "974de089fef56d1542cb45f4d94e375dc935c1c3",
+      "base": "old published #8933 base"
+    },
+    "after": {
+      "worktree": "palette-preview-after-20261116",
+      "source_head": "0e3010d755b14a3ecb12e7613bf0d08ad0477b62",
+      "main": "6a82de14116499cca0df985a430bfdb5448085f6",
+      "backend": "e2d3921d1c4c7726874db7033c195bc572eba9aa"
+    }
+  },
+  "confounder": "Different upstream bases, shared CMS and UI integration revisions; observed matched-workload comparison only, no causal attribution.",
+  "temporary_feature": "photocraft-engine/preview-probe (both builds; removed before production publication)",
+  "transfer_sources_sha256": {
+    "crates/ui-egui/src/canvas/tests/palette_preview_resource_probe.rs": "25513ee4d7815377bf637fa464053c98a6d5ccc99e54d80b65a155f885e686df",
+    "crates/engine/src/palette_cmds.rs": "70ef9c5d755e9eb7fd0d01ad1857ee5aa82298e22916233935ea614f39fe8a29",
+    "crates/engine/src/preview_probe.rs": "84f96dc79e5da39943b1e1c13854111c7ba0001ebc07037556e228eecc01b45a",
+    "crates/engine/Cargo.toml": "bdb4c8957d8a8d85b3821b8264a2189e0f70598e85e6efafcf744c367d8ac48b",
+    "crates/ui-egui/src/dialogs/filter_preview_worker.rs": "c9ebc61a147bb55ac991572affd86671f6456bb2dce56612e32be64ba5d2b401",
+    "crates/ui-egui/src/canvas/tests.rs": "eac89a31f03bd6fe919de2d870ba1d16ec391f072af0564928ca085e293f7680",
+    "crates/engine/src/lib.rs": "f0b67b4f6543f56a0c0a74d0bd3b8d8c2f502d81927336c3142b7527c7ffb43f"
+  },
+  "instrumentation_phase": "Palette Map render_surface after source preparation, before mapping kernel; does not claim mapped output pixels",
+  "fixtures": [
+    "2048x1536 dense opaque RGB/U8",
+    "6000x4000 dense opaque RGB/U8"
+  ],
+  "scenarios": [
+    "isolated final request",
+    "stale real render then final request (burst)",
+    "dialog close during real render"
+  ],
+  "pairs": {
+    "total_scheduled": 6,
+    "warmup": 0,
+    "retained": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "order": {
+      "1": "after->before",
+      "2": "before->after",
+      "3": "after->before",
+      "4": "before->after",
+      "5": "after->before"
+    }
+  },
+  "affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "rayon": 8,
+  "toolchain": "1.95.0",
+  "profile": "release opt3 LTOoff 16cgu incremental0 debug0",
+  "env": {
+    "CRAFT_FONTS_DIR": "/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/craft-fonts",
+    "CRAFT_I18N_DIR": "/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/catalogs-20261116",
+    "CRAFT_I18N_REQUIRED": "1"
+  },
+  "targets": {
+    "before": "/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-preview-before-20261116",
+    "after": "/home/bober/Documents/ProgrammingProjects/Git/photocraft/target/review-preview-after-20261116"
+  },
+  "output_root": "/home/bober/Documents/ProgrammingProjects/Git/photocraft-review/preview-runs-20261116",
+  "correctness_conditions": [
+    "original session document pixels/revision/history unchanged",
+    "isolated and burst final native bytes identical within process and across revisions",
+    "no stale final request accepted",
+    "no preview after close",
+    "max active computations<=1",
+    "all actual worker tasks drained"
+  ],
+  "investigation_thresholds": {
+    "relative": 1.1,
+    "absolute_ready_ms": 20,
+    "cancel_exit_ms": 500,
+    "ensure_call_ms": 16
+  },
+  "timing_executed": true,
+  "binaries": {
+    "before": {
+      "path": "target/review-preview-before-20261116/release/deps/photocraft_ui_egui-6f2d74b4a3bbf9db",
+      "sha256": "e033628c3fd567d7e73f3a3ada9081cca1b109ab116b0cdae15a25a09d70516c",
+      "size": 191606200
+    },
+    "after": {
+      "path": "target/review-preview-after-20261116/release/deps/photocraft_ui_egui-1aa88fa2c389094e",
+      "sha256": "05665afa2838d17997cf0cf0b4b35517a408a1ede553974ed9717ae1415c9496",
+      "size": 243926752
+    }
+  },
+  "executed_utc": [
+    "2026-11-22T15:36:43Z",
+    "2026-11-22T15:36:49Z"
+  ]
+}

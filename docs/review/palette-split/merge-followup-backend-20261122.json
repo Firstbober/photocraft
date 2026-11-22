@@ -1,0 +1,40 @@
+{
+  "pr": "https://github.com/storytold/photocraft/pull/8929",
+  "base": "65fc546bbab9659f920c38b8f373b251003d60d7",
+  "previous_head": "e2d3921d1c4c7726874db7033c195bc572eba9aa",
+  "published_head": "92a695707ebd11f75ae3b6d6bea7abebf914371d",
+  "merge": "1b2acc62e",
+  "followups": [
+    "46e1b0ae1",
+    "92a695707"
+  ],
+  "publication": "fast-forward, no force-push",
+  "conflicts": [
+    "crates/engine/src/cmd/mode_cmds.rs",
+    "crates/ui-egui/src/dialogs/filter_dialog.rs",
+    "crates/engine/src/palette_cmds.rs"
+  ],
+  "branch_only_regressions_fixed": [
+    "stock Exact capacity rejection restored before reduction",
+    "stock opaque matching excludes the synthetic transparency slot",
+    "stock paletteSnapshot encoded sRGB for replay",
+    "tagged-grayscale advanced comparisons use composite_profile"
+  ],
+  "gates": {
+    "engine_tests": [
+      "indexed_exact_*",
+      "stock_*",
+      "mode_cmds",
+      "web_cmds"
+    ],
+    "algo_lib": "pass",
+    "ui_filter_dialog": "pass",
+    "panic_hunt": "pass",
+    "layers": "27 crates",
+    "wasm": "19 crates + HEIF",
+    "clippy": "strict algo+engine; only inherited nonminimal_bool at cmd/type_spell_order_tests.rs:73 allowed on the command line",
+    "fmt": "18 PR-side Rust files clean"
+  },
+  "delta_vs_main": "20 files, +4109/-159",
+  "reply": "https://github.com/storytold/photocraft/pull/8929#issuecomment-7083188999"
+}

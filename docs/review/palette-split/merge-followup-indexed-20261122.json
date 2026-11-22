@@ -1,0 +1,38 @@
+{
+  "pr": "https://github.com/storytold/photocraft/pull/8926",
+  "base": "65fc546bbab9659f920c38b8f373b251003d60d7",
+  "previous_head": "ff9f942efe9af162ff507527e8e3a88378821a9a",
+  "tested_head": "8e3290f4a4dfe7562b4f28f38616e032b1ad1966",
+  "published_head": "1d026bccb6b7ad21b96cf3e04ee5c1b512feaca8",
+  "merge": "ba931bfe80b7edd9dbac777ea420340b0c9763f8",
+  "publication": "normal fast-forward pushes; final commit only rewraps an import",
+  "findings": [
+    {
+      "url": "https://github.com/storytold/photocraft/pull/8926#discussion_r4659029205",
+      "result": "Clone Stamp offers all committing points, not just point 1"
+    },
+    {
+      "url": "https://github.com/storytold/photocraft/pull/8926#discussion_r4659029216",
+      "result": "Unlocked-layer repro failed on an off-table sample at (41, 8); staged constraint now covers canvas and retained tile bounds"
+    },
+    {
+      "url": "https://github.com/storytold/photocraft/pull/8926#discussion_r4659029211",
+      "result": "New opaque default repro failed on an off-table sample at (0, 0); explicit solid and mixed tile pixels that equal the old default follow the remap"
+    }
+  ],
+  "gates": {
+    "tests_passed": {
+      "indexed_painting": 11,
+      "indexed_tool_matrix": 12,
+      "lib_indexed": 67,
+      "lib_retouch": 279,
+      "lib_brush": 227,
+      "panic_hunt": 1
+    },
+    "test_count_note": "Filtered suites overlap",
+    "layering": "27 crates passed",
+    "wasm": "19 crates and HEIF passed",
+    "format": "17 PR-side Rust files checked on published head",
+    "strict_clippy": "One inherited nonminimal_bool at crates/engine/src/cmd/type_spell_order_tests.rs:73, byte-identical to pinned main; all-targets passed with only this lint allowed on the command line."
+  }
+}
